@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CelestialAttack : MonoBehaviour
 {
-    public Animation warningAnim;
-    public GameObject warning;
+    public Animation CelestialAttackAnim;
+    public GameObject warning,celestialAttack;
     public Vector2 positionA, positionB;
     private float nextActionTime = 0.0f;
-    public float period = 1f;
+    public float warningTiming = 5f;
     Vector2 randomValor;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class CelestialAttack : MonoBehaviour
     {
         if (Time.time > nextActionTime)
         {
-            nextActionTime += period;
+            nextActionTime += warningTiming;
 
             randomValor = new Vector2(
                 Random.Range(positionA.x, positionB.x),
@@ -30,8 +30,14 @@ public class CelestialAttack : MonoBehaviour
             );
             warning = Instantiate(warning, randomValor, warning.transform.rotation);
             Destroy(warning.gameObject, 5f);
-            //if(exists == true)
-            //{
+
+                Debug.Log("ola");
+ 
+                //celestialAttack = Instantiate(celestialAttack, randomValor, celestialAttack.transform.rotation);
+
+                //CelestialAttackAnim.Play();
+                //if(exists == true)
+                //{
 
             //}
             //Destroy(WaterDropClone.gameObject, 5f);
