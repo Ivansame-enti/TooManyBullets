@@ -9,10 +9,16 @@ public class movement : MonoBehaviour
     public float rotationSpeed=1000.0f;
 
     public Vector3 lastMoveDir;
+
+    public bool isMoving;
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+            isMoving = false;
+        else isMoving = true;
 
         Vector2 movementDirection = new Vector2(horizontalInput, verticalInput);
         float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
