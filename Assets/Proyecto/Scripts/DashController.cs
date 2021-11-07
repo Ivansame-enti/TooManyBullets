@@ -5,6 +5,8 @@ using UnityEngine;
 public class DashController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public float dashDistance;
+    public GameObject dashParticles;
     /*public float dashSpeed;
     private float timer;
     public float dashDistance;
@@ -46,7 +48,8 @@ public class DashController : MonoBehaviour
         {
             //isDashing = true;
             //Debug.Log("a");
-            this.transform.position += this.GetComponent<movement>().lastMoveDir * 5f;
+            this.transform.position += this.GetComponent<movement>().lastMoveDir * dashDistance;
+            //Instantiate();
             //rb.velocity += this.GetComponent<movement>().lastMoveDir * 5f;
         }
     }
