@@ -45,6 +45,7 @@ public class DashController : MonoBehaviour
         if (Input.GetButtonDown("R2") || Input.GetButtonDown("L2"))
         {
             //isDashing = true;
+            //Debug.Log("a");
             this.transform.position += this.GetComponent<movement>().lastMoveDir * 5f;
             //rb.velocity += this.GetComponent<movement>().lastMoveDir * 5f;
         }

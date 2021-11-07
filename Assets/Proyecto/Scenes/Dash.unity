@@ -229,6 +229,7 @@ MonoBehaviour:
   bala: {fileID: 1485337005}
   enemy: {fileID: 0}
   Timer: 2
+  balat: 0
 --- !u!212 &1002228495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -315,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 25
   rotationSpeed: 1000
+  lastMoveDir: {x: 0, y: 0, z: 0}
 --- !u!50 &1031952465
 Rigidbody2D:
   serializedVersion: 4
@@ -441,9 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb87937079a13ed44a1142046c6865dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 1
-  dashDistance: 2
-  targetDash: {fileID: 570135907}
 --- !u!1 &1485337005
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +532,7 @@ MonoBehaviour:
   bala: {fileID: 1485337005}
   enemy: {fileID: 0}
   Timer: 2
+  balat: 0
 --- !u!212 &1485337010
 SpriteRenderer:
   m_ObjectHideFlags: 0
