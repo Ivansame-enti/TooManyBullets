@@ -568,18 +568,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1967345929}
     m_Modifications:
-    - target: {fileID: 410289795, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410289795, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444984354, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
       propertyPath: m_Name
       value: Enemy
