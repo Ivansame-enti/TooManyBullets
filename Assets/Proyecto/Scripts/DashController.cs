@@ -8,7 +8,9 @@ public class DashController : MonoBehaviour
     public float dashDistance;
     public GameObject dashParticles;
     public float dashDelay;
+    public float dashTime;
     private float timer;
+    private float timer2;
     /*public float dashSpeed;
     private float timer;
     public float dashDistance;
@@ -47,17 +49,28 @@ public class DashController : MonoBehaviour
             }
         }*/
 
+        if (timer2 <= 0)
+        {
+            rb.velocity = Vector3.zero;
+        }
+        else
+        {
+            timer2 -= Time.deltaTime;
+        }
+
         if (timer <= 0)
         {
             if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2")) && this.GetComponent<movement>().isMoving)
             {
                 //isDashing = true;
                 //Debug.Log("a");
-                this.transform.position += this.GetComponent<movement>().lastMoveDir * dashDistance;
+                rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
+                //this.transform.position += this.GetComponent<movement>().lastMoveDir * dashDistance;
                 Instantiate(dashParticles, new Vector2(this.transform.position.x + 0.5f, this.transform.position.y), Quaternion.identity);
                 //particles.transform.parent = gameObject.transform;
                 //rb.velocity += this.GetComponent<movement>().lastMoveDir * 5f;
                 timer = dashDelay;
+                timer2 = dashTime;
             }
         } else
         {

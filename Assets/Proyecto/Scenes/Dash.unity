@@ -312,6 +312,7 @@ MonoBehaviour:
   speed: 25
   rotationSpeed: 1000
   lastMoveDir: {x: 0, y: 0, z: 0}
+  isMoving: 0
 --- !u!50 &1031952465
 Rigidbody2D:
   serializedVersion: 4
@@ -438,9 +439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb87937079a13ed44a1142046c6865dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 2
+  dashDistance: 20
   dashParticles: {fileID: 801082261254393012, guid: d38836dc338edde449fb283f54000aed, type: 3}
-  dashDelay: 2
+  dashDelay: 1.5
+  dashTime: 0.2
 --- !u!1 &1485337005
 GameObject:
   m_ObjectHideFlags: 0
