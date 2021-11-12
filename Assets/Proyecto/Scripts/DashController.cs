@@ -11,50 +11,34 @@ public class DashController : MonoBehaviour
     public float dashTime;
     private float timer;
     private float timer2;
-    /*public float dashSpeed;
-    private float timer;
-    public float dashDistance;
-    private bool isDashing=false;
-    public GameObject targetDash;*/
-
+    private float timer3;
+    public float particle_delay;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //timer = dashDistance;
-        timer = dashDelay;
+        particle_delay = dashDelay/30;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (!isDashing) {
-            if (Input.GetButtonDown("R2") || Input.GetButtonDown("L2"))
-            {
-                isDashing = true;
-            }
-        }
-        else
-        {
-            if (timer <= 0)
-            {
-                isDashing=false;
-                timer = dashDistance;
-                rb.velocity = Vector2.zero;
-            } else
-            {
-                timer -= Time.deltaTime;
-                rb.velocity = targetDash.transform.position * dashSpeed;
-            }
-        }*/
-
         if (timer2 <= 0)
         {
             rb.velocity = Vector3.zero;
+            timer3 = 0;
         }
         else
         {
+            if (timer3 <= 0)
+            {
+                Instantiate(dashParticles, new Vector2(this.transform.position.x + 0.5f, this.transform.position.y), Quaternion.identity);
+                timer3 = particle_delay;
+            } else
+            {
+                timer3 -= Time.deltaTime;
+            }
             timer2 -= Time.deltaTime;
         }
 
@@ -62,13 +46,7 @@ public class DashController : MonoBehaviour
         {
             if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2")) && this.GetComponent<movement>().isMoving)
             {
-                //isDashing = true;
-                //Debug.Log("a");
                 rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
-                //this.transform.position += this.GetComponent<movement>().lastMoveDir * dashDistance;
-                Instantiate(dashParticles, new Vector2(this.transform.position.x + 0.5f, this.transform.position.y), Quaternion.identity);
-                //particles.transform.parent = gameObject.transform;
-                //rb.velocity += this.GetComponent<movement>().lastMoveDir * 5f;
                 timer = dashDelay;
                 timer2 = dashTime;
             }
