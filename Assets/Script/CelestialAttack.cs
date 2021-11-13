@@ -8,8 +8,10 @@ public class CelestialAttack : MonoBehaviour
     public GameObject warning,celestialAttack;
     public Vector2 positionA, positionB;
     private float nextActionTime = 0.0f;
-    public float warningTiming = 5f;
+    public float warningTiming = 2f;
 
+    private float timer;
+    public float activacionAtk;
 
     Vector2 randomValor;
     public float defDistanceRay = 100;
@@ -68,13 +70,24 @@ public class CelestialAttack : MonoBehaviour
             );
 
 
-
+            
             warning = Instantiate(warning, randomValor, warning.transform.rotation);
-            ShootLaser();
+            //if(timer <= 0)
+            //{
+                Destroy(warning.gameObject, 2f);
+                ShootLaser();
+                timer = activacionAtk;
+            /*}
+            else
+            {
+                timer -= Time.deltaTime;
+                
+            }
+            */
             //celestialAttack = Instantiate(celestialAttack,randomValor,celestialAttack.transform.rotation);
             Debug.Log(laserPos1);
             Debug.Log(laserPos2);
-            Destroy(warning.gameObject, 5f);
+            
             //Destroy(celestialAttack.gameObject, 5f);
 
             Debug.Log("ola");
