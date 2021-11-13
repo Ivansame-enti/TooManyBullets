@@ -26,6 +26,7 @@ public class movement : MonoBehaviour
         movementDirection.Normalize();
         lastMoveDir = movementDirection;
         transform.Translate(movementDirection * speed * inputMagnitude * Time.deltaTime, Space.World);
+        //this.GetComponent<Rigidbody2D>().MovePosition(movementDirection * speed * Time.deltaTime);
 
         if (movementDirection != Vector2.zero)
         {

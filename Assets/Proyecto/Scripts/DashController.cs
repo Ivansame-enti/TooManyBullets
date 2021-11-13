@@ -47,7 +47,7 @@ public class DashController : MonoBehaviour
 
         if (timer <= 0) //Delay entre dash
         {
-            if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2")) && this.GetComponent<movement>().isMoving)
+            if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space")) && this.GetComponent<movement>().isMoving)
             {
                 rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                 timer = dashDelay;
