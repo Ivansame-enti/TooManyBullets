@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6327381178287865536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.039, y: 5.515, z: 0}
-  m_LocalScale: {x: 0.3435, y: 0.3435, z: 1}
+  m_LocalPosition: {x: -3.9265, y: 5.7401, z: 0}
+  m_LocalScale: {x: 0.5685612, y: 0.5685612, z: 1.6552}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,3 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaterDropClone: {fileID: 6327381178287865536}
+  DropForce: 0

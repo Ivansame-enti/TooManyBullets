@@ -6,14 +6,15 @@ public class RandomDrop : MonoBehaviour
 {
     public Vector2 positionA,positionB;
 
-    private bool exists = false;
     public GameObject WaterDrop;
     Vector2 randomValor;
+    
 
 
     private float nextActionTime = 0.0f;
     public float period = 1f;
     private GameObject WaterDropClone;
+    public float warningDropForce;
     // Start is called before the first frame update
 
     void Start()
@@ -34,7 +35,7 @@ public class RandomDrop : MonoBehaviour
             );
 
                 WaterDropClone = Instantiate(WaterDrop, randomValor, WaterDrop.transform.rotation);
-                WaterDropClone.GetComponent<Rigidbody2D>().drag = 35;
+                WaterDropClone.GetComponent<Rigidbody2D>().drag = warningDropForce;
                 Destroy(WaterDropClone.gameObject, 6f); 
             //if(exists == true)
             //{

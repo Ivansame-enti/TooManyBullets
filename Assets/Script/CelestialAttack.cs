@@ -9,7 +9,7 @@ public class CelestialAttack : MonoBehaviour
     public Vector2 positionA, positionB;
     private float nextActionTime = 0.0f;
     public float warningTiming = 5f;
-    Vector2 randomValor;
+    public Vector2 randomValor;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +28,13 @@ public class CelestialAttack : MonoBehaviour
                 Random.Range(positionA.x, positionB.x),
                 Random.Range(positionB.y, positionB.y)
             );
-            warning = Instantiate(warning, randomValor, warning.transform.rotation);
-            Destroy(warning.gameObject, 5f);
 
-                Debug.Log("ola");
+            warning = Instantiate(warning, randomValor, warning.transform.rotation);
+            celestialAttack = Instantiate(celestialAttack,randomValor,celestialAttack.transform.rotation);
+            Destroy(warning.gameObject, 5f);
+            //Destroy(celestialAttack.gameObject, 5f);
+
+            Debug.Log("ola");
  
                 //celestialAttack = Instantiate(celestialAttack, randomValor, celestialAttack.transform.rotation);
 

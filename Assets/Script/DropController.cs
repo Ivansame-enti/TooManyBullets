@@ -5,9 +5,13 @@ using UnityEngine;
 public class DropController : MonoBehaviour
 {
     public GameObject WaterDropClone;
+    public float DropForce;
+    SpriteRenderer rend;
+    private Color attackColor = Color.magenta;
     // Start is called before the first frame update
     void Start()
     {
+        rend = GetComponent<SpriteRenderer>();
         
     }
 
@@ -24,6 +28,10 @@ public class DropController : MonoBehaviour
         {
             Debug.Log("funciona");
             WaterDropClone.GetComponent<Rigidbody2D>().drag = 0;
+            WaterDropClone.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -15,0);
+            rend.material.color = attackColor;
+
+
         }
     }
 }
