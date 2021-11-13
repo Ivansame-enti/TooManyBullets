@@ -26,6 +26,7 @@ public class DashController : MonoBehaviour
     {
         if (timer2 <= 0) //Tiempo mientras dasheas
         {
+            this.GetComponent<PolygonCollider2D>().enabled = true;
             rb.velocity = Vector3.zero;
             timer3 = 0;
         }
@@ -39,6 +40,7 @@ public class DashController : MonoBehaviour
             {
                 timer3 -= Time.deltaTime;
             }
+            this.GetComponent<PolygonCollider2D>().enabled = false;
             Debug.Log("Invulnerable");
             timer2 -= Time.deltaTime;
         }
