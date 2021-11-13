@@ -12,13 +12,6 @@ public class movement : MonoBehaviour
 
     public bool isMoving;
 
-    private Vector3 screenPos;
-
-    private void Start()
-    {
-        screenPos = Camera.main.WorldToScreenPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-    }
-
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -39,10 +32,12 @@ public class movement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-        /*
-        Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, screenPos.x, screenPos.x * -1);
-        viewPos.y = Mathf.Clamp(viewPos.y, screenPos.y, screenPos.y * -1);
-        transform.position = viewPos;*/
+
+        //Impide que el jugador salga de los limites de la pantalla
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        pos.x = Mathf.Clamp(pos.x, 0.01f, 0.99f);
+        pos.y = Mathf.Clamp(pos.y, 0.02f, 0.98f);
+        transform.position = Camera.main.ViewportToWorldPoint(pos);
+
     }
 }
