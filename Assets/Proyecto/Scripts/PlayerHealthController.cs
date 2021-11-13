@@ -11,19 +11,16 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
-    private float fixedDeltaTime;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
-        //timer = inmortalTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Time.timeScale);
 
         if (timer > 0) //Tiempo donde es imnnune porque le han golpeado
         {
