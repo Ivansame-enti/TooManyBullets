@@ -24,7 +24,7 @@ public class DashController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer2 <= 0)
+        if (timer2 <= 0) //Tiempo mientras dasheas
         {
             rb.velocity = Vector3.zero;
             timer3 = 0;
@@ -39,10 +39,11 @@ public class DashController : MonoBehaviour
             {
                 timer3 -= Time.deltaTime;
             }
+            Debug.Log("Invulnerable");
             timer2 -= Time.deltaTime;
         }
 
-        if (timer <= 0)
+        if (timer <= 0) //Delay entre dash
         {
             if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2")) && this.GetComponent<movement>().isMoving)
             {
