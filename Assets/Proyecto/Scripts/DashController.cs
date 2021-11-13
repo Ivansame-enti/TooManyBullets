@@ -41,7 +41,7 @@ public class DashController : MonoBehaviour
                 timer3 -= Time.deltaTime;
             }
             this.GetComponent<PolygonCollider2D>().enabled = false;
-            Debug.Log("Invulnerable");
+            //Debug.Log("Invulnerable");
             timer2 -= Time.deltaTime;
         }
 
