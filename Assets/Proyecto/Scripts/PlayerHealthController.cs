@@ -56,7 +56,6 @@ public class PlayerHealthController : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            //Cargar escena muerte
             Destroy(this.gameObject);
         }
     }

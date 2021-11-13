@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class UIPlayerHealthController : MonoBehaviour
 {
     public Image healthBar;
-    private PlayerHealthController phc;
+    public PlayerHealthController phc;
     // Start is called before the first frame update
     void Start()
     {
-        phc = this.GetComponent<PlayerHealthController>();
+        //phc = this.GetComponent<PlayerHealthController>();
     }
 
     // Update is called once per frame
