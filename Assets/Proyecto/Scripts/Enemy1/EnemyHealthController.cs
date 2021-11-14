@@ -32,6 +32,7 @@ public class EnemyHealthController : MonoBehaviour
             Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
             health--;
             healthBar.SetHealthBar(health, maxHealth);
+            if(health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
         }
     }
 

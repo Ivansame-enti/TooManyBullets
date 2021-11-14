@@ -879,7 +879,7 @@ MonoBehaviour:
   dashDistance: 30
   dashParticles: {fileID: 801082261254393012, guid: d38836dc338edde449fb283f54000aed, type: 3}
   dashDelay: 1.5
-  dashTime: 0.1
+  dashTime: 0.05
   particle_delay: 0
 --- !u!114 &782420319
 MonoBehaviour:
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32877897a7de5594ea8edaaebe6561f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 15
   rotationSpeed: 1000
   lastMoveDir: {x: 0, y: 0, z: 0}
   isMoving: 0
@@ -1731,7 +1731,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: 9d83ca94c59ce954da29c5af6b85fc2a, type: 3}
-    volume: 0.05
+    volume: 0.02
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -1744,6 +1744,18 @@ MonoBehaviour:
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 4512ef37ab8fe984e8586e901184a7a5, type: 3}
     volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 5c05faba7a2b5a547b7b4d181feba6bd, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Enemy1Hit
+    clip: {fileID: 8300000, guid: 0c56afb8583625347a4751cc098eb176, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}

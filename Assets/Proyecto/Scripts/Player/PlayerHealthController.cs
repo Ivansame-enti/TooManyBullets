@@ -56,7 +56,8 @@ public class PlayerHealthController : MonoBehaviour
         //Debug.Log(Time.timeScale);
 
         if(currentHealth <= 0)
-        {        
+        {
+            FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDeath");
             Time.timeScale = 1.0f;
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
@@ -71,7 +72,7 @@ public class PlayerHealthController : MonoBehaviour
             shakeCamera.SetTrigger("Shake");
             timer = inmortalTime;
             Time.timeScale = 0.2f;
-            FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
+            if (currentHealth > 0) FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
         }
     }
 }
