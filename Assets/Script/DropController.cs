@@ -26,7 +26,6 @@ public class DropController : MonoBehaviour
         
         if (collision.gameObject.tag.Equals("DropFaster"))
         {
-            Debug.Log("funciona");
             WaterDropClone.GetComponent<Rigidbody2D>().drag = 0;
             WaterDropClone.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -15,0);
             rend.material.color = attackColor;

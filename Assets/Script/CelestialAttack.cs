@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class CelestialAttack : MonoBehaviour
 {
-    public Animation CelestialAttackAnim;
-    public GameObject warning,celestialAttack;
+    public GameObject warning,celestialAtk;
+    private GameObject warningClone;
     public Vector2 positionA, positionB;
     private float nextActionTime = 0.0f;
-    public float warningTiming = 2f;
+    private float warningTiming;
 
     private float timer;
     public float activacionAtk;
+    public float activacionAtkGoing;
+
+    private bool atkExist = false,atkGoing = false;
 
     Vector2 randomValor;
     public float defDistanceRay = 100;
@@ -48,12 +51,13 @@ public class CelestialAttack : MonoBehaviour
 
     }
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
+        warningTiming = Random.Range(10, 15);
         
         if (Time.time > nextActionTime)
         {
-            
+            celestialAtk.SetActive(false);
             nextActionTime += warningTiming;
 
             randomValor = new Vector2(
@@ -71,12 +75,14 @@ public class CelestialAttack : MonoBehaviour
 
 
             
-            warning = Instantiate(warning, randomValor, warning.transform.rotation);
+            warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
+            atkExist = true;
+            timer = 2f;
             //if(timer <= 0)
             //{
-                Destroy(warning.gameObject, 2f);
-                ShootLaser();
-                timer = activacionAtk;
+                //Destroy(warning.gameObject, 2f);
+                //ShootLaser();
+                //timer = activacionAtk;
             /*}
             else
             {
@@ -101,5 +107,32 @@ public class CelestialAttack : MonoBehaviour
             //}
             //Destroy(WaterDropClone.gameObject, 5f);
         }
+            if(timer <= 0 && atkExist == true)
+            {
+            atkExist = false;
+            atkGoing = true;
+            Destroy(warningClone.gameObject);
+            ShootLaser();
+            celestialAtk.SetActive(true);
+            Debug.Log("ola");
+            timer = activacionAtk;
+            }
+            else
+            {
+            timer -= Time.deltaTime;
+            }
+
+        if (timer <= 0 && atkGoing == true)
+        {
+            atkGoing = false;
+            celestialAtk.SetActive(false);
+
+            timer = activacionAtkGoing;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+
     }
 }
