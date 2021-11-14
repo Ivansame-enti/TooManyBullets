@@ -13,14 +13,15 @@ public class CelestialAttack : MonoBehaviour
     private float timer;
     public float activacionAtk;
     public float activacionAtkGoing;
+    public GameObject collisionLaser;
 
     private bool atkExist = false,atkGoing = false;
-
     Vector2 randomValor;
     public float defDistanceRay = 100;
     public LineRenderer m_lineRenderer;
     Transform m_transform;
     Vector2 laserPos1,laserPos2;
+    public ParticleSystem laserParticles;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class CelestialAttack : MonoBehaviour
     }
     void ShootLaser()
     {
+        /*
         if (Physics2D.Raycast(m_transform.position, transform.right))
         {
             RaycastHit2D _hit = Physics2D.Raycast(m_transform.position, transform.right);
@@ -41,8 +43,12 @@ public class CelestialAttack : MonoBehaviour
         }
         else
         {
+        */
             Draw2DRay(laserPos1, laserPos2 * defDistanceRay);
-        }
+            collisionLaser.transform.position = laserPos1;
+            laserParticles.transform.position = laserPos1;
+
+        //}
     }
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
@@ -73,39 +79,9 @@ public class CelestialAttack : MonoBehaviour
               (randomValor.y-100000000)
             );
 
-
-            
             warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
             atkExist = true;
-            timer = 2f;
-            //if(timer <= 0)
-            //{
-                //Destroy(warning.gameObject, 2f);
-                //ShootLaser();
-                //timer = activacionAtk;
-            /*}
-            else
-            {
-                timer -= Time.deltaTime;
-                
-            }
-            */
-            //celestialAttack = Instantiate(celestialAttack,randomValor,celestialAttack.transform.rotation);
-            Debug.Log(laserPos1);
-            Debug.Log(laserPos2);
-            
-            //Destroy(celestialAttack.gameObject, 5f);
-
-            Debug.Log("ola");
- 
-                //celestialAttack = Instantiate(celestialAttack, randomValor, celestialAttack.transform.rotation);
-
-                //CelestialAttackAnim.Play();
-                //if(exists == true)
-                //{
-
-            //}
-            //Destroy(WaterDropClone.gameObject, 5f);
+            timer = 2f;  
         }
             if(timer <= 0 && atkExist == true)
             {
