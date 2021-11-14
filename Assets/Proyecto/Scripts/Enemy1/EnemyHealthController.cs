@@ -24,6 +24,7 @@ public class EnemyHealthController : MonoBehaviour
             Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
         }
 
         if (Input.GetKeyDown("space"))
@@ -31,6 +32,7 @@ public class EnemyHealthController : MonoBehaviour
             Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
             health--;
             healthBar.SetHealthBar(health, maxHealth);
+            if(health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
         }
     }
 

@@ -11,6 +11,7 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
+    public GameObject deathPS;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class PlayerHealthController : MonoBehaviour
 
         if (timer > 0) //Tiempo donde es imnnune porque le han golpeado
         {
-            if(Time.timeScale < 1.0f)
+            if(Time.timeScale < 1.0f && currentHealth > 0)
             {
                 Time.timeScale += Time.deltaTime;
             }
@@ -51,8 +52,14 @@ public class PlayerHealthController : MonoBehaviour
             this.GetComponent<SpriteRenderer>().color = new Color(this.GetComponent<SpriteRenderer>().color.r, this.GetComponent<SpriteRenderer>().color.g, this.GetComponent<SpriteRenderer>().color.b, 1f);
         }
 
+        //Debug.Log("Vida" + currentHealth);
+        //Debug.Log(Time.timeScale);
+
         if(currentHealth <= 0)
         {
+            FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDeath");
+            Time.timeScale = 1.0f;
+            Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
@@ -65,6 +72,7 @@ public class PlayerHealthController : MonoBehaviour
             shakeCamera.SetTrigger("Shake");
             timer = inmortalTime;
             Time.timeScale = 0.2f;
+            if (currentHealth > 0) FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
         }
     }
 }
