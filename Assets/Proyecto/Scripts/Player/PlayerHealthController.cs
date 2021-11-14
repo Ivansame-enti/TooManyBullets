@@ -24,7 +24,7 @@ public class PlayerHealthController : MonoBehaviour
 
         if (timer > 0) //Tiempo donde es imnnune porque le han golpeado
         {
-            if(Time.timeScale < 1.0f)
+            if(Time.timeScale < 1.0f && currentHealth > 0)
             {
                 Time.timeScale += Time.deltaTime;
             }
@@ -51,8 +51,12 @@ public class PlayerHealthController : MonoBehaviour
             this.GetComponent<SpriteRenderer>().color = new Color(this.GetComponent<SpriteRenderer>().color.r, this.GetComponent<SpriteRenderer>().color.g, this.GetComponent<SpriteRenderer>().color.b, 1f);
         }
 
+        //Debug.Log("Vida" + currentHealth);
+        //Debug.Log(Time.timeScale);
+
         if(currentHealth <= 0)
         {
+            Time.timeScale = 1.0f;
             Destroy(this.gameObject);
         }
     }
