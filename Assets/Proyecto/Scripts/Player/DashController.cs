@@ -52,6 +52,7 @@ public class DashController : MonoBehaviour
                 rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                 timer = dashDelay;
                 timer2 = dashTime;
+                FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDash");
             }
         } else
         {
