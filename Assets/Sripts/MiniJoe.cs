@@ -33,7 +33,7 @@ public class MiniJoe : MonoBehaviour
         // float step = shootspeed * Time.deltaTime;
         //Timer -= Time.deltaTime;
 
-        if (gos.Length>=1)
+        if (gos.Length>=1)//mira si hay enemigos
         {
             CheckFire();
 

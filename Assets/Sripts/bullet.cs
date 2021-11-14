@@ -45,7 +45,7 @@ public class bullet : MonoBehaviour
 
      void OnTriggerEnter2D (Collider2D col) {
 
-        if (col.gameObject.name.Equals("enemy"))
+        if (col.gameObject.name.Equals("enemy"))//si colisiona contra enemigo se destruye
         {
             Destroy(gameObject);
         }
