@@ -59,7 +59,7 @@ public class CelestialAttack : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        warningTiming = Random.Range(10, 15);
+        warningTiming = Random.Range(15, 20);
         
         if (Time.time > nextActionTime)
         {
@@ -87,6 +87,7 @@ public class CelestialAttack : MonoBehaviour
         }
             if(timer <= 0 && atkExist == true)
             {
+            Debug.Log("funciona");
             atkExist = false;
             atkGoing = true;
             Destroy(warningClone.gameObject);
