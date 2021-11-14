@@ -21,7 +21,7 @@ public class CelestialAttack : MonoBehaviour
     public LineRenderer m_lineRenderer;
     Transform m_transform;
     Vector2 laserPos1,laserPos2;
-    public ParticleSystem laserParticles;
+    public GameObject laserParticles;
 
     private void Awake()
     {
@@ -80,6 +80,8 @@ public class CelestialAttack : MonoBehaviour
             );
 
             warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
+            laserParticles.transform.position = laserPos1;
+            laserParticles.SetActive(true);
             atkExist = true;
             timer = 2f;  
         }
@@ -102,7 +104,7 @@ public class CelestialAttack : MonoBehaviour
         {
             atkGoing = false;
             celestialAtk.SetActive(false);
-
+            laserParticles.SetActive(false);
             timer = activacionAtkGoing;
         }
         else
