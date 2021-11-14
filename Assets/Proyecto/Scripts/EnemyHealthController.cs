@@ -8,6 +8,7 @@ public class EnemyHealthController : MonoBehaviour
     private float maxHealth;
     public GameObject hitPS;
     public GameObject deathPS;
+    public GameObject swPs;
     public HealthBarController healthBar;
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class EnemyHealthController : MonoBehaviour
         if (health <= 0) {
             Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
+            Instantiate(swPs, this.transform.position, Quaternion.identity);
         }
 
         if (Input.GetKeyDown("space"))
