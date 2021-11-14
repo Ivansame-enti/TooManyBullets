@@ -33,7 +33,7 @@ public class bullet : MonoBehaviour
 
         moveDirection = (closest.transform.position - transform.position).normalized * moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 7f);
 
     }
 

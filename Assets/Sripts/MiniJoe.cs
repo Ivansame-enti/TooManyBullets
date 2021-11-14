@@ -16,12 +16,15 @@ public class MiniJoe : MonoBehaviour
     private bool balat = false;
     float fireRate;
     float nextFire;
+    GameObject[] gos;
+
 
     void Start()
     {
         //enemy = GameObject.FindGameObjectsWithTag("enemy");
         fireRate = 1f;
         nextFire = Time.time;
+        gos = GameObject.FindGameObjectsWithTag("enemy");
     }
     
     // Update is called once per frame
@@ -29,17 +32,22 @@ public class MiniJoe : MonoBehaviour
     {
         // float step = shootspeed * Time.deltaTime;
         //Timer -= Time.deltaTime;
-        CheckFire();
-       
-      
-          //  Instantiate(bala);
-          //  balai = Instantiate(bala,transform.position,transform.rotation);
+
+        if (gos.Length>=1)
+        {
+            CheckFire();
+
+        }
 
 
-       // float step = shootspeed * Time.deltaTime;
+        //  Instantiate(bala);
+        //  balai = Instantiate(bala,transform.position,transform.rotation);
 
-      //  balai.transform.position = Vector3.MoveTowards(balai.transform.position, enemy.transform.position, step);
-    //    transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+
+        // float step = shootspeed * Time.deltaTime;
+
+        //  balai.transform.position = Vector3.MoveTowards(balai.transform.position, enemy.transform.position, step);
+        //    transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
         //balat = false;
         //  if (bala.transform.position == enemy.transform.position)
