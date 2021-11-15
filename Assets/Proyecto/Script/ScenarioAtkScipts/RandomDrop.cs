@@ -37,7 +37,7 @@ public class RandomDrop : MonoBehaviour
 
                 WaterDropClone = Instantiate(WaterDrop, randomValor, WaterDrop.transform.rotation);
                 WaterDropClone.GetComponent<Rigidbody2D>().drag = warningDropForce;
-                Destroy(WaterDropClone.gameObject, 6f); 
+                Destroy(WaterDropClone.gameObject, 10f); 
             //if(exists == true)
             //{
                
