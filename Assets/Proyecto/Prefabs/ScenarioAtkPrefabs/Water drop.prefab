@@ -4819,7 +4819,7 @@ GameObject:
   - component: {fileID: 1898932562738651436}
   m_Layer: 0
   m_Name: Water drop
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
