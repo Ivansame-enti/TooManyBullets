@@ -33,6 +33,7 @@ public class melee : MonoBehaviour
             {
                 ataquei.SetActive(true);
                 ataquei.transform.position = new Vector2(this.GetComponent<movement>().lastMoveDir.x + transform.position.x, this.GetComponent<movement>().lastMoveDir.y + 2 + transform.position.y);
+                ataquei.transform.rotation = Quaternion.Slerp(ataquei.transform.rotation, Quaternion.LookRotation(this.GetComponent<movement>().lastMoveDir), Time.deltaTime * 40f);
             }
           
                 Destroy(this.ataquei,1);
@@ -47,6 +48,7 @@ public class melee : MonoBehaviour
             {
                 ataquei2.SetActive(true);
                 ataquei2.transform.position = new Vector2(this.GetComponent<movement>().lastMoveDir.x - 2 + transform.position.x, this.GetComponent<movement>().lastMoveDir.y + 0 + transform.position.y);
+                ataquei2.transform.rotation = Quaternion.Slerp(ataquei.transform.rotation, Quaternion.LookRotation(this.GetComponent<movement>().lastMoveDir), Time.deltaTime * 40f);
             }
             Destroy(this.ataquei2, 1);
         }
@@ -60,6 +62,7 @@ public class melee : MonoBehaviour
             {
                 ataquei3.SetActive(true);
                 ataquei3.transform.position = new Vector2(this.GetComponent<movement>().lastMoveDir.x + 2 + transform.position.x, this.GetComponent<movement>().lastMoveDir.y +0+ transform.position.y);
+                ataquei3.transform.rotation = Quaternion.Slerp(ataquei.transform.rotation, Quaternion.LookRotation(this.GetComponent<movement>().lastMoveDir), Time.deltaTime * 40f);
             }
             Destroy(this.ataquei3, 1);
         }
@@ -73,6 +76,7 @@ public class melee : MonoBehaviour
             {
                 ataquei4.SetActive(true);
                 ataquei4.transform.position = new Vector2(this.GetComponent<movement>().lastMoveDir.x + 0 + transform.position.x, this.GetComponent<movement>().lastMoveDir.y - 2 + transform.position.y);
+                ataquei4.transform.rotation = Quaternion.Slerp(ataquei.transform.rotation, Quaternion.LookRotation(this.GetComponent<movement>().lastMoveDir), Time.deltaTime * 40f);
             }
             Destroy(this.ataquei4, 1);
         }
