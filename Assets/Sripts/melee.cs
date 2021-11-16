@@ -8,21 +8,44 @@ public class melee : MonoBehaviour
     public GameObject ataque;
     public GameObject player;
     private bool ataquet = false;
-    public float Timer = 0;
+    public float timer=1f;
     private GameObject ataquei;
     private GameObject ataquei2;
     private GameObject ataquei3;
     private GameObject ataquei4;
+    public float JoystickXRange;
+    public float JoystickYRange;
+    float xPos, yPos;
+
+
+    private void Damage(Vector3 rotacion)
+    {
+        ataquei2 = Instantiate(ataque);
+        ataquet = true;
+        if (ataquet == true)
+        {
+            ataquei2.SetActive(true);
+            ataquei2.transform.position = new Vector2(transform.position.x + xPos * 2, transform.position.y + yPos * -2);
+            //ataquei2.transform.rotation = Quaternion.Slerp(ataquei2.transform.rotation, Quaternion.LookRotation(new Vector3(xPos, yPos, 0)), Time.deltaTime * 5f);
+            ataquei2.transform.rotation = Quaternion.Euler(rotacion);
+        }
+        Destroy(this.ataquei2, 1);
+        timer = 1f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("w"))
+        //Debug.Log("Y" + Input.GetAxis("RightJoystickY"));
+        //Debug.Log("X" + Input.GetAxis("RightJoystickX"));
+
+        /*if (Input.GetKeyDown("w"))
         {
             Timer += Time.deltaTime;
             print("w was pressed");
@@ -80,5 +103,31 @@ public class melee : MonoBehaviour
             }
             Destroy(this.ataquei4, 1);
         }
+    }*/
+        /*
+        if (timer <= 0)
+        {
+            xPos = Input.GetAxis("RightJoystickX");
+            yPos = Input.GetAxis("RightJoystickY");
+
+            if (xPos >= JoystickXRange && (yPos <= JoystickYRange && yPos >= -JoystickYRange))
+            {
+                Vector3 rotacion = new Vector3(0,0,0);
+                Damage(rotacion);
+            } else if (xPos <= JoystickXRange && (yPos <= JoystickYRange && yPos >= -JoystickYRange))
+            {
+                Vector3 rotacion = new Vector3(180, 0, 0);
+                Damage(rotacion);
+            }
+            /*else if (yPos >= JoystickYRange)
+            {
+                Vector3 rotacion = new Vector3(90, 0, 0);
+                Damage(rotacion);
+            }
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }*/
     }
 }

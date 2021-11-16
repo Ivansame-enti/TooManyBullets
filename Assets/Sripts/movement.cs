@@ -18,6 +18,8 @@ public class movement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+        //Debug.Log(horizontalInput);
+
         if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
             isMoving = false;
         else isMoving = true;

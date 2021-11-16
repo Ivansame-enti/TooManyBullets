@@ -551,7 +551,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ataque: {fileID: 523470135}
   player: {fileID: 1253285849}
-  Timer: 0
+  timer: 1
+  JoystickXRange: 0.2
+  JoystickYRange: 0.2
 --- !u!50 &1253285851
 Rigidbody2D:
   serializedVersion: 4
