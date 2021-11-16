@@ -19,7 +19,6 @@ public class Enemy1BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, lifeSpan);
 
     }
 
@@ -27,5 +26,14 @@ public class Enemy1BulletController : MonoBehaviour
     void Update()
     {
         //transform.Translate(direction * bulletSpeed * Time.deltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag.Equals("DestroyBulletCollider"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
