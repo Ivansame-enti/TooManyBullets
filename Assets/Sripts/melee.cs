@@ -16,20 +16,17 @@ public class melee : MonoBehaviour
     public float JoystickXRange;
     public float JoystickYRange;
     float xPos, yPos;
+    float result, result2;
 
-
-    private void Damage(Vector3 rotacion)
+    private void Damage(float rotx, float roty)
     {
         ataquei2 = Instantiate(ataque);
-        ataquet = true;
-        if (ataquet == true)
-        {
             ataquei2.SetActive(true);
             ataquei2.transform.position = new Vector2(transform.position.x + xPos * 2, transform.position.y + yPos * -2);
             //ataquei2.transform.rotation = Quaternion.Slerp(ataquei2.transform.rotation, Quaternion.LookRotation(new Vector3(xPos, yPos, 0)), Time.deltaTime * 5f);
-            ataquei2.transform.rotation = Quaternion.Euler(rotacion);
-        }
-        Destroy(this.ataquei2, 1);
+            ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0,0, roty-rotx));
+
+        //Destroy(this.ataquei2, 1);
         timer = 1f;
     }
 
@@ -42,8 +39,7 @@ public class melee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Y" + Input.GetAxis("RightJoystickY"));
-        //Debug.Log("X" + Input.GetAxis("RightJoystickX"));
+        
 
         /*if (Input.GetKeyDown("w"))
         {
@@ -104,30 +100,34 @@ public class melee : MonoBehaviour
             Destroy(this.ataquei4, 1);
         }
     }*/
-        /*
+        
         if (timer <= 0)
         {
             xPos = Input.GetAxis("RightJoystickX");
             yPos = Input.GetAxis("RightJoystickY");
 
-            if (xPos >= JoystickXRange && (yPos <= JoystickYRange && yPos >= -JoystickYRange))
+            if ((xPos >= JoystickXRange || xPos <= -JoystickXRange) || (yPos >= JoystickYRange || yPos <= -JoystickYRange))
             {
-                Vector3 rotacion = new Vector3(0,0,0);
-                Damage(rotacion);
-            } else if (xPos <= JoystickXRange && (yPos <= JoystickYRange && yPos >= -JoystickYRange))
-            {
-                Vector3 rotacion = new Vector3(180, 0, 0);
-                Damage(rotacion);
-            }
-            /*else if (yPos >= JoystickYRange)
-            {
-                Vector3 rotacion = new Vector3(90, 0, 0);
-                Damage(rotacion);
+                Debug.Log("Y" + Input.GetAxis("RightJoystickY"));
+                Debug.Log("X" + Input.GetAxis("RightJoystickX"));
+
+                //float z = (xPos - (1)) / (-1 - (+1)) * (0 - 180) + 180;
+
+                //float z2 = (yPos - (-1)) / (1 - (-1)) * (270 - 90) + 90;
+                if ((xPos >= JoystickXRange || xPos <= -JoystickXRange)) result = Mathf.Lerp(0, 180, Mathf.InverseLerp(1, -1, xPos));
+                else result = 0;
+                if ((yPos >= JoystickYRange || yPos <= -JoystickYRange)) result2 = Mathf.Lerp(90, 270, Mathf.InverseLerp(-1, 1, yPos));
+                else result2 = 0;
+
+                Debug.Log(result);
+                Debug.Log("2: " + result2);
+                //Vector3 rotacion = new Vector3(0,0,0);
+                Damage(result, result2);
             }
         }
         else
         {
             timer -= Time.deltaTime;
-        }*/
+        }
     }
 }

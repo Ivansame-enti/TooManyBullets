@@ -552,8 +552,8 @@ MonoBehaviour:
   ataque: {fileID: 523470135}
   player: {fileID: 1253285849}
   timer: 1
-  JoystickXRange: 0.2
-  JoystickYRange: 0.2
+  JoystickXRange: 0.7
+  JoystickYRange: 0.7
 --- !u!50 &1253285851
 Rigidbody2D:
   serializedVersion: 4
@@ -889,13 +889,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 865379570300240112, guid: ea47a77ba13782f4f8c759053ae06351,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 865379570300240112, guid: ea47a77ba13782f4f8c759053ae06351,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 865379570300240112, guid: ea47a77ba13782f4f8c759053ae06351,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.76
       objectReference: {fileID: 0}
     - target: {fileID: 865379570300240112, guid: ea47a77ba13782f4f8c759053ae06351,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.22
       objectReference: {fileID: 0}
     - target: {fileID: 865379570300240112, guid: ea47a77ba13782f4f8c759053ae06351,
         type: 3}
@@ -937,10 +947,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 865379570300240113, guid: ea47a77ba13782f4f8c759053ae06351,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aaa3bcf12a30238448c9e729a3418a49,
+        type: 3}
     - target: {fileID: 865379570300240126, guid: ea47a77ba13782f4f8c759053ae06351,
         type: 3}
       propertyPath: m_Name
       value: ataque
+      objectReference: {fileID: 0}
+    - target: {fileID: 865379570300240126, guid: ea47a77ba13782f4f8c759053ae06351,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea47a77ba13782f4f8c759053ae06351, type: 3}
