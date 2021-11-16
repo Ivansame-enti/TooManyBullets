@@ -15,14 +15,14 @@ public class PlayerHealthController : MonoBehaviour
 
     private void dealDamage()
     {
-        if (timer <= 0)
-        {
+        //if (timer <= 0)
+        //{
             currentHealth--;
             shakeCamera.SetTrigger("Shake");
             timer = inmortalTime;
             Time.timeScale = 0.2f;
             if (currentHealth > 0) FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
-        }
+        //}
     }
 
     // Start is called before the first frame update
@@ -78,12 +78,18 @@ public class PlayerHealthController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyBullet") dealDamage();
-        
+        if (timer <= 0)
+        {
+            if (collision.tag == "EnemyBullet") dealDamage();
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.tag == "LaserCollider") dealDamage();
+        if (timer <= 0)
+        {
+            if (col.collider.tag == "LaserCollider") dealDamage();
+        }
     }
 }
