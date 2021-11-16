@@ -6,7 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     private int bulletAmount;
     public GameObject bulletPrefab;
-    public float bulletFrequency;
+    public float bulletFrequencyMin;
+    public float bulletFrequencyMax;
     private float timer, timerBullet;
     public float bulletSpeed;
     private float radius = 5f;
@@ -15,7 +16,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timerBullet = Time.deltaTime + bulletFrequency;
+        timerBullet = Time.deltaTime + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
     }
 
     // Update is called once per frame
@@ -43,7 +44,7 @@ public class EnemyController : MonoBehaviour
                 angle += angleStep;
             }
 
-            timerBullet = timer + bulletFrequency;
+            timerBullet = timer + Random.Range(bulletFrequencyMin, bulletFrequencyMax); ;
         }
     }
 }
