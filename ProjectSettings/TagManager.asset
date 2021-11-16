@@ -8,6 +8,7 @@ TagManager:
   - bala
   - LaserCollider
   - EnemyBullet
+  - DestroyBulletCollider
   layers:
   - Default
   - TransparentFX
