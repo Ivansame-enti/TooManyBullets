@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 40393303}
   - component: {fileID: 40393305}
   - component: {fileID: 40393304}
-  - component: {fileID: 40393307}
   - component: {fileID: 40393306}
+  - component: {fileID: 40393307}
   m_Layer: 0
   m_Name: Part1
   m_TagString: Untagged
@@ -152,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 40393302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.65, y: -1.7, z: 2.7446024}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 605148272}
   m_RootOrder: 0
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 0301c57fc0265ca47b37f7318479f950, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0.9483762, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -251,8 +251,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &40393307
-BoxCollider2D:
+--- !u!58 &40393307
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -264,19 +264,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: -0.00000001792796}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.1
 --- !u!4 &45037324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
@@ -526,6 +516,14 @@ PrefabInstance:
       propertyPath: bulletFrequency
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMin
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
 --- !u!1 &222502162 stripped
@@ -662,6 +660,14 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
       propertyPath: bulletFrequency
       value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMin
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
@@ -1237,6 +1243,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMin
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
 --- !u!1 &604855186
@@ -1528,6 +1542,14 @@ PrefabInstance:
       propertyPath: bulletFrequency
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMin
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
 --- !u!1001 &1109396852
@@ -1609,13 +1631,25 @@ PrefabInstance:
       propertyPath: positionB.y
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 3047171144505302195, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
+      propertyPath: maxFrequencyDrop
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047171144505302195, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
+      propertyPath: minFrequencyDrop
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3047171144505302196, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047171144567991020, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.5
+      value: 8.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047171144567991023, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047171144671270108, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
       propertyPath: positionA.x
@@ -1624,6 +1658,14 @@ PrefabInstance:
     - target: {fileID: 3047171144671270108, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
       propertyPath: positionB.x
       value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047171144671270108, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
+      propertyPath: maxFrequencylaser
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047171144671270108, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
+      propertyPath: minFrequencylaser
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7280424419853917611, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
       propertyPath: m_TagString
@@ -7932,13 +7974,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: LaserCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 1938160772, guid: ef2986ddabc6494429f7c42efca1be5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938160773, guid: ef2986ddabc6494429f7c42efca1be5b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2353243952363333906, guid: ef2986ddabc6494429f7c42efca1be5b, type: 3}
       propertyPath: m_Name
       value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 2353243952363333906, guid: ef2986ddabc6494429f7c42efca1be5b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2353243952363333996, guid: ef2986ddabc6494429f7c42efca1be5b, type: 3}
       propertyPath: m_Positions.Array.data[0].y
@@ -8080,6 +8130,14 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
       propertyPath: bulletFrequency
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+      propertyPath: bulletFrequencyMin
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
