@@ -22,7 +22,7 @@ public class melee : MonoBehaviour
         ataquei2.transform.position = new Vector2(transform.position.x + xPos * 2, transform.position.y + yPos * -2);
         this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, roty2 - rotx2));
         ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, roty - rotx));
-        ataquei2.GetComponent<Animation>().Play();
+        //ataquei2.GetComponent<Animation>().Play();
         //Destroy(this.ataquei2, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         //Destroy(this.ataquei2, 0.50f);
         timer = 1f;
