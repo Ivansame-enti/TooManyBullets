@@ -548,6 +548,8 @@ MonoBehaviour:
   timer: 1
   JoystickXRange: 1
   JoystickYRange: 1
+  particles: {fileID: 6371645538713442293, guid: 8dfa6b3f5779ebb49be9c817015a86df,
+    type: 3}
 --- !u!50 &1253285851
 Rigidbody2D:
   serializedVersion: 4
