@@ -20,6 +20,8 @@ public class EnemyHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ///Debug.Log(health);
+
         if (health <= 0) {
             Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
