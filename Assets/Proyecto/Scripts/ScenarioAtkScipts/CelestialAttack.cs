@@ -22,6 +22,7 @@ public class CelestialAttack : MonoBehaviour
     Transform m_transform;
     Vector2 laserPos1,laserPos2;
     public GameObject laserParticles;
+    public int minFrequencylaser, maxFrequencylaser;
 
     private void Awake()
     {
@@ -34,21 +35,9 @@ public class CelestialAttack : MonoBehaviour
     }
     void ShootLaser()
     {
-        /*
-        if (Physics2D.Raycast(m_transform.position, transform.right))
-        {
-            RaycastHit2D _hit = Physics2D.Raycast(m_transform.position, transform.right);
-            Draw2DRay(laserPos1, _hit.point);
-            Debug.Log("AU");
-        }
-        else
-        {
-        */
             Draw2DRay(laserPos1, laserPos2 * defDistanceRay);
             collisionLaser.transform.position = laserPos1;
             laserParticles.transform.position = laserPos1;
-
-        //}
     }
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
@@ -59,7 +48,7 @@ public class CelestialAttack : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        warningTiming = Random.Range(15, 20);
+        warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
         
         if (Time.time > nextActionTime)
         {
