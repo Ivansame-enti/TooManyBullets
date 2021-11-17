@@ -80,8 +80,11 @@ public class PlayerHealthController : MonoBehaviour
     {
         if (timer <= 0)
         {
-            if (collision.tag == "EnemyBullet") dealDamage();
-            Destroy(collision.gameObject);
+            if (collision.tag == "EnemyBullet")
+            {
+                dealDamage();
+                Destroy(collision.gameObject);
+            }
         }
     }
 

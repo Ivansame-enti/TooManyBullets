@@ -33,7 +33,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.011474609, y: 0}
   m_SizeDelta: {x: 10.022947, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 6094048694357508492}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,7 +481,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 0301c57fc0265ca47b37f7318479f950, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 0301c57fc0265ca47b37f7318479f950,
+    type: 3}
   m_Color: {r: 0.8207547, g: 0.38327694, b: 0.6765264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -551,7 +552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c829967d15ed9c14fa3eb9d95cfe5046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4788137523487652988, guid: 3eb0f5641fdd54148bbafdc357dfd2e3, type: 3}
+  bulletPrefab: {fileID: 4788137523487652988, guid: 3eb0f5641fdd54148bbafdc357dfd2e3,
+    type: 3}
   bulletFrequencyMin: 1
   bulletFrequencyMax: 2
   bulletSpeed: 5
@@ -567,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fb8a6df574caa458cdaa5a0c352e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 25
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
   deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
