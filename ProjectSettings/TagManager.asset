@@ -9,6 +9,7 @@ TagManager:
   - LaserCollider
   - EnemyBullet
   - DestroyBulletCollider
+  - PlayerTag
   layers:
   - Default
   - TransparentFX
