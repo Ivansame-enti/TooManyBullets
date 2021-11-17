@@ -5,10 +5,8 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    //public GameObject bala;
     float moveSpeed = 10f;
     Rigidbody2D rb;
-    private GameObject enemy;
     GameObject[] gos;
 
 
@@ -45,7 +43,7 @@ public class bullet : MonoBehaviour
 
      void OnTriggerEnter2D (Collider2D col) {
 
-        if (col.gameObject.name.Equals("enemy"))//si colisiona contra enemigo se destruye
+        if (col.gameObject.name.Equals("enemy"))// Si colisiona contra enemigo se destruye
         {
             Destroy(gameObject);
         }

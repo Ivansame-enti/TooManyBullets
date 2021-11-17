@@ -6,11 +6,12 @@ public class melee : MonoBehaviour
 {
 
     public GameObject ataque;
-    public GameObject player;
-    public float timer = 1f;
+    private float timer;
     private GameObject ataquei2;
     public float JoystickXRange;
     public float JoystickYRange;
+    public float attackRange;
+    public float attackCD;
     float xPos, yPos;
     float result, result2, result3, result4;
     public ParticleSystem particles;
@@ -18,14 +19,14 @@ public class melee : MonoBehaviour
     private void Damage(float rotx, float roty, float rotx2, float roty2)
     {
         ataquei2 = Instantiate(ataque);
-        Instantiate(particles, new Vector2(transform.position.x + xPos * 2, transform.position.y + yPos * -2), Quaternion.identity);
-        ataquei2.transform.position = new Vector2(transform.position.x + xPos * 2, transform.position.y + yPos * -2);
+        Instantiate(particles, new Vector2(transform.position.x + xPos * attackRange, transform.position.y + yPos * -attackRange), Quaternion.identity);
+        ataquei2.transform.position = new Vector2(transform.position.x + xPos * attackRange, transform.position.y + yPos * -attackRange);
         this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, roty2 - rotx2));
         ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, roty - rotx));
         //ataquei2.GetComponent<Animation>().Play();
         //Destroy(this.ataquei2, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         //Destroy(this.ataquei2, 0.50f);
-        timer = 1f;
+        timer = attackCD;
     }
 
     // Update is called once per frame
@@ -53,46 +54,46 @@ public class melee : MonoBehaviour
             else if(Input.GetKeyDown(KeyCode.LeftArrow)) //Control por teclado
             {
                 ataquei2 = Instantiate(ataque);
-                Instantiate(particles, new Vector2(transform.position.x + -1 * 2, transform.position.y + 0 * -2), Quaternion.identity);
-                ataquei2.transform.position = new Vector2(transform.position.x + -1 * 2, transform.position.y + 0 * -2);
+                Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
 
                 Destroy(this.ataquei2, 1);
-                timer = 1f;
+                timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 ataquei2 = Instantiate(ataque);
-                Instantiate(particles, new Vector2(transform.position.x + +1 * 2, transform.position.y + 0 * -2), Quaternion.identity);
-                ataquei2.transform.position = new Vector2(transform.position.x + +1 * 2, transform.position.y + 0 * -2);
+                Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
 
                 Destroy(this.ataquei2, 1);
-                timer = 1f;
+                timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 ataquei2 = Instantiate(ataque);
-                Instantiate(particles, new Vector2(transform.position.x + 0 * 2, transform.position.y + -1 * -2), Quaternion.identity);
-                ataquei2.transform.position = new Vector2(transform.position.x + 0 * 2, transform.position.y + -1 * -2);
+                Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
+                ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 + 90));
 
                 Destroy(this.ataquei2, 1);
-                timer = 1f;
+                timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 ataquei2 = Instantiate(ataque);
-                Instantiate(particles, new Vector2(transform.position.x + 0 * 2, transform.position.y + 1 * -2), Quaternion.identity);
-                ataquei2.transform.position = new Vector2(transform.position.x + 0 * 2, transform.position.y + 1 * -2);
+                Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
+                ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 180));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 90));
 
                 Destroy(this.ataquei2, 1);
-                timer = 1f;
+                timer = attackCD;
             }
         }
         else

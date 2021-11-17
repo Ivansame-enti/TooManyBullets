@@ -464,10 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e385eb54225b7c54b9b0028f194815ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootspeed: 0.5
   bala: {fileID: 8272167073645393139, guid: a7bd4f40d86819444b49a04e4fc934f8, type: 3}
-  enemy: {fileID: 126881979}
-  Timer: 2
 --- !u!61 &1233696460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -506,10 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e385eb54225b7c54b9b0028f194815ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootspeed: 2
   bala: {fileID: 0}
-  enemy: {fileID: 0}
-  Timer: 2
 --- !u!1 &1253285849
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,10 +538,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataque: {fileID: 865379570300240126, guid: ea47a77ba13782f4f8c759053ae06351, type: 3}
-  player: {fileID: 1253285849}
-  timer: 1
   JoystickXRange: 0.9
   JoystickYRange: 0.9
+  attackRange: 2
+  attackCD: 1
   particles: {fileID: 5018808405644473933, guid: af552a2ea83d82344ae72bb700fe463f,
     type: 3}
 --- !u!50 &1253285851

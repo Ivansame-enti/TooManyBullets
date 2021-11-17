@@ -6,14 +6,7 @@ using UnityEngine;
 public class MiniJoe : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    public float shootspeed = 2.0f;
-    public GameObject bala;
-    public GameObject enemy;
-    private GameObject balai;
-    
-    public float Timer = 2;
-    private bool balat = false;
+    public GameObject bala;    
     float fireRate;
     float nextFire;
     GameObject[] gos;
