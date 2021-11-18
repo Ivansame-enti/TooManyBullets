@@ -37,6 +37,11 @@ public class PlayerHealthController : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            currentHealth = health;
+        }
+
         if (timer > 0) //Tiempo donde es imnnune porque le han golpeado
         {
             if(Time.timeScale < 1.0f && currentHealth > 0)
