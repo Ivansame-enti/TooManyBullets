@@ -12,6 +12,8 @@ TagManager:
   - enemy
   - bala
   - slash
+  - DestroyBulletCollider
+  - PlayerTag
   layers:
   - Default
   - TransparentFX
