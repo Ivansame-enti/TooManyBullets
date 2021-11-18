@@ -7,14 +7,14 @@ public class MiniJoe : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject bala;    
-    float fireRate;
+    public float fireRate;
     float nextFire;
     GameObject[] gos;
 
 
     void Start()
     {
-        fireRate = 1f;
+        //fireRate = 1f;
         nextFire = Time.time;
     }
     
