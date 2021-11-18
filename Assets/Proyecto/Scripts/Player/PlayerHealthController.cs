@@ -11,6 +11,7 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
+    public GameObject GameOverUI;
     public GameObject deathPS;
 
     private void dealDamage()
@@ -29,6 +30,7 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = health;
+        GameOverUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -73,6 +75,7 @@ public class PlayerHealthController : MonoBehaviour
             Time.timeScale = 1.0f;
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            GameOverUI.SetActive(true);
         }
     }
 
