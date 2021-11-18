@@ -20,16 +20,15 @@ public class RandomDrop : MonoBehaviour
 
     void Start()
     {
- 
     }
 
     // Update is called once per frame
     void Update()
     {
-        period = Random.Range(minFrequencyDrop, maxFrequencyDrop);
-        if (Time.time > nextActionTime)
+        if (nextActionTime <= 0)
         {
-            nextActionTime += period;
+            period = Random.Range(minFrequencyDrop, maxFrequencyDrop);
+            nextActionTime = period;
             
             randomValor = new Vector2(
                 Random.Range(positionA.x, positionB.x),
@@ -44,6 +43,9 @@ public class RandomDrop : MonoBehaviour
                
             //}
                 
+        } else
+        {
+            nextActionTime -= Time.deltaTime;
         }
 
     }
