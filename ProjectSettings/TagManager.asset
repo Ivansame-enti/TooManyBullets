@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DropFaster
+  - bala
+  - LaserCollider
+  - EnemyBullet
+  tags:
+  - enemy
+  - bala
+  - slash
+  - DestroyBulletCollider
+  - PlayerTag
   layers:
   - Default
   - TransparentFX
@@ -11,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Post Processing
   - 
   - 
   - 
