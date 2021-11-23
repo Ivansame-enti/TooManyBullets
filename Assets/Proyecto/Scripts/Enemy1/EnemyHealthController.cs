@@ -23,7 +23,9 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
 
         if (health <= 0) {
-            Destroy(this.gameObject);
+            if (transform.parent != null && transform.parent.gameObject.tag == "container")
+                Destroy(this.transform.parent.gameObject);     
+            else Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
