@@ -21,6 +21,7 @@ public class MeleeEnemyController : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("PlayerTag").transform;
         //canvas.transform.parent = null;
         transform.Rotate(0, 0, speedRotation * Time.deltaTime);
+        //canvas.transform.Rotate(800, 0, 800);
         //canvas.transform.parent = this.transform;
     }
 }
