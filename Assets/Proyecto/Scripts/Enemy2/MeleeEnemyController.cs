@@ -9,9 +9,11 @@ public class MeleeEnemyController : MonoBehaviour
     private Transform playerPos;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private Vector2 aux;
     public bool hitPlayer = false;
     private float timer;
     public float knockbackDuration;
+    public float knockbackDistance;
     private bool flag = false;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class MeleeEnemyController : MonoBehaviour
     {
         playerPos = GameObject.FindGameObjectWithTag("PlayerTag").transform;
         Vector3 direction = playerPos.position - this.transform.position;
-        Vector3 aux = direction;
+        aux = direction;
         direction.Normalize();
         movement = direction;
         if (!hitPlayer) transform.Rotate(0, 0, speedRotation * Time.deltaTime);
@@ -43,8 +45,7 @@ public class MeleeEnemyController : MonoBehaviour
             else
             {
                 timer -= Time.deltaTime;
-                Debug.Log(aux);
-                rb.AddForce(-movement * 50 * Time.deltaTime, ForceMode2D.Impulse);
+                rb.AddForce(-movement * knockbackDistance * Time.deltaTime, ForceMode2D.Impulse);
                 transform.Rotate(0, 0, -speedRotation * Time.deltaTime);
             }
 
@@ -58,6 +59,11 @@ public class MeleeEnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!hitPlayer) rb.MovePosition((Vector2)transform.position + (movement * movementSpeed * Time.deltaTime));
+        if (!hitPlayer) rb.AddForce(aux * movementSpeed * Time.deltaTime); //rb.MovePosition((Vector2)transform.position + (movement * movementSpeed * Time.deltaTime));
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "Enemy2") Debug.Log("Ey");
     }
 }
