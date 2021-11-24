@@ -9,7 +9,7 @@ public class MeleeEnemyController : MonoBehaviour
     private Transform playerPos;
     private Rigidbody2D rb;
     private Vector2 movement;
-    public bool hitPlayer=false;
+    public bool hitPlayer = false;
     private float timer;
     public float knockbackDuration;
     private bool flag = false;
@@ -29,7 +29,7 @@ public class MeleeEnemyController : MonoBehaviour
         direction.Normalize();
         movement = direction;
         if (!hitPlayer) transform.Rotate(0, 0, speedRotation * Time.deltaTime);
-        
+
         if (hitPlayer)
         {
             if (timer <= 0)
@@ -39,18 +39,15 @@ public class MeleeEnemyController : MonoBehaviour
                 flag = false;
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = 0f;
-            } else
+            }
+            else
             {
                 timer -= Time.deltaTime;
-                ///if (!flag)
-                //{
                 Debug.Log(aux);
-                    rb.AddForce(Vector2.up * 20 * Time.deltaTime, ForceMode2D.Impulse);
+                rb.AddForce(-movement * 50 * Time.deltaTime, ForceMode2D.Impulse);
                 transform.Rotate(0, 0, -speedRotation * Time.deltaTime);
-                //flag = true;
-                ///}
             }
-            
+
         }
 
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
@@ -61,6 +58,6 @@ public class MeleeEnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!hitPlayer) rb.MovePosition((Vector2) transform.position + (movement * movementSpeed * Time.deltaTime));
+        if (!hitPlayer) rb.MovePosition((Vector2)transform.position + (movement * movementSpeed * Time.deltaTime));
     }
 }

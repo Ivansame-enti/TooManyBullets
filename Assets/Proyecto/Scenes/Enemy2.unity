@@ -2030,6 +2030,14 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1693822652, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693822652, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}
       propertyPath: m_RootOrder
