@@ -36,4 +36,10 @@ public class Enemy1BulletController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnParticleCollision(GameObject other)
+    {
+        //Destroy(gameObject);
+        Debug.Log("colision");
+    }
 }
