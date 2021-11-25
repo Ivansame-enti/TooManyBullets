@@ -2284,6 +2284,7 @@ GameObject:
   - component: {fileID: 1315369027}
   - component: {fileID: 1315369026}
   - component: {fileID: 1315369025}
+  - component: {fileID: 1315369034}
   m_Layer: 0
   m_Name: character
   m_TagString: PlayerTag
@@ -2689,6 +2690,7 @@ MonoBehaviour:
   dashDelay: 1.5
   dashTime: 0.2
   particle_delay: 0
+  dashTrial: {fileID: 0}
 --- !u!114 &1315369029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2826,7 +2828,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315369024}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2868,7 +2870,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5000038
+        value: 0.6976776
         inSlope: 0
         outSlope: 0
         tangentMode: 0

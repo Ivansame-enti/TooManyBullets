@@ -14,6 +14,7 @@ public class DashController : MonoBehaviour
     private float timer2;
     private float timer3;
     public float particle_delay;
+    public TrailRenderer dashTrial;
 
     // Start is called before the first frame update
     void Start()
@@ -30,21 +31,24 @@ public class DashController : MonoBehaviour
             this.GetComponent<PolygonCollider2D>().enabled = true;
             rb.velocity = Vector3.zero;
             timer3 = 0;
+            this.GetComponent<TrailRenderer>().enabled = false;
         }
         else
         {
             if (timer3 <= 0)
             {
-                Instantiate(dashParticles, new Vector2(this.transform.position.x + 0.5f, this.transform.position.y), Quaternion.identity);
+                //Instantiate(dashParticles, new Vector2(this.transform.position.x + 0.5f, this.transform.position.y), Quaternion.identity);
                 GameObject a = Instantiate(sprite, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                a.GetComponent<SpriteRenderer>().color = new Color(81, 209, 246);
                 a.SetActive(true);
                 timer3 = particle_delay;
-                Destroy(a, 0.1f);
+                Destroy(a, 0.4f);
             } else
             {
                 timer3 -= Time.deltaTime;
             }
             this.GetComponent<PolygonCollider2D>().enabled = false;
+            this.GetComponent<TrailRenderer>().enabled = true;
             //Debug.Log("Invulnerable");
             timer2 -= Time.deltaTime;
         }
