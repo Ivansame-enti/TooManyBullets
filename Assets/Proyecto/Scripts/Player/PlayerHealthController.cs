@@ -104,7 +104,7 @@ public class PlayerHealthController : MonoBehaviour
             if (col.collider.tag == "enemy")
             {
                 col.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
-                Debug.Log("Ey");
+                dealDamage();
             }
         }
     }
