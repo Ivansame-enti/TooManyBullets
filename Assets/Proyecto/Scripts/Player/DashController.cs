@@ -66,7 +66,7 @@ public class DashController : MonoBehaviour
             }
         } else
         {
-            this.GetComponent<SpriteRenderer>().color = new Color(255, 233, 0, this.GetComponent<SpriteRenderer>().color.a);
+            this.GetComponent<SpriteRenderer>().color = new Color(0, 214, 255, this.GetComponent<SpriteRenderer>().color.a);
             timer -= Time.deltaTime;
         }
     }
