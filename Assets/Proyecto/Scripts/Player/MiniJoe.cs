@@ -10,28 +10,54 @@ public class MiniJoe : MonoBehaviour
     public float fireRate;
     float nextFire;
     GameObject[] gos;
-
-
+    //private GameObject healarea;
+    public GameObject minijoe;
+    private bool flagS = false;
+    public Transform padre;
+    public float area,area2;
+    public GameObject player;
+    public GameObject healarea;
+    public GameObject[] healareaP;
+    public GameObject torretarea;
+    private GameObject enemy;
+    private bool enemya=false;
+    private bool checkenemyinrange = false;
     void Start()
     {
         //fireRate = 1f;
         nextFire = Time.time;
-    }
+        
+}
     
     // Update is called once per frame
     void Update()
     {
+
+        float distancia = Vector2.Distance(minijoe.transform.position, player.transform.position);
+      
         // float step = shootspeed * Time.deltaTime;
         //Timer -= Time.deltaTime;
         gos = GameObject.FindGameObjectsWithTag("enemy");
-
-        if (gos.Length>=1)//mira si hay enemigos
+        
+        healareaP = GameObject.FindGameObjectsWithTag("healarea");
+        if (gos.Length >= 1) { 
+            for (int i =0; i<gos.Length; i++)
         {
-            CheckFire();
-
+            if (Vector2.Distance(minijoe.transform.position, gos[i].transform.position) <= area2)
+            {
+                enemya = true;
+                checkenemyinrange = true;
+            }
+            else
+            {
+                if (checkenemyinrange == false){ 
+                enemya = false;
+                }
+            }
+            
         }
-
-
+        checkenemyinrange = false;
+        }
         //  Instantiate(bala);
         //  balai = Instantiate(bala,transform.position,transform.rotation);
 
@@ -45,16 +71,92 @@ public class MiniJoe : MonoBehaviour
         //  if (bala.transform.position == enemy.transform.position)
         // {
         //  Destroy(this.balai, 2);
+        if (Input.GetKeyDown(KeyCode.O)) {
+
+
+            minijoe.transform.parent = null;
+            flagS = true;
+            
+        }
+       // else
+       // {
+       //     minijoe.transform.parent = padre.transform.parent;
+        //}
+
+       if (flagS == true)
+        {
+            if (enemya==true)
+            {
+                if (gos.Length >= 1)//mira si hay enemigos
+                {
+                    CheckFire();
+
+                }
+            }
+         
+        }
+
+        if (flagS == true)
+        {
+            if (distancia <= area)
+            {
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    Example(padre);
+                    Debug.Log("Hello: ");
+                    torretarea.SetActive(false);
+                  //  healwafe.SetActive(false);
+                    flagS = false;
+                }
+            }
+            else
+            {
+
+                torretarea.SetActive(true);
+               // healwafe.SetActive(true);
+               
+
+                //ESTA PLANTADO Y NO ESTA EN RANGO DE RECOGER PONER LAS COSAS DE ESTAR PLANTADO
+
+            }
+        }
+
     }
 
 
-  void  CheckFire()
+    public void Example(Transform padre)
     {
+        // Sets "newParent" as the new parent of the child GameObject
+        minijoe.transform.SetParent(padre);
+      //  Debug.Log("Hello: ");
+      
+        //  child.transform.SetParent(newParent, false);
+
+        // child.transform.SetParent(null);
+    }
+
+    void  CheckFire()
+    {
+        //if (torretarea.)
+        //{
         if (Time.time > nextFire)
         {
             Instantiate(bala, this.transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
+       // }
     }
-    
+    private void OnDrawGizmoSelected()
+    {
+        Gizmos.color = Color.white;
+        //Gizmos.DrawWireSphere(transform.position, area2);
+        Gizmos.DrawSphere(transform.position, area);
+        // Gizmos.DrawWireSphere(transform.position, areadisparo);
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+
+        enemya = true;     
+    }
 }
