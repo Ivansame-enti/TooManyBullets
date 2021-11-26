@@ -656,7 +656,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -2101,7 +2101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: movementSpeed
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: speedRotation
@@ -2109,7 +2109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: knockbackDistance
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: knockbackDuration
@@ -2559,7 +2559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: movementSpeed
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: speedRotation
@@ -2567,7 +2567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: knockbackDistance
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1693822649, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: knockbackDuration
