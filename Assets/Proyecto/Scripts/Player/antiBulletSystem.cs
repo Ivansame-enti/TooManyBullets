@@ -21,8 +21,10 @@ public class antiBulletSystem : MonoBehaviour
         {
             //antiBulletPower.transform.position = this.transform.position;
             antiBulletPowerClone = Instantiate(antiBulletPower, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+            antiBulletPowerClone.transform.parent = gameObject.transform;
             Destroy(antiBulletPowerClone.gameObject, 2f);
             antiBulletPowerClone = Instantiate(antiBulletPowerRest, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+            antiBulletPowerClone.transform.parent = gameObject.transform;
             Destroy(antiBulletPowerClone.gameObject, 2f);
         }
         
