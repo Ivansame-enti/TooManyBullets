@@ -13,13 +13,14 @@ public class MiniJoe : MonoBehaviour
     //private GameObject healarea;
     public GameObject minijoe;
     private bool flagS = false;
-    public Transform padre;
+    public Transform padre,padre2;
     public float area,area2;
     public GameObject player;
     public GameObject healarea;
     public GameObject[] healareaP;
     public GameObject torretarea;
     private GameObject enemy;
+    public GameObject healwafe;
     private bool enemya=false;
     private bool checkenemyinrange = false;
     void Start()
@@ -105,7 +106,12 @@ public class MiniJoe : MonoBehaviour
                     Example(padre);
                     Debug.Log("Hello: ");
                     torretarea.SetActive(false);
-                  //  healwafe.SetActive(false);
+                    healwafe.SetActive(false);
+                    torretarea.transform.parent = null;
+                    healwafe.transform.parent = null;
+                    minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                    torretarea.transform.SetParent(padre2);
+                    healwafe.transform.SetParent(padre2);
                     flagS = false;
                 }
             }
@@ -113,9 +119,14 @@ public class MiniJoe : MonoBehaviour
             {
 
                 torretarea.SetActive(true);
-               // healwafe.SetActive(true);
-               
+                healwafe.SetActive(true);
 
+                torretarea.transform.parent = null;
+                healwafe.transform.parent = null;
+                minijoe.transform.localScale = new Vector2(0.2f, 0.2f);
+                torretarea.transform.SetParent(padre2);
+                healwafe.transform.SetParent(padre2);
+              
                 //ESTA PLANTADO Y NO ESTA EN RANGO DE RECOGER PONER LAS COSAS DE ESTAR PLANTADO
 
             }

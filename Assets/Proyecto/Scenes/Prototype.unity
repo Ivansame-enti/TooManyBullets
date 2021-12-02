@@ -713,12 +713,14 @@ MonoBehaviour:
   fireRate: 2
   minijoe: {fileID: 490372441}
   padre: {fileID: 1967874472}
+  padre2: {fileID: 490372442}
   area: 0.8
   area2: 6.7
   player: {fileID: 1967874463}
-  healarea: {fileID: 384562219}
+  healarea: {fileID: 0}
   healareaP: []
   torretarea: {fileID: 384562219}
+  healwafe: {fileID: 1862269081}
 --- !u!212 &490372444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2284,7 +2286,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
     type: 3}
-  m_Color: {r: 0.021505356, g: 1, b: 0.6392157, a: 0.13333334}
+  m_Color: {r: 0.9811321, g: 0, b: 0.04001578, a: 0.13333334}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
