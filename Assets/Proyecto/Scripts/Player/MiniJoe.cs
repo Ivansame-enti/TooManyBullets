@@ -90,6 +90,7 @@ public class MiniJoe : MonoBehaviour
             {
                 if (gos.Length >= 1)//mira si hay enemigos
                 {
+                    healwafe.SetActive(true);
                     CheckFire();
 
                 }
@@ -119,7 +120,7 @@ public class MiniJoe : MonoBehaviour
             {
 
                 torretarea.SetActive(true);
-                healwafe.SetActive(true);
+              //  healwafe.SetActive(true);
 
                 torretarea.transform.parent = null;
                 healwafe.transform.parent = null;
