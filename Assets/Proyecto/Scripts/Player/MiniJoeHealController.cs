@@ -5,10 +5,11 @@ using UnityEngine;
 public class MiniJoeHealController : MonoBehaviour
 {
     // Start is called before the first frame update
+    //public Animation plantUIAnim;
     public float healDelay;
     public float healTimer;
     public float healAmmount;
-    private float timer;
+    public float timer;
     public float timer2;
     public PlayerHealthController phc;
     private bool minijoeIn;
@@ -26,21 +27,27 @@ public class MiniJoeHealController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(phc.currentHealth<phc.health && minijoeIn && timer2>=healDelay) //&& !healOnce
+        if (Input.GetButtonDown("R1"))
+        {
+            Debug.Log("R1");
+        }
+
+        if (Input.GetButtonDown("L1"))
+        {
+            Debug.Log("L1");
+        }
+
+        if (phc.currentHealth<phc.health && minijoeIn && timer2>=healDelay) //&& !healOnce
         {
             if (timer <= 0)
             {
-                //float 
                 var ps = Instantiate(healParticle, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
-                //ps.transform.localScale;
-                //Debug.Log(ps.transform.localScale);
-                //ps.transform.parent = this.transform;
-                //ps.transform.localScale = new Vector3(1f,1f,1f);
                 phc.currentHealth += healAmmount;
                 phc.currentHealth = Mathf.Round(phc.currentHealth * 10.0f) * 0.1f; //Resondear a unn decimal porque a veces no se suma bien
                 if(phc.currentHealth==3.0f || phc.currentHealth == 2.0f)
                 {
                     timer2 = 0;
+                    
                     //healedOnce = true;
                 }
                 timer = healTimer;
