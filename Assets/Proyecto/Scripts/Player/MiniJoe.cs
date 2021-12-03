@@ -72,12 +72,16 @@ public class MiniJoe : MonoBehaviour
         //  if (bala.transform.position == enemy.transform.position)
         // {
         //  Destroy(this.balai, 2);
-        if (Input.GetKeyDown(KeyCode.O)) {
+        if (displanted == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
 
 
-            minijoe.transform.parent = null;
-            flagS = true;
-            
+                minijoe.transform.parent = null;
+                flagS = true;
+
+            }
         }
        // else
        // {
@@ -102,19 +106,22 @@ public class MiniJoe : MonoBehaviour
         {
             if (distancia <= area)
             {
-                if (Input.GetKeyDown(KeyCode.P))
+                if (displanted == true)
                 {
-                    Example(padre);
-                    Debug.Log("Hello: ");
-                    torretarea.SetActive(false);
-                    healwafe.SetActive(false);
-                    torretarea.transform.parent = null;
-                    healwafe.transform.parent = null;
-                    minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
-                    torretarea.transform.SetParent(padre2);
-                    healwafe.transform.SetParent(padre2);
-                    flagS = false;
-                    displanted = false;
+                    if (Input.GetKeyDown(KeyCode.Q))
+                    {
+                        Example(padre);
+                        Debug.Log("Hello: ");
+                        torretarea.SetActive(false);
+                        healwafe.SetActive(false);
+                        torretarea.transform.parent = null;
+                        healwafe.transform.parent = null;
+                        minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                        torretarea.transform.SetParent(padre2);
+                        healwafe.transform.SetParent(padre2);
+                        flagS = false;
+                        displanted = false;
+                    }
                 }
             }
             else
