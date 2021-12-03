@@ -23,6 +23,7 @@ public class MiniJoe : MonoBehaviour
     public GameObject healwafe;
     private bool enemya=false;
     private bool checkenemyinrange = false;
+    public bool displanted = false;
     void Start()
     {
         //fireRate = 1f;
@@ -33,7 +34,6 @@ public class MiniJoe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         float distancia = Vector2.Distance(minijoe.transform.position, player.transform.position);
       
         // float step = shootspeed * Time.deltaTime;
@@ -114,6 +114,7 @@ public class MiniJoe : MonoBehaviour
                     torretarea.transform.SetParent(padre2);
                     healwafe.transform.SetParent(padre2);
                     flagS = false;
+                    displanted = false;
                 }
             }
             else
@@ -127,6 +128,7 @@ public class MiniJoe : MonoBehaviour
                 minijoe.transform.localScale = new Vector2(0.2f, 0.2f);
                 torretarea.transform.SetParent(padre2);
                 healwafe.transform.SetParent(padre2);
+                displanted = true;
               
                 //ESTA PLANTADO Y NO ESTA EN RANGO DE RECOGER PONER LAS COSAS DE ESTAR PLANTADO
 
