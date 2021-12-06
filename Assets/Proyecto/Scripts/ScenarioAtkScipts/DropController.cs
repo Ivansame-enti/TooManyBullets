@@ -32,5 +32,11 @@ public class DropController : MonoBehaviour
 
 
         }
+        
+        if (collision.gameObject.tag.Equals("DestroyBulletCollider"))
+        {
+            Destroy(gameObject);
+        }
     }
+
 }
