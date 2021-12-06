@@ -57,5 +57,15 @@ public class EnemyHealthController : MonoBehaviour
             if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
             //Destroy(collision.gameObject);
         }
+        if (collision.tag == "MjLaserCollider")
+        {
+            Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
+            health = health - collision.gameObject.GetComponent<MeleeAttackController>().damage;
+            healthBar.SetHealthBar(health, maxHealth);
+            if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
+            //Destroy(collision.gameObject);
+        }
+
     }
+
 }

@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class MiniJoeLaserController : MonoBehaviour
 {
-    private Vector2 laserPos1, laserPos2;
+    public Vector2 laserPos1, laserPos2;
     public GameObject miniJoePosition, playerPosition;
     public LineRenderer m_lineRenderer;
     //public GameObject collisionLaser;q
-    private bool shooting;
+    public bool shooting;
     public GameObject mLaserBeam;
     public float laserCoolDown;
     private float timer;
     public Animation ola;
+    CapsuleCollider capsule;
     // Start is called before the first frame update
     void Start()
     {
-
+        /*
+        capsule = gameObject.AddComponent(typeof(CapsuleCollider)) as CapsuleCollider;
+        capsule.radius = 2 / 2;
+        capsule.center = Vector3.zero;
+        capsule.direction = 2; // Z-axis for easier "LookAt" orientation
+        */
     }
 
     // Update is called once per frame
@@ -75,6 +81,10 @@ public class MiniJoeLaserController : MonoBehaviour
     {
         m_lineRenderer.SetPosition(0, startPos);
         m_lineRenderer.SetPosition(1, endPos);
-
+        /*
+        capsule.transform.position = startPos + (endPos - startPos) / 2;
+        capsule.transform.LookAt(startPos);
+        capsule.height = (endPos - startPos).magnitude;
+        */
     }
 }

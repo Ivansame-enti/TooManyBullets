@@ -9,9 +9,11 @@ TagManager:
   - LaserCollider
   - EnemyBullet
   - DestroyBulletCollider
+  - PlayerTag
   - slash
   - enemy
   - healarea
+  - MjLaserCollider
   layers:
   - Default
   - TransparentFX

@@ -235,22 +235,31 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 3
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1162796
-        inSlope: 0
-        outSlope: 1.8187971
-        tangentMode: 65
+        value: 0.14650531
+        inSlope: -19.472963
+        outSlope: -19.472963
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.19116181
+      - serializedVersion: 3
+        time: 0.14690325
+        value: 0.47675133
+        inSlope: 0.06030269
+        outSlope: 0.06030269
+        tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.4858818
-        value: 1
+        time: 0.46233654
+        value: 0.48372138
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -258,14 +267,23 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9905853
-        value: 0.19302474
-        inSlope: -1.5989095
-        outSlope: 0
-        tangentMode: 69
+        time: 0.895484
+        value: 0.46511662
+        inSlope: -0.1384119
+        outSlope: -0.1384119
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.15814173
+        inSlope: 24.69759
+        outSlope: 24.69759
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15442047
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -934,12 +952,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10f8f0cccb29a240a6d3e2efd76a157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserPos1: {x: 0, y: 0}
+  laserPos2: {x: 0, y: 0}
   miniJoePosition: {fileID: 490372441}
   playerPosition: {fileID: 1967874463}
   m_lineRenderer: {fileID: 158020365}
+  shooting: 0
   mLaserBeam: {fileID: 158020363}
   laserCoolDown: 4
-  ola: {fileID: 1500329188}
+  ola: {fileID: 0}
 --- !u!1001 &497315135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1535,6 +1556,65 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1152485942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152485944}
+  - component: {fileID: 1152485943}
+  - component: {fileID: 1152485945}
+  m_Layer: 0
+  m_Name: MiniJLaserCollider
+  m_TagString: MjLaserCollider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1152485943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152485942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22e8ff376843ad41bfcbd61ee8a02f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Minijoe: {fileID: 490372441}
+--- !u!4 &1152485944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152485942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.0787587, y: 2.1818197, z: -0.08570194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1152485945
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152485942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1161678697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,52 +1895,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423155202}
   m_CullTransparentMesh: 1
---- !u!1 &1500329187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1500329189}
-  - component: {fileID: 1500329188}
-  m_Layer: 0
-  m_Name: asd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!111 &1500329188
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500329187}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!4 &1500329189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500329187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6474242, y: -1.3662777, z: 398.24817}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520917228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,6 +2732,46 @@ PrefabInstance:
         type: 3}
       propertyPath: minFrequencylaser
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 0.489649
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.060465276
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017332725217937476, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
+      value: 0.10697693
       objectReference: {fileID: 0}
     - target: {fileID: 7280424419853917611, guid: 1e3cfe223b840554782f590c4bb8042d,
         type: 3}
