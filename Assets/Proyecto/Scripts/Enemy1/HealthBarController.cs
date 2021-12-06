@@ -12,6 +12,9 @@ public class HealthBarController : MonoBehaviour
     private float maxTimer;
     private bool fadeOut=false;
     public float fadeOutSpeed;
+    private Quaternion rotation;
+    public GameObject enemy;
+    //private Vector3 OrgPosition;
 
     public void FadeOutHealthBar()
     {
@@ -38,15 +41,15 @@ public class HealthBarController : MonoBehaviour
         fadeOut = true;
     }
 
-    private void Start()
+    /*private void Awake()
     {
-        //maxTimer = Time.deltaTime + showTime;
-    }
+        rotation = transform.rotation;
+    }*/
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offSet);
+        healthBar.transform.position = Camera.main.WorldToScreenPoint(enemy.transform.position + offSet);
 
         currentTimer += Time.deltaTime;
 
@@ -55,4 +58,10 @@ public class HealthBarController : MonoBehaviour
             FadeOutHealthBar();
         }
     }
+    /*
+    private void LateUpdate()
+    {
+        transform.rotation = rotation;
+    }*/
+
 }

@@ -102,5 +102,11 @@ public class PlayerHealthController : MonoBehaviour
         {
             if (col.collider.tag == "LaserCollider") dealDamage();
         }
+
+        if (col.collider.tag == "enemy")
+        {
+            col.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            if(timer <= 0) dealDamage();
+        }
     }
 }

@@ -23,7 +23,9 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
 
         if (health <= 0) {
-            Destroy(this.gameObject);
+            if (transform.parent != null && transform.parent.gameObject.tag == "container")
+                Destroy(this.transform.parent.gameObject);     
+            else Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
@@ -54,8 +56,8 @@ public class EnemyHealthController : MonoBehaviour
             Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
             health = health - collision.gameObject.GetComponent<MeleeAttackController>().damage;
             healthBar.SetHealthBar(health, maxHealth);
+            if(this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
             if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
-            //Destroy(collision.gameObject);
         }
     }
 }
