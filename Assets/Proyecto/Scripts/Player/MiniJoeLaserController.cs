@@ -37,13 +37,13 @@ public class MiniJoeLaserController : MonoBehaviour
         {
             laserPos1 = miniJoePosition.transform.position;
             laserPos2 = playerPosition.transform.position;
+            ShootLaser();
 
-            
             if (laserCoolDown <= 0)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    ShootLaser();
+                    
                     laserCoolDown = 4f;
                     //timeRemaining -= Time.deltaTime;
                     shooting = true;
@@ -87,6 +87,8 @@ public class MiniJoeLaserController : MonoBehaviour
 
         //if (col != null) Destroy(col);
         //if (col != null) Destroy(col);
+
+        if (col != null) Destroy(col.gameObject);
 
         col = new GameObject("Collider").AddComponent<BoxCollider2D>();
 
