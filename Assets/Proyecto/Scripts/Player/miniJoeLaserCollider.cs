@@ -25,20 +25,37 @@ public class miniJoeLaserCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Minijoe.GetComponent<MiniJoeLaserController>().shooting == true)
+        /*if (Minijoe.GetComponent<MiniJoeLaserController>().shooting == true)
         {
-            this.GetComponent<CapsuleCollider>().enabled = true;
+            
+            this.GetComponent<BoxCollider2D>().enabled = true;
             startPos = Minijoe.GetComponent<MiniJoeLaserController>().laserPos1;
             endPos = Minijoe.GetComponent<MiniJoeLaserController>().laserPos2;
 
-            this.GetComponent<CapsuleCollider2D>().transform.position = startPos + (endPos - startPos) / 2;
-            this.GetComponent<CapsuleCollider2D>().transform.LookAt(startPos);
+            this.GetComponent<BoxCollider2D>().transform.position = startPos + (endPos - startPos) / 2;
+            //this.GetComponent<BoxCollider2D>().transform.LookAt(startPos);
             //this.GetComponent<CapsuleCollider>().height = (endPos - startPos).magnitude;
-            this.GetComponent<CapsuleCollider2D>().size = new Vector2(0, (endPos - startPos).magnitude);
+            //this.GetComponent<CapsuleCollider2D>().size = new Vector2(1, 2);
+            
+            /*BoxCollider col = new GameObject("Collider").AddComponent<BoxCollider>();
+            //col.transform.parent = line.transform; // Collider is added as child object of line
+            float lineLength = Vector3.Distance(startPos, endPos); // length of line
+            col.size = new Vector3(lineLength, 0.1f, 1f); // size of collider is set where X is length of line, Y is width of line, Z will be set as per requirement
+            Vector3 midPoint = (startPos + endPos) / 2;
+            col.transform.position = midPoint; // setting position of collider object
+                                               // Following lines calculate the angle between startPos and endPos
+            float angle = (Mathf.Abs(startPos.y - endPos.y) / Mathf.Abs(startPos.x - endPos.x));
+            if ((startPos.y < endPos.y && startPos.x > endPos.x) || (endPos.y < startPos.y && endPos.x > startPos.x))
+            {
+                angle *= -1;
+            }
+            angle = Mathf.Rad2Deg * Mathf.Atan(angle);
+            col.transform.Rotate(0, 0, angle);
         }
         else
         {
-            this.GetComponent<CapsuleCollider>().enabled = false;
+            this.GetComponent<BoxCollider2D>().enabled = false;
         }
+    }*/
     }
 }

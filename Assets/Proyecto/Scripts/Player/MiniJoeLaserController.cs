@@ -14,6 +14,8 @@ public class MiniJoeLaserController : MonoBehaviour
     private float timer;
     public Animation ola;
     CapsuleCollider capsule;
+    private BoxCollider2D col;
+    private bool flag = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +38,12 @@ public class MiniJoeLaserController : MonoBehaviour
             laserPos1 = miniJoePosition.transform.position;
             laserPos2 = playerPosition.transform.position;
 
-            ShootLaser();
+            
             if (laserCoolDown <= 0)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    ShootLaser();
                     laserCoolDown = 4f;
                     //timeRemaining -= Time.deltaTime;
                     shooting = true;
@@ -81,10 +84,30 @@ public class MiniJoeLaserController : MonoBehaviour
     {
         m_lineRenderer.SetPosition(0, startPos);
         m_lineRenderer.SetPosition(1, endPos);
-        /*
-        capsule.transform.position = startPos + (endPos - startPos) / 2;
-        capsule.transform.LookAt(startPos);
-        capsule.height = (endPos - startPos).magnitude;
-        */
+
+        //if (col != null) Destroy(col);
+        //if (col != null) Destroy(col);
+
+        col = new GameObject("Collider").AddComponent<BoxCollider2D>();
+
+        col.transform.parent = mLaserBeam.transform; // Collider is added as child object of line
+
+            //col = mLaserBeam.gameObject.GetComponent<BoxCollider2D>();
+            float lineLength = Vector3.Distance(startPos, endPos); // length of line
+
+            col.size = new Vector3(lineLength, 0.3f, 1f); // size of collider is set where X is length of line, Y is width of line, Z will be set as per requirement
+
+            Vector3 midPoint = (startPos + endPos) / 2;
+
+            col.transform.position = midPoint; // setting position of collider object
+                                               // Following lines calculate the angle between startPos and endPos
+            float angle = (Mathf.Abs(startPos.y - endPos.y) / Mathf.Abs(startPos.x - endPos.x));
+            if ((startPos.y < endPos.y && startPos.x > endPos.x) || (endPos.y < startPos.y && endPos.x > startPos.x))
+            {
+                angle *= -1;
+            }
+            angle = Mathf.Rad2Deg * Mathf.Atan(angle);
+        col.transform.Rotate(0, 0, angle);
+        col.isTrigger = true;
     }
 }
