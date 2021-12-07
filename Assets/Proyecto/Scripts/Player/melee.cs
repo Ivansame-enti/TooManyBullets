@@ -59,7 +59,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
 
-                Destroy(this.ataquei2, 1);
+                //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -70,7 +70,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
 
-                Destroy(this.ataquei2, 1);
+                //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -81,7 +81,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 + 90));
 
-                Destroy(this.ataquei2, 1);
+                ///Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -92,7 +92,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 180));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 90));
 
-                Destroy(this.ataquei2, 1);
+                //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
         }

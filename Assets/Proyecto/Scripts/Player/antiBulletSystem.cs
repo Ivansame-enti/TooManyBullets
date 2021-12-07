@@ -23,7 +23,8 @@ public class antiBulletSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && timer >= antiBulletdelay)
         {
-            //antiBulletPower.transform.position = this.transform.position;
+            //this.transform.Find("Shield").gameObject.SetActive(true);
+            antiBulletPower.transform.position = this.transform.position;
             antiBulletPowerClone = Instantiate(antiBulletPower, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
             //particles = Instantiate(PS, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
             //antiBulletPowerClone.transform.parent = gameObject.transform;
