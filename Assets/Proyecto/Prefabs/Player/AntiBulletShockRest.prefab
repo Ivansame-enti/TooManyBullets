@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8426091861516376058}
   m_Layer: 0
   m_Name: AntiBulletShockRest
-  m_TagString: DestroyBulletCollider
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
