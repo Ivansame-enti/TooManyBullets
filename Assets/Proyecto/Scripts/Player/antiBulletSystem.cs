@@ -23,6 +23,7 @@ public class antiBulletSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && timer >= antiBulletdelay)
         {
+            FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
             //this.transform.Find("Shield").gameObject.SetActive(true);
             antiBulletPower.transform.position = this.transform.position;
             antiBulletPowerClone = Instantiate(antiBulletPower, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
