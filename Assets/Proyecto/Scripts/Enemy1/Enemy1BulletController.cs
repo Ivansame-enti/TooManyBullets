@@ -10,7 +10,8 @@ public class Enemy1BulletController : MonoBehaviour
     private Rigidbody2D rb;
     private float target;*/
 
-    public float lifeSpan;
+    public float scaleTime;
+    public GameObject destroyPS;
     /*public void SetDirection(Vector2 dir)
     {
         direction = dir;
@@ -25,6 +26,7 @@ public class Enemy1BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //this.transform.localScale += new Vector3(50f, 50f, 50f);
         //transform.Translate(direction * bulletSpeed * Time.deltaTime);
     }
 
@@ -41,8 +43,10 @@ public class Enemy1BulletController : MonoBehaviour
         if (collision.gameObject.tag.Equals("Shield"))
         {
             //Debug.Log("a");
-            //StartCoroutine(ScaleOverTime(1, collision));
-            collision.gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+            StartCoroutine(ScaleOverTime(scaleTime));
+            //Debug.Log(collision.transform.localScale);
+            //transform.localScale += new Vector3(50f, 50f, 50f);
+            //Debug.Log("Nuevo: " + collision.transform.localScale);
             //collision.gameObject.transform.localScale = new
             //Destroy(gameObject);
         }
@@ -54,21 +58,20 @@ public class Enemy1BulletController : MonoBehaviour
         Debug.Log("colision");
     }
 
-    IEnumerator ScaleOverTime(float time, Collider2D collision)
+    IEnumerator ScaleOverTime(float time)
     {
-        Vector3 originalScale = collision.transform.localScale;
+        Vector3 originalScale = this.transform.localScale;
         Vector3 destinationScale = new Vector3(0.0f, 0.0f, 0.0f);
+        Destroy(this.gameObject.GetComponent<BoxCollider2D>());
         float currentTime = 0.0f;
 
         do
         {
-            //originalScale.x -= Time.deltaTime;
-            //originalScale.y -= Time.deltaTime;
-            collision.transform.localScale = destinationScale;
+            this.transform.localScale = Vector3.Lerp(originalScale, destinationScale, currentTime / time);
             currentTime += Time.deltaTime;
             yield return null;
         } while (currentTime <= time);
-
-        Destroy(collision.gameObject);
+        Instantiate(destroyPS, this.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
