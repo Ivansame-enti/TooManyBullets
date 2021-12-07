@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 158020364}
   - component: {fileID: 158020365}
   - component: {fileID: 158020366}
+  - component: {fileID: 158020367}
   m_Layer: 0
   m_Name: mLaser
   m_TagString: Untagged
@@ -210,7 +211,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5e472477bf28db54bb87a65b5ab2f8ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -341,16 +342,29 @@ BoxCollider2D:
   m_Offset: {x: 82.95714, y: 42.314278}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 20.48, y: 20.48}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 28.571424, y: 28.571424}
   m_EdgeRadius: 0
+--- !u!114 &158020367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158020363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8d27241264cb54c94eba2d8b30fbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LaserDamage: 0
 --- !u!1001 &201853271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -979,15 +993,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10f8f0cccb29a240a6d3e2efd76a157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPos1: {x: 0, y: 0}
-  laserPos2: {x: 0, y: 0}
   miniJoePosition: {fileID: 490372441}
   playerPosition: {fileID: 1967874463}
   m_lineRenderer: {fileID: 158020365}
   shooting: 0
   mLaserBeam: {fileID: 158020363}
-  laserCoolDown: 4
-  ola: {fileID: 0}
+  laserCoolDown: 1
+  laserDamage: 0.5
 --- !u!1001 &497315135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,7 +1015,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -1583,94 +1595,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1152485942
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1152485944}
-  - component: {fileID: 1152485943}
-  - component: {fileID: 1152485945}
-  - component: {fileID: 1152485946}
-  m_Layer: 0
-  m_Name: MiniJLaserCollider
-  m_TagString: MjLaserCollider
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1152485943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152485942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22e8ff376843ad41bfcbd61ee8a02f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Minijoe: {fileID: 490372441}
---- !u!4 &1152485944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152485942}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0787587, y: 2.1818197, z: -0.08570194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1152485945
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152485942}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
---- !u!61 &1152485946
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152485942}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1161678697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2059,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -2411,7 +2335,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -3478,7 +3402,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -3642,6 +3566,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0c56afb8583625347a4751cc098eb176, type: 3}
     volume: 0.3
     pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MiniJoeLaser
+    clip: {fileID: 8300000, guid: a67ab2c9aa484184f8c729fc8c4c0658, type: 3}
+    volume: 0.2
+    pitch: 0.9
     loop: 0
     source: {fileID: 0}
 --- !u!1001 &1127931920699263730

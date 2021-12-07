@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class MiniJoeLaserController : MonoBehaviour
 {
-    public Vector2 laserPos1, laserPos2;
+    private Vector2 laserPos1, laserPos2;
     public GameObject miniJoePosition, playerPosition;
     public LineRenderer m_lineRenderer;
-    //public GameObject collisionLaser;q
     public bool shooting;
     public GameObject mLaserBeam;
     public float laserCoolDown;
     private float timer;
-    public Animation ola;
-    CapsuleCollider capsule;
     private BoxCollider2D col;
     private bool flag = false;
+    public float laserDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,28 +29,21 @@ public class MiniJoeLaserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log(shooting);
-        Debug.Log(timer);
         if (GetComponent<MiniJoe>().displanted == true)
         {
             laserPos1 = miniJoePosition.transform.position;
             laserPos2 = playerPosition.transform.position;
             ShootLaser();
-
             if (laserCoolDown <= 0)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    
                     laserCoolDown = 4f;
-                    //timeRemaining -= Time.deltaTime;
                     shooting = true;
                     timer = 1f;
                     mLaserBeam.SetActive(true);
-                    GetComponent<movement>().speed /= 2;
-                    ola.Play();
-
+                    FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
+                    //GetComponent<movement>().speed /= 2;
                 }
             }
             else
@@ -64,7 +56,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 shooting = false;
                 mLaserBeam.SetActive(false);
                 timer = 1f;
-                GetComponent<movement>().speed *= 2;
+                //GetComponent<movement>().speed *= 2;
             }
             else
             {
@@ -91,7 +83,9 @@ public class MiniJoeLaserController : MonoBehaviour
         if (col != null) Destroy(col.gameObject);
 
         col = new GameObject("Collider").AddComponent<BoxCollider2D>();
-
+        col.tag = "MjLaserCollider";
+        col.gameObject.AddComponent<mJLaserDamage>();
+        col.gameObject.GetComponent<mJLaserDamage>().LaserDamage = laserDamage;
         col.transform.parent = mLaserBeam.transform; // Collider is added as child object of line
 
             //col = mLaserBeam.gameObject.GetComponent<BoxCollider2D>();
