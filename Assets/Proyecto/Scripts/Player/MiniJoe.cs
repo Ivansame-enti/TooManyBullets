@@ -6,10 +6,17 @@ using UnityEngine;
 public class MiniJoe : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject bala;    
+    public GameObject bala;
+    public GameObject minijoe;
+    public GameObject character;
     public float fireRate;
+    public float delay;
+    private float timer=0;
     float nextFire;
     GameObject[] gos;
+    private List<Vector3> positionList;
+    private int distance=20;
+   
 
 
     void Start()
@@ -21,6 +28,7 @@ public class MiniJoe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // float step = shootspeed * Time.deltaTime;
         //Timer -= Time.deltaTime;
         gos = GameObject.FindGameObjectsWithTag("enemy");
@@ -31,6 +39,8 @@ public class MiniJoe : MonoBehaviour
 
         }
 
+
+        //nijoe.transform.position = character.transform.position + new Vector3(1,1,0); //ESTO MUEVE A MINIJOE BIEN PERO SIN DELAY
 
         //  Instantiate(bala);
         //  balai = Instantiate(bala,transform.position,transform.rotation);
@@ -45,6 +55,19 @@ public class MiniJoe : MonoBehaviour
         //  if (bala.transform.position == enemy.transform.position)
         // {
         //  Destroy(this.balai, 2);
+
+
+        positionList.Add(character.transform.position);
+        Debug.Log(positionList);
+        if(positionList.Count > 2)
+        {
+            positionList.RemoveAt(0);
+            //minijoe.transform.position = positionList[0];
+            minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
+
+        }
+
+
     }
 
 
