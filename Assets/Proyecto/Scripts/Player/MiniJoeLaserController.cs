@@ -29,7 +29,7 @@ public class MiniJoeLaserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<MiniJoe>().displanted == true)
+        if (GetComponent<MiniJoe>().displanted == true && playerPosition != null)
         {
             laserPos1 = miniJoePosition.transform.position;
             laserPos2 = playerPosition.transform.position;
@@ -43,7 +43,7 @@ public class MiniJoeLaserController : MonoBehaviour
                     timer = 1f;
                     mLaserBeam.SetActive(true);
                     FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
-                    //GetComponent<movement>().speed /= 2;
+                    playerPosition.GetComponent<movement>().speed /= 2;
                 }
             }
             else
@@ -56,7 +56,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 shooting = false;
                 mLaserBeam.SetActive(false);
                 timer = 1f;
-                //GetComponent<movement>().speed *= 2;
+                playerPosition.GetComponent<movement>().speed *= 2;
             }
             else
             {
