@@ -30,14 +30,6 @@ public class EnemyHealthController : MonoBehaviour
             Instantiate(swPs, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
         }
-        /*
-        if (Input.GetKeyDown("space"))
-        {
-            Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
-            health--;
-            healthBar.SetHealthBar(health, maxHealth);
-            if(health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,5 +51,14 @@ public class EnemyHealthController : MonoBehaviour
             if(this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
             if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
         }
+        if (collision.tag == "MjLaserCollider")
+        {
+            Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
+            health = health - collision.gameObject.GetComponent<mJLaserDamage>().LaserDamage;
+            healthBar.SetHealthBar(health, maxHealth);
+            //if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
+        }
+
     }
+
 }

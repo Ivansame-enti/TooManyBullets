@@ -14,6 +14,10 @@ TagManager:
   - enemy
   - Shield
   - PlayerTag
+  - slash
+  - enemy
+  - healarea
+  - MjLaserCollider
   layers:
   - Default
   - TransparentFX
