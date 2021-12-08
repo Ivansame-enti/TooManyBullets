@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public int health;
-    public int currentHealth;
+    public float health;
+    public float currentHealth;
     public Animator shakeCamera;
     public float inmortalTime;
     public float blinkTime;

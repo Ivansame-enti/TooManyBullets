@@ -39,7 +39,7 @@ public class DashController : MonoBehaviour
             {
                 //Instantiate(dashParticles, new Vector2(this.transform.position.x + 0.5f, this.transform.position.y), Quaternion.identity);
                 GameObject a = Instantiate(sprite, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
-                a.GetComponent<SpriteRenderer>().color = new Color(81, 209, 246);
+                //a.GetComponent<SpriteRenderer>().color = new Color(81, 209, 246);
                 a.SetActive(true);
                 timer3 = particle_delay;
                 Destroy(a, 0.3f);
