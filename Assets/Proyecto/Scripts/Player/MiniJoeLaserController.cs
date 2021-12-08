@@ -10,21 +10,11 @@ public class MiniJoeLaserController : MonoBehaviour
     public bool shooting;
     public GameObject mLaserBeam;
     public float laserCoolDown;
+    public float warningTimer;
+    private bool warning;
     private float timer;
     private BoxCollider2D col;
-    private bool flag = false;
     public float laserDamage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        /*
-        capsule = gameObject.AddComponent(typeof(CapsuleCollider)) as CapsuleCollider;
-        capsule.radius = 2 / 2;
-        capsule.center = Vector3.zero;
-        capsule.direction = 2; // Z-axis for easier "LookAt" orientation
-        */
-    }
 
     // Update is called once per frame
     void Update()
@@ -36,26 +26,43 @@ public class MiniJoeLaserController : MonoBehaviour
             ShootLaser();
             if (laserCoolDown <= 0)
             {
+                //CREACION DEL LASER
+                //Comienza con feedback al jugador
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     laserCoolDown = 4f;
-                    shooting = true;
-                    timer = 1f;
+                    warningTimer = 1f;
                     mLaserBeam.SetActive(true);
-                    FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
-                    playerPosition.GetComponent<movement>().speed /= 2;
+                    m_lineRenderer.SetColors(Color.white,Color.white);
+                    m_lineRenderer.SetWidth(0.15f,0.15f);
+                    warning = true;
                 }
             }
             else
             {
                 laserCoolDown -= Time.deltaTime;
             }
+            //LASER DISPARA
+            if(warningTimer <= 0 && warning == true)
+            {
+                timer = 1f;
+                warning = false;
+                shooting = true;
+                m_lineRenderer.SetColors(Color.green,Color.green);
+                m_lineRenderer.SetWidth(0.30f,0.30f);
+                FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
+                playerPosition.GetComponent<movement>().speed /= 2;
+            }
+            else
+            {
+                warningTimer -= Time.deltaTime;
+            }
             
-            if(timer <= 0 && shooting == true)
+            //LASER SE CIERRA
+            if (timer <= 0 && shooting == true)
             {
                 shooting = false;
                 mLaserBeam.SetActive(false);
-                timer = 1f;
                 playerPosition.GetComponent<movement>().speed *= 2;
             }
             else
@@ -68,27 +75,24 @@ public class MiniJoeLaserController : MonoBehaviour
 
     void ShootLaser()
     {
+        //DIBUJA LASER ENTRE DOS POSICIONES
         Draw2DRay(laserPos1, laserPos2);
-        //collisionLaser.transform.position = laserPos1;
-
     }
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
         m_lineRenderer.SetPosition(0, startPos);
         m_lineRenderer.SetPosition(1, endPos);
 
-        //if (col != null) Destroy(col);
-        //if (col != null) Destroy(col);
+        if (shooting == true)
+        {
+            if (col != null) Destroy(col.gameObject);
 
-        if (col != null) Destroy(col.gameObject);
+            col = new GameObject("Collider").AddComponent<BoxCollider2D>();
+            col.tag = "MjLaserCollider";
+            col.gameObject.AddComponent<mJLaserDamage>();
+            col.gameObject.GetComponent<mJLaserDamage>().LaserDamage = laserDamage;
+            col.transform.parent = mLaserBeam.transform; // Collider is added as child object of line
 
-        col = new GameObject("Collider").AddComponent<BoxCollider2D>();
-        col.tag = "MjLaserCollider";
-        col.gameObject.AddComponent<mJLaserDamage>();
-        col.gameObject.GetComponent<mJLaserDamage>().LaserDamage = laserDamage;
-        col.transform.parent = mLaserBeam.transform; // Collider is added as child object of line
-
-            //col = mLaserBeam.gameObject.GetComponent<BoxCollider2D>();
             float lineLength = Vector3.Distance(startPos, endPos); // length of line
 
             col.size = new Vector3(lineLength, 0.3f, 1f); // size of collider is set where X is length of line, Y is width of line, Z will be set as per requirement
@@ -103,7 +107,8 @@ public class MiniJoeLaserController : MonoBehaviour
                 angle *= -1;
             }
             angle = Mathf.Rad2Deg * Mathf.Atan(angle);
-        col.transform.Rotate(0, 0, angle);
-        col.isTrigger = true;
+            col.transform.Rotate(0, 0, angle);
+            col.isTrigger = true;
+        }
     }
 }

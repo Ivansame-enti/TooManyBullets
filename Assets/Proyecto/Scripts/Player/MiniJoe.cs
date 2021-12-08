@@ -80,8 +80,7 @@ public class MiniJoe : MonoBehaviour
 
         if (flagS == true)
         {
-            if (distancia <= area)
-            {
+
                 if (displanted == true)
                 {
                     if (Input.GetKeyDown(KeyCode.Q))
@@ -99,7 +98,7 @@ public class MiniJoe : MonoBehaviour
                         displanted = false;
                     }
                 }
-            }
+            
             else
             {
 
