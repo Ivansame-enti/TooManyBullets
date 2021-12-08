@@ -21,6 +21,7 @@ public class MiniJoe : MonoBehaviour
     private bool enemya=false;
     private bool checkenemyinrange = false;
     public bool displanted = false;
+    public GameObject miniJoelaser;
     void Start()
     {
         //fireRate = 1f;
@@ -58,8 +59,7 @@ public class MiniJoe : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-
-
+                
                 minijoe.transform.parent = null;
                 flagS = true;
 
@@ -96,6 +96,7 @@ public class MiniJoe : MonoBehaviour
                                 minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
                                 torretarea.transform.SetParent(padre2);
 
+                                miniJoelaser.SetActive(false);
                                 flagS = false;
                                 displanted = false;
                             }
