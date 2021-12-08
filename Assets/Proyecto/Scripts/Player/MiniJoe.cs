@@ -80,41 +80,45 @@ public class MiniJoe : MonoBehaviour
 
         if (flagS == true)
         {
-
-                if (displanted == true)
-                {
-                    if (Input.GetKeyDown(KeyCode.Q))
+                
+                    if (displanted == true)
                     {
-                        Example(padre);
+                        if (distancia < 1)
+                        {
+                            if (Input.GetKeyDown(KeyCode.Q))
+                            {
+                                Example(padre);
 
-                        torretarea.SetActive(false);
+                                torretarea.SetActive(false);
 
-                        torretarea.transform.parent = null;
+                                torretarea.transform.parent = null;
 
-                        minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
-                        torretarea.transform.SetParent(padre2);
+                                minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                                torretarea.transform.SetParent(padre2);
 
-                        flagS = false;
-                        displanted = false;
+                                flagS = false;
+                                displanted = false;
+                            }
+                        }
                     }
+                
+
+                else
+                {
+
+                    torretarea.SetActive(true);
+                    //  healwafe.SetActive(true);
+
+                    torretarea.transform.parent = null;
+
+                    minijoe.transform.localScale = new Vector2(0.2f, 0.2f);
+                    torretarea.transform.SetParent(padre2);
+
+                    displanted = true;
+
+                    //ESTA PLANTADO Y NO ESTA EN RANGO DE RECOGER PONER LAS COSAS DE ESTAR PLANTADO
+
                 }
-            
-            else
-            {
-
-                torretarea.SetActive(true);
-              //  healwafe.SetActive(true);
-
-                torretarea.transform.parent = null;
-
-                minijoe.transform.localScale = new Vector2(0.2f, 0.2f);
-                torretarea.transform.SetParent(padre2);
-
-                displanted = true;
-              
-                //ESTA PLANTADO Y NO ESTA EN RANGO DE RECOGER PONER LAS COSAS DE ESTAR PLANTADO
-
-            }
         }
         }
 
