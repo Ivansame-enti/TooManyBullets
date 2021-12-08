@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class MiniJoeUIController : MonoBehaviour
 {
-    public GameObject plantUI;
-    public Image plantImage;
-    public Image activeImage;
+    public GameObject plantImage;
+    public Image plantImageGreen;
+    public Image activeImage1;
+    public Image activeImage2;
     public MiniJoeHealController mhc;
-    private Color firstColor;
+    private Color firstColorPlant;
+    private Color firstColorActive1;
+    private Color firstColorActive2;
+    public bool active;
 
     // Start is called before the first frame update
     void Start()
     {
-        firstColor = plantUI.GetComponent<Image>().color;
+        firstColorPlant = plantImage.GetComponent<Image>().color;
+        firstColorActive1 = activeImage1.color;
+        firstColorActive2 = activeImage2.color;
     }
 
     // Update is called once per frame
@@ -22,13 +28,25 @@ public class MiniJoeUIController : MonoBehaviour
     {
         if (mhc.timer2 >= mhc.healDelay)
         {
-            plantUI.gameObject.GetComponent<Animator>().enabled = true;
+            plantImage.gameObject.GetComponent<Animator>().enabled = true;
         } else
         {
-            plantUI.gameObject.GetComponent<Animator>().enabled = false;
-            plantUI.GetComponent<Image>().color = firstColor;
+            plantImage.gameObject.GetComponent<Animator>().enabled = false;
+            plantImage.GetComponent<Image>().color = firstColorPlant;
         }
 
-        plantImage.fillAmount = mhc.timer2/mhc.healDelay;
+        plantImageGreen.fillAmount = mhc.timer2/mhc.healDelay;
+
+        if (active)
+        {
+            activeImage1.gameObject.GetComponent<Animator>().enabled = true;
+            activeImage2.gameObject.GetComponent<Animator>().enabled = true;
+        } else
+        {
+            activeImage1.gameObject.GetComponent<Animator>().enabled = false;
+            activeImage2.gameObject.GetComponent<Animator>().enabled = false;
+            activeImage1.color = firstColorActive1;
+            activeImage2.color = firstColorActive2;
+        }
     }
 }
