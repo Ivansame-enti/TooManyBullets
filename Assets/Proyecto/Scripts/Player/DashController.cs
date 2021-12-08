@@ -60,7 +60,6 @@ public class DashController : MonoBehaviour
             if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space")) && this.GetComponent<movement>().isMoving)
             {
                 rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
-                //rb.AddForce(this.GetComponent<movement>().lastMoveDir * dashDistance);
                 timer = dashDelay;
                 timer2 = dashTime;
                 FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDash");

@@ -11,17 +11,24 @@ public class EnemyController : MonoBehaviour
     private float timer, timerBullet;
     public float bulletSpeed;
     private float radius = 5f;
+    public GameObject spawnParticles;
     //private int angle;
 
     // Start is called before the first frame update
     void Start()
     {
+        spawnParticles = Instantiate(spawnParticles, this.transform.position, Quaternion.identity);
+        
         timerBullet = Time.deltaTime + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(spawnParticles != null)
+        {
+            Destroy(spawnParticles.gameObject, 1f);
+        }
         
         timer += Time.deltaTime;
 
