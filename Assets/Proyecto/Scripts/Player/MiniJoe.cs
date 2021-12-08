@@ -14,7 +14,7 @@ public class MiniJoe : MonoBehaviour
     private float timer=0;
     float nextFire;
     GameObject[] gos;
-    private List<Vector3> positionList;
+    private List<Vector3> positionList = new List<Vector3>();
     private int distance=20;
    
 
@@ -56,9 +56,12 @@ public class MiniJoe : MonoBehaviour
         // {
         //  Destroy(this.balai, 2);
 
+        Debug.Log(character.transform.position);
 
-        positionList.Add(character.transform.position);
-        Debug.Log(positionList);
+        Vector3 posicion = character.transform.position;
+
+        positionList.Add(posicion);
+        
         if(positionList.Count > 2)
         {
             positionList.RemoveAt(0);
