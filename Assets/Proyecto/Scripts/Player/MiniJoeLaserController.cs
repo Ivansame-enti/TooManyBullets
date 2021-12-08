@@ -48,7 +48,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 timer = 1f;
                 warning = false;
                 shooting = true;
-                m_lineRenderer.SetColors(Color.green,Color.green);
+                m_lineRenderer.SetColors(Color.cyan,Color.cyan);
                 m_lineRenderer.SetWidth(0.30f,0.30f);
                 FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
                 playerPosition.GetComponent<movement>().speed /= 2;
