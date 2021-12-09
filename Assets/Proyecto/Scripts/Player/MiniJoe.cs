@@ -62,11 +62,11 @@ public class MiniJoe : MonoBehaviour
 
         positionList.Add(posicion);
         
-        if(positionList.Count > 2)
+        if(positionList.Count > 20)
         {
             positionList.RemoveAt(0);
-            //minijoe.transform.position = positionList[0];
-            minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
+            minijoe.transform.position = positionList[0] + new Vector3(1,1,0);
+            //minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
 
         }
 
