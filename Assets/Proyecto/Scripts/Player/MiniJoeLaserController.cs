@@ -15,7 +15,12 @@ public class MiniJoeLaserController : MonoBehaviour
     private float timer;
     private BoxCollider2D col;
     public float laserDamage;
+    public float timerLaser;
 
+    private void Start()
+    {
+        timerLaser = laserCoolDown;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -24,13 +29,13 @@ public class MiniJoeLaserController : MonoBehaviour
             laserPos1 = miniJoePosition.transform.position;
             laserPos2 = playerPosition.transform.position;
             ShootLaser();
-            if (laserCoolDown <= 0)
+            if (timerLaser >= laserCoolDown)
             {
                 //CREACION DEL LASER
                 //Comienza con feedback al jugador
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("R1"))
                 {
-                    laserCoolDown = 4f;
+                    timerLaser = 0;
                     warningTimer = 1f;
                     mLaserBeam.SetActive(true);
                     m_lineRenderer.SetColors(Color.white,Color.white);
@@ -38,9 +43,9 @@ public class MiniJoeLaserController : MonoBehaviour
                     warning = true;
                 }
             }
-            else
+            else if(timerLaser <= laserCoolDown)
             {
-                laserCoolDown -= Time.deltaTime;
+                timerLaser += Time.deltaTime;
             }
             //LASER DISPARA
             if(warningTimer <= 0 && warning == true)

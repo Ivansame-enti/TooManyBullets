@@ -7,7 +7,7 @@ public class antiBulletSystem : MonoBehaviour
     public GameObject antiBulletPower;
     public GameObject PS;
     public float antiBulletdelay;
-    private float timer;
+    public float timer;
     private GameObject antiBulletPowerClone;
     private GameObject antiBulletPowerClone2;
     public GameObject antiBulletPowerRest;
@@ -23,7 +23,7 @@ public class antiBulletSystem : MonoBehaviour
     {
         if (GetComponent<MiniJoe>().displanted == false)
         {
-            if (Input.GetKeyDown(KeyCode.E) && timer >= antiBulletdelay)
+            if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("R1")) && timer >= antiBulletdelay)
             {
                 FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
                 //this.transform.Find("Shield").gameObject.SetActive(true);

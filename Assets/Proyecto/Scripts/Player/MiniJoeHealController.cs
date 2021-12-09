@@ -12,13 +12,11 @@ public class MiniJoeHealController : MonoBehaviour
     public float timer;
     public float timer2;
     public PlayerHealthController phc;
-    private bool minijoeIn;
     private bool healedOnce;
     public GameObject healParticle;
     
     void Start()
     {
-        minijoeIn = true;
         timer = healTimer;
         healedOnce = false;
         timer2 = healDelay;
@@ -27,37 +25,42 @@ public class MiniJoeHealController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("R1"))
+        /*if (Input.GetButtonDown("R1"))
         {
             Debug.Log("R1");
-        }
-
+        }*/
+        /*
         if (Input.GetButtonDown("L1"))
         {
             Debug.Log("L1");
-        }
+        }*/
 
-        if (phc.currentHealth<phc.health && minijoeIn && timer2>=healDelay) //&& !healOnce
+        if (GetComponent<MiniJoe>().displanted == false)
         {
-            if (timer <= 0)
+            if (phc.currentHealth < phc.health && timer2 >= healDelay) //&& !healOnce
             {
-                var ps = Instantiate(healParticle, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
-                phc.currentHealth += healAmmount;
-                phc.currentHealth = Mathf.Round(phc.currentHealth * 10.0f) * 0.1f; //Resondear a unn decimal porque a veces no se suma bien
-                if(phc.currentHealth==3.0f || phc.currentHealth == 2.0f)
+                if (timer <= 0)
                 {
-                    timer2 = 0;
-                    
-                    //healedOnce = true;
+                    var ps = Instantiate(healParticle, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+                    phc.currentHealth += healAmmount;
+                    phc.currentHealth = Mathf.Round(phc.currentHealth * 10.0f) * 0.1f; //Resondear a unn decimal porque a veces no se suma bien
+                    if (phc.currentHealth == 3.0f || phc.currentHealth == 2.0f)
+                    {
+                        timer2 = 0;
+
+                        //healedOnce = true;
+                    }
+                    timer = healTimer;
                 }
-                timer = healTimer;
-            } else
-            {
-                timer -= Time.deltaTime;
+                else
+                {
+                    timer -= Time.deltaTime;
+                }
             }
-        } else
-        {
-            timer2 += Time.deltaTime;
+            else
+            {
+                timer2 += Time.deltaTime;
+            }
         }
     }
 }

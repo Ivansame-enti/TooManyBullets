@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -953,6 +953,7 @@ MonoBehaviour:
     type: 3}
   PS: {fileID: 2089191746028056081, guid: 601356c3eaafd8c4aaf6da79682997ad, type: 3}
   antiBulletdelay: 3
+  timer: 0
   antiBulletPowerRest: {fileID: 1008037289338287748, guid: 245d5df60c3d5f140af93e84135b330e,
     type: 3}
 --- !u!114 &301313341
@@ -978,6 +979,8 @@ MonoBehaviour:
   torretarea: {fileID: 1538039614}
   displanted: 0
   miniJoelaser: {fileID: 1955369573}
+  timer: 0
+  plantCD: 3
 --- !u!212 &301313342
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1046,9 +1049,10 @@ MonoBehaviour:
   m_lineRenderer: {fileID: 1955369577}
   shooting: 0
   mLaserBeam: {fileID: 1955369573}
-  laserCoolDown: 1
+  laserCoolDown: 6
   warningTimer: 0
   laserDamage: 1
+  timerLaser: 0
 --- !u!114 &301313344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1652,7 +1656,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 0
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2389,9 +2393,7 @@ MonoBehaviour:
   activeOutImage2: {fileID: 330723648}
   activeOutImage3: {fileID: 631942977}
   activeOutImageGreen: {fileID: 1127865986}
-  mhc: {fileID: 301313344}
-  active: 0
-  miniJoeIn: 0
+  miniJoe: {fileID: 301313338}
 --- !u!114 &861389448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3037,7 +3039,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
