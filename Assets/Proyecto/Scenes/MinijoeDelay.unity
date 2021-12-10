@@ -622,7 +622,7 @@ MonoBehaviour:
   minijoe: {fileID: 490372441}
   character: {fileID: 1967874463}
   fireRate: 2
-  delay: 2
+  delay: 50
 --- !u!212 &490372444
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -62,7 +62,7 @@ public class MiniJoe : MonoBehaviour
 
         positionList.Add(posicion);
         
-        if(positionList.Count > 20)
+        if(positionList.Count > delay)
         {
             positionList.RemoveAt(0);
             minijoe.transform.position = positionList[0] + new Vector3(1,1,0);
