@@ -75,7 +75,7 @@ public class MiniJoeUIController : MonoBehaviour
 
             plantImageGreen.fillAmount = m.timer / m.plantCD;
 
-            if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo
+            if ((miniJoe.GetComponent<MiniJoe>().enabled == true && miniJoe.GetComponent<MiniJoe>().displanted == false) || miniJoe.GetComponent<MiniJoe2>().displanted == false) //Cuando miniJoe va contigo
             {
                 activeIn.SetActive(true);
                 pasive.SetActive(true);
