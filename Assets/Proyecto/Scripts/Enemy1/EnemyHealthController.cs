@@ -43,6 +43,11 @@ public class EnemyHealthController : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.gameObject.tag.Equals("Shield"))
+        {
+            if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+        }
+
         if (collision.tag == "slash")
         {
             Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
@@ -60,5 +65,18 @@ public class EnemyHealthController : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (this.gameObject.name == "Enemy2" && col.collider.tag == "LaserCollider")
+        {
+            if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+        }
+    }
+    /*
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        //if (this.gameObject.name == "Enemy2" && col.collider.tag == "LaserCollider") this.GetComponent<PolygonCollider2D>().enabled = true;
+    }*/
 
 }

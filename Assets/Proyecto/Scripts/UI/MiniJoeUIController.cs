@@ -61,74 +61,78 @@ public class MiniJoeUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m.timer >= m.plantCD) //Curacion
+        if (miniJoe != null)
         {
-            plantImage.gameObject.GetComponent<Animator>().enabled = true;
-        }
-        else
-        {
-            plantImage.gameObject.GetComponent<Animator>().enabled = false;
-            plantImage.color = firstColorPlant;
-        }
-
-        plantImageGreen.fillAmount = m.timer / m.plantCD;
-
-        if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo
-        {
-            activeIn.SetActive(true);
-            pasive.SetActive(true);
-            activeOut.SetActive(false);
-        
-            if (mhc.timer2 >= mhc.healDelay) //Curacion
+            if (m.timer >= m.plantCD) //Curacion
             {
-                //plantImage.gameObject.GetComponent<Animator>().enabled = true;
-                pasiveImage.gameObject.GetComponent<Animator>().enabled = true;
+                plantImage.gameObject.GetComponent<Animator>().enabled = true;
             }
             else
             {
-                pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
-                pasiveImage.color = firstColorPasive;
+                plantImage.gameObject.GetComponent<Animator>().enabled = false;
+                plantImage.color = firstColorPlant;
             }
 
-            pasiveImageGreen.fillAmount = mhc.timer2 / mhc.healDelay;
+            plantImageGreen.fillAmount = m.timer / m.plantCD;
 
-            if (abs.timer >= abs.antiBulletdelay) //Escudo
+            if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo
             {
-                activeInImage1.gameObject.GetComponent<Animator>().enabled = true;
-                activeInImage2.gameObject.GetComponent<Animator>().enabled = true;
-            }
-            else
-            {
-                activeInImage1.gameObject.GetComponent<Animator>().enabled = false;
-                activeInImage2.gameObject.GetComponent<Animator>().enabled = false;
-                activeInImage1.color = firstColorActive1;
-                activeInImage2.color = firstColorActive2;
-            }
+                activeIn.SetActive(true);
+                pasive.SetActive(true);
+                activeOut.SetActive(false);
 
-            activeInImageGreen.fillAmount = abs.timer / abs.antiBulletdelay;
-        } else //Minioe plantado
-        {
-            activeIn.SetActive(false);
-            pasive.SetActive(false);
-            activeOut.SetActive(true);
-            
-            if (mlc.timerLaser >= mlc.laserCoolDown) //Rayo
-            {
-                activeOutImage1.gameObject.GetComponent<Animator>().enabled = true;
-                activeOutImage2.gameObject.GetComponent<Animator>().enabled = true;
-                activeOutImage3.gameObject.GetComponent<Animator>().enabled = true;
-            }
-            else
-            {
-                activeOutImage1.gameObject.GetComponent<Animator>().enabled = false;
-                activeOutImage2.gameObject.GetComponent<Animator>().enabled = false;
-                activeOutImage3.gameObject.GetComponent<Animator>().enabled = false;
-                activeOutImage1.color = firstColorOutActive1;
-                activeOutImage2.color = firstColorOutActive2;
-                activeOutImage3.color = firstColorOutActive3;
-            }
+                if (mhc.timer2 >= mhc.healDelay) //Curacion
+                {
+                    //plantImage.gameObject.GetComponent<Animator>().enabled = true;
+                    pasiveImage.gameObject.GetComponent<Animator>().enabled = true;
+                }
+                else
+                {
+                    pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
+                    pasiveImage.color = firstColorPasive;
+                }
 
-            activeOutImageGreen.fillAmount = mlc.timerLaser / mlc.laserCoolDown;
+                pasiveImageGreen.fillAmount = mhc.timer2 / mhc.healDelay;
+
+                if (abs.timer >= abs.antiBulletdelay) //Escudo
+                {
+                    activeInImage1.gameObject.GetComponent<Animator>().enabled = true;
+                    activeInImage2.gameObject.GetComponent<Animator>().enabled = true;
+                }
+                else
+                {
+                    activeInImage1.gameObject.GetComponent<Animator>().enabled = false;
+                    activeInImage2.gameObject.GetComponent<Animator>().enabled = false;
+                    activeInImage1.color = firstColorActive1;
+                    activeInImage2.color = firstColorActive2;
+                }
+
+                activeInImageGreen.fillAmount = abs.timer / abs.antiBulletdelay;
+            }
+            else //Minioe plantado
+            {
+                activeIn.SetActive(false);
+                pasive.SetActive(false);
+                activeOut.SetActive(true);
+
+                if (mlc.timerLaser >= mlc.laserCoolDown) //Rayo
+                {
+                    activeOutImage1.gameObject.GetComponent<Animator>().enabled = true;
+                    activeOutImage2.gameObject.GetComponent<Animator>().enabled = true;
+                    activeOutImage3.gameObject.GetComponent<Animator>().enabled = true;
+                }
+                else
+                {
+                    activeOutImage1.gameObject.GetComponent<Animator>().enabled = false;
+                    activeOutImage2.gameObject.GetComponent<Animator>().enabled = false;
+                    activeOutImage3.gameObject.GetComponent<Animator>().enabled = false;
+                    activeOutImage1.color = firstColorOutActive1;
+                    activeOutImage2.color = firstColorOutActive2;
+                    activeOutImage3.color = firstColorOutActive3;
+                }
+
+                activeOutImageGreen.fillAmount = mlc.timerLaser / mlc.laserCoolDown;
+            }
         }
     }
 }

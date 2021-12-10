@@ -27,6 +27,7 @@ public class MiniJoe : MonoBehaviour
     private List<Vector3> positionList = new List<Vector3>();
     public float timer;
     public float plantCD;
+    public float pickUpDistance;
     void Start()
     {
         //fireRate = 1f;
@@ -96,7 +97,7 @@ public class MiniJoe : MonoBehaviour
 
                 if (displanted == true)
                 {
-                    if (distancia < 1)
+                    if (distancia < pickUpDistance)
                     {
                         if (timer >= plantCD)
                         {
@@ -153,15 +154,19 @@ public class MiniJoe : MonoBehaviour
 
             if (positionList.Count > delay)
             {
+                //Debug.Log("Ei");
                 positionList.RemoveAt(0);
                 minijoe.transform.position = positionList[0] + new Vector3(0.6f, 0.6f, 0);
                 //minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
 
             }
+
+            //Evitar que salga de la pantalla
             Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
             pos.x = Mathf.Clamp(pos.x, 0.01f, 0.99f);
             pos.y = Mathf.Clamp(pos.y, 0.02f, 0.98f);
             transform.position = Camera.main.ViewportToWorldPoint(pos);
+
         }else if (displanted == true)
         {
             positionList.Clear();
