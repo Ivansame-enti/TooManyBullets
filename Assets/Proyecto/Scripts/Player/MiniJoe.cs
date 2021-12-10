@@ -8,6 +8,8 @@ public class MiniJoe : MonoBehaviour
     // Start is called before the first frame update
     public GameObject bala;
     public float fireRate;
+    public float delay;
+    // private float timer=0;
     float nextFire;
     GameObject[] gos;
     //private GameObject healarea;
@@ -16,13 +18,13 @@ public class MiniJoe : MonoBehaviour
     public Transform padre, padre2;
     public float area, area2;
     public GameObject player;
-
+    public GameObject character;
     public GameObject torretarea;
     private bool enemya = false;
     private bool checkenemyinrange = false;
     public bool displanted = false;
     public GameObject miniJoelaser;
-
+    private List<Vector3> positionList = new List<Vector3>();
     public float timer;
     public float plantCD;
     void Start()
@@ -113,6 +115,7 @@ public class MiniJoe : MonoBehaviour
                                 miniJoelaser.SetActive(false);
                                 flagS = false;
                                 displanted = false;
+
                             }
                         }
                         else if (timer <= plantCD)
@@ -120,6 +123,7 @@ public class MiniJoe : MonoBehaviour
                             timer += Time.deltaTime;
                         }
                     }
+
                 }
 
 
@@ -141,8 +145,30 @@ public class MiniJoe : MonoBehaviour
                 }
             }
         }
+        if (displanted==false)
+        {
+            Vector3 posicion = character.transform.position;
+
+            positionList.Add(posicion);
+
+            if (positionList.Count > delay)
+            {
+                positionList.RemoveAt(0);
+                minijoe.transform.position = positionList[0] + new Vector3(0.6f, 0.6f, 0);
+                //minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
+
+            }
+            Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+            pos.x = Mathf.Clamp(pos.x, 0.01f, 0.99f);
+            pos.y = Mathf.Clamp(pos.y, 0.02f, 0.98f);
+            transform.position = Camera.main.ViewportToWorldPoint(pos);
+        }else if (displanted == true)
+        {
+            positionList.Clear();
+        }
 
     }
+
 
 
     public void Example(Transform padre)
