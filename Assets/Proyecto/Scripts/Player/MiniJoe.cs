@@ -56,7 +56,7 @@ public class MiniJoe : MonoBehaviour
         // {
         //  Destroy(this.balai, 2);
 
-        Debug.Log(character.transform.position);
+        //Debug.Log(character.transform.position);
 
         Vector3 posicion = character.transform.position;
 
@@ -65,11 +65,14 @@ public class MiniJoe : MonoBehaviour
         if(positionList.Count > delay)
         {
             positionList.RemoveAt(0);
-            minijoe.transform.position = positionList[0] + new Vector3(1,1,0);
+            minijoe.transform.position = positionList[0] + new Vector3(0.7f,0.7f,0);
             //minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
 
         }
-
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        pos.x = Mathf.Clamp(pos.x, 0.01f, 0.99f);
+        pos.y = Mathf.Clamp(pos.y, 0.02f, 0.98f);
+        transform.position = Camera.main.ViewportToWorldPoint(pos);
 
     }
 
