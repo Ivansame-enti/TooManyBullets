@@ -5,13 +5,19 @@ using UnityEngine;
 public class LaserEnemyController : MonoBehaviour
 {
     public float speedRotation;
+    public float fireRate;
+    public float attackDuration;
     private Vector2 laser1Pos1, laser1Pos2, laser2Pos1, laser2Pos2, laser3Pos1, laser3Pos2;
-    public LineRenderer m_lineRenderer;
-    public GameObject mLaserBeam;
+    private float timer, timer2;
+    public GameObject mLaserBeam, mLaserBeam2, mLaserBeam3;
     // Start is called before the first frame update
     void Start()
     {
-
+        /*
+        laser1Pos2 = new Vector2(this.gameObject.transform.GetChild(0).transform.position.x - 100f, this.gameObject.transform.GetChild(0).transform.position.y + 100f);
+        laser2Pos2 = new Vector2(this.gameObject.transform.GetChild(0).transform.position.x + 100f, this.gameObject.transform.GetChild(0).transform.position.y);
+        laser3Pos2 = new Vector2(this.gameObject.transform.GetChild(0).transform.position.x, this.gameObject.transform.GetChild(0).transform.position.y + 100f);
+        */
     }
 
     // Update is called once per frame
@@ -23,61 +29,67 @@ public class LaserEnemyController : MonoBehaviour
         laser2Pos1 = this.gameObject.transform.GetChild(1).transform.position;
         laser3Pos1 = this.gameObject.transform.GetChild(2).transform.position;
 
-        laser1Pos2 = new Vector2(this.gameObject.transform.GetChild(0).transform.position.x - 100f, this.gameObject.transform.GetChild(0).transform.position.y);
-        laser2Pos2 = new Vector2(this.gameObject.transform.GetChild(0).transform.position.x + 100f, this.gameObject.transform.GetChild(0).transform.position.y);
-        laser3Pos2 = new Vector2(this.gameObject.transform.GetChild(0).transform.position.x, this.gameObject.transform.GetChild(0).transform.position.y + 100f);
+        laser1Pos2 = new Vector2(this.gameObject.transform.GetChild(3).transform.position.x, this.gameObject.transform.GetChild(3).transform.position.y - 3);
+        laser2Pos2 = new Vector2(this.gameObject.transform.GetChild(4).transform.position.x, this.gameObject.transform.GetChild(4).transform.position.y - 3);
+        laser3Pos2 = new Vector2(this.gameObject.transform.GetChild(5).transform.position.x, this.gameObject.transform.GetChild(5).transform.position.y - 3);
 
-        ShootLaser();
+        if (timer >= fireRate)
+        {
+            ShootLaser();
 
-        mLaserBeam.SetActive(true);
-        m_lineRenderer.SetColors(Color.cyan, Color.cyan);
-        m_lineRenderer.SetWidth(0.30f, 0.30f);
+            mLaserBeam.SetActive(true);
+            mLaserBeam.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+            mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+
+            mLaserBeam2.SetActive(true);
+            mLaserBeam2.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+            mLaserBeam2.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+
+            mLaserBeam3.SetActive(true);
+            mLaserBeam3.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+            mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+
+            if(timer2 >= attackDuration)
+            {
+                timer = 0;
+                timer2 = 0;
+                mLaserBeam.SetActive(false);
+                mLaserBeam2.SetActive(false);
+                mLaserBeam3.SetActive(false);
+            } else
+            {
+                timer2 += Time.deltaTime;
+            }
+
+        } else
+        {
+            timer += Time.deltaTime;
+        }
 
         void ShootLaser()
         {
             //DIBUJA LASER ENTRE DOS POSICIONES
-            Draw2DRay(laser1Pos1, laser1Pos2);
-            //Draw2DRay(laser2Pos1, laser2Pos2);
-            //Draw2DRay(laser3Pos1, laser3Pos2);
+            Draw2DRay1(laser1Pos1, laser1Pos2);
+            Draw2DRay2(laser2Pos1, laser2Pos2);
+            Draw2DRay3(laser3Pos1, laser3Pos2);
         }
 
-        void Draw2DRay(Vector2 startPos, Vector2 endPos)
+        void Draw2DRay1(Vector2 startPos, Vector2 endPos)
         {
-            m_lineRenderer.SetPosition(0, startPos);
-            m_lineRenderer.SetPosition(1, endPos);
+            mLaserBeam.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam.GetComponent<LineRenderer>().SetPosition(1, endPos);
+        }
 
-            //if (shooting == true)
-            // {
-            /*
-                 if (col != null) Destroy(col.gameObject);
+        void Draw2DRay2(Vector2 startPos, Vector2 endPos)
+        {
+            mLaserBeam2.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam2.GetComponent<LineRenderer>().SetPosition(1, endPos);
+        }
 
-                 col = new GameObject("Collider").AddComponent<BoxCollider2D>();
-                 col.tag = "MjLaserCollider";
-                 col.gameObject.AddComponent<mJLaserDamage>();
-                 col.gameObject.GetComponent<mJLaserDamage>().LaserDamage = laserDamage;
-                 col.transform.parent = mLaserBeam.transform; // Collider is added as child object of line
-            */
-            float lineLength = Vector3.Distance(startPos, endPos); // length of line
-
-            //col.size = new Vector3(lineLength, 0.3f, 1f); // size of collider is set where X is length of line, Y is width of line, Z will be set as per requirement
-
-            Vector3 midPoint = (startPos + endPos) / 2;
-
-            //col.transform.position = midPoint; // setting position of collider object
-            // Following lines calculate the angle between startPos and endPos
-            /*
-float angle = (Mathf.Abs(startPos.y - endPos.y) / Mathf.Abs(startPos.x - endPos.x));
-if ((startPos.y < endPos.y && startPos.x > endPos.x) || (endPos.y < startPos.y && endPos.x > startPos.x))
-{
-angle *= -1;
-}
-angle = Mathf.Rad2Deg * Mathf.Atan(angle);*/
-            //col.transform.Rotate(0, 0, angle);
-            //col.isTrigger = true;
+        void Draw2DRay3(Vector2 startPos, Vector2 endPos)
+        {
+            mLaserBeam3.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam3.GetComponent<LineRenderer>().SetPosition(1, endPos);
         }
     }
-
-
-
-
 }
