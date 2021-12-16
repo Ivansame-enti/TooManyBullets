@@ -5,7 +5,7 @@ using UnityEngine;
 public class Nivel1 : MonoBehaviour
 {
     public bool startLevel, clearPart1;
-    public GameObject part1, part2, scenarioAttacks;
+    public GameObject part1, part2,part3, scenarioAttacks,multiLaser,uniLaser;
     public float timer;
     // Start is called before the first frame update
     void Start()
@@ -32,18 +32,26 @@ public class Nivel1 : MonoBehaviour
 
         if (part2.transform.childCount <= 0 && clearPart1 == false)
         {
-            timer = 3f;
+            timer = 8f;
             clearPart1 = true;
+            multiLaser.SetActive(true);
+            uniLaser.SetActive(false);
 
 
         }
         if (part2.transform.childCount <= 0 && timer < 0)
         {
-            Debug.Log(timer);
+            part3.SetActive(true);
+            multiLaser.SetActive(false);
+            uniLaser.SetActive(true);
         }
         else
         {
             timer -= Time.deltaTime;
+        }
+        if(part3.transform.childCount <= 0)
+        {
+            Debug.Log("win");
         }
     }
 }
