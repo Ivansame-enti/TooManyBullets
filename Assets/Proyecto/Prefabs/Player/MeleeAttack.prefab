@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 306388503}
   - component: {fileID: 1498273448}
   - component: {fileID: 4364815066720539643}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MeleeAttack
   m_TagString: slash
   m_Icon: {fileID: 0}
