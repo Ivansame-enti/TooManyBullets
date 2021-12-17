@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 161073324}
   - component: {fileID: 161073327}
   - component: {fileID: 161073326}
-  - component: {fileID: 161073325}
   m_Layer: 0
   m_Name: mLaser
   m_TagString: Untagged
@@ -193,19 +192,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.571424, y: 28.571424}
   m_EdgeRadius: 0
---- !u!114 &161073325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161073323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8d27241264cb54c94eba2d8b30fbd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaserDamage: 0
 --- !u!1 &183795805
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +629,6 @@ GameObject:
   - component: {fileID: 1629374872}
   - component: {fileID: 1629374875}
   - component: {fileID: 1629374874}
-  - component: {fileID: 1629374873}
   m_Layer: 0
   m_Name: mLaser3
   m_TagString: Untagged
@@ -825,19 +810,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.571424, y: 28.571424}
   m_EdgeRadius: 0
---- !u!114 &1629374873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629374871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8d27241264cb54c94eba2d8b30fbd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaserDamage: 0
 --- !u!1 &1908198004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,6 +1405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6617125929960289015}
+  - component: {fileID: 1060569404}
   m_Layer: 0
   m_Name: Enemy3Container
   m_TagString: container
@@ -1456,6 +1429,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1060569404
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617125929960289014}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6617125930088565009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1548,6 @@ GameObject:
   - component: {fileID: 2534632141051010691}
   - component: {fileID: 647307500902865926}
   - component: {fileID: 6250912909240237694}
-  - component: {fileID: 4616699960114943695}
   m_Layer: 0
   m_Name: mLaser2
   m_TagString: Untagged
@@ -1738,16 +1729,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.571424, y: 28.571424}
   m_EdgeRadius: 0
---- !u!114 &4616699960114943695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8207068141202247034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8d27241264cb54c94eba2d8b30fbd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaserDamage: 0
