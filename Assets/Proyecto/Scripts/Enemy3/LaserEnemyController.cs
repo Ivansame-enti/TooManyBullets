@@ -8,7 +8,7 @@ public class LaserEnemyController : MonoBehaviour
     public float fireRate;
     public float attackDuration;
     public float warningTime;
-    private Vector2 laser1Pos1, laser1Pos2, laser2Pos1, laser2Pos2, laser3Pos1, laser3Pos2;
+    private Vector2 laser1Pos1, laser1Pos2, laser2Pos1, laser2Pos2, laser3Pos1, laser3Pos2, laser1Warning, laser2Warning, laser3Warning;
     private float timer, timer2;
     public GameObject mLaserBeam, mLaserBeam2, mLaserBeam3;
     public GameObject exclamation1, exclamation2, exclamation3;
@@ -42,6 +42,10 @@ public class LaserEnemyController : MonoBehaviour
         laser1Pos2 = new Vector2(this.gameObject.transform.GetChild(3).transform.position.x, this.gameObject.transform.GetChild(3).transform.position.y - 3);
         laser2Pos2 = new Vector2(this.gameObject.transform.GetChild(4).transform.position.x, this.gameObject.transform.GetChild(4).transform.position.y - 3);
         laser3Pos2 = new Vector2(this.gameObject.transform.GetChild(5).transform.position.x, this.gameObject.transform.GetChild(5).transform.position.y - 3);
+
+        //laser1Warning = new Vector2(this.gameObject.transform.GetChild(6).transform.position.x, this.gameObject.transform.GetChild(6).transform.position.y);
+        //laser2Warning = new Vector2(this.gameObject.transform.GetChild(7).transform.position.x, this.gameObject.transform.GetChild(7).transform.position.y);
+        //laser3Warning = new Vector2(this.gameObject.transform.GetChild(8).transform.position.x, this.gameObject.transform.GetChild(8).transform.position.y);
 
         if (timer >= fireRate)
         {
@@ -84,12 +88,13 @@ public class LaserEnemyController : MonoBehaviour
             {
                 warning = true;
                 ShootLaser();
-                exclamation1.SetActive(true);
+
+                /*exclamation1.SetActive(true);
                 exclamation2.SetActive(true);
-                exclamation3.SetActive(true);
-                /*
+                exclamation3.SetActive(true);*/
+                
                 mLaserBeam.SetActive(true);
-                mLaserBeam.GetComponent<LineRenderer>().SetColors(Color.white, Color.white);
+                //mLaserBeam.GetComponent<LineRenderer>().SetColors(Color.white, Color.white);
                 mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.15f, 0.15f);
 
                 mLaserBeam2.SetActive(true);
@@ -98,7 +103,7 @@ public class LaserEnemyController : MonoBehaviour
 
                 mLaserBeam3.SetActive(true);
                 mLaserBeam3.GetComponent<LineRenderer>().SetColors(Color.white, Color.white);
-                mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.15f, 0.15f);*/
+                mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.15f, 0.15f);
             }
             timer += Time.deltaTime;
         }
@@ -106,9 +111,10 @@ public class LaserEnemyController : MonoBehaviour
         void ShootLaser()
         {
             //DIBUJA LASER ENTRE DOS POSICIONES
-            Draw2DRay1(laser1Pos1, laser1Pos2);
-            Draw2DRay2(laser2Pos1, laser2Pos2);
-            Draw2DRay3(laser3Pos1, laser3Pos2);
+                Draw2DRay1(laser1Pos1, laser1Pos2);
+                Draw2DRay2(laser2Pos1, laser2Pos2);
+                Draw2DRay3(laser3Pos1, laser3Pos2);
+
         }
 
         void Draw2DRay1(Vector2 startPos, Vector2 endPos)
