@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class SelectLevelsButton : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -17,13 +17,8 @@ public class GameOver : MonoBehaviour
         
     }
 
-    public void RestartLevel()
+    public void PlayLevel1Button()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void MainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Nivel1Original");
     }
 }
