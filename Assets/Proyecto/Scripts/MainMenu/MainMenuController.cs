@@ -17,8 +17,13 @@ public class MainMenuController : MonoBehaviour
         
     }
 
-    public void PlayButton()
+    public void MainMenu()
     {
         SceneManager.LoadScene("LevelSelector");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

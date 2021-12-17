@@ -21,4 +21,9 @@ public class SelectLevelsButton : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel1Original");
     }
+
+    public void ReturnButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
