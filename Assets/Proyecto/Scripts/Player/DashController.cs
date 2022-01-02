@@ -6,7 +6,6 @@ public class DashController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float dashDistance;
-    public GameObject dashParticles;
     public GameObject sprite;
     public float dashDelay;
     public float dashTime;
