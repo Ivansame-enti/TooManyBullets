@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5164555099959928234}
   - component: {fileID: 5164555099959928235}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: MiniJoeLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
