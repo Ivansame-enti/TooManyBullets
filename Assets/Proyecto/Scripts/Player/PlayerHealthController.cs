@@ -93,6 +93,8 @@ public class PlayerHealthController : MonoBehaviour
                 dealDamage();
                 Destroy(collision.gameObject);
             }
+
+            if(collision.tag == "LaserColliderEnemy") dealDamage();
         }
     }
 

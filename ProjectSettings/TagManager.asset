@@ -16,6 +16,7 @@ TagManager:
   - enemy
   - healarea
   - MjLaserCollider
+  - LaserColliderEnemy
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Water
   - UI
   - Post Processing
-  - 
-  - 
+  - Slash
+  - EnemyLaser
   - 
   - 
   - 
