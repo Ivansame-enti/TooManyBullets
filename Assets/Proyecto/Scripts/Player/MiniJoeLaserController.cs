@@ -117,7 +117,8 @@ public class MiniJoeLaserController : MonoBehaviour
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.4f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.6f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.8f), Quaternion.identity);
-                boolParticles=true;
+
+                boolParticles =true;
             }
         }
     }
