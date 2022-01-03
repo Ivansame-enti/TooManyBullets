@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class MiniJoeLaserController : MonoBehaviour
 {
-    private Vector2 laserPos1, laserPos2;
+    private Vector2 laserPos1, laserPos2, laserPosWarning;
     public GameObject miniJoePosition, playerPosition;
     public LineRenderer m_lineRenderer;
     public bool shooting;
     public GameObject mLaserBeam;
+    private Gradient originalLaserColor;
     public float laserCoolDown;
-    public float warningTimer;
+    public bool warningTimer;
     private bool warning;
     private float timer;
     private BoxCollider2D col;
     public float laserDamage;
     public float timerLaser;
+    public float laserSpeed;
+    public GameObject laserParticles;
+    private float particleTimer;
+    private bool boolParticles;
 
     private void Start()
     {
         timerLaser = laserCoolDown;
+        originalLaserColor = m_lineRenderer.colorGradient;
+        boolParticles = false;
     }
     // Update is called once per frame
     void Update()
@@ -27,7 +34,9 @@ public class MiniJoeLaserController : MonoBehaviour
         if (GetComponent<MiniJoe>().displanted == true && playerPosition != null)
         {
             laserPos1 = miniJoePosition.transform.position;
+            if (warning == false) laserPosWarning = laserPos1;
             laserPos2 = playerPosition.transform.position;
+
             ShootLaser();
             if (timerLaser >= laserCoolDown)
             {
@@ -36,10 +45,14 @@ public class MiniJoeLaserController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("R1"))
                 {
                     timerLaser = 0;
-                    warningTimer = 1f;
+                    warningTimer = true;
                     mLaserBeam.SetActive(true);
-                    m_lineRenderer.SetColors(Color.white,Color.white);
-                    m_lineRenderer.SetWidth(0.15f,0.15f);
+                    //m_lineRenderer.SetColors(Color.white,Color.white);
+                    m_lineRenderer.colorGradient = originalLaserColor;
+                    //m_lineRenderer.endColor = Color.white;
+                    //m_lineRenderer.SetWidth(0.15f,0.15f);
+                    m_lineRenderer.startWidth = 0.20f;
+                    m_lineRenderer.endWidth = 0.10f;
                     warning = true;
                 }
             }
@@ -48,27 +61,30 @@ public class MiniJoeLaserController : MonoBehaviour
                 timerLaser += Time.deltaTime;
             }
             //LASER DISPARA
-            if(warningTimer <= 0 && warning == true)
+            if(warningTimer==false && warning == true)
             {
+                //laserPosWarning = laserPos1;
                 timer = 1f;
                 warning = false;
                 shooting = true;
-                m_lineRenderer.SetColors(Color.cyan,Color.cyan);
-                m_lineRenderer.SetWidth(0.30f,0.30f);
+                //m_lineRenderer.SetColors(Color.cyan,Color.cyan);
+                m_lineRenderer.startColor = Color.cyan;
+                m_lineRenderer.endColor = Color.cyan;
+                //m_lineRenderer.SetWidth(0.30f,0.30f);
+                m_lineRenderer.startWidth = 0.20f;
+                m_lineRenderer.endWidth = 0.10f;
                 FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
                 playerPosition.GetComponent<movement>().speed /= 2;
-            }
-            else
-            {
-                warningTimer -= Time.deltaTime;
             }
             
             //LASER SE CIERRA
             if (timer <= 0 && shooting == true)
             {
                 shooting = false;
+                boolParticles = false;
                 mLaserBeam.SetActive(false);
                 playerPosition.GetComponent<movement>().speed *= 2;
+                if (col != null) Destroy(col.gameObject);
             }
             else
             {
@@ -81,7 +97,30 @@ public class MiniJoeLaserController : MonoBehaviour
     void ShootLaser()
     {
         //DIBUJA LASER ENTRE DOS POSICIONES
-        Draw2DRay(laserPos1, laserPos2);
+        if (warning)
+        {
+            laserPosWarning = Vector2.MoveTowards(laserPosWarning, laserPos2, laserSpeed * Time.deltaTime);
+            Draw2DRay(laserPos1, laserPosWarning);
+            if (Vector2.Distance(laserPosWarning, laserPos2) == 0)
+            {
+                warningTimer = false;
+                laserPosWarning = laserPos1;
+            }
+        }
+        else
+        {
+            Draw2DRay(laserPos1, laserPos2);
+            //Vector3 interpolatedPosition = Vector3.Lerp(laserPos1, laserPos2, 0.1f);
+            if (!boolParticles && shooting)
+            {
+                Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.2f), Quaternion.identity);
+                Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.4f), Quaternion.identity);
+                Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.6f), Quaternion.identity);
+                Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.8f), Quaternion.identity);
+
+                boolParticles =true;
+            }
+        }
     }
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {

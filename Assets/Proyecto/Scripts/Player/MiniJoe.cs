@@ -20,6 +20,7 @@ public class MiniJoe : MonoBehaviour
     public GameObject player;
     public GameObject character;
     public GameObject torretarea;
+    public GameObject pickArea;
     private bool enemya = false;
     private bool checkenemyinrange = false;
     public bool displanted = false;
@@ -65,14 +66,14 @@ public class MiniJoe : MonoBehaviour
                 checkenemyinrange = false;
             }
 
+
             if (displanted == false && timer >= plantCD)
             {
-                if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1"))
+                if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1")) //Plantar a minijoe
                 {
                     timer = 0;
                     minijoe.transform.parent = null;
                     flagS = true;
-
                 }
             }
             else if (timer <= plantCD)
@@ -89,7 +90,6 @@ public class MiniJoe : MonoBehaviour
                         CheckFire();
                     }
                 }
-
             }
 
             if (flagS == true)
@@ -99,12 +99,15 @@ public class MiniJoe : MonoBehaviour
                 {
                     if (distancia < pickUpDistance)
                     {
+                        pickArea.SetActive(true);
                         if (timer >= plantCD)
                         {
-                            if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1"))
+                            if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1")) //Recoger a minijoe
                             {
                                 timer = 0;
                                 Example(padre);
+
+                                pickArea.SetActive(false);
 
                                 torretarea.SetActive(false);
 
@@ -123,11 +126,9 @@ public class MiniJoe : MonoBehaviour
                         {
                             timer += Time.deltaTime;
                         }
-                    }
+                    } else pickArea.SetActive(false);
 
                 }
-
-
                 else
                 {
 
@@ -146,6 +147,8 @@ public class MiniJoe : MonoBehaviour
                 }
             }
         }
+
+        //Movimiento de minijoe
         if (displanted==false)
         {
             Vector3 posicion = character.transform.position;

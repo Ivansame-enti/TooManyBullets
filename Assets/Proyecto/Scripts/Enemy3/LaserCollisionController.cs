@@ -13,7 +13,7 @@ public class LaserCollisionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Entra");
+        //Debug.Log("Entra");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
