@@ -84,6 +84,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 boolParticles = false;
                 mLaserBeam.SetActive(false);
                 playerPosition.GetComponent<movement>().speed *= 2;
+                if (col != null) Destroy(col.gameObject);
             }
             else
             {
