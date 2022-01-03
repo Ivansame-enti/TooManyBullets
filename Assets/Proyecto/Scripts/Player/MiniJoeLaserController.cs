@@ -100,7 +100,11 @@ public class MiniJoeLaserController : MonoBehaviour
         {
             laserPosWarning = Vector2.MoveTowards(laserPosWarning, laserPos2, laserSpeed * Time.deltaTime);
             Draw2DRay(laserPos1, laserPosWarning);
-            if (Vector2.Distance(laserPosWarning, laserPos2) == 0) warningTimer = false;
+            if (Vector2.Distance(laserPosWarning, laserPos2) == 0)
+            {
+                warningTimer = false;
+                laserPosWarning = laserPos1;
+            }
         }
         else
         {
