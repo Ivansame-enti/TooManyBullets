@@ -8,6 +8,7 @@ public class Level2Controller : MonoBehaviour
     public Image controllerSprite;
     public GameObject phase1;
     public GameObject phase2;
+    public GameObject phase3;
     private int phasecounter;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class Level2Controller : MonoBehaviour
         phasecounter = 0;
         phase1.SetActive(true);
         phase2.SetActive(false);
+        phase3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +41,16 @@ public class Level2Controller : MonoBehaviour
                 phasecounter++;
             } else if (phasecounter == 1)
             {
+                GameObject[] bullets;
+
+                bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                foreach (GameObject bullet in bullets)
+                {
+                    Destroy(bullet);
+                }
                 phase2.SetActive(false);
+                phase3.SetActive(true);
             }
         }
     }
