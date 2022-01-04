@@ -4942,6 +4942,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaterDropClone: {fileID: 6327381178287865536}
   DropForce: 0
-  scaleTime: 0.1
+  scaleTime: 0.2
   destroyPS: {fileID: 4689059412065698976, guid: ab92477987428e74581cb1feefefcdc1,
     type: 3}

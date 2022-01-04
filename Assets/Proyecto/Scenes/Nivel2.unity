@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &27666206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27666207}
+  - component: {fileID: 27666208}
+  m_Layer: 0
+  m_Name: WaterDropAttack (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &27666207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27666206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &27666208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27666206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &40393302
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +667,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168860953}
   m_CullTransparentMesh: 1
+--- !u!1 &184098183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184098184}
+  m_Layer: 0
+  m_Name: Water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184098184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184098183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7173021, y: 2.0483122, z: 32.089706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 200899544}
+  - {fileID: 1093196497}
+  - {fileID: 1998749924}
+  - {fileID: 1081401404}
+  - {fileID: 809528800}
+  - {fileID: 890566694}
+  - {fileID: 918936668}
+  - {fileID: 193155360}
+  - {fileID: 1883816579}
+  - {fileID: 1216896273}
+  - {fileID: 276378335}
+  - {fileID: 682202061}
+  - {fileID: 1707873331}
+  - {fileID: 27666207}
+  m_Father: {fileID: 605148272}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185772870
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +744,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &193155359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193155360}
+  - component: {fileID: 193155361}
+  m_Layer: 0
+  m_Name: WaterDropAttack (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193155360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193155359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193155361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193155359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &200899543
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,11 +819,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200899543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.295239, y: 6.3860416, z: 3.0924952}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 605148272}
-  m_RootOrder: 2
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &200899545
 MonoBehaviour:
@@ -694,12 +838,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionA: {x: -3, y: 13}
-  positionB: {x: 2, y: 13}
+  positionB: {x: 3, y: 13}
   WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
     type: 3}
   warningDropForce: 35
   minFrequencyDrop: 0
-  maxFrequencyDrop: 1
+  maxFrequencyDrop: 1.1
 --- !u!1 &237941536
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +1047,56 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &276378334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276378335}
+  - component: {fileID: 276378336}
+  m_Layer: 0
+  m_Name: WaterDropAttack (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276378335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276378334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &276378336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276378334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &276673822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,8 +2087,7 @@ Transform:
   m_Children:
   - {fileID: 40393303}
   - {fileID: 1339493184}
-  - {fileID: 200899544}
-  - {fileID: 1216896273}
+  - {fileID: 184098184}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2165,6 +2358,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659286541}
   m_CullTransparentMesh: 1
+--- !u!1 &682202060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682202061}
+  - component: {fileID: 682202062}
+  m_Layer: 0
+  m_Name: WaterDropAttack (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &682202061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682202060}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &682202062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682202060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1001 &708644598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2245,6 +2488,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 708644598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &809528799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809528800}
+  - component: {fileID: 809528801}
+  m_Layer: 0
+  m_Name: WaterDropAttack (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &809528800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809528799}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809528801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809528799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &811140959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,6 +2935,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
+--- !u!1 &890566693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890566694}
+  - component: {fileID: 890566695}
+  m_Layer: 0
+  m_Name: WaterDropAttack (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &890566694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890566693}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890566695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890566693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &891290089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,6 +3080,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891290089}
   m_CullTransparentMesh: 1
+--- !u!1 &918936667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918936668}
+  - component: {fileID: 918936669}
+  m_Layer: 0
+  m_Name: WaterDropAttack (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &918936668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918936667}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918936669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918936667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &961994154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,6 +3164,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1081401403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081401404}
+  - component: {fileID: 1081401405}
+  m_Layer: 0
+  m_Name: WaterDropAttack (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081401404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081401403}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081401405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081401403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &1087649744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,6 +3347,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087649744}
   m_CullTransparentMesh: 1
+--- !u!1 &1093196496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1093196497}
+  - component: {fileID: 1093196498}
+  m_Layer: 0
+  m_Name: WaterDropAttack (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1093196497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093196496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1093196498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093196496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1001 &1109396852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3213,11 +3706,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216896272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.464031, y: 9.186043, z: -1.2446039}
+  m_LocalPosition: {x: -2.181333, y: 7.1377306, z: -33.33431}
   m_LocalScale: {x: 37.41, y: 1.03657, z: 1}
   m_Children: []
-  m_Father: {fileID: 605148272}
-  m_RootOrder: 3
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1216896274
 Rigidbody2D:
@@ -3745,10 +4238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb87937079a13ed44a1142046c6865dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 20
+  dashDistance: 15
   sprite: {fileID: 1127931920605403113, guid: f8c20f3d6bf23a741849133c7511fd5f, type: 3}
   dashDelay: 1.5
-  dashTime: 0.2
+  dashTime: 0.15
   particle_delay: 0
   dashTrail: {fileID: 0}
 --- !u!114 &1315369029
@@ -4835,6 +5328,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 46, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1707873330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707873331}
+  - component: {fileID: 1707873332}
+  m_Layer: 0
+  m_Name: WaterDropAttack (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1707873331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707873330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707873332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707873330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &1710881002
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,6 +5949,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868593139}
   m_CullTransparentMesh: 1
+--- !u!1 &1883816578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883816579}
+  - component: {fileID: 1883816580}
+  m_Layer: 0
+  m_Name: WaterDropAttack (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1883816579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883816578}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883816580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883816578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &1903651443
 GameObject:
   m_ObjectHideFlags: 0
@@ -5886,6 +6479,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+--- !u!1 &1998749923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998749924}
+  - component: {fileID: 1998749925}
+  m_Layer: 0
+  m_Name: WaterDropAttack (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998749924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998749923}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.012541, y: 4.3377295, z: -28.997211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 184098184}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1998749925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998749923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8bbd1e868364e4a903eb6c3aae9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionA: {x: -3, y: 13}
+  positionB: {x: 3, y: 13}
+  WaterDrop: {fileID: 6327381178287865536, guid: f3d2b0c8c441e7844a67b1d9e75a71b6,
+    type: 3}
+  warningDropForce: 35
+  minFrequencyDrop: 0
+  maxFrequencyDrop: 1.1
 --- !u!1 &2069251994
 GameObject:
   m_ObjectHideFlags: 0
