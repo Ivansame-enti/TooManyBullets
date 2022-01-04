@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 public class MainMenuController : MonoBehaviour
 {
+    public GameObject menuUI, optionsUI,levelSelectorUI;
     public GameObject playButton, optionButton, exitButton;
     // Start is called before the first frame update
     void Start()
@@ -20,15 +21,16 @@ public class MainMenuController : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("LevelSelector");
+        menuUI.SetActive(false);
+        levelSelectorUI.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(playButton);
     }
 
     public void Options()
     {
-        SceneManager.LoadScene("Options");
-
+        menuUI.SetActive(false);
+        optionsUI.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionButton);
     }
@@ -40,4 +42,6 @@ public class MainMenuController : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(exitButton);
     }
+
+
 }

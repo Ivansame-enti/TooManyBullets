@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class OptionMenuController : MonoBehaviour
 {
+    public GameObject menuUI, optionsUI;
+    public GameObject sliderObject, dropdownObject, fullScreenObject,doneObject;
     public AudioMixer am;
     public Slider vol;
     public float vol_aux;
@@ -53,6 +56,7 @@ public class OptionMenuController : MonoBehaviour
         am.SetFloat("volume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("volume", volume);
 
+
     }
     public void sliderVolumeText(float value)
     {
@@ -60,11 +64,16 @@ public class OptionMenuController : MonoBehaviour
     }
     public void FullScreenOption()
     {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(fullScreenObject);
         Screen.fullScreen = !Screen.fullScreen;
     }
     public void Done()
     {
-        SceneManager.LoadScene("MainMenu");
+        menuUI.SetActive(true);
+        optionsUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(doneObject);
     }
 
     public void SetQuality(int qualityIndex)
