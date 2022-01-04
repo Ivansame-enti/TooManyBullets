@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class Level2Controller : MonoBehaviour
 {
     public Image controllerSprite;
+    public Image imagePhase3;
     public GameObject phase1;
     public GameObject phase2;
     public GameObject phase3;
+    public GameObject phase4;
     private int phasecounter;
+    private int enemiesDestroyed;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +20,19 @@ public class Level2Controller : MonoBehaviour
         phase1.SetActive(true);
         phase2.SetActive(false);
         phase3.SetActive(false);
+        phase4.SetActive(false);
+        enemiesDestroyed = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (phasecounter == 4)
+        {
+            phase3.SetActive(false);
+            phase4.SetActive(true);
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,6 +61,21 @@ public class Level2Controller : MonoBehaviour
                 }
                 phase2.SetActive(false);
                 phase3.SetActive(true);
+                imagePhase3.gameObject.SetActive(true);
+                this.transform.localScale = new Vector3(30,30,0);
+                this.transform.position = new Vector3(22f, -0.3f, 0);
+                phasecounter++;
+            }
+        }
+
+        if (collision.gameObject.tag == "enemy")
+        {
+            Destroy(collision.transform.parent.gameObject);
+            enemiesDestroyed++;
+            if (enemiesDestroyed == 2)
+            {
+                imagePhase3.gameObject.SetActive(false);
+                phasecounter = 4;
             }
         }
     }

@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour
                 angle += angleStep;
             }
 
-            timerBullet = timer + Random.Range(bulletFrequencyMin, bulletFrequencyMax); ;
+            timerBullet = timer + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
         }
     }
 }
