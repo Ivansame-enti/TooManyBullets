@@ -1151,7 +1151,7 @@ MonoBehaviour:
   sliderObject: {fileID: 1550046819}
   dropdownObject: {fileID: 961889607}
   fullScreenObject: {fileID: 289891676}
-  doneObject: {fileID: 1949330017}
+  doneObject: {fileID: 262248396}
   am: {fileID: 24100000, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
   vol: {fileID: 1550046821}
   vol_aux: 0
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 1550046821}
