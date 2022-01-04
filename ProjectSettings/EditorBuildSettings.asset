@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Proyecto/Scenes/Dash.unity
-    guid: efc6e827e7b90ed40955c92690796873
-  - enabled: 0
-    path: Assets/Proyecto/Scenes/Prototype.unity
-    guid: 3d38e792ff9c30044bb3a6c7274ccf5f
   - enabled: 1
-    path: Assets/Proyecto/Scenes/Minijoe'sHeal.unity
-    guid: 306e399309d314c4e84318baa320a7e6
+    path: Assets/Proyecto/Scenes/MainMenu.unity
+    guid: 29e82352659cd2846b48af5dca901c71
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/Nivel1Original.unity
+    guid: 1d488a54bbeea4f4683eb65ba51a7170
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/LevelSelector.unity
+    guid: c40a367a67ac69b46aede4c88dc7908a
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/Options.unity
+    guid: 6412c2875e8f8e3458c51aa39d7c8402
   m_configObjects: {}

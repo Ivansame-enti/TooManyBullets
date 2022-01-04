@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
-    public GameObject GameOverUI;
     public GameObject deathPS;
+    private bool hitInmunity;
+    public bool dead;
+
 
     private void dealDamage()
     {
@@ -30,7 +33,6 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = health;
-        GameOverUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class PlayerHealthController : MonoBehaviour
             if(Time.timeScale < 1.0f && currentHealth > 0)
             {
                 Time.timeScale += Time.deltaTime;
+                hitInmunity = true;
             }
             
             if(timer2 <= 0) // Timer que controla el parpadeo que inndica la inmortalidad
@@ -67,7 +70,11 @@ public class PlayerHealthController : MonoBehaviour
             timer -= Time.deltaTime;
         } else //Vuelve a la normalidad
         {
-            Time.timeScale = 1.0f;
+            if(hitInmunity == true)
+            {
+                Time.timeScale = 1.0f;
+                hitInmunity = false;
+            }
             this.GetComponent<SpriteRenderer>().color = new Color(this.GetComponent<SpriteRenderer>().color.r, this.GetComponent<SpriteRenderer>().color.g, this.GetComponent<SpriteRenderer>().color.b, 1f);
         }
 
@@ -79,8 +86,9 @@ public class PlayerHealthController : MonoBehaviour
             FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDeath");
             Time.timeScale = 1.0f;
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
+            dead = true;
             Destroy(this.gameObject);
-            GameOverUI.SetActive(true);
+            
         }
     }
 

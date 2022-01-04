@@ -29,6 +29,8 @@ public class MiniJoe : MonoBehaviour
     public float timer;
     public float plantCD;
     public float pickUpDistance;
+    public PauseController pause;
+
     void Start()
     {
         //fireRate = 1f;
@@ -147,9 +149,7 @@ public class MiniJoe : MonoBehaviour
                 }
             }
         }
-
-        //Movimiento de minijoe
-        if (displanted==false)
+        if (displanted==false && pause.pauseState == false)
         {
             Vector3 posicion = character.transform.position;
 

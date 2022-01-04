@@ -15,6 +15,7 @@ public class melee : MonoBehaviour
     float xPos, yPos;
     float result, result2, result3, result4;
     public ParticleSystem particles;
+    public PauseController pause;
 
     private void Damage(float rotx, float roty, float rotx2, float roty2)
     {
@@ -32,7 +33,7 @@ public class melee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= 0)
+        if (timer <= 0 && pause.pauseState == false)
         {
             xPos = Input.GetAxis("RightJoystickX");
             yPos = Input.GetAxis("RightJoystickY");
