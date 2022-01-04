@@ -227,6 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15cf89cd96862041a67c9ba29696e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuUI: {fileID: 0}
+  optionsUI: {fileID: 0}
+  sliderObject: {fileID: 0}
+  dropdownObject: {fileID: 0}
+  fullScreenObject: {fileID: 0}
+  doneObject: {fileID: 0}
   am: {fileID: 24100000, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
   vol: {fileID: 111327129}
   vol_aux: 0
@@ -374,10 +380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 452251877}
+    m_SelectOnDown: {fileID: 1872372603}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -738,12 +744,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 1872372603}
+    m_SelectOnDown: {fileID: 111327129}
+    m_SelectOnLeft: {fileID: 617460901}
+    m_SelectOnRight: {fileID: 617460901}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1240,12 +1246,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 1872372603}
+    m_SelectOnDown: {fileID: 111327129}
+    m_SelectOnLeft: {fileID: 452251877}
+    m_SelectOnRight: {fileID: 452251877}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2957,10 +2963,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 111327129}
+    m_SelectOnDown: {fileID: 452251877}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1

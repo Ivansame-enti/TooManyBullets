@@ -22,7 +22,7 @@ public class SelectLevelsButton : MonoBehaviour
 
     public void PlayLevel1Button()
     {
-        SceneManager.LoadScene("Nivel1Original");
+        SceneManager.LoadScene("Pause");
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(level1);
     }
