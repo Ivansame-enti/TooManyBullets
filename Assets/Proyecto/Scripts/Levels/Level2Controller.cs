@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Level2Controller : MonoBehaviour
 {
     public Image controllerSprite;
     public Image imagePhase3;
+    public GameObject counterUI;
     public GameObject phase1;
     public GameObject phase2;
     public GameObject phase3;
     public GameObject phase4;
     private int phasecounter;
     private int enemiesDestroyed;
+    private TextMeshProUGUI textPro;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,7 @@ public class Level2Controller : MonoBehaviour
         phase3.SetActive(false);
         phase4.SetActive(false);
         enemiesDestroyed = 0;
+        textPro = counterUI.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -62,6 +66,8 @@ public class Level2Controller : MonoBehaviour
                 phase2.SetActive(false);
                 phase3.SetActive(true);
                 imagePhase3.gameObject.SetActive(true);
+                counterUI.SetActive(true);
+                textPro.text = enemiesDestroyed.ToString();
                 this.transform.localScale = new Vector3(30,30,0);
                 this.transform.position = new Vector3(22f, -0.3f, 0);
                 phasecounter++;
@@ -72,8 +78,10 @@ public class Level2Controller : MonoBehaviour
         {
             Destroy(collision.transform.parent.gameObject);
             enemiesDestroyed++;
+            textPro.text = enemiesDestroyed.ToString();
             if (enemiesDestroyed == 2)
             {
+                counterUI.SetActive(false);
                 imagePhase3.gameObject.SetActive(false);
                 phasecounter = 4;
             }
