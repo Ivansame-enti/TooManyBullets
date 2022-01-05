@@ -7,19 +7,22 @@ public class Nivel1 : MonoBehaviour
     public bool startLevel, clearPart1;
     public GameObject part1, part2,part3, scenarioAttacks,multiLaser,uniLaser;
     public float timer;
+    private bool firstTime;
     // Start is called before the first frame update
     void Start()
     {
         startLevel = false;
         clearPart1 = false;
+        firstTime = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (startLevel == true)
+        
+        if (startLevel == true && firstTime)
         {
+            firstTime = false;
             FindObjectOfType<Tutorial>().tutorialImageAttack.SetActive(false);
             part1.SetActive(true);
             scenarioAttacks.SetActive(true);
@@ -35,13 +38,16 @@ public class Nivel1 : MonoBehaviour
             timer = 8f;
             clearPart1 = true;
             multiLaser.SetActive(true);
+            //scenarioAttacks.SetActive(false);
             uniLaser.SetActive(false);
 
 
         }
+
         if (part2.transform.childCount <= 0 && timer < 0)
         {
             part3.SetActive(true);
+            //scenarioAttacks.SetActive(true);
             multiLaser.SetActive(false);
             uniLaser.SetActive(true);
         }
@@ -49,6 +55,7 @@ public class Nivel1 : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+
         if(part3.transform.childCount <= 0)
         {
             Debug.Log("win");
