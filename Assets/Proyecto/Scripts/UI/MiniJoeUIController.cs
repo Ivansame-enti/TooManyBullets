@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MiniJoeUIController : MonoBehaviour
 {
-    public GameObject plant;
+    //public GameObject plant;
     public Image plantImage;
     public Image plantImageGreen;
 
@@ -48,7 +48,7 @@ public class MiniJoeUIController : MonoBehaviour
         abs = miniJoe.gameObject.GetComponent<antiBulletSystem>();
         mlc = miniJoe.gameObject.GetComponent<MiniJoeLaserController>();
         m = miniJoe.gameObject.GetComponent<MiniJoe>();
-        plant.SetActive(true);
+        //plant.SetActive(true);
         firstColorPlant = plantImage.color;
         firstColorActive1 = activeInImage1.color;
         firstColorActive2 = activeInImage2.color;

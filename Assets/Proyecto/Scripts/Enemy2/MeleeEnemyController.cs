@@ -34,7 +34,7 @@ public class MeleeEnemyController : MonoBehaviour
             direction.Normalize();
             movement = direction;
             if (!hitPlayer) transform.Rotate(0, 0, speedRotation * Time.deltaTime);
-
+            
             //Debug.Log(movement);
 
             if (hitPlayer)

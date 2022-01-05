@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class MiniJoe : MonoBehaviour
@@ -31,12 +32,14 @@ public class MiniJoe : MonoBehaviour
     public float pickUpDistance;
     public PauseController pause;
 
+    private bool level2;
     void Start()
     {
         //fireRate = 1f;
         nextFire = Time.time;
         timer = plantCD;
-
+        if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
+        else level2 = true;
     }
 
     // Update is called once per frame
@@ -69,7 +72,7 @@ public class MiniJoe : MonoBehaviour
             }
 
 
-            if (displanted == false && timer >= plantCD)
+            if (displanted == false && timer >= plantCD && !level2)
             {
                 if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1")) //Plantar a minijoe
                 {

@@ -10,11 +10,14 @@ public class EnemyHealthController : MonoBehaviour
     public GameObject deathPS;
     public GameObject swPs;
     public HealthBarController healthBar;
+    public LevelEndingController ending; 
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;    
+        //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
+        maxHealth = health;
+        if (ending != null) ending.AddEnnemy(this.gameObject);
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
 
         if (health <= 0) {
+            if(ending!=null) ending.EnemyDies(this.gameObject);
             if (transform.parent != null && transform.parent.gameObject.tag == "container")
                 Destroy(this.transform.parent.gameObject);     
             else Destroy(this.gameObject);

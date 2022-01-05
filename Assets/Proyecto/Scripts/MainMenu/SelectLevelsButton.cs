@@ -29,6 +29,7 @@ public class SelectLevelsButton : MonoBehaviour
 
     public void PlayLevel2Button()
     {
+        SceneManager.LoadScene("Nivel2");
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(level2);
     }

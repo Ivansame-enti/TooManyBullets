@@ -15,7 +15,7 @@ public class RandomDrop : MonoBehaviour
     private float period = 1f;
     private GameObject WaterDropClone;
     public float warningDropForce;
-    public int minFrequencyDrop, maxFrequencyDrop;
+    public float minFrequencyDrop, maxFrequencyDrop;
     // Start is called before the first frame update
 
     void Start()

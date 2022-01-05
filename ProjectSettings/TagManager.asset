@@ -17,6 +17,7 @@ TagManager:
   - healarea
   - MjLaserCollider
   - LaserColliderEnemy
+  - ending
   layers:
   - Default
   - TransparentFX
