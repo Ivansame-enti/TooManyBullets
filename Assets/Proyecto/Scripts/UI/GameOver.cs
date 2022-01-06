@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class GameOver : MonoBehaviour
 {
     public PlayerHealthController isDead;
-    public GameObject restartButton, GameOverUI;
+    public GameObject restartButton, GameOverUI,gameOverPanel;
     private bool gameOver;
 
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
         {
             gameOver = true;
             GameOverUI.SetActive(true);
+            gameOverPanel.SetActive(true);
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(restartButton);
         }

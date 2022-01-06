@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Proyecto/Scenes/MainMenu.unity
     guid: 29e82352659cd2846b48af5dca901c71
   - enabled: 1
-    path: Assets/Proyecto/Scenes/Nivel1Original.unity
+    path: Assets/Proyecto/Scenes/Victory.unity
     guid: 1d488a54bbeea4f4683eb65ba51a7170
   - enabled: 1
     path: Assets/Proyecto/Scenes/LevelSelector.unity
