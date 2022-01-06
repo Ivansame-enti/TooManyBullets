@@ -81,7 +81,7 @@ public class MiniJoeUIController : MonoBehaviour
                 pasive.SetActive(true);
                 activeOut.SetActive(false);
 
-                if (mhc.timer2 >= mhc.healDelay) //Curacion
+                if (mhc.currenntHealsAvailable>0) //Curacion
                 {
                     //plantImage.gameObject.GetComponent<Animator>().enabled = true;
                     pasiveImage.gameObject.GetComponent<Animator>().enabled = true;
@@ -92,7 +92,7 @@ public class MiniJoeUIController : MonoBehaviour
                     pasiveImage.color = firstColorPasive;
                 }
 
-                pasiveImageGreen.fillAmount = mhc.timer2 / mhc.healDelay;
+                pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
 
                 if (abs.timer >= abs.antiBulletdelay) //Escudo
                 {

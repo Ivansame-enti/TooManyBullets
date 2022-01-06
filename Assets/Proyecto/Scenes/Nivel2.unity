@@ -2388,11 +2388,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ade36d82a80e5f48aaa4753ba5394e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healDelay: 10
   healTimer: 1
   healAmmount: 0.1
+  healsAvailable: 2
+  currenntHealsAvailable: 0
   timer: 0
-  timer2: 0
   phc: {fileID: 1315369027}
   healParticle: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
     type: 3}
@@ -4764,7 +4764,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
