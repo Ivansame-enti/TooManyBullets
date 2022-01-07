@@ -2300,7 +2300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 8272167073645393139, guid: a7bd4f40d86819444b49a04e4fc934f8, type: 3}
   fireRate: 0.25
-  delay: 30
+  delay: 10
   minijoe: {fileID: 301313338}
   padre: {fileID: 1315369033}
   padre2: {fileID: 301313339}
