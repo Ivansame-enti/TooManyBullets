@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour
     public PlayerHealthController isDead;
     public GameObject restartButton, GameOverUI,gameOverPanel;
     private bool gameOver;
+    public static bool goingLS;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,12 @@ public class GameOver : MonoBehaviour
 
     public void MainMenu()
     {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LevelSelector()
+    {
+        goingLS = true;
         SceneManager.LoadScene("MainMenu");
     }
 }
