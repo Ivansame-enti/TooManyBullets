@@ -15,7 +15,7 @@ public class VictoryController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        victory = true;
+        victoryPanel.SetActive(false);
     }
 
     // Update is called once per frame
