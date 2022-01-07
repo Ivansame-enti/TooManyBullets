@@ -162,7 +162,8 @@ public class MiniJoe : MonoBehaviour
             {
                 //Debug.Log("Ei");
                 positionList.RemoveAt(0);
-                minijoe.transform.position = positionList[0] + new Vector3(0.6f, 0.6f, 0);
+                //minijoe.transform.position = positionList[0] + new Vector3(0.6f, 0.6f, 0);
+                transform.position = Vector2.MoveTowards(transform.position, positionList[0] + new Vector3(0.6f, 0.6f, 0), 2 * Time.deltaTime);
                 //minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
 
             }
