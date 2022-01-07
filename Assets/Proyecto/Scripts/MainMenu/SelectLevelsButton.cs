@@ -46,6 +46,7 @@ public class SelectLevelsButton : MonoBehaviour
     }
     public void PlayLevel5Button()
     {
+        SceneManager.LoadScene("Nivel5");
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(level5);
     }
