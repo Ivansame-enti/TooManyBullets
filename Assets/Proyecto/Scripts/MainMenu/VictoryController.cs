@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 public class VictoryController : MonoBehaviour
 {
     private Vector2 randomValor, randomValor2;
     public Vector2 positionA, positionB, positionC, positionD;
-    public GameObject firework, player,victoryPanel;
+    public GameObject firework, victoryUI, player, victoryPanel,buttonLs;
     private float leftFirework, rightFirework;
     public float fireworkCooldownLeft, fireworkCooldownRight;
     public bool victory;
@@ -16,6 +17,7 @@ public class VictoryController : MonoBehaviour
     void Start()
     {
         victoryPanel.SetActive(false);
+        victory = true;
     }
 
     // Update is called once per frame
@@ -23,8 +25,11 @@ public class VictoryController : MonoBehaviour
     {
         if (victory == true)
         {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(buttonLs);
             player.SetActive(false);
             victoryPanel.SetActive(true);
+            victoryUI.SetActive(true);
             if (leftFirework <= 0)
             {
                 randomValor = new Vector2(
