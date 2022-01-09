@@ -15,6 +15,7 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject deathPS;
     private bool hitInmunity;
     public bool dead;
+    public PauseController pause;
 
 
     private void dealDamage()
@@ -46,10 +47,11 @@ public class PlayerHealthController : MonoBehaviour
 
         if (timer > 0) //Tiempo donde es imnnune porque le han golpeado
         {
-            if(Time.timeScale < 1.0f && currentHealth > 0)
+            if(Time.timeScale < 1.0f && currentHealth > 0 && pause.pauseState != true)
             {
                 Time.timeScale += Time.deltaTime;
                 hitInmunity = true;
+                
             }
             
             if(timer2 <= 0) // Timer que controla el parpadeo que inndica la inmortalidad
@@ -70,11 +72,12 @@ public class PlayerHealthController : MonoBehaviour
             timer -= Time.deltaTime;
         } else //Vuelve a la normalidad
         {
-            if(hitInmunity == true)
+            if (hitInmunity == true)
             {
                 Time.timeScale = 1.0f;
                 hitInmunity = false;
             }
+            
             this.GetComponent<SpriteRenderer>().color = new Color(this.GetComponent<SpriteRenderer>().color.r, this.GetComponent<SpriteRenderer>().color.g, this.GetComponent<SpriteRenderer>().color.b, 1f);
         }
 

@@ -7026,6 +7026,7 @@ MonoBehaviour:
   blinkTime: 0.1
   deathPS: {fileID: 9045900899425504740, guid: 1f8738176fde6bf4bae19ac9ddce3b42, type: 3}
   dead: 0
+  pause: {fileID: 492181535}
 --- !u!114 &1315369028
 MonoBehaviour:
   m_ObjectHideFlags: 0
