@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject menuUI, optionsUI,levelSelectorUI;
-    public GameObject playButton, optionButton, exitButton;
+    public GameObject playButton, optionButton, exitButton,level1;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,8 @@ public class MainMenuController : MonoBehaviour
             GameOver.goingLS = false;
             menuUI.SetActive(false);
             levelSelectorUI.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(level1);
         }
     }
 
