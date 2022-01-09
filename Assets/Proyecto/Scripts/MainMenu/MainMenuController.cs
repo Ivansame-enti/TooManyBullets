@@ -10,7 +10,13 @@ public class MainMenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(VictoryController.goingLS == true || GameOver.goingLS == true)
+        {
+            VictoryController.goingLS = false;
+            GameOver.goingLS = false;
+            menuUI.SetActive(false);
+            levelSelectorUI.SetActive(true);
+        }
     }
 
     // Update is called once per frame

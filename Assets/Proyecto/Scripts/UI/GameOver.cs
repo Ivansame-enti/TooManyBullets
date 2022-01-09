@@ -7,8 +7,9 @@ using UnityEngine.EventSystems;
 public class GameOver : MonoBehaviour
 {
     public PlayerHealthController isDead;
-    public GameObject restartButton, GameOverUI;
+    public GameObject restartButton, GameOverUI,gameOverPanel;
     private bool gameOver;
+    public static bool goingLS;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class GameOver : MonoBehaviour
         {
             gameOver = true;
             GameOverUI.SetActive(true);
+            gameOverPanel.SetActive(true);
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(restartButton);
         }
@@ -35,6 +37,12 @@ public class GameOver : MonoBehaviour
 
     public void MainMenu()
     {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LevelSelector()
+    {
+        goingLS = true;
         SceneManager.LoadScene("MainMenu");
     }
 }

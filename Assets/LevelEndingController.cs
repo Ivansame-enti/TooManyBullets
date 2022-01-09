@@ -6,6 +6,7 @@ public class LevelEndingController : MonoBehaviour
 {
     List<GameObject> enemyList = new List<GameObject>();
     private bool emptyList = true;
+    public VictoryController victoryController;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class LevelEndingController : MonoBehaviour
     {
         if (enemyList.Count == 0 && !emptyList)
         {
-            Debug.Log("Ha terminado la partida");
+            victoryController.victory = true;
         }
     }
 

@@ -8,6 +8,7 @@ public class Nivel1 : MonoBehaviour
     public GameObject part1, part2,part3, scenarioAttacks,multiLaser,uniLaser;
     public float timer;
     private bool firstTime;
+    public VictoryController victoryController;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +59,7 @@ public class Nivel1 : MonoBehaviour
 
         if(part3.transform.childCount <= 0)
         {
-            Debug.Log("win");
+            victoryController.victory = true;
         }
     }
 }
