@@ -9,6 +9,7 @@ public class Level3Controller : MonoBehaviour
     public GameObject phase3;
     public GameObject phase4;
     public GameObject scenario;
+    public GameObject arrowCanvas;
     private int phasecounter;
     private bool oneTime;
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class Level3Controller : MonoBehaviour
         phase4.SetActive(false);
         scenario.SetActive(false);
         oneTime = true;
+        //arrowCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,11 +62,15 @@ public class Level3Controller : MonoBehaviour
         {
             if (phasecounter == 0)
             {
+                arrowCanvas.SetActive(false);
+                //arrowCanvas.transform.position = new Vector3(-300 ,45, 0);
+                //arrowCanvas.GetComponent<RectTransform>().position = new Vector3(-300, 45, 0);
                 this.transform.position = new Vector3(-16.2f, this.transform.position.y, 1);
                 phasecounter++;
             }
             else if (phasecounter == 1)
             {
+                //arrowCanvas.SetActive(false);
                 phase1.SetActive(false);
                 phase2.SetActive(true);
                 scenario.SetActive(true);

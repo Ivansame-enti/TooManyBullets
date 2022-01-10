@@ -9450,6 +9450,10 @@ PrefabInstance:
       propertyPath: health
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: inmortal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}
       propertyPath: m_RootOrder
@@ -10183,6 +10187,10 @@ PrefabInstance:
     - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: health
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: inmortal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}

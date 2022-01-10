@@ -10,7 +10,8 @@ public class EnemyHealthController : MonoBehaviour
     public GameObject deathPS;
     public GameObject swPs;
     public HealthBarController healthBar;
-    public LevelEndingController ending; 
+    public LevelEndingController ending;
+    public bool inmortal = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,11 @@ public class EnemyHealthController : MonoBehaviour
     {
         ///Debug.Log(health);
 
-        if (health <= 0) {
-            if(ending!=null) ending.EnemyDies(this.gameObject);
+        if (health <= 0)
+        {
+            if (ending != null) ending.EnemyDies(this.gameObject);
             if (transform.parent != null && transform.parent.gameObject.tag == "container")
-                Destroy(this.transform.parent.gameObject);     
+                Destroy(this.transform.parent.gameObject);
             else Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
@@ -40,10 +42,13 @@ public class EnemyHealthController : MonoBehaviour
     {
         if (collision.tag == "bala")
         {
-            Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
-            health = health - collision.gameObject.GetComponent<bullet>().damage;
-            healthBar.SetHealthBar(health, maxHealth);
-            if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
+            if (!inmortal)
+            {
+                Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
+                health = health - collision.gameObject.GetComponent<bullet>().damage;
+                healthBar.SetHealthBar(health, maxHealth);
+                if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
+            }
             Destroy(collision.gameObject);
         }
 
@@ -54,17 +59,23 @@ public class EnemyHealthController : MonoBehaviour
 
         if (collision.tag == "slash")
         {
-            Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
-            health = health - collision.gameObject.GetComponent<MeleeAttackController>().damage;
-            healthBar.SetHealthBar(health, maxHealth);
-            if(this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            if (!inmortal)
+            {
+                Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
+                health = health - collision.gameObject.GetComponent<MeleeAttackController>().damage;
+                healthBar.SetHealthBar(health, maxHealth);
+            }
+            if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
             if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
         }
         if (collision.tag == "MjLaserCollider")
         {
-            Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
-            health = health - collision.gameObject.GetComponent<mJLaserDamage>().LaserDamage;
-            healthBar.SetHealthBar(health, maxHealth);
+            if (!inmortal)
+            {
+                Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
+                health = health - collision.gameObject.GetComponent<mJLaserDamage>().LaserDamage;
+                healthBar.SetHealthBar(health, maxHealth);
+            }
             //if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
         }
 
