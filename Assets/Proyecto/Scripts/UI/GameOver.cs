@@ -8,13 +8,14 @@ public class GameOver : MonoBehaviour
 {
     public PlayerHealthController isDead;
     public GameObject restartButton, GameOverUI,gameOverPanel;
-    private bool gameOver;
+    private bool gameOver,firstTime;
     public static bool goingLS;
 
     // Start is called before the first frame update
     void Start()
     {
         GameOverUI.SetActive(false);
+        firstTime = true;
     }
 
     // Update is called once per frame
@@ -22,6 +23,11 @@ public class GameOver : MonoBehaviour
     {
         if (isDead.dead == true && gameOver == false)
         {
+            if (firstTime)
+            {
+                if (GameObject.Find("MiniJoe")) GameObject.Find("MiniJoe").SetActive(false);
+                firstTime = false;
+            }
             gameOver = true;
             GameOverUI.SetActive(true);
             gameOverPanel.SetActive(true);
