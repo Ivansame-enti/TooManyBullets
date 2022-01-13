@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nivel1 : MonoBehaviour
+public class Nivel3 : MonoBehaviour
 {
     public bool startLevel;
     public GameObject enemies,scenarioAttacks, enemy1,enemy2,enemy3,enemy4,enemy5,enemy6,enemy7, scenarioattack1, objects,objects2,tutorial, enemy8,enemy9,enemy10;
