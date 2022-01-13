@@ -74,7 +74,7 @@ public class MiniJoe : MonoBehaviour
 
             if (displanted == false && timer >= plantCD && !level2)
             {
-                if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1")) //Plantar a minijoe
+                if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
                 {
                     timer = 0;
                     minijoe.transform.parent = null;
@@ -107,7 +107,7 @@ public class MiniJoe : MonoBehaviour
                         pickArea.SetActive(true);
                         if (timer >= plantCD)
                         {
-                            if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1")) //Recoger a minijoe
+                            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Recoger a minijoe
                             {
                                 timer = 0;
                                 Example(padre);

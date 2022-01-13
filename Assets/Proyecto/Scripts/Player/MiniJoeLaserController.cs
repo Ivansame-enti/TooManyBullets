@@ -42,7 +42,7 @@ public class MiniJoeLaserController : MonoBehaviour
             {
                 //CREACION DEL LASER
                 //Comienza con feedback al jugador
-                if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("R1"))
+                if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("R1"))
                 {
                     timerLaser = 0;
                     warningTimer = true;

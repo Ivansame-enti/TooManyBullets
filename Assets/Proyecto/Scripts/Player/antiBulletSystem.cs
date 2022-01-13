@@ -23,7 +23,7 @@ public class antiBulletSystem : MonoBehaviour
     {
         if (GetComponent<MiniJoe>().displanted == false)
         {
-            if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("R1")) && timer >= antiBulletdelay)
+            if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("R1")) && timer >= antiBulletdelay)
             {
                 FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
                 //this.transform.Find("Shield").gameObject.SetActive(true);
