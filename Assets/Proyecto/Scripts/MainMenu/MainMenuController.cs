@@ -10,7 +10,9 @@ public class MainMenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(VictoryController.goingLS == true || GameOver.goingLS == true)
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        if (VictoryController.goingLS == true || GameOver.goingLS == true)
         {
             VictoryController.goingLS = false;
             GameOver.goingLS = false;
