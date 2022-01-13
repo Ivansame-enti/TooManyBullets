@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &40393303
 Transform:
   m_ObjectHideFlags: 0
@@ -1810,7 +1810,7 @@ GameObject:
   - component: {fileID: 604855187}
   - component: {fileID: 604855188}
   m_Layer: 0
-  m_Name: Nivel1
+  m_Name: Nivel4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,6 +1847,28 @@ MonoBehaviour:
   startLevel: 0
   enemies: {fileID: 2069251994}
   scenarioAttacks: {fileID: 1943423881}
+  enemy1: {fileID: 0}
+  enemy2: {fileID: 0}
+  enemy3: {fileID: 0}
+  enemy4: {fileID: 0}
+  enemy5: {fileID: 0}
+  enemy6: {fileID: 0}
+  enemy7: {fileID: 0}
+  scenarioattack1: {fileID: 0}
+  objects: {fileID: 0}
+  objects2: {fileID: 0}
+  tutorial: {fileID: 0}
+  enemy8: {fileID: 0}
+  enemy9: {fileID: 0}
+  enemy10: {fileID: 0}
+  enemy11: {fileID: 0}
+  enemy12: {fileID: 0}
+  enemy13: {fileID: 0}
+  enemy14: {fileID: 0}
+  enemy15: {fileID: 0}
+  enemy16: {fileID: 0}
+  enemy17: {fileID: 0}
+  enemy18: {fileID: 0}
 --- !u!1 &605148271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &605148272
 Transform:
   m_ObjectHideFlags: 0
