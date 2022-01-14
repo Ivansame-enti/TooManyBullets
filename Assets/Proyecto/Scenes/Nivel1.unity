@@ -29453,6 +29453,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 7.6
       objectReference: {fileID: 0}
+    - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: health
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}
       propertyPath: m_RootOrder
@@ -30809,6 +30813,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MiniJoeLaser
     clip: {fileID: 8300000, guid: a67ab2c9aa484184f8c729fc8c4c0658, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
@@ -43921,6 +43931,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: health
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}
       propertyPath: m_RootOrder
@@ -54509,11 +54523,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3047171142893446454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.7087917, y: 10.236279, z: 2.8916419}
+  m_LocalPosition: {x: -1.4500003, y: 2.420001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3047171143466187164}
-  m_RootOrder: 1
+  m_Father: {fileID: 5017332724112737587}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &3047171143209506500
 ParticleSystem:
@@ -59381,7 +59395,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3047171143209506502}
-  - {fileID: 3047171142893446459}
   m_Father: {fileID: 3047171144844067942}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59745,6 +59758,7 @@ Transform:
   - {fileID: 5017332724268554847}
   - {fileID: 7280424419632957132}
   - {fileID: 7280424420892004568}
+  - {fileID: 3047171142893446459}
   m_Father: {fileID: 3047171143561877935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

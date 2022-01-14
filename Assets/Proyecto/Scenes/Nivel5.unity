@@ -3975,6 +3975,10 @@ PrefabInstance:
       propertyPath: ending
       value: 
       objectReference: {fileID: 1409772709}
+    - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: health
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}
       propertyPath: m_RootOrder
@@ -4753,6 +4757,10 @@ PrefabInstance:
       propertyPath: ending
       value: 
       objectReference: {fileID: 1409772709}
+    - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: health
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}
       propertyPath: m_RootOrder
@@ -9414,6 +9422,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MiniJoeLaser
     clip: {fileID: 8300000, guid: a67ab2c9aa484184f8c729fc8c4c0658, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0

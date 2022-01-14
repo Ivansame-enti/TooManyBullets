@@ -9,6 +9,7 @@ public class Nivel1 : MonoBehaviour
     public float timer;
     private bool firstTime;
     public VictoryController victoryController;
+    //public GameObject laser;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +39,10 @@ public class Nivel1 : MonoBehaviour
         {
             timer = 8f;
             clearPart1 = true;
+            uniLaser.SetActive(false);
             multiLaser.SetActive(true);
             //scenarioAttacks.SetActive(false);
-            uniLaser.SetActive(false);
-
-
+            
         }
 
         if (part2.transform.childCount <= 0 && timer < 0)
