@@ -8,6 +8,7 @@ public class Nivel3 : MonoBehaviour
     public VictoryController victorycontroller;
     public GameObject enemies, scenarioAttacks, scenarioattack1, objects, tutorial;
     public GameObject part1, part2, part3, part4, player;
+    public PlayerHealthController playerIsDead;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class Nivel3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (part1.transform.childCount <= 0)
+        if (part1.transform.childCount <= 0 && playerIsDead.dead == false)
         {
             part2.SetActive(true);
             objects.SetActive(true);

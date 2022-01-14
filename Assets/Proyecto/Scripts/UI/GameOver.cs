@@ -33,6 +33,7 @@ public class GameOver : MonoBehaviour
                 firstTime = false;
             }
             gameOver = true;
+            gameObstacles.SetActive(false);
             GameOverUI.SetActive(true);
             gameOverPanel.SetActive(true);
             EventSystem.current.SetSelectedGameObject(null);
