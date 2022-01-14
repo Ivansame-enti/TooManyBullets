@@ -7240,7 +7240,7 @@ MonoBehaviour:
   JoystickXRange: 0.9
   JoystickYRange: 0.9
   attackRange: 2
-  attackCD: 1
+  attackCD: 0.5
   particles: {fileID: 5018808405644473933, guid: af552a2ea83d82344ae72bb700fe463f,
     type: 3}
   pause: {fileID: 70857486}
@@ -7751,6 +7751,7 @@ MonoBehaviour:
   restartButton: {fileID: 693071038}
   GameOverUI: {fileID: 2105268503}
   gameOverPanel: {fileID: 696234075}
+  gameObstacles: {fileID: 0}
 --- !u!4 &1576646845
 Transform:
   m_ObjectHideFlags: 0

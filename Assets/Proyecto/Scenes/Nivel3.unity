@@ -4062,7 +4062,7 @@ MonoBehaviour:
   JoystickXRange: 0.9
   JoystickYRange: 0.9
   attackRange: 2
-  attackCD: 1
+  attackCD: 0.5
   particles: {fileID: 5018808405644473933, guid: af552a2ea83d82344ae72bb700fe463f,
     type: 3}
   pause: {fileID: 1175201623}
