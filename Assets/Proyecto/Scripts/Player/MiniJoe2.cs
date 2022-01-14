@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
-public class MiniJoe : MonoBehaviour
+public class MiniJoe2 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject bala;
@@ -21,42 +20,30 @@ public class MiniJoe : MonoBehaviour
     public GameObject player;
     public GameObject character;
     public GameObject torretarea;
-    public GameObject pickArea;
     private bool enemya = false;
     private bool checkenemyinrange = false;
-    public bool displanted = false;
+    public bool displanted = true;
     public GameObject miniJoelaser;
     private List<Vector3> positionList = new List<Vector3>();
     public float timer;
     public float plantCD;
     public float pickUpDistance;
-    public PauseController pause;
-    private bool nivel3;
-
-    private bool level2;
     void Start()
     {
         //fireRate = 1f;
         nextFire = Time.time;
         timer = plantCD;
-        if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
-        else level2 = true;
-        if (SceneManager.GetActiveScene().name != "Nivel3") nivel3 = false;
-        else nivel3 = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        minijoe.transform.parent = null;
+        minijoe.transform.localScale = new Vector2(0.2f, 0.2f);
+        Debug.Log(displanted);
         if (player != null)
         {
-            if (nivel3)
-            {
-                minijoe.transform.parent = null;
-                flagS = true;
-                this.transform.position = new Vector2(0, 0);
-            }
-
             float distancia = Vector2.Distance(minijoe.transform.position, player.transform.position);
             gos = GameObject.FindGameObjectsWithTag("enemy");
 
@@ -81,14 +68,14 @@ public class MiniJoe : MonoBehaviour
                 checkenemyinrange = false;
             }
 
-
-            if (displanted == false && timer >= plantCD && !level2)
+            if (displanted == false && timer >= plantCD)
             {
-                if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
+                if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1"))
                 {
                     timer = 0;
                     minijoe.transform.parent = null;
                     flagS = true;
+
                 }
             }
             else if (timer <= plantCD)
@@ -105,6 +92,7 @@ public class MiniJoe : MonoBehaviour
                         CheckFire();
                     }
                 }
+
             }
 
             if (flagS == true)
@@ -114,36 +102,35 @@ public class MiniJoe : MonoBehaviour
                 {
                     if (distancia < pickUpDistance)
                     {
-                        pickArea.SetActive(true);
                         if (timer >= plantCD)
                         {
-                            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Recoger a minijoe
-                            {
-                                timer = 0;
-                                Example(padre);
+                           // if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("L1"))
+                          //  {
+                            //    timer = 0;
+                           //     Example(padre);
 
-                                pickArea.SetActive(false);
+                           //     torretarea.SetActive(false);
 
-                                torretarea.SetActive(false);
+                          //      torretarea.transform.parent = null;
 
-                                torretarea.transform.parent = null;
+                          //      minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                          //      torretarea.transform.SetParent(padre2);
 
-                                minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
-                                torretarea.transform.SetParent(padre2);
+                          //      miniJoelaser.SetActive(false);
+                         //       flagS = false;
+                          //      displanted = false;
 
-                                miniJoelaser.SetActive(false);
-                                flagS = false;
-                                displanted = false;
-
-                            }
+                         //   }
                         }
                         else if (timer <= plantCD)
                         {
                             timer += Time.deltaTime;
                         }
-                    } else pickArea.SetActive(false);
+                    }
 
                 }
+
+
                 else
                 {
 
@@ -161,14 +148,8 @@ public class MiniJoe : MonoBehaviour
 
                 }
             }
-
-        
-
         }
-
-      
-
-        if (displanted==false && pause.pauseState == false)
+        if (displanted==false)
         {
             Vector3 posicion = character.transform.position;
 
@@ -178,8 +159,7 @@ public class MiniJoe : MonoBehaviour
             {
                 //Debug.Log("Ei");
                 positionList.RemoveAt(0);
-                //minijoe.transform.position = positionList[0] + new Vector3(0.6f, 0.6f, 0);
-                transform.position = Vector2.MoveTowards(transform.position, positionList[0] + new Vector3(0.6f, 0.6f, 0), 2 * Time.deltaTime);
+                minijoe.transform.position = positionList[0] + new Vector3(0.6f, 0.6f, 0);
                 //minijoe.transform.position = character.transform.position + new Vector3(1, 1, 0);
 
             }
@@ -195,10 +175,6 @@ public class MiniJoe : MonoBehaviour
             positionList.Clear();
         }
 
-        if (nivel3)
-        {
-
-        }
     }
 
 

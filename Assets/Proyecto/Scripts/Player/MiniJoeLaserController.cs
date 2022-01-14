@@ -31,7 +31,7 @@ public class MiniJoeLaserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<MiniJoe>().displanted == true && playerPosition != null)
+        if (GetComponent<MiniJoe>().displanted == true && playerPosition != null && playerPosition != null)
         {
             laserPos1 = miniJoePosition.transform.position;
             if (warning == false) laserPosWarning = laserPos1;

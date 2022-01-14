@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class MiniJoeUIController : MonoBehaviour
 {
     //public GameObject plant;
@@ -37,7 +37,7 @@ public class MiniJoeUIController : MonoBehaviour
     private Color firstColorOutActive1;
     private Color firstColorOutActive2;
     private Color firstColorOutActive3;
-
+    private bool nivel3;
     //public bool active;
     //public bool miniJoeIn;
 
@@ -56,11 +56,20 @@ public class MiniJoeUIController : MonoBehaviour
         firstColorOutActive1 = activeOutImage1.color;
         firstColorOutActive2 = activeOutImage2.color;
         firstColorOutActive3 = activeOutImage3.color;
+        if (SceneManager.GetActiveScene().name != "Nivel3") nivel3 = false;
+        else nivel3 = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (nivel3)
+        {
+            plantImage.enabled = false;
+            plantImageGreen.enabled = false;
+            
+        }
+
         if (miniJoe != null)
         {
             if (m.timer >= m.plantCD) //Curacion
