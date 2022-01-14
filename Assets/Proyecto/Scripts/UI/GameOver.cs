@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class GameOver : MonoBehaviour
 {
     public PlayerHealthController isDead;
-    public GameObject restartButton, GameOverUI,gameOverPanel;
+    public GameObject restartButton, GameOverUI,gameOverPanel,gameObstacles;
     private bool gameOver,firstTime;
     public static bool goingLS;
 
@@ -26,6 +26,10 @@ public class GameOver : MonoBehaviour
             if (firstTime)
             {
                 if (GameObject.Find("MiniJoe")) GameObject.Find("MiniJoe").SetActive(false);
+                if (gameObstacles != null)
+                {
+                    gameObstacles.SetActive(false);
+                }
                 firstTime = false;
             }
             gameOver = true;
