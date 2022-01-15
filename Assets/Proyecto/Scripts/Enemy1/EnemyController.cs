@@ -12,10 +12,8 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     private float radius = 5f;
     public GameObject spawnParticles;
-
-    private bool itWillShoot;
     public Animation anim;
-    private float shootAfterWarning;
+
     //private int angle;
 
     // Start is called before the first frame update
@@ -40,13 +38,22 @@ public class EnemyController : MonoBehaviour
 
         if (timer > timerBullet)
         {
+            timerBullet = timer + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
             anim.Play("warningRangedEnemy");
-            //itWillShoot = true;
+            
+        }
+    }
+
+    public void AlertObservers(string message)
+    {
+        if (message.Equals("AttackAnimationEnded"))
+        {
+            //HACER ATAQUE JUSTO DESPUES DE ANIMACION
             bulletAmount = Random.Range(5, 20);
             float angleStep = 360f / bulletAmount;
             float angle = 0f;
-            
-            for(int i=0; i < bulletAmount; i++)
+
+            for (int i = 0; i < bulletAmount; i++)
             {
                 float bulletXPos = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
                 float bulletYPos = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
@@ -58,13 +65,6 @@ public class EnemyController : MonoBehaviour
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletDirection.x, bulletDirection.y);
                 angle += angleStep;
             }
-
-            timerBullet = timer + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
-        }
-
-        if (itWillShoot == true)
-        {
-
         }
     }
 }

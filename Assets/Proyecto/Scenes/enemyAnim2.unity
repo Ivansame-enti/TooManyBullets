@@ -930,28 +930,6 @@ Transform:
   m_Father: {fileID: 1974070436}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &102427428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
-    type: 3}
-  m_PrefabInstance: {fileID: 648713311}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &102427436
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102427428}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 0ab8f501510a4c1449a619f20aeb60e8, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 0ab8f501510a4c1449a619f20aeb60e8, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &109706383
 GameObject:
   m_ObjectHideFlags: 0
@@ -23188,30 +23166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
-        type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -23263,11 +23221,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 102427436}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
 --- !u!1 &659286541
