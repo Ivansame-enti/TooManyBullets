@@ -12,11 +12,17 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     private float radius = 5f;
     public GameObject spawnParticles;
+
+    private bool itWillShoot;
+    public Animation anim;
+    private float shootAfterWarning;
     //private int angle;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = gameObject.GetComponent<Animation>();
+
         spawnParticles = Instantiate(spawnParticles, this.transform.position, Quaternion.identity);
         
         timerBullet = Time.deltaTime + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
@@ -34,6 +40,8 @@ public class EnemyController : MonoBehaviour
 
         if (timer > timerBullet)
         {
+            anim.Play("warningRangedEnemy");
+            //itWillShoot = true;
             bulletAmount = Random.Range(5, 20);
             float angleStep = 360f / bulletAmount;
             float angle = 0f;
@@ -52,6 +60,11 @@ public class EnemyController : MonoBehaviour
             }
 
             timerBullet = timer + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
+        }
+
+        if (itWillShoot == true)
+        {
+
         }
     }
 }
