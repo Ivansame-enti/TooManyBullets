@@ -421,7 +421,6 @@ GameObject:
   - component: {fileID: 3782049486628547886}
   - component: {fileID: 6094048694357508492}
   - component: {fileID: 8016744924728573905}
-  - component: {fileID: 102427436}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: enemy
@@ -562,7 +561,6 @@ MonoBehaviour:
   bulletSpeed: 5
   spawnParticles: {fileID: 9092008219153462090, guid: 2edcd942b7f5040468c672d1d2d0188b,
     type: 3}
-  anim: {fileID: 102427436}
 --- !u!114 &6094048694357508492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,8 +578,6 @@ MonoBehaviour:
   deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
   healthBar: {fileID: 2048710621}
-  ending: {fileID: 0}
-  inmortal: 0
 --- !u!95 &8016744924728573905
 Animator:
   serializedVersion: 3
@@ -601,19 +597,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &102427436
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3782049486628547874}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 0ab8f501510a4c1449a619f20aeb60e8, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 0ab8f501510a4c1449a619f20aeb60e8, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0

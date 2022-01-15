@@ -54,15 +54,4 @@ public class AudioManagerController : MonoBehaviour
         }
         a.source.Play();
     }
-
-    public void AudioPause(string name)
-    {
-        Sound a = Array.Find(audios, audio => audio.name == name);
-        if (a == null)
-        {
-            Debug.Log("Audio not found");
-            return;
-        }
-        a.source.Pause();
-    }
 }
