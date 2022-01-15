@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     private float radius = 5f;
     public GameObject spawnParticles;
+    // Color originalColor;
     //private int angle;
 
     // Start is called before the first frame update

@@ -117,7 +117,7 @@ public class MiniJoe : MonoBehaviour
                         pickArea.SetActive(true);
                         if (timer >= plantCD)
                         {
-                            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Recoger a minijoe
+                            if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) && !nivel3) //Recoger a minijoe
                             {
                                 timer = 0;
                                 Example(padre);

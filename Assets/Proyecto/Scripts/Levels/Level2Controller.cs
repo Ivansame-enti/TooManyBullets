@@ -7,7 +7,9 @@ using TMPro;
 public class Level2Controller : MonoBehaviour
 {
     public Image controllerSprite;
+    public Image arrowImage;
     public Image imagePhase3;
+    public GameObject textUI;
     public GameObject counterUI;
     public GameObject phase1;
     public GameObject phase2;
@@ -52,6 +54,7 @@ public class Level2Controller : MonoBehaviour
                 phase2.SetActive(true);
                 this.transform.position = new Vector3(-19.5f, -10f, 1);
                 controllerSprite.enabled = false;
+                arrowImage.enabled = false;
                 phasecounter++;
             } else if (phasecounter == 1)
             {
@@ -66,6 +69,7 @@ public class Level2Controller : MonoBehaviour
                 phase2.SetActive(false);
                 phase3.SetActive(true);
                 imagePhase3.gameObject.SetActive(true);
+                textUI.SetActive(true);
                 counterUI.SetActive(true);
                 textPro.text = enemiesDestroyed.ToString();
                 this.transform.localScale = new Vector3(30,30,0);
@@ -83,6 +87,7 @@ public class Level2Controller : MonoBehaviour
             {
                 counterUI.SetActive(false);
                 imagePhase3.gameObject.SetActive(false);
+                textUI.SetActive(false);
                 phasecounter = 4;
             }
         }
