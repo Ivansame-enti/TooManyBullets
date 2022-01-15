@@ -2082,6 +2082,7 @@ MonoBehaviour:
   plantCD: 3
   pickUpDistance: 3
   pause: {fileID: 492181535}
+  searchEnemies: {fileID: 605148271}
 --- !u!212 &301313342
 SpriteRenderer:
   m_ObjectHideFlags: 0

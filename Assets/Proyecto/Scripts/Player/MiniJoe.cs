@@ -12,7 +12,7 @@ public class MiniJoe : MonoBehaviour
     public float delay;
     // private float timer=0;
     float nextFire;
-    GameObject[] gos;
+    private List<GameObject> gos = new List<GameObject>();
     //private GameObject healarea;
     public GameObject minijoe;
     private bool flagS = false;
@@ -32,6 +32,7 @@ public class MiniJoe : MonoBehaviour
     public float pickUpDistance;
     public PauseController pause;
     private bool nivel3;
+    public GameObject searchEnemies;
 
     private bool level2;
     void Start()
@@ -50,6 +51,8 @@ public class MiniJoe : MonoBehaviour
     {
         if (player != null)
         {
+            float distancia = Vector2.Distance(minijoe.transform.position, player.transform.position);
+
             if (nivel3)
             {
                 minijoe.transform.parent = null;
@@ -57,28 +60,61 @@ public class MiniJoe : MonoBehaviour
                 this.transform.position = new Vector2(0, 0);
             }
 
-            float distancia = Vector2.Distance(minijoe.transform.position, player.transform.position);
-            gos = GameObject.FindGameObjectsWithTag("enemy");
-
-            if (gos.Length >= 1)
+            if (displanted)
             {
-                for (int i = 0; i < gos.Length; i++)
-                {
-                    if (Vector2.Distance(minijoe.transform.position, gos[i].transform.position) <= area2)
-                    {
-                        enemya = true;
-                        checkenemyinrange = true;
-                    }
-                    else
-                    {
-                        if (checkenemyinrange == false)
-                        {
-                            enemya = false;
-                        }
-                    }
+                //gos = GameObject.FindGameObjectsWithTag("enemy");
 
+                if(gos.Count >= 1) gos.Clear(); //Limpia la lista
+                var children = searchEnemies.GetComponentsInChildren<Transform>(); //Busca en el objeto que contiene el nivel
+
+                foreach (var child in children)
+                {
+                    if (child.tag == "enemy") //Recoge a los hijos que 
+                        gos.Add(child.gameObject);
+                        //Debug.Log("Hola");
                 }
-                checkenemyinrange = false;
+                /*
+                if (gos.Length >= 1)
+                {
+                    for (int i = 0; i < gos.Length; i++)
+                    {
+                        if (Vector2.Distance(minijoe.transform.position, gos[i].transform.position) <= area2)
+                        {
+                            enemya = true;
+                            checkenemyinrange = true;
+                        }
+                        else
+                        {
+                            if (checkenemyinrange == false)
+                            {
+                                enemya = false;
+                            }
+                        }
+
+                    }
+                    checkenemyinrange = false;
+                }
+                */
+                if (gos.Count >= 1)
+                {
+                    for (int i = 0; i < gos.Count; i++)
+                    {
+                        if (Vector2.Distance(minijoe.transform.position, gos[i].transform.position) <= area2)
+                        {
+                            enemya = true;
+                            checkenemyinrange = true;
+                        }
+                        else
+                        {
+                            if (checkenemyinrange == false)
+                            {
+                                enemya = false;
+                            }
+                        }
+
+                    }
+                    checkenemyinrange = false;
+                }
             }
 
 
@@ -100,7 +136,11 @@ public class MiniJoe : MonoBehaviour
             {
                 if (enemya == true)
                 {
-                    if (gos.Length >= 1)//mira si hay enemigos
+                    /*if (gos.Length >= 1)//mira si hay enemigos
+                    {
+                        CheckFire();
+                    }*/
+                    if (gos.Count >= 1)//mira si hay enemigos
                     {
                         CheckFire();
                     }
@@ -141,7 +181,8 @@ public class MiniJoe : MonoBehaviour
                         {
                             timer += Time.deltaTime;
                         }
-                    } else pickArea.SetActive(false);
+                    }
+                    else pickArea.SetActive(false);
 
                 }
                 else
@@ -161,14 +202,11 @@ public class MiniJoe : MonoBehaviour
 
                 }
             }
-
-        
-
         }
 
-      
 
-        if (displanted==false && pause.pauseState == false)
+
+        if (displanted == false && pause.pauseState == false)
         {
             Vector3 posicion = character.transform.position;
 
@@ -190,7 +228,8 @@ public class MiniJoe : MonoBehaviour
             pos.y = Mathf.Clamp(pos.y, 0.02f, 0.98f);
             transform.position = Camera.main.ViewportToWorldPoint(pos);
 
-        }else if (displanted == true)
+        }
+        else if (displanted == true)
         {
             positionList.Clear();
         }
