@@ -5,7 +5,7 @@ using UnityEngine;
 public class MiniJoeZona : MonoBehaviour
 {
 
-    public GameObject obstaculo,escudos, tutorialEnemies,tutorialObstacle,checkMj;
+    public GameObject obstaculo,escudos, tutorial, tutorialEnemies,checkMj;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,8 @@ public class MiniJoeZona : MonoBehaviour
         if (collision.tag == "zona")
         {
             tutorialEnemies.SetActive(true);
-            tutorialObstacle.SetActive(false);
             checkMj.SetActive(false);
+            tutorial.SetActive(false);
         }
         if (collision.tag == "zona2")
         {
