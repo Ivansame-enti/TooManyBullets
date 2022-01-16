@@ -122,6 +122,7 @@ public class MiniJoe : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
                 {
+                    this.GetComponent<BoxCollider2D>().enabled = true;
                     timer = 0;
                     minijoe.transform.parent = null;
                     flagS = true;
@@ -159,6 +160,7 @@ public class MiniJoe : MonoBehaviour
                         {
                             if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) && !nivel3) //Recoger a minijoe
                             {
+                                this.GetComponent<BoxCollider2D>().enabled = false;
                                 timer = 0;
                                 Example(padre);
 
