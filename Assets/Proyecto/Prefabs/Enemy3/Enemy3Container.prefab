@@ -131,9 +131,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8196079, g: 0.38431376, b: 0.6784314, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
-      key2: {r: 1, g: 0.9975568, b: 0.98039216, a: 0}
+      key0: {r: 1, g: 0.4914296, b: 0, a: 1}
+      key1: {r: 1, g: 0.4914296, b: 0, a: 0}
+      key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -141,7 +141,7 @@ LineRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 9638
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -749,9 +749,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.81960785, g: 0.38431373, b: 0.6784314, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.4914296, b: 0, a: 1}
+      key1: {r: 1, g: 0.4914296, b: 0, a: 0}
+      key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -759,7 +759,7 @@ LineRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -1009,6 +1009,8 @@ MonoBehaviour:
   deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
   healthBar: {fileID: 6617125929742434301}
+  ending: {fileID: 0}
+  inmortal: 0
 --- !u!60 &820220229451798905
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1741,9 +1743,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.81960785, g: 0.38431373, b: 0.6784314, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.4914296, b: 0, a: 1}
+      key1: {r: 1, g: 0.4914296, b: 0, a: 0}
+      key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1751,7 +1753,7 @@ LineRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0

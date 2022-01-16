@@ -60,24 +60,24 @@ public class LaserEnemyController : MonoBehaviour
 
             mLaserBeam.SetActive(true);
             //mLaserBeam.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
-            mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 0, 146);
-            mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 0, 146);
+            //mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 255, 0);
+            //mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 255, 0);
             //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
             mLaserBeam.GetComponent<LineRenderer>().startWidth = 0.30f;
             mLaserBeam.GetComponent<LineRenderer>().endWidth = 0.30f;
 
             mLaserBeam2.SetActive(true);
             //mLaserBeam2.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
-            mLaserBeam2.GetComponent<LineRenderer>().startColor = new Color(255, 0, 146);
-            mLaserBeam2.GetComponent<LineRenderer>().endColor = new Color(255, 0, 146);
+            //mLaserBeam2.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
+            //mLaserBeam2.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
             //mLaserBeam2.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
             mLaserBeam2.GetComponent<LineRenderer>().startWidth = 0.30f;
             mLaserBeam2.GetComponent<LineRenderer>().endWidth = 0.30f;
 
             mLaserBeam3.SetActive(true);
             //mLaserBeam3.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
-            mLaserBeam3.GetComponent<LineRenderer>().startColor = new Color(255, 0, 146);
-            mLaserBeam3.GetComponent<LineRenderer>().endColor = new Color(255, 0, 146);
+            //mLaserBeam3.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
+            //mLaserBeam3.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
             //mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
             mLaserBeam3.GetComponent<LineRenderer>().startWidth = 0.30f;
             mLaserBeam3.GetComponent<LineRenderer>().endWidth = 0.30f;
