@@ -12,7 +12,6 @@ public class movement : MonoBehaviour
 
     public bool isMoving;
     public GameObject minijoe;
-    private List<Vector3> positionList;
 
     void Update()
     {

@@ -52,12 +52,6 @@ public class Enemy1BulletController : MonoBehaviour
         }
     }
 
-    void OnParticleCollision(GameObject other)
-    {
-        //Destroy(gameObject);
-        Debug.Log("colision");
-    }
-
     IEnumerator ScaleOverTime(float time)
     {
         Vector3 originalScale = this.transform.localScale;

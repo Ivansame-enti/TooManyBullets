@@ -19,7 +19,6 @@ public class MiniJoeLaserController : MonoBehaviour
     public float timerLaser;
     public float laserSpeed;
     public GameObject laserParticles;
-    private float particleTimer;
     private bool boolParticles;
 
     private void Start()

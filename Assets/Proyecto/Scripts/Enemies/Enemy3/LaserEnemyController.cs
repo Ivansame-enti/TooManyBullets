@@ -162,7 +162,7 @@ public class LaserEnemyController : MonoBehaviour
                 col.tag = "LaserColliderEnemy";
                 col.gameObject.layer = 8;
                 //col.gameObject.AddComponent<Rigidbody2D>();
-                col.gameObject.AddComponent<LaserCollisionController>();
+                //col.gameObject.AddComponent<LaserCollisionController>();
 
                 col.isTrigger = true;
                 col.transform.parent = mLaserBeam.transform; // Collider is added as child object of line
@@ -196,7 +196,7 @@ public class LaserEnemyController : MonoBehaviour
                 col2.tag = "LaserColliderEnemy";
                 col2.gameObject.layer = 8;
                 //col2.gameObject.AddComponent<Rigidbody2D>();
-                col2.gameObject.AddComponent<LaserCollisionController>();
+                //col2.gameObject.AddComponent<LaserCollisionController>();
                 col2.isTrigger = true;
                 col2.transform.parent = mLaserBeam2.transform; // Collider is added as child object of line
                 float lineLength = Vector3.Distance(startPos, endPos); // length of line
@@ -230,7 +230,7 @@ public class LaserEnemyController : MonoBehaviour
                 col3.tag = "LaserColliderEnemy";
                 col3.gameObject.layer = 8;
                 //col3.gameObject.AddComponent<Rigidbody2D>();
-                col3.gameObject.AddComponent<LaserCollisionController>();
+                //col3.gameObject.AddComponent<LaserCollisionController>();
                 col3.transform.parent = mLaserBeam3.transform; // Collider is added as child object of line
                 col3.isTrigger = true;
                 float lineLength = Vector3.Distance(startPos, endPos); // length of line

@@ -12,7 +12,6 @@ public class HealthBarController : MonoBehaviour
     private float maxTimer;
     private bool fadeOut=false;
     public float fadeOutSpeed;
-    private Quaternion rotation;
     public GameObject enemy;
     //private Vector3 OrgPosition;
 
@@ -41,11 +40,6 @@ public class HealthBarController : MonoBehaviour
         fadeOut = true;
     }
 
-    /*private void Awake()
-    {
-        rotation = transform.rotation;
-    }*/
-
     // Update is called once per frame
     void Update()
     {
@@ -58,10 +52,5 @@ public class HealthBarController : MonoBehaviour
             FadeOutHealthBar();
         }
     }
-    /*
-    private void LateUpdate()
-    {
-        transform.rotation = rotation;
-    }*/
 
 }

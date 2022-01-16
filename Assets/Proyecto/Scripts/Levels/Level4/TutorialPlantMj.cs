@@ -21,7 +21,6 @@ public class Zona : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("entra");
         if (collision.gameObject.tag.Equals("Minijoe"))
         {
             objects2.SetActive(false);

@@ -258,11 +258,6 @@ public class MiniJoe : MonoBehaviour
             nextFire = Time.time + fireRate;
         }
     }
-    private void OnDrawGizmoSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawSphere(transform.position, area);
-    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {

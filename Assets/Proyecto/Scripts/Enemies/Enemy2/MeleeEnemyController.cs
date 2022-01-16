@@ -14,7 +14,6 @@ public class MeleeEnemyController : MonoBehaviour
     private float timer;
     public float knockbackDuration;
     public float knockbackDistance;
-    private bool flag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +42,6 @@ public class MeleeEnemyController : MonoBehaviour
                 {
                     hitPlayer = false;
                     timer = knockbackDuration;
-                    flag = false;
                     rb.velocity = Vector3.zero;
                     rb.angularVelocity = 0f;
                 }
