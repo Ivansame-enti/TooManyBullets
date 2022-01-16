@@ -8,12 +8,16 @@ TagManager:
   - bala
   - LaserCollider
   - EnemyBullet
-  tags:
-  - enemy
-  - bala
-  - slash
   - DestroyBulletCollider
+  - container
+  - Shield
   - PlayerTag
+  - slash
+  - enemy
+  - healarea
+  - MjLaserCollider
+  - LaserColliderEnemy
+  - ending
   layers:
   - Default
   - TransparentFX
@@ -22,8 +26,8 @@ TagManager:
   - Water
   - UI
   - Post Processing
-  - 
-  - 
+  - Slash
+  - EnemyLaser
   - 
   - 
   - 

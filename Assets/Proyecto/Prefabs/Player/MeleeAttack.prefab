@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 306388503}
   - component: {fileID: 1498273448}
   - component: {fileID: 4364815066720539643}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MeleeAttack
   m_TagString: slash
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08295013, y: -0.035615206}
+  m_Offset: {x: -0.09793003, y: -0.035615206}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6899425, y: 0.88994277}
+  m_Size: {x: 1.0517029, y: 0.88994277}
   m_EdgeRadius: 0
 --- !u!95 &1498273448
 Animator:

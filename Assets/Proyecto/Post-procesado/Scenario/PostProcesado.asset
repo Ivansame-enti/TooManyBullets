@@ -80,10 +80,10 @@ MonoBehaviour:
     value: 200
   mixerRedOutGreenIn:
     overrideState: 1
-    value: -43
+    value: -170
   mixerRedOutBlueIn:
     overrideState: 1
-    value: -13
+    value: 28
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
@@ -1329,13 +1329,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 12
+    value: 10
   threshold:
     overrideState: 1
     value: 1
   softKnee:
     overrideState: 1
-    value: 0.76
+    value: 0.8
   clamp:
     overrideState: 0
     value: 65472
@@ -1347,7 +1347,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.73763466, g: 0, b: 1, a: 1}
   fastMode:
     overrideState: 0
     value: 0

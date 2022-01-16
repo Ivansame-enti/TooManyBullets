@@ -15,6 +15,7 @@ public class melee : MonoBehaviour
     float xPos, yPos;
     float result, result2, result3, result4;
     public ParticleSystem particles;
+    public PauseController pause;
 
     private void Damage(float rotx, float roty, float rotx2, float roty2)
     {
@@ -32,7 +33,7 @@ public class melee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= 0)
+        if (timer <= 0 && pause.pauseState == false)
         {
             xPos = Input.GetAxis("RightJoystickX");
             yPos = Input.GetAxis("RightJoystickY");
@@ -59,7 +60,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
 
-                Destroy(this.ataquei2, 1);
+                //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -70,7 +71,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
 
-                Destroy(this.ataquei2, 1);
+                //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -81,7 +82,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 + 90));
 
-                Destroy(this.ataquei2, 1);
+                ///Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -92,7 +93,7 @@ public class melee : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 180));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 90));
 
-                Destroy(this.ataquei2, 1);
+                //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
         }

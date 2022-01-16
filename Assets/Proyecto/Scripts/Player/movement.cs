@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public float speed=15.0f;
+    public float speed;
 
     public float rotationSpeed=1000.0f;
 
     public Vector3 lastMoveDir;
 
     public bool isMoving;
+    public GameObject minijoe;
 
     void Update()
     {
@@ -38,6 +39,12 @@ public class movement : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, 0.01f, 0.99f);
         pos.y = Mathf.Clamp(pos.y, 0.02f, 0.98f);
         transform.position = Camera.main.ViewportToWorldPoint(pos);
+
+
+
+      
+
+
 
     }
 }
