@@ -36,7 +36,7 @@ public class SelectLevelsButton : MonoBehaviour
 
     public void PlayLevel4Button()
     {
-
+        SceneManager.LoadScene("Nivel4");
     }
     public void PlayLevel5Button()
     {
