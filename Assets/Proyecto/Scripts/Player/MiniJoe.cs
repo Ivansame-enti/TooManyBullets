@@ -32,7 +32,6 @@ public class MiniJoe : MonoBehaviour
     public float pickUpDistance;
     public PauseController pause;
     private bool nivel3;
-    private bool flag2=true;
 
     private bool level2;
     void Start()
@@ -85,12 +84,14 @@ public class MiniJoe : MonoBehaviour
 
             if (displanted == false && timer >= plantCD && !level2)
             {
+                
                 if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
                 {
+                    this.GetComponent<BoxCollider2D>().enabled = true;
                     timer = 0;
                     minijoe.transform.parent = null;
                     flagS = true;
-                    this.GetComponent<BoxCollider2D>().enabled = true;
+
                 }
             }
             else if (timer <= plantCD)
