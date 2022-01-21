@@ -809,9 +809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ceea60cae0527438b4eb40b11d73d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minijoe: {fileID: 0}
-  objects2: {fileID: 0}
-  tutorialEnemies: {fileID: 878827334}
 --- !u!58 &109150076
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4122,7 +4119,7 @@ MonoBehaviour:
   JoystickXRange: 0.9
   JoystickYRange: 0.9
   attackRange: 2
-  attackCD: 0.5
+  attackCD: 0.3
   particles: {fileID: 5018808405644473933, guid: af552a2ea83d82344ae72bb700fe463f,
     type: 3}
   pause: {fileID: 1175201623}
@@ -5285,6 +5282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy2Container
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850523000277931949, guid: e0085f4cb9616ca43a57486386e89024,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
@@ -9451,7 +9453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healTimer: 1
-  healAmmount: 0.1
+  healAmmount: 0.5
   healsAvailable: 2
   currenntHealsAvailable: 0
   timer: 0
@@ -9475,7 +9477,7 @@ MonoBehaviour:
   m_lineRenderer: {fileID: 1121173048}
   shooting: 0
   mLaserBeam: {fileID: 1121173044}
-  laserCoolDown: 6
+  laserCoolDown: 4
   warningTimer: 0
   laserDamage: 1
   timerLaser: 0

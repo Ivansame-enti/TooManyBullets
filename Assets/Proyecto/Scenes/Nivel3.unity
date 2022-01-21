@@ -4094,7 +4094,7 @@ MonoBehaviour:
   JoystickXRange: 0.9
   JoystickYRange: 0.9
   attackRange: 2
-  attackCD: 0.5
+  attackCD: 0.3
   particles: {fileID: 5018808405644473933, guid: af552a2ea83d82344ae72bb700fe463f,
     type: 3}
   pause: {fileID: 1175201623}
@@ -14633,7 +14633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healTimer: 1
-  healAmmount: 0.1
+  healAmmount: 0.5
   healsAvailable: 2
   currenntHealsAvailable: 0
   timer: 0
@@ -14657,7 +14657,7 @@ MonoBehaviour:
   m_lineRenderer: {fileID: 1121173048}
   shooting: 0
   mLaserBeam: {fileID: 1121173044}
-  laserCoolDown: 6
+  laserCoolDown: 4
   warningTimer: 0
   laserDamage: 1
   timerLaser: 0

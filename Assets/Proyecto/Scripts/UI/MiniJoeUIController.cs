@@ -105,18 +105,18 @@ public class MiniJoeUIController : MonoBehaviour
 
                 if (abs.timer >= abs.antiBulletdelay) //Escudo
                 {
-                    activeInImage1.gameObject.GetComponent<Animator>().enabled = true;
-                    activeInImage2.gameObject.GetComponent<Animator>().enabled = true;
+                    //activeInImage1.gameObject.GetComponent<Animator>().enabled = true;
+                    //activeInImage2.gameObject.GetComponent<Animator>().enabled = true;
                 }
                 else
                 {
-                    activeInImage1.gameObject.GetComponent<Animator>().enabled = false;
-                    activeInImage2.gameObject.GetComponent<Animator>().enabled = false;
-                    activeInImage1.color = firstColorActive1;
-                    activeInImage2.color = firstColorActive2;
+                    //activeInImage1.gameObject.GetComponent<Animator>().enabled = false;
+                    //activeInImage2.gameObject.GetComponent<Animator>().enabled = false;
+                    //activeInImage1.color = firstColorActive1;
+                    //activeInImage2.color = firstColorActive2;
                 }
-
-                activeInImageGreen.fillAmount = abs.timer / abs.antiBulletdelay;
+                activeIn.transform.position = new Vector3(miniJoe.transform.position.x, miniJoe.transform.position.y, 1);
+                activeIn.GetComponent<Image>().fillAmount = abs.timer / abs.antiBulletdelay;
             }
             else //Minioe plantado
             {

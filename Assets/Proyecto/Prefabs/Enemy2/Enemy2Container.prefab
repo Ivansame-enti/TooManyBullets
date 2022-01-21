@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: ac69b22f14fdf8a43b1b18a5cd7d9714,
     type: 3}
-  m_Color: {r: 0.8207547, g: 0.38327694, b: 0.6765264, a: 1}
+  m_Color: {r: 0.81960785, g: 0.38431373, b: 0.6784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,6 +126,8 @@ MonoBehaviour:
   deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
   healthBar: {fileID: 4850522999422474918}
+  ending: {fileID: 0}
+  inmortal: 0
 --- !u!60 &1693822650
 PolygonCollider2D:
   m_ObjectHideFlags: 0
