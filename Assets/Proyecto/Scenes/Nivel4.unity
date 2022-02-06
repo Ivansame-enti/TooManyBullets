@@ -9330,7 +9330,7 @@ MonoBehaviour:
   displanted: 0
   miniJoelaser: {fileID: 1121173044}
   timer: 0
-  plantCD: 0
+  plantCD: 0.2
   pickUpDistance: 3
   pause: {fileID: 1175201623}
   searchEnemies: {fileID: 2117776823}

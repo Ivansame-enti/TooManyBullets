@@ -3367,7 +3367,7 @@ MonoBehaviour:
   displanted: 0
   miniJoelaser: {fileID: 721107496}
   timer: 0
-  plantCD: 0
+  plantCD: 0.2
   pickUpDistance: 3
   pause: {fileID: 70857486}
   searchEnemies: {fileID: 1861239880}

@@ -15,6 +15,13 @@ public class movement : MonoBehaviour
 
     void Update()
     {
+        if (ControllerInput.Xbox_One_Controller)
+        {
+
+        } else if (ControllerInput.PS4_Controller)
+        {
+
+        }
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
