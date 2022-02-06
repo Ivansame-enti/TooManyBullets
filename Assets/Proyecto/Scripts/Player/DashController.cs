@@ -55,7 +55,7 @@ public class DashController : MonoBehaviour
 
         if (timer <= 0) //Delay entre dash
         {
-            this.GetComponent<SpriteRenderer>().color = new Color(255, 140, 0, this.GetComponent<SpriteRenderer>().color.a);
+            this.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, this.GetComponent<SpriteRenderer>().color.a);
             if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space")) && this.GetComponent<movement>().isMoving)
             {
                 rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
