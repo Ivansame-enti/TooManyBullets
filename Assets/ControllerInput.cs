@@ -25,7 +25,6 @@ public class ControllerInput : MonoBehaviour
                 PS4_Controller = false;
                 Xbox_One_Controller = true;
             }
-
             else if (names[x].Length == 19)
             {
                 print("PS4 CONTROLLER IS CONNECTED");
