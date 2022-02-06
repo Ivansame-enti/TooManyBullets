@@ -120,12 +120,34 @@ public class MiniJoe : MonoBehaviour
 
             if (displanted == false && timer >= plantCD && !level2)
             {
-                if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
+                if (ControllerInput.Xbox_One_Controller)
                 {
-                    this.GetComponent<BoxCollider2D>().enabled = true;
-                    timer = 0;
-                    minijoe.transform.parent = null;
-                    flagS = true;
+                    if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("LB")) //Plantar a minijoe
+                    {
+                        this.GetComponent<BoxCollider2D>().enabled = true;
+                        timer = 0;
+                        minijoe.transform.parent = null;
+                        flagS = true;
+                    }
+                }
+                else if (ControllerInput.PS4_Controller)
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
+                    {
+                        this.GetComponent<BoxCollider2D>().enabled = true;
+                        timer = 0;
+                        minijoe.transform.parent = null;
+                        flagS = true;
+                    }
+                } else
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftControl)) //Plantar a minijoe
+                    {
+                        this.GetComponent<BoxCollider2D>().enabled = true;
+                        timer = 0;
+                        minijoe.transform.parent = null;
+                        flagS = true;
+                    }
                 }
             }
             else if (timer <= plantCD)
@@ -158,26 +180,75 @@ public class MiniJoe : MonoBehaviour
                         pickArea.SetActive(true);
                         if (timer >= plantCD)
                         {
-                            if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) && !nivel3) //Recoger a minijoe
+                            if (ControllerInput.Xbox_One_Controller)
                             {
-                                this.GetComponent<BoxCollider2D>().enabled = false;
-                                timer = 0;
-                                Example(padre);
+                                if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("LB")) && !nivel3) //Recoger a minijoe
+                                {
+                                    this.GetComponent<BoxCollider2D>().enabled = false;
+                                    timer = 0;
+                                    Example(padre);
 
-                                pickArea.SetActive(false);
+                                    pickArea.SetActive(false);
 
-                                torretarea.SetActive(false);
+                                    torretarea.SetActive(false);
 
-                                torretarea.transform.parent = null;
+                                    torretarea.transform.parent = null;
 
-                                minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
-                                torretarea.transform.SetParent(padre2);
+                                    minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                                    torretarea.transform.SetParent(padre2);
 
-                                miniJoelaser.SetActive(false);
-                                flagS = false;
-                                displanted = false;
+                                    miniJoelaser.SetActive(false);
+                                    flagS = false;
+                                    displanted = false;
 
+                                }
                             }
+                            else if (ControllerInput.PS4_Controller)
+                            {
+                                if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) && !nivel3) //Recoger a minijoe
+                                {
+                                    this.GetComponent<BoxCollider2D>().enabled = false;
+                                    timer = 0;
+                                    Example(padre);
+
+                                    pickArea.SetActive(false);
+
+                                    torretarea.SetActive(false);
+
+                                    torretarea.transform.parent = null;
+
+                                    minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                                    torretarea.transform.SetParent(padre2);
+
+                                    miniJoelaser.SetActive(false);
+                                    flagS = false;
+                                    displanted = false;
+
+                                }
+                            }
+                            else
+                            {
+                                if (Input.GetKeyDown(KeyCode.LeftControl) && !nivel3) //Recoger a minijoe
+                                {
+                                    this.GetComponent<BoxCollider2D>().enabled = false;
+                                    timer = 0;
+                                    Example(padre);
+
+                                    pickArea.SetActive(false);
+
+                                    torretarea.SetActive(false);
+
+                                    torretarea.transform.parent = null;
+
+                                    minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                                    torretarea.transform.SetParent(padre2);
+
+                                    miniJoelaser.SetActive(false);
+                                    flagS = false;
+                                    displanted = false;
+
+                                }
+                            }                            
                         }
                         else if (timer <= plantCD)
                         {
