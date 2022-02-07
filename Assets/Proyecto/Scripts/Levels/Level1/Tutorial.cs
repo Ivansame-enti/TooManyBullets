@@ -16,6 +16,8 @@ public class Tutorial : MonoBehaviour
     //Enemigo prueba
     public GameObject tutorialEnemy;
     public GameObject tutorialImageControls,tutorialImageDash,tutorialImageAttack;
+    public GameObject ps4Moviment, keyboardMovement;
+
 
     //private new Vector2();
     // Start is called before the first frame update
@@ -33,7 +35,16 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (ControllerInput.PS4_Controller == true && flag == 0)
+        {
+            ps4Moviment.SetActive(true);
+            keyboardMovement.SetActive(false);
+        }
+        else
+        {
+            ps4Moviment.SetActive(false);
+            keyboardMovement.SetActive(true);
+        }
     }
 
     private void tutorial()
@@ -44,6 +55,8 @@ public class Tutorial : MonoBehaviour
             tutorialImageDash.SetActive(true);
             this.transform.position = new Vector2(-12, 0);
             celestialAtk.SetActive(true);
+
+
         }
         if(flag == 1)
         {
