@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class melee : MonoBehaviour
 {
-
     public GameObject ataque;
     private float timer;
     private GameObject ataquei2;
@@ -52,7 +51,7 @@ public class melee : MonoBehaviour
 
                 Damage(result, result2, result3, result4);
             }
-            else if(Input.GetKeyDown(KeyCode.LeftArrow)) //Control por teclado
+            else if(Input.GetKey(KeyCode.LeftArrow)) //Control por teclado
             {
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
@@ -63,7 +62,7 @@ public class melee : MonoBehaviour
                 //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
@@ -74,7 +73,7 @@ public class melee : MonoBehaviour
                 //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            else if (Input.GetKey(KeyCode.UpArrow))
             {
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
@@ -85,7 +84,7 @@ public class melee : MonoBehaviour
                 ///Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
