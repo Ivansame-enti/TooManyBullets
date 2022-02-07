@@ -12304,6 +12304,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296005791}
   m_CullTransparentMesh: 1
+--- !u!1 &297871198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297871200}
+  - component: {fileID: 297871199}
+  m_Layer: 0
+  m_Name: ControllerInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &297871199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297871198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23bc872912492bb48a53d47fa0b41fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &297871200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297871198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.23906, y: -3.235703, z: 84.37908}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &307785462
 GameObject:
   m_ObjectHideFlags: 0
@@ -28648,18 +28691,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantImage: {fileID: 159472566}
   plantImageGreen: {fileID: 811140961}
+  fadeOutSpeed: 0
   activeIn: {fileID: 473458917}
-  activeInImage1: {fileID: 659286544}
-  activeInImage2: {fileID: 1517406476}
-  activeInImageGreen: {fileID: 120375428}
   pasive: {fileID: 1868593139}
   pasiveImage: {fileID: 891290092}
   pasiveImageGreen: {fileID: 309412358}
-  activeOut: {fileID: 168860953}
-  activeOutImage1: {fileID: 1717518235}
-  activeOutImage2: {fileID: 330723648}
-  activeOutImage3: {fileID: 631942977}
-  activeOutImageGreen: {fileID: 1127865986}
   miniJoe: {fileID: 0}
 --- !u!114 &861389448
 MonoBehaviour:

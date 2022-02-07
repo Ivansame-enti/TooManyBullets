@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ControllerInput : MonoBehaviour
 {
     public static bool Xbox_One_Controller = false;
     public static bool PS4_Controller = false;
+    EventSystem eventSystem;
+    StandaloneInputModule inputModule;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        eventSystem = EventSystem.current;
+        inputModule = eventSystem.gameObject.GetComponent<StandaloneInputModule>();
     }
 
     // Update is called once per frame
@@ -21,15 +25,24 @@ public class ControllerInput : MonoBehaviour
         {
             if (names[x].Length == 33)
             {
-                print("XBOX ONE CONTROLLER IS CONNECTED");
+                inputModule.horizontalAxis = "HorizontalUIXbox";
+                inputModule.verticalAxis = "VerticalUIXbox";
+                //print("XBOX ONE CONTROLLER IS CONNECTED");
+                //eventSystem.GetComponent<Standalone>
                 PS4_Controller = false;
                 Xbox_One_Controller = true;
             }
             else if (names[x].Length == 19)
             {
-                print("PS4 CONTROLLER IS CONNECTED");
+                inputModule.horizontalAxis = "HorizontalUI";
+                inputModule.verticalAxis = "VerticalUI";
+                //print("PS4 CONTROLLER IS CONNECTED");
                 PS4_Controller = true;
                 Xbox_One_Controller = false;
+            } else
+            {
+                inputModule.horizontalAxis = "HorizontalUI";
+                inputModule.verticalAxis = "VerticalUI";
             }
         }
     }
