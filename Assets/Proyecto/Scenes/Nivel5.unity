@@ -6468,7 +6468,7 @@ MonoBehaviour:
   buttonLs: {fileID: 2041316048}
   levelObjects: {fileID: 1861239880}
   UI: {fileID: 1664130014}
-  MiniJoeSkillsUI: {fileID: 0}
+  MiniJoeSkillsUI: {fileID: 1928149989}
   fireworkCooldownLeft: 0.7
   fireworkCooldownRight: 1
   victory: 0
