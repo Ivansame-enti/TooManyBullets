@@ -16,7 +16,7 @@ public class melee : MonoBehaviour
     public ParticleSystem particles;
     public PauseController pause;
 
-    private void Damage(float rotx, float roty, float rotx2, float roty2)
+    /*private void Damage(float rotx, float roty, float rotx2, float roty2)
     {
         ataquei2 = Instantiate(ataque);
         Instantiate(particles, new Vector2(transform.position.x + xPos * attackRange, transform.position.y + yPos * -attackRange), Quaternion.identity);
@@ -27,14 +27,14 @@ public class melee : MonoBehaviour
         //Destroy(this.ataquei2, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         //Destroy(this.ataquei2, 0.50f);
         timer = attackCD;
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
     {
         if (timer <= 0 && pause.pauseState == false)
         {
-            xPos = Input.GetAxis("RightJoystickX");
+            /*xPos = Input.GetAxis("RightJoystickX");
             yPos = Input.GetAxis("RightJoystickY");
 
             if ((xPos >= JoystickXRange || xPos <= -JoystickXRange) || (yPos >= JoystickYRange || yPos <= -JoystickYRange)) //Control por Joystick
@@ -50,8 +50,10 @@ public class melee : MonoBehaviour
                 else result4 = 0;
 
                 Damage(result, result2, result3, result4);
-            }
-            else if(Input.GetKey(KeyCode.LeftArrow)) //Control por teclado
+            }*/
+            
+            
+            if(Input.GetKey(KeyCode.LeftArrow)) //Control por teclado
             {
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
@@ -94,6 +96,102 @@ public class melee : MonoBehaviour
 
                 //Destroy(this.ataquei2, 1);
                 timer = attackCD;
+            }
+
+            if (ControllerInput.Xbox_One_Controller)
+            {
+                if (Input.GetButtonDown("XboxX"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
+
+                    //Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
+                else if (Input.GetButtonDown("XboxB"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
+
+                    //Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
+                else if (Input.GetButtonDown("XboxY"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 + 90));
+
+                    ///Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
+                else if (Input.GetButtonDown("XboxA"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 180));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 90));
+
+                    //Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
+
+            }
+            else if (ControllerInput.PS4_Controller)
+            {
+                if (Input.GetButtonDown("PlaySquare"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
+
+                    //Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
+                else if (Input.GetButtonDown("PlayCircle"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
+
+                    //Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
+                else if (Input.GetButtonDown("PlayTriangle"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 + 90));
+
+                    ///Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
+                else if (Input.GetButtonDown("PlayX"))
+                {
+                    ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
+                    this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 180));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 90));
+
+                    //Destroy(this.ataquei2, 1);
+                    timer = attackCD;
+                }
             }
         }
         else
