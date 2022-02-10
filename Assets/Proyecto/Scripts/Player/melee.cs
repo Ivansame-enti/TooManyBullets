@@ -5,6 +5,7 @@ using UnityEngine;
 public class melee : MonoBehaviour
 {
     public GameObject ataque;
+    //public GameObject ataque360;
     private float timer;
     private GameObject ataquei2;
     public float JoystickXRange;
@@ -150,13 +151,27 @@ public class melee : MonoBehaviour
             {
                 if (Input.GetButtonDown("PlaySquare"))
                 {
+                    
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
+                    
+                    /*
+                    ataquei2 = Instantiate(ataque360);
+                    Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                    //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
+                    */
 
-                    //Destroy(this.ataquei2, 1);
+                    /*ataquei2 = Instantiate(ataque);
+                    Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(this.GetComponent<movement>().lastMoveDir.x, this.GetComponent<movement>().lastMoveDir.y);
+                    //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                    //ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
+                    //Destroy(this.ataquei2, 1);*/
                     timer = attackCD;
                 }
                 else if (Input.GetButtonDown("PlayCircle"))
