@@ -5,7 +5,7 @@ using UnityEngine;
 public class melee : MonoBehaviour
 {
     public GameObject ataque;
-    //public GameObject ataque360;
+    public GameObject ataque360;
     private float timer;
     private GameObject ataquei2;
     public float JoystickXRange;
@@ -103,7 +103,7 @@ public class melee : MonoBehaviour
             {
                 if (Input.GetButtonDown("XboxX"))
                 {
-                    ataquei2 = Instantiate(ataque);
+                    ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
@@ -114,7 +114,7 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("XboxB"))
                 {
-                    ataquei2 = Instantiate(ataque);
+                    ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270 - 0));
@@ -125,7 +125,7 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("XboxY"))
                 {
-                    ataquei2 = Instantiate(ataque);
+                    ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
@@ -136,7 +136,7 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("XboxA"))
                 {
-                    ataquei2 = Instantiate(ataque);
+                    ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 180));
@@ -151,13 +151,21 @@ public class melee : MonoBehaviour
             {
                 if (Input.GetButtonDown("PlaySquare"))
                 {
-                    
-                    ataquei2 = Instantiate(ataque);
+                    /*
+                    ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
-                    
+                    */
+
+                    ataquei2 = Instantiate(ataque360);
+                    Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                    //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z - 0));
+                    Debug.Log(this.transform.localEulerAngles.z);
+
                     /*
                     ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);

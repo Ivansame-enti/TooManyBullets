@@ -13,6 +13,9 @@ public class movement : MonoBehaviour
     public bool isMoving;
     public GameObject minijoe;
 
+    public Vector2 movementDirection;
+    public Quaternion toRotation;
+
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -22,7 +25,7 @@ public class movement : MonoBehaviour
             isMoving = false;
         else isMoving = true;
 
-        Vector2 movementDirection = new Vector2(horizontalInput, verticalInput);
+        movementDirection = new Vector2(horizontalInput, verticalInput);
         float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
         movementDirection.Normalize();
         lastMoveDir = movementDirection;
@@ -30,7 +33,7 @@ public class movement : MonoBehaviour
 
         if (movementDirection != Vector2.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
+            toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
