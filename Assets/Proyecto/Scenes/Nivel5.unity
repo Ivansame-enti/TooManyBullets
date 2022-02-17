@@ -6081,6 +6081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataque: {fileID: 865379570300240126, guid: ea47a77ba13782f4f8c759053ae06351, type: 3}
+  ataque360: {fileID: 865379570300240126, guid: 95641720b161fb349b52530ada0ed6e9,
+    type: 3}
   JoystickXRange: 0.9
   JoystickYRange: 0.9
   attackRange: 2
@@ -6123,6 +6125,8 @@ MonoBehaviour:
   lastMoveDir: {x: 0, y: 0, z: 0}
   isMoving: 0
   minijoe: {fileID: 0}
+  movementDirection: {x: 0, y: 0}
+  toRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!50 &1496381708
 Rigidbody2D:
   serializedVersion: 4
