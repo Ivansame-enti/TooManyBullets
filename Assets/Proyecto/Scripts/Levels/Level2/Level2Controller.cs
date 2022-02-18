@@ -8,14 +8,13 @@ public class Level2Controller : MonoBehaviour
 {
     public GameObject controllerSprite;
     public Image arrowImage;
-    public Image imagePhase3;
     public GameObject textUI;
     public GameObject counterUI;
     public GameObject phase1;
     public GameObject phase2;
     public GameObject phase3;
     public GameObject phase4;
-    public GameObject shieldTutorial,shieldXbox, shieldPS4, shieldKeyboard;
+    public GameObject shieldTutorial,shieldXbox, shieldPS4, shieldKeyboard,helpText;
     private int phasecounter;
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
@@ -88,7 +87,7 @@ public class Level2Controller : MonoBehaviour
                 }
                 phase2.SetActive(false);
                 phase3.SetActive(true);
-                imagePhase3.gameObject.SetActive(true);
+                helpText.SetActive(true);
                 textUI.SetActive(true);
                 counterUI.SetActive(true);
                 textPro.text = enemiesDestroyed.ToString();
@@ -105,8 +104,8 @@ public class Level2Controller : MonoBehaviour
             textPro.text = enemiesDestroyed.ToString();
             if (enemiesDestroyed == 2)
             {
+                helpText.SetActive(false);
                 counterUI.SetActive(false);
-                imagePhase3.gameObject.SetActive(false);
                 textUI.SetActive(false);
                 phasecounter = 4;
             }
