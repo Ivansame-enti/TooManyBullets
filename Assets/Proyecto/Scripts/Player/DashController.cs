@@ -78,7 +78,7 @@ public class DashController : MonoBehaviour
                 }
             } else
             {
-                if (Input.GetKeyDown("space") && this.GetComponent<movement>().isMoving)
+                if ((Input.GetKeyDown("space") || Input.GetMouseButtonDown(1)) && this.GetComponent<movement>().isMoving)
                 {
                     rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                     timer = dashDelay;

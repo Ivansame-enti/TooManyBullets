@@ -53,8 +53,8 @@ public class melee : MonoBehaviour
 
                 Damage(result, result2, result3, result4);
             }*/
-            
-            
+
+            /*
             if(Input.GetKey(KeyCode.LeftArrow)) //Control por teclado
             {
                 //flagSpeed = true;
@@ -106,12 +106,37 @@ public class melee : MonoBehaviour
 
                 //Destroy(this.ataquei2, 1);
                 timer = attackCD;
+            }*/
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                //flagSpeed = true;
+                //this.GetComponent<movement>().speed /= 3;
+                ataquei2 = Instantiate(ataque360);
+                Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z));
+                timer = attackCD;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return)) //Control por teclado
+            {
+                //flagSpeed = true;
+                //this.GetComponent<movement>().speed /= 3;
+                ataquei2 = Instantiate(ataque360);
+                Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z));
+                timer = attackCD;
             }
 
             if (ControllerInput.Xbox_One_Controller)
             {
                 if (Input.GetButtonDown("XboxX"))
                 {
+                    /*
                     //flagSpeed = true;
                     //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
@@ -120,9 +145,15 @@ public class melee : MonoBehaviour
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
 
-                    //Destroy(this.ataquei2, 1);
+                    //Destroy(this.ataquei2, 1);*/
+                    ataquei2 = Instantiate(ataque360);
+                    Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
+                    ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                    //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
+                    ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z));
                     timer = attackCD;
                 }
+                /*
                 else if (Input.GetButtonDown("XboxB"))
                 {
                     //flagSpeed = true;
@@ -161,7 +192,7 @@ public class melee : MonoBehaviour
 
                     //Destroy(this.ataquei2, 1);
                     timer = attackCD;
-                }
+                }*/
 
             }
             else if (ControllerInput.PS4_Controller)
@@ -201,6 +232,7 @@ public class melee : MonoBehaviour
                     //Destroy(this.ataquei2, 1);*/
                     timer = attackCD;
                 }
+                /*
                 else if (Input.GetButtonDown("PlayCircle"))
                 {
                     //flagSpeed = true;
@@ -239,7 +271,7 @@ public class melee : MonoBehaviour
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z - 0));
                     //Destroy(this.ataquei2, 1);
                     timer = attackCD;
-                }
+                }*/
             }
         }
         else
