@@ -57,8 +57,8 @@ public class melee : MonoBehaviour
             
             if(Input.GetKey(KeyCode.LeftArrow)) //Control por teclado
             {
-                flagSpeed = true;
-                this.GetComponent<movement>().speed /= 3;
+                //flagSpeed = true;
+                //this.GetComponent<movement>().speed /= 3;
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                 ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
@@ -70,8 +70,8 @@ public class melee : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                flagSpeed = true;
-                this.GetComponent<movement>().speed /= 3;
+                //flagSpeed = true;
+                //this.GetComponent<movement>().speed /= 3;
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                 ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
@@ -83,8 +83,8 @@ public class melee : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.UpArrow))
             {
-                flagSpeed = true;
-                this.GetComponent<movement>().speed /= 3;
+                //flagSpeed = true;
+                //this.GetComponent<movement>().speed /= 3;
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
                 ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
@@ -96,8 +96,8 @@ public class melee : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                flagSpeed = true;
-                this.GetComponent<movement>().speed /= 3;
+                //flagSpeed = true;
+                //this.GetComponent<movement>().speed /= 3;
                 ataquei2 = Instantiate(ataque);
                 Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
                 ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
@@ -112,8 +112,8 @@ public class melee : MonoBehaviour
             {
                 if (Input.GetButtonDown("XboxX"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
@@ -125,8 +125,8 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("XboxB"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
@@ -138,8 +138,8 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("XboxY"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
@@ -151,8 +151,8 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("XboxA"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
@@ -168,8 +168,8 @@ public class melee : MonoBehaviour
             {
                 if (Input.GetButtonDown("PlaySquare"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     /*
                     ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
@@ -203,8 +203,8 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("PlayCircle"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
@@ -216,8 +216,8 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("PlayTriangle"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
@@ -229,8 +229,8 @@ public class melee : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("PlayX"))
                 {
-                    flagSpeed = true;
-                    this.GetComponent<movement>().speed /= 3;
+                    //flagSpeed = true;
+                    //this.GetComponent<movement>().speed /= 3;
                     ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
@@ -244,11 +244,12 @@ public class melee : MonoBehaviour
         }
         else
         {
+            /*
             if(ataquei2==null && flagSpeed)
             {
                 this.GetComponent<movement>().speed *= 3;
                 flagSpeed = false;
-            }
+            }*/
             timer -= Time.deltaTime;
         }
     }
