@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
     public GameObject ps4Moviment, keyboardMovement, xboxAttack,PS4Attack,PS4Dash,xboxDash,keyboarDash,keyboardAttack;
     public movement movementToZero;
     public Nivel1 lvl1;
-    public GameObject tutorialEnemies;
+    public GameObject tutorialEnemies,player;
 
 
     //private new Vector2();
@@ -113,11 +113,13 @@ public class Tutorial : MonoBehaviour
         }
         if(flag == 1)
         {
+            
            tutorialImageDash.SetActive(false);
            tutorialImageAttack.SetActive(true);
            celestialAtk.SetActive(false);
            tutorialEnemy.SetActive(true);
-           this.transform.position = new Vector2(-30, 0);
+            player.transform.position = new Vector2(-11, 0);
+            this.transform.position = new Vector2(-30, 0);
            movementToZero.speed -= defaultPlayerVel;
         }
     }
