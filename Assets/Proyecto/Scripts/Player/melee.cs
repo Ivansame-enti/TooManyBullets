@@ -114,7 +114,7 @@ public class melee : MonoBehaviour
                 {
                     flagSpeed = true;
                     this.GetComponent<movement>().speed /= 3;
-                    ataquei2 = Instantiate(ataque360);
+                    ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
@@ -127,7 +127,7 @@ public class melee : MonoBehaviour
                 {
                     flagSpeed = true;
                     this.GetComponent<movement>().speed /= 3;
-                    ataquei2 = Instantiate(ataque360);
+                    ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + +1 * attackRange, transform.position.y + 0 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270 - 0));
@@ -140,7 +140,7 @@ public class melee : MonoBehaviour
                 {
                     flagSpeed = true;
                     this.GetComponent<movement>().speed /= 3;
-                    ataquei2 = Instantiate(ataque360);
+                    ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + -1 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 0));
@@ -153,7 +153,7 @@ public class melee : MonoBehaviour
                 {
                     flagSpeed = true;
                     this.GetComponent<movement>().speed /= 3;
-                    ataquei2 = Instantiate(ataque360);
+                    ataquei2 = Instantiate(ataque);
                     Instantiate(particles, new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x + 0 * attackRange, transform.position.y + 1 * -attackRange);
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0 - 180));
