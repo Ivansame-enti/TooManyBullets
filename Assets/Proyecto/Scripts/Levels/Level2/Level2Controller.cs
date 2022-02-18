@@ -6,7 +6,7 @@ using TMPro;
 
 public class Level2Controller : MonoBehaviour
 {
-    public Image controllerSprite;
+    public GameObject controllerSprite;
     public Image arrowImage;
     public Image imagePhase3;
     public GameObject textUI;
@@ -15,6 +15,7 @@ public class Level2Controller : MonoBehaviour
     public GameObject phase2;
     public GameObject phase3;
     public GameObject phase4;
+    public GameObject shieldTutorial,shieldXbox, shieldPS4, shieldKeyboard;
     private int phasecounter;
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
@@ -33,6 +34,24 @@ public class Level2Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ControllerInput.Xbox_One_Controller == true)
+        {
+            shieldXbox.SetActive(true);
+            shieldPS4.SetActive(false);
+            shieldKeyboard.SetActive(false);
+        }
+        else if (ControllerInput.PS4_Controller == true)
+        {
+            shieldXbox.SetActive(false);
+            shieldPS4.SetActive(true);
+            shieldKeyboard.SetActive(false);
+        }
+        else if (ControllerInput.Xbox_One_Controller == false && ControllerInput.PS4_Controller == false)
+        {
+            shieldXbox.SetActive(false);
+            shieldPS4.SetActive(false);
+            shieldKeyboard.SetActive(true);
+        }
         if (phasecounter == 4)
         {
             phase3.SetActive(false);
@@ -50,10 +69,11 @@ public class Level2Controller : MonoBehaviour
                 //Destroy(this.GetComponent<SpriteRenderer>());
                 //Destroy(this.GetComponent<Rigidbody2D>());
                 //Destroy(this.GetComponent<CircleCollider2D>());
+                shieldTutorial.SetActive(false);
                 phase1.SetActive(false);
                 phase2.SetActive(true);
                 this.transform.position = new Vector3(-19.5f, -10f, 1);
-                controllerSprite.enabled = false;
+                controllerSprite.SetActive(false);
                 arrowImage.enabled = false;
                 phasecounter++;
             } else if (phasecounter == 1)
