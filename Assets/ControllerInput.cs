@@ -27,6 +27,7 @@ public class ControllerInput : MonoBehaviour
             {
                 inputModule.horizontalAxis = "HorizontalUIXbox";
                 inputModule.verticalAxis = "VerticalUIXbox";
+                inputModule.submitButton = "SubmitXbox";
                 //print("XBOX ONE CONTROLLER IS CONNECTED");
                 //eventSystem.GetComponent<Standalone>
                 PS4_Controller = false;
@@ -36,6 +37,7 @@ public class ControllerInput : MonoBehaviour
             {
                 inputModule.horizontalAxis = "HorizontalUI";
                 inputModule.verticalAxis = "VerticalUI";
+                inputModule.submitButton = "Submit";
                 //print("PS4 CONTROLLER IS CONNECTED");
                 PS4_Controller = true;
                 Xbox_One_Controller = false;
@@ -43,6 +45,7 @@ public class ControllerInput : MonoBehaviour
             {
                 inputModule.horizontalAxis = "HorizontalUI";
                 inputModule.verticalAxis = "VerticalUI";
+                inputModule.submitButton = "Submit";
             }
         }
     }
