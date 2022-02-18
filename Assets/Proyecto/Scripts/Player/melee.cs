@@ -107,7 +107,7 @@ public class melee : MonoBehaviour
                 //Destroy(this.ataquei2, 1);
                 timer = attackCD;
             }*/
-
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                 //flagSpeed = true;
@@ -118,7 +118,7 @@ public class melee : MonoBehaviour
                 //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z));
                 timer = attackCD;
-            }
+            }*/
 
             if (Input.GetKeyDown(KeyCode.Return)) //Control por teclado
             {
