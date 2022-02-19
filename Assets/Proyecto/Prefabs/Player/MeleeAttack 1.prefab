@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1498273448}
   - component: {fileID: 4364815066720539643}
   m_Layer: 7
-  m_Name: MeleeAttack
+  m_Name: MeleeAttack 1
   m_TagString: slash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865379570300240126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &865379570300240113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.24, y: 1.5}
+    oldSize: {x: 1.25, y: 1.5}
     newSize: {x: 1.26, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -43,7 +43,9 @@ public class DropController : MonoBehaviour
         if (collision.gameObject.tag.Equals("Shield"))
         {
             //Debug.Log("a");
-            StartCoroutine(ScaleOverTime(scaleTime));
+            //StartCoroutine(ScaleOverTime(scaleTime));
+            Instantiate(destroyPS, this.transform.position, Quaternion.identity);
+            Destroy(gameObject);
             //Instantiate(destroyPS, this.transform.position, Quaternion.identity);
             //Destroy(gameObject);
             //Debug.Log(collision.transform.localScale);
@@ -54,7 +56,7 @@ public class DropController : MonoBehaviour
         }
     }
     
-    IEnumerator ScaleOverTime(float time)
+    /*IEnumerator ScaleOverTime(float time)
     {
         Vector3 originalScale = this.transform.localScale;
         Vector3 destinationScale = new Vector3(0.0f, 0.0f, 0.0f);
@@ -69,6 +71,6 @@ public class DropController : MonoBehaviour
         } while (currentTime <= time);
         Instantiate(destroyPS, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
-    }
+    }*/
     
 }

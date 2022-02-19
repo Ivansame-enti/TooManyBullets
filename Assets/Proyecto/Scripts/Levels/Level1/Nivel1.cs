@@ -27,7 +27,7 @@ public class Nivel1 : MonoBehaviour
             firstTime = false;
             FindObjectOfType<Tutorial>().tutorialImageAttack.SetActive(false);
             part1.SetActive(true);
-            scenarioAttacks.SetActive(true);
+            //scenarioAttacks.SetActive(true);
         }
 
         if (part1.transform.childCount <= 0)
@@ -41,7 +41,7 @@ public class Nivel1 : MonoBehaviour
             clearPart1 = true;
             uniLaser.SetActive(false);
             multiLaser.SetActive(true);
-            //scenarioAttacks.SetActive(false);
+            scenarioAttacks.SetActive(true);
             
         }
 

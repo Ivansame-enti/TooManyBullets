@@ -8,21 +8,12 @@ public class MiniJoeUIController : MonoBehaviour
     //public GameObject plant;
     public Image plantImage;
     public Image plantImageGreen;
-
+    public float fadeOutSpeed;
     public GameObject activeIn;
-    public Image activeInImage1;
-    public Image activeInImage2;
-    public Image activeInImageGreen;
 
     public GameObject pasive;
     public Image pasiveImage;
     public Image pasiveImageGreen;
-
-    public GameObject activeOut;
-    public Image activeOutImage1;
-    public Image activeOutImage2;
-    public Image activeOutImage3;
-    public Image activeOutImageGreen;
 
     private MiniJoeHealController mhc;
     private antiBulletSystem abs;
@@ -31,33 +22,27 @@ public class MiniJoeUIController : MonoBehaviour
     public GameObject miniJoe;
 
     private Color firstColorPlant;
-    private Color firstColorActive1;
-    private Color firstColorActive2;
     private Color firstColorPasive;
-    private Color firstColorOutActive1;
-    private Color firstColorOutActive2;
-    private Color firstColorOutActive3;
+    private Color originalColor;
     private bool nivel3;
+    private bool fadeOut;
     //public bool active;
     //public bool miniJoeIn;
 
     // Start is called before the first frame update
     void Start()
     {
+        fadeOut = true;
         mhc = miniJoe.gameObject.GetComponent<MiniJoeHealController>();
         abs = miniJoe.gameObject.GetComponent<antiBulletSystem>();
         mlc = miniJoe.gameObject.GetComponent<MiniJoeLaserController>();
         m = miniJoe.gameObject.GetComponent<MiniJoe>();
         //plant.SetActive(true);
         firstColorPlant = plantImage.color;
-        firstColorActive1 = activeInImage1.color;
-        firstColorActive2 = activeInImage2.color;
         firstColorPasive = pasiveImage.color;
-        firstColorOutActive1 = activeOutImage1.color;
-        firstColorOutActive2 = activeOutImage2.color;
-        firstColorOutActive3 = activeOutImage3.color;
         if (SceneManager.GetActiveScene().name != "Nivel3") nivel3 = false;
         else nivel3 = true;
+        originalColor = activeIn.GetComponent<Image>().color;
     }
 
     // Update is called once per frame
@@ -88,7 +73,6 @@ public class MiniJoeUIController : MonoBehaviour
             {
                 activeIn.SetActive(true);
                 pasive.SetActive(true);
-                activeOut.SetActive(false);
 
                 if (mhc.currenntHealsAvailable>0) //Curacion
                 {
@@ -100,47 +84,60 @@ public class MiniJoeUIController : MonoBehaviour
                     pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
                     pasiveImage.color = firstColorPasive;
                 }
-
+                activeIn.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
 
-                if (abs.timer >= abs.antiBulletdelay) //Escudo
+                activeIn.transform.position = new Vector3(miniJoe.transform.position.x+0.25f, miniJoe.transform.position.y - 0.3f, 1);
+
+                activeIn.GetComponent<Image>().fillAmount = abs.timer / abs.antiBulletdelay;
+
+                if (activeIn.GetComponent<Image>().fillAmount == 1)
                 {
-                    activeInImage1.gameObject.GetComponent<Animator>().enabled = true;
-                    activeInImage2.gameObject.GetComponent<Animator>().enabled = true;
+                    if (fadeOut)
+                    {
+                        float fadeAmount = activeIn.GetComponent<Image>().color.a - (fadeOutSpeed * Time.deltaTime);
+                        activeIn.GetComponent<Image>().color = new Color(activeIn.GetComponent<Image>().color.r, activeIn.GetComponent<Image>().color.g, activeIn.GetComponent<Image>().color.b, fadeAmount);
+
+                        if (activeIn.GetComponent<Image>().color.a <= 0f)
+                        {
+                            fadeOut = false;
+                        }
+                    }
                 }
                 else
                 {
-                    activeInImage1.gameObject.GetComponent<Animator>().enabled = false;
-                    activeInImage2.gameObject.GetComponent<Animator>().enabled = false;
-                    activeInImage1.color = firstColorActive1;
-                    activeInImage2.color = firstColorActive2;
+                    activeIn.GetComponent<Image>().color = originalColor;
+                    fadeOut = true;
                 }
-
-                activeInImageGreen.fillAmount = abs.timer / abs.antiBulletdelay;
             }
             else //Minioe plantado
             {
-                activeIn.SetActive(false);
                 pasive.SetActive(false);
-                activeOut.SetActive(true);
 
-                if (mlc.timerLaser >= mlc.laserCoolDown) //Rayo
+                //activeOutImageGreen.fillAmount = mlc.timerLaser / mlc.laserCoolDown;
+                activeIn.gameObject.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+                activeIn.transform.position = new Vector3(miniJoe.transform.position.x+0.65f, miniJoe.transform.position.y-0.8f, 1);
+
+                activeIn.GetComponent<Image>().fillAmount = mlc.timerLaser / mlc.laserCoolDown;
+
+                if (activeIn.GetComponent<Image>().fillAmount == 1)
                 {
-                    activeOutImage1.gameObject.GetComponent<Animator>().enabled = true;
-                    activeOutImage2.gameObject.GetComponent<Animator>().enabled = true;
-                    activeOutImage3.gameObject.GetComponent<Animator>().enabled = true;
+                    if (fadeOut)
+                    {
+                        float fadeAmount = activeIn.GetComponent<Image>().color.a - (fadeOutSpeed * Time.deltaTime);
+                        activeIn.GetComponent<Image>().color = new Color(activeIn.GetComponent<Image>().color.r, activeIn.GetComponent<Image>().color.g, activeIn.GetComponent<Image>().color.b, fadeAmount);
+
+                        if (activeIn.GetComponent<Image>().color.a <= 0f)
+                        {
+                            fadeOut = false;
+                        }
+                    }
                 }
                 else
                 {
-                    activeOutImage1.gameObject.GetComponent<Animator>().enabled = false;
-                    activeOutImage2.gameObject.GetComponent<Animator>().enabled = false;
-                    activeOutImage3.gameObject.GetComponent<Animator>().enabled = false;
-                    activeOutImage1.color = firstColorOutActive1;
-                    activeOutImage2.color = firstColorOutActive2;
-                    activeOutImage3.color = firstColorOutActive3;
+                    activeIn.GetComponent<Image>().color = originalColor;
+                    fadeOut = true;
                 }
-
-                activeOutImageGreen.fillAmount = mlc.timerLaser / mlc.laserCoolDown;
             }
         }
     }
