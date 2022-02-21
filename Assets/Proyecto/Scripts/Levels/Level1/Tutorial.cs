@@ -40,8 +40,6 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(flag);
-        Debug.Log(ControllerInput.Xbox_One_Controller);
         if (tutorialEnemies.transform.childCount <= 0 && lvl1.startLevel== false)
         {
             lvl1.startLevel = true;
