@@ -14,7 +14,7 @@ public class Level2Controller : MonoBehaviour
     public GameObject phase2;
     public GameObject phase3;
     public GameObject phase4;
-    public GameObject shieldTutorial,shieldXbox, shieldPS4, shieldKeyboard,helpText;
+    public GameObject shieldTutorial,shieldXbox, shieldPS4, shieldKeyboard;
     private int phasecounter;
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
@@ -78,7 +78,6 @@ public class Level2Controller : MonoBehaviour
             } else if (phasecounter == 1)
             {
                 GameObject[] bullets;
-
                 bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
                 foreach (GameObject bullet in bullets)
@@ -87,7 +86,6 @@ public class Level2Controller : MonoBehaviour
                 }
                 phase2.SetActive(false);
                 phase3.SetActive(true);
-                helpText.SetActive(true);
                 textUI.SetActive(true);
                 counterUI.SetActive(true);
                 textPro.text = enemiesDestroyed.ToString();
@@ -104,7 +102,7 @@ public class Level2Controller : MonoBehaviour
             textPro.text = enemiesDestroyed.ToString();
             if (enemiesDestroyed == 2)
             {
-                helpText.SetActive(false);
+                //helpText.SetActive(false);
                 counterUI.SetActive(false);
                 textUI.SetActive(false);
                 phasecounter = 4;
