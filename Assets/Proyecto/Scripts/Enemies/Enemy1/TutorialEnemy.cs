@@ -24,7 +24,6 @@ public class TutorialEnemy : MonoBehaviour
 
         if (health <= 0)
         {
-            FindObjectOfType<Nivel1>().startLevel = true;
             Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
