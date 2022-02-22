@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3976731652366335366}
   - component: {fileID: 4507766246242359932}
   m_Layer: 0
-  m_Name: Enemy 1 destroy
+  m_Name: Enemy 1 destroy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5031804150630487784}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -55,7 +55,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 1
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.8392157, g: 0.5882353, b: 0.77254903, a: 1}
-      maxColor: {r: 0.81960785, g: 0.38431373, b: 0.6784314, a: 1}
+      minColor: {r: 1, g: 0, b: 0.16194439, a: 1}
+      maxColor: {r: 0.8679245, g: 0.3389818, b: 0.3840499, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
