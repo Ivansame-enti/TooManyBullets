@@ -3808,6 +3808,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_RootOrder
@@ -4428,7 +4433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1169509233
 Transform:
   m_ObjectHideFlags: 0
@@ -4958,11 +4963,6 @@ PrefabInstance:
       propertyPath: ending
       value: 
       objectReference: {fileID: 1409772709}
-    - target: {fileID: 1766611725925682144, guid: 9646123d4ffc0894f9d3845e4c23191b,
-        type: 3}
-      propertyPath: health
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 6617125929960289014, guid: 9646123d4ffc0894f9d3845e4c23191b,
         type: 3}
       propertyPath: m_Name

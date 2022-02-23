@@ -7,8 +7,8 @@ public class EnemyHealthController : MonoBehaviour
     public float health;
     private float maxHealth;
     public GameObject hitPS;
-    public GameObject deathPS;
-    public GameObject swPs;
+    public GameObject deathPS,deathPS2;
+    public GameObject swPs,swPs2;
     public HealthBarController healthBar;
     public LevelEndingController ending;
     public bool inmortal = false;
@@ -33,7 +33,9 @@ public class EnemyHealthController : MonoBehaviour
                 Destroy(this.transform.parent.gameObject);
             else Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
+            Instantiate(deathPS2, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
+            Instantiate(swPs2, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
         }
     }
