@@ -14757,7 +14757,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d75b8f41e959450c84ac6e967084d3e1, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2353243952363333996, guid: ef2986ddabc6494429f7c42efca1be5b,
         type: 3}
       propertyPath: m_Parameters.numCapVertices

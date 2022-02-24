@@ -10,7 +10,8 @@ public class CelestialAttack : MonoBehaviour
     private float nextActionTime = 0.0f;
     private float warningTiming;
 
-    private float timer;
+    private float timerWarning;
+    private float timerAttack;
     public float activacionAtk;
     public float activacionAtkGoing;
     public GameObject collisionLaser;
@@ -23,6 +24,12 @@ public class CelestialAttack : MonoBehaviour
     Vector2 laserPos1, laserPos2;
     public GameObject laserParticles, laserParticles2;
     public int minFrequencylaser, maxFrequencylaser;
+    private float originalWidth;
+    private float width;
+    private bool reduceWidth;
+    private float originalBoxColliderSizeX;
+    private float originalBoxColliderSizeY;
+    private float boxColliderX;
 
     private void Awake()
     {
@@ -31,8 +38,13 @@ public class CelestialAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        width = 2.0f;
+        originalWidth = celestialAtk.GetComponent<LineRenderer>().startWidth;
+        reduceWidth = false;
+        originalBoxColliderSizeX = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.x;
+        originalBoxColliderSizeY = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.y;
     }
+
     void ShootLaser()
     {
         Draw2DRay(laserPos1, laserPos2 * defDistanceRay);
@@ -49,11 +61,14 @@ public class CelestialAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if (nextActionTime <= 0)
+        if (nextActionTime <= 0) //Hace warning
         {
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
+            reduceWidth = false;
+            width = originalWidth;
+            boxColliderX = originalBoxColliderSizeX;
+            celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
+            celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
             nextActionTime = warningTiming;
 
@@ -73,15 +88,18 @@ public class CelestialAttack : MonoBehaviour
             warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
             laserParticles.transform.position = laserPos1;
             laserParticles.SetActive(true);
-       
+            //Debug.Log("A");
+            //atkGoing = true;
             atkExist = true;
-            timer = 2f;
+            timerWarning = 2f;
         }
         else
         {
-            nextActionTime -= Time.deltaTime;
+            if (!atkGoing && !atkExist)
+                nextActionTime -= Time.deltaTime;
         }
-        if (timer <= 0 && atkExist == true)
+
+        if (timerWarning <= 0 && atkExist) //Laser
         {
             //Debug.Log("funciona");
             atkExist = false;
@@ -91,26 +109,40 @@ public class CelestialAttack : MonoBehaviour
             celestialAtk.SetActive(true);
             laserParticles2.transform.position = laserPos1;
             laserParticles2.SetActive(true);
-            //Debug.Log("ola");
-            timer = activacionAtk;
+            timerAttack = activacionAtk;
+
         }
         else
         {
-            timer -= Time.deltaTime;
+            timerWarning -= Time.deltaTime;
         }
 
-        if (timer <= 0 && atkGoing == true)
+        if (timerAttack <= 0 && atkGoing)
         {
             atkGoing = false;
             celestialAtk.SetActive(false);
             laserParticles.SetActive(false);
             laserParticles2.SetActive(false);
-            timer = activacionAtkGoing;
+            //timer = activacionAtkGoing;
         }
         else
         {
-            timer -= Time.deltaTime;
+            if (reduceWidth)
+            {
+                if (width > 0)
+                {
+                    //Debug.Log("Bajaaaaa");
+                    width -= Time.deltaTime * 2;
+                    boxColliderX -= Time.deltaTime;
+                    celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
+                    celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
+                    laserParticles.SetActive(false);
+                    laserParticles2.SetActive(false);
+                }
+                if (width <= 0) timerAttack -= Time.deltaTime;
+            }
+            if (timerAttack <= 0.2 && atkGoing) reduceWidth = true;
+            else timerAttack -= Time.deltaTime;
         }
-
     }
 }
