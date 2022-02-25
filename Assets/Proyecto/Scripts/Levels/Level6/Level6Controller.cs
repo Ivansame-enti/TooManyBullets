@@ -12,6 +12,7 @@ public class Level6Controller : MonoBehaviour
     public GameObject lightsOff;
     public float lightsOffTimer;
     private float timer;
+    private int phasecounter;
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +21,25 @@ public class Level6Controller : MonoBehaviour
         phase2.SetActive(false);
         phase3.SetActive(false);
         phase4.SetActive(false);
-        scenario.SetActive(false);
+        scenario.SetActive(true);
         timer = lightsOffTimer;
+        phasecounter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Time.timeScale = 1f;
+        if (phase1.transform.childCount <= 0 && phasecounter == 0)
+        {
+            phase2.SetActive(true);
+            phase3.SetActive(false);
+            phasecounter++;
+        }
+
         if (timer <= 0)
         {
-
+            //lightsOff
         } else
         {
             timer -= Time.deltaTime;
