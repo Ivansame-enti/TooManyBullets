@@ -505,7 +505,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127851332}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaa8c2eda441b6b45b19ee4febe5ea4c, type: 3}
   m_Name: 
@@ -516,7 +516,8 @@ MonoBehaviour:
   phase4: {fileID: 338383943}
   scenario: {fileID: 232206358}
   lightsOff: {fileID: 1304994859}
-  lightsOffTimer: 0
+  lightsOffTimer: 5
+  lightsOffDuration: 2
 --- !u!58 &1127851336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -730,6 +731,7 @@ GameObject:
   - component: {fileID: 1304994863}
   - component: {fileID: 1304994862}
   - component: {fileID: 1304994861}
+  - component: {fileID: 1304994864}
   m_Layer: 0
   m_Name: LightsOff
   m_TagString: Untagged
@@ -766,7 +768,7 @@ Animator:
   m_GameObject: {fileID: 1304994859}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8df05084cba7e4e4a9e532e8ff0a4173, type: 2}
+  m_Controller: {fileID: 9100000, guid: 26ab2bb0ce6c34d459871ccef2a5e2e8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -813,6 +815,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304994859}
   m_CullTransparentMesh: 1
+--- !u!114 &1304994864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304994859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af05f9da4a625944293b692b7deba120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightsOffTimer: 2
+  lightsOffDuration: 2
 --- !u!1 &1472217182
 GameObject:
   m_ObjectHideFlags: 0
