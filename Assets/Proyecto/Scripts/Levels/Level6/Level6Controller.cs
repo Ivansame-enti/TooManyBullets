@@ -23,7 +23,7 @@ public class Level6Controller : MonoBehaviour
         phase2.SetActive(false);
         phase3.SetActive(false);
         phase4.SetActive(false);
-        scenario.SetActive(true);
+        scenario.SetActive(false);
         timer = lightsOffTimer;
         timer2 = lightsOffDuration;
         phasecounter = 0;
@@ -38,7 +38,7 @@ public class Level6Controller : MonoBehaviour
             phase1.SetActive(false);
             phasecounter++;
         }
-
+/*
         if (timer <= 0)
         {
             lightsOff.GetComponent<Animator>().SetBool("LightsOff", true);
@@ -58,6 +58,6 @@ public class Level6Controller : MonoBehaviour
         } else
         {
             timer -= Time.deltaTime;
-        }
+        }*/
     }
 }
