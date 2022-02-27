@@ -11,6 +11,7 @@ public class LightsController : MonoBehaviour
     private bool animFinished;
     private bool animFinished2;
     private bool lightOn = true;
+    public GameObject playerLight;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,9 @@ public class LightsController : MonoBehaviour
             {
                 timer = lightsOffTimer;
                 animFinished = false;
-                this.GetComponent<Animator>().SetBool("LightsOff", true);             
+                playerLight.SetActive(true);
+                this.GetComponent<Animator>().SetBool("LightsOff", true);
+                playerLight.GetComponent<Animator>().SetBool("LightsOff", true);
                 //Debug.Log("S");
                 lightOn = false;
             }
@@ -48,6 +51,7 @@ public class LightsController : MonoBehaviour
             {
                 //Debug.Log("SA");
                 this.GetComponent<Animator>().SetBool("LightsOff", false);
+                playerLight.GetComponent<Animator>().SetBool("LightsOff", false);
                 animFinished2 = false;
                 timer2 = lightsOffDuration;
                 lightOn = true;
@@ -103,6 +107,7 @@ public class LightsController : MonoBehaviour
         if (mensaje.Equals("LightsOn"))
         {
             animFinished2 = true;
+            playerLight.SetActive(false);
         }
     }
 }

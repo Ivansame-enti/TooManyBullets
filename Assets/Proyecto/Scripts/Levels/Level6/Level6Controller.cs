@@ -9,11 +9,6 @@ public class Level6Controller : MonoBehaviour
     public GameObject phase3;
     public GameObject phase4;
     public GameObject scenario;
-    public GameObject lightsOff;
-    public float lightsOffTimer;
-    public float lightsOffDuration;
-    private float timer;
-    private float timer2;
     private int phasecounter;
 
     // Start is called before the first frame update
@@ -23,9 +18,7 @@ public class Level6Controller : MonoBehaviour
         phase2.SetActive(false);
         phase3.SetActive(false);
         phase4.SetActive(false);
-        scenario.SetActive(false);
-        timer = lightsOffTimer;
-        timer2 = lightsOffDuration;
+        scenario.SetActive(true);
         phasecounter = 0;
     }
 
@@ -38,26 +31,5 @@ public class Level6Controller : MonoBehaviour
             phase1.SetActive(false);
             phasecounter++;
         }
-/*
-        if (timer <= 0)
-        {
-            lightsOff.GetComponent<Animator>().SetBool("LightsOff", true);
-            if (!lightsOff.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("LightsOffs"))
-            {
-                if (timer2 <= 0)
-                {
-                    lightsOff.GetComponent<Animator>().SetBool("LightsOff", false);
-                    timer = lightsOffTimer;
-                    timer2 = lightsOffDuration;
-                }
-                else
-                {
-                    timer2 -= Time.deltaTime;
-                }
-            }
-        } else
-        {
-            timer -= Time.deltaTime;
-        }*/
     }
 }
