@@ -127,6 +127,7 @@ public class melee : MonoBehaviour
                 ataquei2 = Instantiate(ataque360);
                 Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                 ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                ataquei2.transform.parent = this.transform;
                 //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                 ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z));
                 timer = attackCD;
@@ -149,6 +150,7 @@ public class melee : MonoBehaviour
                     ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                    ataquei2.transform.parent = this.transform;
                     //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z));
                     timer = attackCD;
@@ -212,6 +214,7 @@ public class melee : MonoBehaviour
                     ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
+                    ataquei2.transform.parent = this.transform;
                     //this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, this.transform.localEulerAngles.z));
                     //Debug.Log(this.transform.localEulerAngles.z);

@@ -14931,7 +14931,7 @@ MonoBehaviour:
   m_lineRenderer: {fileID: 1121173048}
   shooting: 0
   mLaserBeam: {fileID: 1121173044}
-  laserCoolDown: 4
+  laserCoolDown: 1
   warningTimer: 0
   laserDamage: 1
   timerLaser: 0

@@ -18,6 +18,7 @@ public class Level2Controller : MonoBehaviour
     private int phasecounter;
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
+    public Sprite square;
     // Start is called before the first frame update
     void Start()
     {
@@ -89,8 +90,10 @@ public class Level2Controller : MonoBehaviour
                 textUI.SetActive(true);
                 counterUI.SetActive(true);
                 textPro.text = enemiesDestroyed.ToString();
-                this.transform.localScale = new Vector3(30,30,0);
-                this.transform.position = new Vector3(22f, -0.3f, 0);
+                this.GetComponent<SpriteRenderer>().sprite = square;
+                this.transform.localScale = new Vector3(8,7,0);
+                this.transform.position = new Vector3(24.5f, -0.3f, 0);
+                this.gameObject.AddComponent<BoxCollider2D>();
                 phasecounter++;
             }
         }

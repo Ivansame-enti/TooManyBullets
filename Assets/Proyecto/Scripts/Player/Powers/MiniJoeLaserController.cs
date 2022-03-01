@@ -109,7 +109,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 m_lineRenderer.startWidth = 0.20f;
                 m_lineRenderer.endWidth = 0.10f;
                 FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
-                playerPosition.GetComponent<movement>().speed /= 2;
+                //playerPosition.GetComponent<movement>().speed /= 2;
             }
             
             //LASER SE CIERRA
@@ -118,7 +118,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 shooting = false;
                 boolParticles = false;
                 mLaserBeam.SetActive(false);
-                playerPosition.GetComponent<movement>().speed *= 2;
+                //playerPosition.GetComponent<movement>().speed *= 2;
                 if (col != null) Destroy(col.gameObject);
             }
             else

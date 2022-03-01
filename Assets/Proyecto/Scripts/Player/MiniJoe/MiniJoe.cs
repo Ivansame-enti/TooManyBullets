@@ -33,10 +33,12 @@ public class MiniJoe : MonoBehaviour
     public PauseController pause;
     private bool nivel3;
     public GameObject searchEnemies;
+    private float playerSpeed;
 
     private bool level2;
     void Start()
     {
+        playerSpeed = player.GetComponent<movement>().speed;
         //fireRate = 1f;
         nextFire = Time.time;
         timer = plantCD;
@@ -197,6 +199,7 @@ public class MiniJoe : MonoBehaviour
                                     minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
                                     torretarea.transform.SetParent(padre2);
 
+                                    player.GetComponent<movement>().speed = playerSpeed;
                                     miniJoelaser.SetActive(false);
                                     flagS = false;
                                     displanted = false;
@@ -220,6 +223,7 @@ public class MiniJoe : MonoBehaviour
                                     minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
                                     torretarea.transform.SetParent(padre2);
 
+                                    player.GetComponent<movement>().speed = playerSpeed;
                                     miniJoelaser.SetActive(false);
                                     flagS = false;
                                     displanted = false;
@@ -243,6 +247,7 @@ public class MiniJoe : MonoBehaviour
                                     minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
                                     torretarea.transform.SetParent(padre2);
 
+                                    player.GetComponent<movement>().speed = playerSpeed;
                                     miniJoelaser.SetActive(false);
                                     flagS = false;
                                     displanted = false;
