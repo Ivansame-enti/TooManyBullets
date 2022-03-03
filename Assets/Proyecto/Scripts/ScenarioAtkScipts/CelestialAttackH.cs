@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CelestialAttack : MonoBehaviour
+public class CelestialAttackH : MonoBehaviour
 {
     public GameObject warning, celestialAtk;
     private GameObject warningClone;
@@ -30,7 +30,7 @@ public class CelestialAttack : MonoBehaviour
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
     private float boxColliderX;
-
+    private float random;
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -48,9 +48,12 @@ public class CelestialAttack : MonoBehaviour
     void ShootLaser()
     {
         Draw2DRay(laserPos1, laserPos2 * defDistanceRay);
-        collisionLaser.transform.position = laserPos1;
-        laserParticles.transform.position = laserPos1;
-        laserParticles2.transform.position = laserPos1;
+        collisionLaser.transform.position =new Vector2(laserPos1.x + 1000000000, laserPos1.y);
+        laserParticles.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
+        laserParticles2.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
+        Debug.Log(collisionLaser.transform.position.x);
+
+        Debug.Log(collisionLaser.transform.position.y);
     }
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
@@ -76,19 +79,27 @@ public class CelestialAttack : MonoBehaviour
                 Random.Range(positionA.x, positionB.x),
                 Random.Range(positionB.y, positionB.y)
             );
+            random = Random.Range(0, 18);
 
             laserPos1 = new Vector2(
-             (randomValor.x),
-              (randomValor.y+12)
+             (randomValor.x-1000000000),
+              (randomValor.y + random)
             );
             laserPos2 = new Vector2(
-             (randomValor.x),
-              (randomValor.y - 100000000)
+             (randomValor.x+10000000000),
+              (randomValor.y + random)
             );
 
-            warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
-            laserParticles.transform.position = laserPos1;
+            laserParticles.transform.rotation = new Quaternion(90, 90, 0, 1);
+           
+            warningClone = Instantiate(warning, new Vector2(randomValor.x+random, randomValor.y+random), warning.transform.rotation);
+            warningClone.transform.rotation = new Quaternion(90, 90, 0, 1);
             laserParticles.SetActive(true);
+            laserParticles.transform.position = new Vector2(30, laserPos1.y);
+            //laserParticles.transform.rotation = new Quaternion(90,90,0,1);
+
+           
+           
             //Debug.Log("A");
             //atkGoing = true;
             atkExist = true;
@@ -108,8 +119,12 @@ public class CelestialAttack : MonoBehaviour
             Destroy(warningClone.gameObject);
             ShootLaser();
             celestialAtk.SetActive(true);
-            laserParticles2.transform.position = laserPos1;
+            laserParticles2.transform.rotation = new Quaternion(90, 90, 0, 1);
+            laserParticles2.transform.position = new Vector2(30, laserPos1.y); ;
             laserParticles2.SetActive(true);
+            laserParticles.transform.rotation = new Quaternion(90, 90, 0, 1);
+            laserParticles.transform.position = new Vector2(30, laserPos1.y); ;
+            laserParticles.SetActive(true);
             timerAttack = activacionAtk;
 
         }
