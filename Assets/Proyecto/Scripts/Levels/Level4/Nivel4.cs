@@ -54,7 +54,7 @@ public class Nivel4 : MonoBehaviour
         if (part3.transform.childCount <= 0)
         {
             part4.SetActive(true);
-            scenarioattack1.SetActive(true);
+           // scenarioattack1.SetActive(true);
         }
 
         if (part4.transform.childCount <= 0)

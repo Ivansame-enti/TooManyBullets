@@ -1912,7 +1912,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &185772870
 GameObject:
@@ -2060,7 +2060,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -22695,7 +22695,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &415587835
 GameObject:
@@ -23661,7 +23661,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &561313093
 GameObject:
@@ -34401,7 +34401,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &772689803
 GameObject:
@@ -34933,7 +34933,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &889488463 stripped
 GameObject:
@@ -35232,7 +35232,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -45202,7 +45202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &986494911
 GameObject:
@@ -45643,7 +45643,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -46111,7 +46111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &1168677621
 GameObject:
@@ -46478,7 +46478,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -51837,7 +51837,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -58631,7 +58631,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -90079,7 +90079,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -90459,7 +90459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938160773, guid: ef2986ddabc6494429f7c42efca1be5b, type: 3}
       propertyPath: m_Size.x
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2353243952240752131, guid: ef2986ddabc6494429f7c42efca1be5b,
         type: 3}
@@ -90504,7 +90504,7 @@ PrefabInstance:
     - target: {fileID: 2353243952363333996, guid: ef2986ddabc6494429f7c42efca1be5b,
         type: 3}
       propertyPath: m_Parameters.widthMultiplier
-      value: 2.7144582
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2353243952363333996, guid: ef2986ddabc6494429f7c42efca1be5b,
         type: 3}
@@ -106012,7 +106012,7 @@ LineRenderer:
   - {x: 0, y: -10, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2.7144582
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -106198,7 +106198,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &7280424420892004575
 GameObject:
