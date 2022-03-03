@@ -27,7 +27,7 @@ public class LightsController : MonoBehaviour
     void Update()
     {
         //Debug.Log(animFinished);
-        if (animFinished2)
+        if (animFinished2 && playerLight!=null)
         {
             if (timer <= 0)
             {
@@ -45,7 +45,7 @@ public class LightsController : MonoBehaviour
             }
         }
 
-        if (animFinished)
+        if (animFinished && playerLight != null)
         {
             if (timer2 <= 0)
             {
@@ -107,7 +107,7 @@ public class LightsController : MonoBehaviour
         if (mensaje.Equals("LightsOn"))
         {
             animFinished2 = true;
-            playerLight.SetActive(false);
+            if(playerLight != null) playerLight.SetActive(false);
         }
     }
 }
