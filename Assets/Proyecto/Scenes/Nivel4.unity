@@ -9020,7 +9020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healTimer: 1
   healAmmount: 0.2
-  healsAvailable: 2
+  healsAvailable: 10000
   currenntHealsAvailable: 0
   timer: 0
   phc: {fileID: 781798019}
