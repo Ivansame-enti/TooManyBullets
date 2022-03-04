@@ -23,6 +23,13 @@ public class PlayerLightController : MonoBehaviour
             collision.GetComponent<SpriteRenderer>().sortingOrder = 11;
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //Debug.Log("Ei");
+        if (collision.tag == "enemy" || collision.tag == "EnemyBullet")
+            collision.GetComponent<SpriteRenderer>().sortingOrder = 11;
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         //Debug.Log("Ei");
