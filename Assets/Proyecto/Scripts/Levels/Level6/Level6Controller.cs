@@ -35,8 +35,8 @@ public class Level6Controller : MonoBehaviour
 
         if (phase2.transform.childCount <= 0 && phasecounter == 1)
         {
-            phase2.SetActive(true);
-            phase1.SetActive(false);
+            phase2.SetActive(false);
+            phase3.SetActive(true);
             phasecounter++;
         }
     }
