@@ -34,7 +34,7 @@ public class EnemyController2 : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Nivel6" && bulletSpeed>10)
         {
             bulletSpeed -=Time.deltaTime*3;
-            Debug.Log(bulletSpeed);
+            //Debug.Log(bulletSpeed);
         }
 
         if (spawnParticles != null)
