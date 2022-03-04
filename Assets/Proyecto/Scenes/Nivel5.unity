@@ -3478,13 +3478,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healTimer: 1
-  healAmmount: 0.5
+  healAmmount: 0.2
   healsAvailable: 2
   currenntHealsAvailable: 0
   timer: 0
   phc: {fileID: 1496381712}
   healParticle: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
     type: 3}
+  player: {fileID: 1496381702}
 --- !u!114 &824828164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3502,7 +3503,7 @@ MonoBehaviour:
   m_lineRenderer: {fileID: 721107500}
   shooting: 0
   mLaserBeam: {fileID: 721107496}
-  laserCoolDown: 1
+  laserCoolDown: 2
   warningTimer: 0
   laserDamage: 1
   timerLaser: 0
