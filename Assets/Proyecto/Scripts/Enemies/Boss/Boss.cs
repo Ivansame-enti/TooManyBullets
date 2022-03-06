@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour
 
     public GameObject player;
     public GameObject leftEye, rightEye;
+    public PlayerHealthController playerH;
     public float speed;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,11 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        leftEye.transform.position = Vector2.MoveTowards(leftEye.transform.position, player.transform.position, speed * Time.deltaTime);
-        rightEye.transform.position = Vector2.MoveTowards(rightEye.transform.position, player.transform.position, speed * Time.deltaTime);
+        if(playerH.dead == false)
+        {
+            leftEye.transform.position = Vector2.MoveTowards(leftEye.transform.position, player.transform.position, speed * Time.deltaTime);
+            rightEye.transform.position = Vector2.MoveTowards(rightEye.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+
     }
 }
