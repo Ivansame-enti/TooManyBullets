@@ -8,8 +8,9 @@ public class Level6Controller : MonoBehaviour
     public GameObject phase2;
     public GameObject phase3;
     public GameObject phase4;
+    public GameObject lights;
     public GameObject scenario;
-    private int phasecounter;
+    public int phasecounter;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class Level6Controller : MonoBehaviour
         phase2.SetActive(false);
         phase3.SetActive(false);
         phase4.SetActive(false);
+        lights.SetActive(false);
         scenario.SetActive(false);
         phasecounter = 0;
     }
@@ -37,6 +39,15 @@ public class Level6Controller : MonoBehaviour
         {
             phase2.SetActive(false);
             phase3.SetActive(true);
+            lights.SetActive(true);
+            phasecounter++;
+        }
+
+        if (phase3.transform.childCount <= 0 && phasecounter == 2)
+        {
+            phase3.SetActive(false);
+            phase4.SetActive(true);
+            //lights.SetActive(true);
             phasecounter++;
         }
     }

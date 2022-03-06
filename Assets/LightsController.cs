@@ -44,7 +44,7 @@ public class LightsController : MonoBehaviour
                 if (lightOn) timer -= Time.deltaTime;
             }
         }
-
+        /*
         if (animFinished && playerLight != null)
         {
             if (timer2 <= 0)
@@ -60,7 +60,7 @@ public class LightsController : MonoBehaviour
             {
                 if (!lightOn) timer2 -= Time.deltaTime;
             }
-        }
+        }*/
 
     }
     /*
@@ -101,7 +101,7 @@ public class LightsController : MonoBehaviour
             animFinished = true;
         }
     }
-
+    /*
     public void LightsOn(string mensaje)
     {
         if (mensaje.Equals("LightsOn"))
@@ -109,5 +109,5 @@ public class LightsController : MonoBehaviour
             animFinished2 = true;
             if(playerLight != null) playerLight.SetActive(false);
         }
-    }
+    }*/
 }
