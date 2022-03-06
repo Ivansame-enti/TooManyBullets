@@ -11,6 +11,7 @@ public class Level6Controller : MonoBehaviour
     public GameObject lights;
     public GameObject scenario;
     public int phasecounter;
+    public VictoryController victorycontroller;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,11 @@ public class Level6Controller : MonoBehaviour
             phase4.SetActive(true);
             //lights.SetActive(true);
             phasecounter++;
+        }
+
+        if (phase4.transform.childCount <= 0 && phasecounter == 3)
+        {
+            victorycontroller.victory = true;
         }
     }
 }

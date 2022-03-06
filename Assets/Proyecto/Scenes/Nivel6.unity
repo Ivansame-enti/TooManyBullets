@@ -325,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 3969236534594426590, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3969236534749429690, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
@@ -402,6 +402,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2013410264}
+    - target: {fileID: 3969236535655275956, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236535995282921, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_SortingOrder
@@ -480,6 +485,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 232206357}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &232206359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+    type: 3}
+  m_PrefabInstance: {fileID: 232206357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0b0b35880b8d54aa62f46d008df630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &257976642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2044,6 +2061,7 @@ MonoBehaviour:
   lights: {fileID: 367363544}
   scenario: {fileID: 232206358}
   phasecounter: 0
+  victorycontroller: {fileID: 232206359}
 --- !u!58 &1127851336
 CircleCollider2D:
   m_ObjectHideFlags: 0
