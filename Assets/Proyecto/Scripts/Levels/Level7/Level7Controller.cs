@@ -18,9 +18,10 @@ public class Level7Controller : MonoBehaviour
     {
 
 
-       // scenario.SetActive(true);
-        phase1.SetActive(true);
-        scenario.SetActive(true);
+        // scenario.SetActive(true);
+        //phase1.SetActive(true); 
+        //scenario.SetActive(true);
+        phase3.SetActive(true);
     }
 
     // Update is called once per frame
