@@ -10,9 +10,11 @@ public class Nivel3 : MonoBehaviour
     public GameObject part1, part2, part3, part4, player;
     public PlayerHealthController playerIsDead;
     public GameObject laserXbox, laserPS4, laserKeyboard;
+    public PlayerHealthController phc;
     // Start is called before the first frame update
     void Start()
     {
+        phc.currentHealth--;
         startLevel = false;
     }
 
@@ -37,7 +39,7 @@ public class Nivel3 : MonoBehaviour
             laserPS4.SetActive(false);
             laserKeyboard.SetActive(true);
         }
-        if (part1.transform.childCount <= 0 && playerIsDead.dead == false)
+        if (part1.transform.childCount <= 0 && playerIsDead.dead == false && phc.currentHealth==phc.health)
         {
             part2.SetActive(true);
             objects.SetActive(true);
