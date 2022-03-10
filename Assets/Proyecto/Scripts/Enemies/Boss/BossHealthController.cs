@@ -4,22 +4,46 @@ using UnityEngine;
 
 public class BossHealthController : MonoBehaviour
 {
+    private bool hit;
+    private float timer,hitColor = 0.1f;
     public float health;
     private float maxHealth;
     public GameObject hitPS;
     public GameObject deathPS, deathPS2;
     public GameObject swPs, swPs2;
     public bool inmortal = false;
+    public GameObject superiorFace, inferiorFace,mouth;
+    private Color originalColor;
     // Start is called before the first frame update
     void Start()
     {
-        
+        originalColor = superiorFace.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ///Debug.Log(health);
+        Debug.Log(hit);
+
+        if(hit == true)
+        {
+            superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, superiorFace.GetComponent<SpriteRenderer>().color.a);
+            inferiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, inferiorFace.GetComponent<SpriteRenderer>().color.a);
+            mouth.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, mouth.GetComponent<SpriteRenderer>().color.a);
+            if (timer >= hitColor)
+            {
+                superiorFace.GetComponent<SpriteRenderer>().color = originalColor;
+                inferiorFace.GetComponent<SpriteRenderer>().color = originalColor;
+                mouth.GetComponent<SpriteRenderer>().color = originalColor;
+                hit = false;
+                timer = 0;
+            }
+            else
+            {
+                timer += Time.deltaTime;
+            }
+
+        }
 
         if (health <= 0)
         {
@@ -58,6 +82,7 @@ public class BossHealthController : MonoBehaviour
             {
                 Instantiate(hitPS, new Vector2(this.transform.position.x, this.transform.position.y - 0.5f), Quaternion.identity);
                 health = health - collision.gameObject.GetComponent<MeleeAttackController>().damage;
+                hit = true;
             }
             if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
             if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");

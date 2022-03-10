@@ -16,9 +16,11 @@ public class BossLaser : MonoBehaviour
     private Gradient originalLaserColor;
     private BoxCollider2D col, col2, col3,col4,col5,col6,col7,col8;
     private bool warning = false;
+    public bool finish;
     // Start is called before the first frame update
     void Start()
     {
+        finish = false;
         originalRotation = exclamation1.transform.rotation;
         originalLaserColor = mLaserBeam.GetComponent<LineRenderer>().colorGradient;
         /*
@@ -139,6 +141,8 @@ public class BossLaser : MonoBehaviour
                 mLaserBeam6.SetActive(false);
                 mLaserBeam7.SetActive(false);
                 mLaserBeam8.SetActive(false);
+                finish = true;
+
             }
             else
             {
