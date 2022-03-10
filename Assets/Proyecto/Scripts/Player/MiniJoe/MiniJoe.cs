@@ -33,8 +33,7 @@ public class MiniJoe : MonoBehaviour
     public PauseController pause;
     private bool nivel3;
     public GameObject searchEnemies;
-    private float playerSpeed;
-
+    private bool nivel6;
     private bool level2;
     void Start()
     {
@@ -46,6 +45,8 @@ public class MiniJoe : MonoBehaviour
         else level2 = true;
         if (SceneManager.GetActiveScene().name != "Nivel3") nivel3 = false;
         else nivel3 = true;
+        if (SceneManager.GetActiveScene().name != "Nivel6") nivel6 = false;
+        else nivel6 = true;
     }
 
     // Update is called once per frame
@@ -60,6 +61,15 @@ public class MiniJoe : MonoBehaviour
                 minijoe.transform.parent = null;
                 flagS = true;
                 this.transform.position = new Vector2(0, 0);
+            }
+
+            if (nivel6)
+            {
+                this.GetComponent<BoxCollider2D>().enabled = true;
+                minijoe.transform.parent = null;
+                flagS = true;
+                this.transform.position = new Vector2(20.5f, 0);
+                nivel6 = false;
             }
 
             if (displanted)
@@ -310,11 +320,6 @@ public class MiniJoe : MonoBehaviour
         else if (displanted == true)
         {
             positionList.Clear();
-        }
-
-        if (nivel3)
-        {
-
         }
     }
 
