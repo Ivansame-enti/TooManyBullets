@@ -6,8 +6,7 @@ public class BossHealthController : MonoBehaviour
 {
     private bool hit;
     private float timer,hitColor = 0.1f;
-    public float health;
-    private float maxHealth;
+    public float health,maxHealth;
     public GameObject hitPS;
     public GameObject deathPS, deathPS2;
     public GameObject swPs, swPs2;
@@ -18,6 +17,7 @@ public class BossHealthController : MonoBehaviour
     void Start()
     {
         originalColor = superiorFace.GetComponent<SpriteRenderer>().color;
+        maxHealth = health;
     }
 
     // Update is called once per frame

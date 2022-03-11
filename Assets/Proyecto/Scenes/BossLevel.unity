@@ -482,7 +482,7 @@ Transform:
   m_GameObject: {fileID: 68892674}
   m_LocalRotation: {x: -0, y: -0, z: -0.033120215, w: 0.9994514}
   m_LocalPosition: {x: 6.5000005, y: 1.584323, z: 2.5885813}
-  m_LocalScale: {x: 3.4992528, y: 4.38465, z: 1.0727571}
+  m_LocalScale: {x: 3.4992528, y: 4.38465, z: 0}
   m_Children: []
   m_Father: {fileID: 1669954175}
   m_RootOrder: 1
@@ -638,7 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75200514}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114347851}
   - component: {fileID: 114347852}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CelestialAttack (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,7 +918,7 @@ GameObject:
   - component: {fileID: 126196254}
   - component: {fileID: 126196256}
   - component: {fileID: 126196255}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5720,7 +5720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156427093}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6002,7 +6002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 245916917}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6032,7 +6032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263480545}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6275,7 +6275,7 @@ GameObject:
   - component: {fileID: 352340323}
   - component: {fileID: 352340325}
   - component: {fileID: 352340324}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11115,7 +11115,7 @@ GameObject:
   - component: {fileID: 367630765}
   - component: {fileID: 367630767}
   - component: {fileID: 367630766}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15917,7 +15917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 371464596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15979,7 +15979,7 @@ GameObject:
   - component: {fileID: 417509452}
   - component: {fileID: 417509454}
   - component: {fileID: 417509453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21282,7 +21282,7 @@ GameObject:
   - component: {fileID: 479447379}
   - component: {fileID: 479447381}
   - component: {fileID: 479447380}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26168,7 +26168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 559521948}
   - component: {fileID: 559521949}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26523,7 +26523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625556848}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26555,7 +26555,7 @@ GameObject:
   - component: {fileID: 628699829}
   - component: {fileID: 628699831}
   - component: {fileID: 628699830}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31441,7 +31441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663630481}
   - component: {fileID: 663630482}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ColliderLaser
   m_TagString: LaserCollider
   m_Icon: {fileID: 0}
@@ -31611,7 +31611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 690086658}
   - component: {fileID: 690086659}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ColliderLaser
   m_TagString: LaserCollider
   m_Icon: {fileID: 0}
@@ -31770,7 +31770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724802927}
   - component: {fileID: 724802928}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CelestialAttack (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31855,7 +31855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746749351}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MultiLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31870,8 +31870,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746749350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3713646, y: 3.27, z: 0.6478424}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.026109, y: 2.5802228, z: 3.2364237}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 1575709565}
   - {fileID: 1290813652}
@@ -31887,8 +31887,8 @@ Transform:
   - {fileID: 903801137}
   - {fileID: 2117975535}
   - {fileID: 559521948}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1484129854}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796397657
 GameObject:
@@ -31992,7 +31992,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d,
     type: 3}
   m_Color: {r: 0.6509804, g: 0.05882351, b: 0.47423875, a: 1}
@@ -32128,7 +32128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903801137}
   - component: {fileID: 903801138}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32399,7 +32399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984141328}
   - component: {fileID: 984141329}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ColliderLaser
   m_TagString: LaserCollider
   m_Icon: {fileID: 0}
@@ -32621,7 +32621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023187897}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32683,7 +32683,7 @@ GameObject:
   - component: {fileID: 1026010294}
   - component: {fileID: 1026010296}
   - component: {fileID: 1026010295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37516,7 +37516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079588054}
   - component: {fileID: 1079588055}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ColliderLaser
   m_TagString: LaserCollider
   m_Icon: {fileID: 0}
@@ -37675,7 +37675,7 @@ GameObject:
   - component: {fileID: 1109319385}
   - component: {fileID: 1109319387}
   - component: {fileID: 1109319386}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42478,7 +42478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110938668}
   - component: {fileID: 1110938669}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ColliderLaser
   m_TagString: LaserCollider
   m_Icon: {fileID: 0}
@@ -42538,6 +42538,7 @@ GameObject:
   - component: {fileID: 1114626125}
   - component: {fileID: 1114626123}
   - component: {fileID: 1114626124}
+  - component: {fileID: 1114626127}
   m_Layer: 3
   m_Name: Boss
   m_TagString: enemy
@@ -42553,7 +42554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114626121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 468726932}
@@ -42597,7 +42598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863f25e3418417048909e05c5d847ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 1000
+  maxHealth: 0
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
   deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
   deathPS2: {fileID: 5031804150630487784, guid: e283fea6115d5874d8a2c6a4b030d557,
@@ -42625,12 +42627,16 @@ MonoBehaviour:
   rightEye: {fileID: 1499159072}
   playerH: {fileID: 1087902714}
   bossLaser: {fileID: 1888137751}
+  bossHealth: {fileID: 1114626124}
   laser: {fileID: 1888137749}
   bullets: {fileID: 954503623}
   waterDrop: {fileID: 1842885091}
+  multiLaser: {fileID: 746749350}
   speed: 2
   bulletsDuration: 5
-  dropDuration: 5
+  dropDuration: 8
+  multiLaserDuration: 5
+  cooldownAttack: 2
 --- !u!60 &1114626126
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -42672,6 +42678,25 @@ PolygonCollider2D:
       - {x: 9.130781, y: -1.7662786}
       - {x: 9.892162, y: -1.1313396}
       - {x: 9.954599, y: 3.4248016}
+--- !u!95 &1114626127
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114626121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3e13ebbc43043f4899ab5d66d875ee4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1130605610
 GameObject:
   m_ObjectHideFlags: 0
@@ -42682,7 +42707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1130605611}
   - component: {fileID: 1130605612}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CelestialAttack (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42739,7 +42764,7 @@ GameObject:
   - component: {fileID: 1144840327}
   - component: {fileID: 1144840329}
   - component: {fileID: 1144840328}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47573,7 +47598,7 @@ GameObject:
   - component: {fileID: 1216857315}
   - component: {fileID: 1216857317}
   - component: {fileID: 1216857316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52377,7 +52402,7 @@ GameObject:
   - component: {fileID: 1245987939}
   - component: {fileID: 1245987941}
   - component: {fileID: 1245987940}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57264,7 +57289,7 @@ GameObject:
   - component: {fileID: 1261823991}
   - component: {fileID: 1261823993}
   - component: {fileID: 1261823992}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62067,7 +62092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1290813652}
   - component: {fileID: 1290813653}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62429,7 +62454,7 @@ GameObject:
   - component: {fileID: 1369051959}
   - component: {fileID: 1369051961}
   - component: {fileID: 1369051960}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67262,7 +67287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1417876095}
   - component: {fileID: 1417876096}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ColliderLaser
   m_TagString: LaserCollider
   m_Icon: {fileID: 0}
@@ -67357,7 +67382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1458864657
 Transform:
   m_ObjectHideFlags: 0
@@ -67367,7 +67392,7 @@ Transform:
   m_GameObject: {fileID: 1458864656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.4700001, y: 0.9200001, z: 2.5885813}
-  m_LocalScale: {x: 1, y: 1, z: 0.27055934}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1669954175}
   m_RootOrder: 2
@@ -67540,6 +67565,7 @@ Transform:
   - {fileID: 1888137750}
   - {fileID: 954503624}
   - {fileID: 1842885092}
+  - {fileID: 746749351}
   m_Father: {fileID: 1114626122}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67644,7 +67670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1499159073
 Transform:
   m_ObjectHideFlags: 0
@@ -67654,7 +67680,7 @@ Transform:
   m_GameObject: {fileID: 1499159072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.87, y: 0.7800001, z: 2.5885813}
-  m_LocalScale: {x: 1, y: 1, z: 0.185739}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1669954175}
   m_RootOrder: 3
@@ -67837,7 +67863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524472811}
   - component: {fileID: 1524472812}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CelestialAttack (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67976,7 +68002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575709565}
   - component: {fileID: 1575709566}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CelestialAttack (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68032,7 +68058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592462636}
   - component: {fileID: 1592462637}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CelestialAttack (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68532,7 +68558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647520500}
   - component: {fileID: 1647520501}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68967,7 +68993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1710257897}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69149,7 +69175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1725301623}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69179,7 +69205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1727000045}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69234,7 +69260,7 @@ Transform:
   m_GameObject: {fileID: 1774548363}
   m_LocalRotation: {x: -0, y: -0, z: 0.033120308, w: 0.9994514}
   m_LocalPosition: {x: 1.55, y: 1.5843229, z: 2.5885813}
-  m_LocalScale: {x: 3.4992523, y: 4.3846493, z: 1.0727571}
+  m_LocalScale: {x: 3.4992523, y: 4.3846493, z: 0}
   m_Children: []
   m_Father: {fileID: 1669954175}
   m_RootOrder: 0
@@ -69532,7 +69558,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d,
     type: 3}
   m_Color: {r: 0.6509804, g: 0.05882353, b: 0.4745098, a: 1}
@@ -69554,7 +69580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1865168327}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70088,7 +70114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905773762}
   - component: {fileID: 1905773763}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70222,7 +70248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934237079}
   - component: {fileID: 1934237080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70355,7 +70381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959484400}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70489,7 +70515,7 @@ GameObject:
   - component: {fileID: 1988546268}
   - component: {fileID: 1988546270}
   - component: {fileID: 1988546269}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75292,7 +75318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992680104}
   - component: {fileID: 1992680105}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ColliderLaser
   m_TagString: LaserCollider
   m_Icon: {fileID: 0}
@@ -75348,7 +75374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2016458899}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75379,7 +75405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2043891521}
   - component: {fileID: 2043891522}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75512,7 +75538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072779477}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserFinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75626,7 +75652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117975535}
   - component: {fileID: 2117975536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CelestialAttack (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75724,6 +75750,11 @@ PrefabInstance:
       propertyPath: shakeCamera
       value: 
       objectReference: {fileID: 1329259014}
+    - target: {fileID: 3969236534129587925, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: inmortalTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236534380507463, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_Camera
