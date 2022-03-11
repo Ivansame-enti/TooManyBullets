@@ -1291,6 +1291,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &206286492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206286487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &208133238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,6 +3355,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &671809474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671809469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &681461051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3841,7 +3865,7 @@ MonoBehaviour:
   health: 3
   currentHealth: 0
   shakeCamera: {fileID: 33265004}
-  inmortalTime: 2
+  inmortalTime: 1
   blinkTime: 0.1
   deathPS: {fileID: 9045900899425504740, guid: 1f8738176fde6bf4bae19ac9ddce3b42, type: 3}
   dead: 0
@@ -5939,7 +5963,7 @@ GameObject:
   - component: {fileID: 975429125}
   m_Layer: 0
   m_Name: Obstacles
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7919,6 +7943,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1298458390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298458385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1320955225
 GameObject:
   m_ObjectHideFlags: 0
@@ -8123,6 +8159,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -5.06
       objectReference: {fileID: 0}
+    - target: {fileID: 1686658640971889971, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1686658640971889973, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
       propertyPath: m_Color.b
@@ -8137,6 +8178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686658641893391244, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1686658641893391246, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
@@ -8248,6 +8294,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1686658641994177349, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1686658641994295944, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
       propertyPath: m_Color.b
@@ -8283,6 +8334,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.88
       objectReference: {fileID: 0}
+    - target: {fileID: 1686658641994295990, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1686658643091521688, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -8302,6 +8358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686658643091521689, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1686658643091521691, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
@@ -9898,6 +9959,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1704976540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704976535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1705159449
 GameObject:
   m_ObjectHideFlags: 0
@@ -16652,6 +16725,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -5.06
       objectReference: {fileID: 0}
+    - target: {fileID: 1686658640971889971, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1686658640971889973, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
       propertyPath: m_Color.b
@@ -16666,6 +16744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686658641893391244, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1686658641893391246, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
@@ -16777,6 +16860,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1686658641994177349, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1686658641994295944, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
       propertyPath: m_Color.b
@@ -16812,6 +16900,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.88
       objectReference: {fileID: 0}
+    - target: {fileID: 1686658641994295990, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1686658643091521688, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16831,6 +16924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686658643091521689, guid: b32f8ce52ab62b3469f80b64c6c962a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 1686658643091521691, guid: b32f8ce52ab62b3469f80b64c6c962a5,
         type: 3}
@@ -17067,6 +17165,54 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2017424721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017424701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2017424722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017424702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2017424723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017424703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2017424724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017424704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069169893
 GameObject:
   m_ObjectHideFlags: 0

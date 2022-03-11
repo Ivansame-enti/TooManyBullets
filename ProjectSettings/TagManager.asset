@@ -18,6 +18,9 @@ TagManager:
   - MjLaserCollider
   - LaserColliderEnemy
   - ending
+  - zona
+  - Minijoe
+  - Wall
   layers:
   - Default
   - TransparentFX

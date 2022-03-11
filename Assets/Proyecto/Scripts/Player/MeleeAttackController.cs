@@ -7,4 +7,5 @@ public class MeleeAttackController : MonoBehaviour
     // Start is called before the first frame update
     public float damage;
 
+    
 }

@@ -69,7 +69,7 @@ public class DashController : MonoBehaviour
             }
             else if (ControllerInput.PS4_Controller)
             {
-                if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space")) && this.GetComponent<movement>().isMoving)
+                if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space") || Input.GetButtonDown("PlayX")) && this.GetComponent<movement>().isMoving)
                 {
                     rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                     timer = dashDelay;

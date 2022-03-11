@@ -6638,7 +6638,7 @@ MonoBehaviour:
   health: 3
   currentHealth: 0
   shakeCamera: {fileID: 111208377}
-  inmortalTime: 2
+  inmortalTime: 1
   blinkTime: 0.1
   deathPS: {fileID: 9045900899425504740, guid: 1f8738176fde6bf4bae19ac9ddce3b42, type: 3}
   dead: 0
