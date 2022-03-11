@@ -585,6 +585,9 @@ MonoBehaviour:
   healthBar: {fileID: 2048710621}
   ending: {fileID: 0}
   inmortal: 0
+  probabilidad: 0
+  specialParticles: {fileID: 7346800036578399500, guid: 5a3bc6ff30742b043b6faa1559f134aa,
+    type: 3}
 --- !u!95 &8016744924728573905
 Animator:
   serializedVersion: 3

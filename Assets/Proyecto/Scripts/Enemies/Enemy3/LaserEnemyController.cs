@@ -18,9 +18,28 @@ public class LaserEnemyController : MonoBehaviour
     private bool warning = false;
     private bool animFinished;
     private bool activeAnimation;
+    Gradient gradient;
+    GradientColorKey[] colorKey;
+    GradientAlphaKey[] alphaKey;
     // Start is called before the first frame update
     void Start()
     {
+        gradient = new Gradient();
+        colorKey = new GradientColorKey[2];
+        colorKey[0].color = Color.red;
+        colorKey[0].time = 0.0f;
+        colorKey[1].color = Color.blue;
+        colorKey[1].time = 0.0f;
+
+        // Populate the alpha  keys at relative time 0 and 1  (0 and 100%)
+        alphaKey = new GradientAlphaKey[2];
+        alphaKey[0].alpha = 1.0f;
+        alphaKey[0].time = 0.0f;
+        alphaKey[1].alpha = 1.0f;
+        alphaKey[1].time = 1.0f;
+
+        gradient.SetKeys(colorKey, alphaKey);
+
         activeAnimation = true;
         animFinished = true;
         originalRotation = exclamation1.transform.rotation;
@@ -75,6 +94,7 @@ public class LaserEnemyController : MonoBehaviour
                 //mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 255, 0);
                 //mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 255, 0);
                 //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam.GetComponent<LineRenderer>().colorGradient = gradient;
                 mLaserBeam.GetComponent<LineRenderer>().startWidth = 0.30f;
                 mLaserBeam.GetComponent<LineRenderer>().endWidth = 0.30f;
 
@@ -83,6 +103,7 @@ public class LaserEnemyController : MonoBehaviour
                 //mLaserBeam2.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
                 //mLaserBeam2.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
                 //mLaserBeam2.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam2.GetComponent<LineRenderer>().colorGradient = gradient;
                 mLaserBeam2.GetComponent<LineRenderer>().startWidth = 0.30f;
                 mLaserBeam2.GetComponent<LineRenderer>().endWidth = 0.30f;
 
@@ -91,6 +112,7 @@ public class LaserEnemyController : MonoBehaviour
                 //mLaserBeam3.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
                 //mLaserBeam3.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
                 //mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam3.GetComponent<LineRenderer>().colorGradient = gradient;
                 mLaserBeam3.GetComponent<LineRenderer>().startWidth = 0.30f;
                 mLaserBeam3.GetComponent<LineRenderer>().endWidth = 0.30f;
 

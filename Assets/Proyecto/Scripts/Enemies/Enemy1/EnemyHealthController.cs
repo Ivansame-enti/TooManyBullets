@@ -12,20 +12,39 @@ public class EnemyHealthController : MonoBehaviour
     public HealthBarController healthBar;
     public LevelEndingController ending;
     public bool inmortal = false;
-
+    public int probabilidad;
+    private int numAleatorio;
+    private bool firstTime;
+    private bool specialEnemy;
+    public GameObject specialParticles;
     // Start is called before the first frame update
     void Start()
     {
+        specialEnemy = false;
+        probabilidad = 10;
+        firstTime = true;
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
         if (ending != null) ending.AddEnnemy(this.gameObject);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (firstTime)
+        {
+            numAleatorio = Random.Range(1, probabilidad);
+            Debug.Log(numAleatorio);
+            if(numAleatorio == 1)
+            {
+                specialEnemy = true;
+                var particle = Instantiate(specialParticles, this.transform.position, Quaternion.identity);
+                particle.transform.parent = this.transform;
+            }
+            firstTime = false;
+        }
         ///Debug.Log(health);
-
         if (health <= 0)
         {
             if (ending != null) ending.EnemyDies(this.gameObject);
