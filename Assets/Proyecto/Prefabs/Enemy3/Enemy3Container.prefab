@@ -884,6 +884,7 @@ GameObject:
   - component: {fileID: 1766611725925682144}
   - component: {fileID: 820220229451798905}
   - component: {fileID: 820220229451798906}
+  - component: {fileID: 811148699614947696}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: enemy
@@ -1087,6 +1088,25 @@ MonoBehaviour:
   exclamation1: {fileID: 183795805}
   exclamation2: {fileID: 1269258206}
   exclamation3: {fileID: 1550579006}
+--- !u!95 &811148699614947696
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766611725925682156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67054fed75d8d9c499a5f9638e2e7f42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5505969530509433776
 GameObject:
   m_ObjectHideFlags: 0

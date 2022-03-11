@@ -302,6 +302,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 3969236534129587919, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: dashDelay
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236534129587925, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: shakeCamera
@@ -2241,7 +2246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -51, y: -260.21716}
+  m_AnchoredPosition: {x: -50.99997, y: -260.21716}
   m_SizeDelta: {x: -116.596, y: -60.588505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1304994861

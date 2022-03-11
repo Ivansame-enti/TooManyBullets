@@ -4261,7 +4261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashDistance: 15
   sprite: {fileID: 1127931920605403113, guid: f8c20f3d6bf23a741849133c7511fd5f, type: 3}
-  dashDelay: 1.5
+  dashDelay: 0.75
   dashTime: 0.15
   particle_delay: 0
   dashTrail: {fileID: 0}
