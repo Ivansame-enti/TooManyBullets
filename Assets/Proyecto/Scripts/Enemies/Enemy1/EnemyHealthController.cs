@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealthController : MonoBehaviour
 {
@@ -17,11 +18,19 @@ public class EnemyHealthController : MonoBehaviour
     private bool firstTime;
     private bool specialEnemy;
     public GameObject specialParticles;
+    private bool level1;
+    private bool level2;
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
+        else level1 = true;
+
+        if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
+        else level2 = true;
+
         specialEnemy = false;
-        probabilidad = 10;
+        probabilidad = 7;
         firstTime = true;
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
@@ -36,7 +45,7 @@ public class EnemyHealthController : MonoBehaviour
         {
             numAleatorio = Random.Range(1, probabilidad);
             Debug.Log(numAleatorio);
-            if(numAleatorio == 1)
+            if(numAleatorio == 1 && !level1 && !level2)
             {
                 specialEnemy = true;
                 var particle = Instantiate(specialParticles, this.transform.position, Quaternion.identity);
