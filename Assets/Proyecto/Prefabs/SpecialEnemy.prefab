@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7346800036578399501}
   - component: {fileID: -4807163845879159944}
   m_Layer: 0
-  m_Name: HealParticle 1
+  m_Name: SpecialEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4837,7 +4837,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

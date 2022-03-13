@@ -417,6 +417,16 @@ PrefabInstance:
       propertyPath: searchEnemies
       value: 
       objectReference: {fileID: 1823652170}
+    - target: {fileID: 3969236535606439622, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 232206360}
+    - target: {fileID: 3969236535606439622, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: healAmmount
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236535655275956, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_Camera
@@ -517,6 +527,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0b0b35880b8d54aa62f46d008df630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &232206360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3969236534129587907, guid: d04c2d495b45f9b4d89e31ed36467132,
+    type: 3}
+  m_PrefabInstance: {fileID: 232206357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &257976642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2246,7 +2262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50.99997, y: -260.21716}
+  m_AnchoredPosition: {x: -51, y: -260.21716}
   m_SizeDelta: {x: -116.596, y: -60.588505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1304994861

@@ -37,7 +37,7 @@ public class PlayerLightController : MonoBehaviour
                     animFinished = false;
                     timer = blinkTimer;
                 }
-                else if(animFinished)
+                else if (animFinished)
                 {
                     timer -= Time.deltaTime;
                 }
@@ -60,7 +60,8 @@ public class PlayerLightController : MonoBehaviour
         {
             if (collision.tag == "enemy" || collision.tag == "EnemyBullet")
                 collision.GetComponent<SpriteRenderer>().sortingOrder = 11;
-        } else
+        }
+        else
         {
             if (collision.tag == "enemy" || collision.tag == "EnemyBullet")
                 collision.GetComponent<SpriteRenderer>().sortingOrder = 0;
@@ -69,8 +70,8 @@ public class PlayerLightController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-            if (collision.tag == "enemy" || collision.tag == "EnemyBullet")
-                collision.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        if (collision.tag == "enemy" || collision.tag == "EnemyBullet")
+            collision.GetComponent<SpriteRenderer>().sortingOrder = 0;
     }
 
     private void Blink(string mensaje)

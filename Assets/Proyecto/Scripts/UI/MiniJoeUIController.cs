@@ -71,7 +71,9 @@ public class MiniJoeUIController : MonoBehaviour
             
             if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo
             {
+                pasive.SetActive(false);
                 activeIn.SetActive(true);
+                /*
                 pasive.SetActive(true);
 
                 if (mhc.currenntHealsAvailable>0) //Curacion
@@ -83,9 +85,9 @@ public class MiniJoeUIController : MonoBehaviour
                 {
                     pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
                     pasiveImage.color = firstColorPasive;
-                }
+                }*/
                 activeIn.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
+                //pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
 
                 activeIn.transform.position = new Vector3(miniJoe.transform.position.x+0.25f, miniJoe.transform.position.y - 0.3f, 1);
 
@@ -112,7 +114,20 @@ public class MiniJoeUIController : MonoBehaviour
             }
             else //Minioe plantado
             {
-                pasive.SetActive(false);
+                //pasive.SetActive(false);
+                pasive.SetActive(true);
+
+                if (mhc.currenntHealsAvailable > 0) //Curacion
+                {
+                    //plantImage.gameObject.GetComponent<Animator>().enabled = true;
+                    pasiveImage.gameObject.GetComponent<Animator>().enabled = true;
+                }
+                else
+                {
+                    pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
+                    pasiveImage.color = firstColorPasive;
+                }
+                pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
 
                 //activeOutImageGreen.fillAmount = mlc.timerLaser / mlc.laserCoolDown;
                 activeIn.gameObject.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
