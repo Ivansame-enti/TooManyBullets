@@ -30,7 +30,7 @@ public class EnemyHealthController : MonoBehaviour
         else level2 = true;
 
         specialEnemy = false;
-        probabilidad = 10;
+        probabilidad = 2;
         firstTime = true;
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
