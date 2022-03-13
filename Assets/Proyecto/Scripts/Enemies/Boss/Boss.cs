@@ -40,7 +40,6 @@ public class Boss : MonoBehaviour
                     laser.SetActive(true);
                     if (bossLaser.finish == true)
                     {
-                        bossLaser.finish = false;
                         laser.SetActive(false);
                         cooldownOn = true;
                     }
@@ -49,6 +48,7 @@ public class Boss : MonoBehaviour
                         attack = Random.Range(1, 5);
                         cooldownOn = false;
                         timer = 0;
+                        bossLaser.finish = false;
                     }
                     else
                     {
@@ -122,15 +122,24 @@ public class Boss : MonoBehaviour
             {
                 if (attack == 1)
                 {
-                    bullets.SetActive(true);
                     laser.SetActive(true);
+                    bullets.SetActive(true);
                     if (bossLaser.finish == true)
                     {
                         bullets.SetActive(false);
-                        bossLaser.finish = false;
                         laser.SetActive(false);
-
+                        cooldownOn = true;
+                    }
+                    if (timer >= cooldownAttack && cooldownOn == true)
+                    {
                         attack = Random.Range(1, 3);
+                        bossLaser.finish = false;
+                        cooldownOn = false;
+                        timer = 0;
+                    }
+                    else
+                    {
+                        timer += Time.deltaTime;
                     }
                 }
 
