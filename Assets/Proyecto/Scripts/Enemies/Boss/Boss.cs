@@ -13,7 +13,7 @@ public class Boss : MonoBehaviour
     public GameObject laser,bullets,waterDrop,multiLaser;
     public float speed;
     private int attack;
-    private bool startPhase2;
+    private bool startPhase2,cooldownOn;
     private float timer;
     public float bulletsDuration,dropDuration,multiLaserDuration,cooldownAttack;
     // Start is called before the first frame update
@@ -40,10 +40,19 @@ public class Boss : MonoBehaviour
                     laser.SetActive(true);
                     if (bossLaser.finish == true)
                     {
-                        Debug.Log(attack);
                         bossLaser.finish = false;
                         laser.SetActive(false);
+                        cooldownOn = true;
+                    }
+                    if (timer >= cooldownAttack && cooldownOn == true)
+                    {
                         attack = Random.Range(1, 5);
+                        cooldownOn = false;
+                        timer = 0;
+                    }
+                    else
+                    {
+                        timer += Time.deltaTime;
                     }
                 }
                 if (attack == 2)
@@ -72,7 +81,7 @@ public class Boss : MonoBehaviour
                         waterDrop.SetActive(false);
                     }
 
-                    if (timer >= dropDuration + 5)
+                    if (timer >= dropDuration + cooldownAttack + 5)
                     {
                         attack = Random.Range(1, 5);
                         timer = 0;
@@ -107,7 +116,7 @@ public class Boss : MonoBehaviour
                 bullets.SetActive(false);
                 laser.SetActive(false);
                 multiLaser.SetActive(false);
-                attack = Random.Range(1,2);
+                attack = Random.Range(1,3);
             }
             if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == true)
             {
@@ -121,7 +130,27 @@ public class Boss : MonoBehaviour
                         bossLaser.finish = false;
                         laser.SetActive(false);
 
-                        attack = Random.Range(1, 2);
+                        attack = Random.Range(1, 3);
+                    }
+                }
+
+                if (attack == 2)
+                {
+                    multiLaser.SetActive(true);
+                    waterDrop.SetActive(true);
+                    if (timer >= multiLaserDuration)
+                    {
+                        multiLaser.SetActive(false);
+                        waterDrop.SetActive(false);
+                    }
+                    if (timer >= multiLaserDuration + cooldownAttack + 5)
+                    {
+                        attack = Random.Range(1, 3);
+                        timer = 0;
+                    }
+                    else
+                    {
+                        timer += Time.deltaTime;
                     }
                 }
             }
