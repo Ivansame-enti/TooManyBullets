@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class MiniJoeUIController : MonoBehaviour
 {
     //public GameObject plant;
@@ -14,6 +16,7 @@ public class MiniJoeUIController : MonoBehaviour
     public GameObject pasive;
     public Image pasiveImage;
     public Image pasiveImageGreen;
+    public TextMeshProUGUI TextPro;
 
     private MiniJoeHealController mhc;
     private antiBulletSystem abs;
@@ -71,7 +74,7 @@ public class MiniJoeUIController : MonoBehaviour
             
             if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo
             {
-                pasive.SetActive(false);
+                //pasive.SetActive(false);
                 activeIn.SetActive(true);
                 /*
                 pasive.SetActive(true);
@@ -127,7 +130,8 @@ public class MiniJoeUIController : MonoBehaviour
                     pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
                     pasiveImage.color = firstColorPasive;
                 }
-                pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
+                //pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
+                TextPro.text = mhc.currenntHealsAvailable.ToString();
 
                 //activeOutImageGreen.fillAmount = mlc.timerLaser / mlc.laserCoolDown;
                 activeIn.gameObject.transform.localScale = new Vector3(0.5f,0.5f,0.5f);

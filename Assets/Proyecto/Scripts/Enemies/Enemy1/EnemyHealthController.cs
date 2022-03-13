@@ -30,7 +30,7 @@ public class EnemyHealthController : MonoBehaviour
         else level2 = true;
 
         specialEnemy = false;
-        probabilidad = 7;
+        probabilidad = 10;
         firstTime = true;
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
@@ -56,6 +56,10 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
         if (health <= 0)
         {
+            if (specialEnemy)
+            {
+                GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable++;
+            }
             if (ending != null) ending.EnemyDies(this.gameObject);
             if (transform.parent != null && transform.parent.gameObject.tag == "container")
                 Destroy(this.transform.parent.gameObject);
@@ -64,7 +68,7 @@ public class EnemyHealthController : MonoBehaviour
             Instantiate(deathPS2, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
             Instantiate(swPs2, this.transform.position, Quaternion.identity);
-            FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
+            FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death"); 
         }
     }
 
