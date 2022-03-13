@@ -15050,8 +15050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ade36d82a80e5f48aaa4753ba5394e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healTimer: 2
-  healAmmount: 0.08
+  healTimer: 1
+  healAmmount: 0.2
   healsAvailable: 2
   currenntHealsAvailable: 0
   timer: 0
