@@ -44,7 +44,7 @@ public class EnemyHealthController : MonoBehaviour
         if (firstTime)
         {
             numAleatorio = Random.Range(1, probabilidad);
-            Debug.Log(numAleatorio);
+            //Debug.Log(numAleatorio);
             if(numAleatorio == 1 && !level1 && !level2)
             {
                 specialEnemy = true;
