@@ -134,7 +134,7 @@ public class MiniJoe : MonoBehaviour
             {
                 if (ControllerInput.Xbox_One_Controller)
                 {
-                    if (Input.GetKeyDown(KeyCode.LeftControl) || (Input.GetButtonDown("LB") || Input.GetButtonDown("XboxY"))) //Plantar a minijoe
+                    if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("LB")) //Plantar a minijoe
                     {
                         this.GetComponent<BoxCollider2D>().enabled = true;
                         timer = 0;
@@ -194,7 +194,7 @@ public class MiniJoe : MonoBehaviour
                         {
                             if (ControllerInput.Xbox_One_Controller)
                             {
-                                if ((Input.GetKeyDown(KeyCode.LeftControl) || (Input.GetButtonDown("LB") || Input.GetButtonDown("XboxY"))) && !nivel3) //Recoger a minijoe
+                                if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("LB")) && !nivel3) //Recoger a minijoe
                                 {
                                     this.GetComponent<BoxCollider2D>().enabled = false;
                                     timer = 0;

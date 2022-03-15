@@ -8,8 +8,9 @@ public class WallController : MonoBehaviour
     {
         if (collision.gameObject.tag == "slash")
         {
-            //Destroy(collision.gameObject);
-            //collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            //Destroy(collision.gameObject.GetComponent<BoxCollider2D>());
+            //collision.GetComponent<MeleeAttackController>().damage = 0f;
+            //collision.gameObject.GetComponent<Rigidbody2D>().simulated = false;
         }
     }
 }

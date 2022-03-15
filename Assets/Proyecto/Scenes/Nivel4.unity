@@ -6692,7 +6692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49145937, g: 0.764151, b: 0.26312745, a: 0.21960784}
+  m_Color: {r: 0.49145937, g: 0.764151, b: 0.26312745, a: 0.11764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8144,6 +8144,8 @@ MonoBehaviour:
   TextPro: {fileID: 1627474784}
   newHeal: {fileID: 1155921165}
   miniJoe: {fileID: 1727879313}
+  healParticle: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
+    type: 3}
 --- !u!114 &1505322686
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class MiniJoeUIController : MonoBehaviour
     private MiniJoe m;
     public GameObject miniJoe;
 
+    public GameObject healParticle;
+
     private Color firstColorPlant;
     private Color firstColorPasive;
     private Color originalColor;
@@ -80,7 +82,9 @@ public class MiniJoeUIController : MonoBehaviour
             TextPro.text = mhc.currenntHealsAvailable.ToString();
             if (mhc.currenntHealsAvailable > lastCharges)
             {
-                Debug.Log("Holaa");
+                //Instantiate(healParticle, newHeal.transform.position, Quaternion.identity);
+                Instantiate(healParticle, new Vector2(newHeal.transform.position.x, newHeal.transform.position.y-0.2f), Quaternion.identity);
+                //Instantiate(healParticle, new Vector2(newHeal.transform.position.x + 0.5f, newHeal.transform.position.y), Quaternion.identity);
                 newHeal.GetComponent<Animator>().SetBool("New", true);
             }
             else newHeal.GetComponent<Animator>().SetBool("New", false);

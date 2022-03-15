@@ -16,7 +16,8 @@ public class EnemyHealthController : MonoBehaviour
     public int probabilidad;
     private int numAleatorio;
     private bool firstTime;
-    private bool specialEnemy;
+    public bool specialEnemy=false;
+    public bool antiSlash = false;
     public GameObject specialParticles;
     private bool level1;
     private bool level2;
@@ -29,8 +30,8 @@ public class EnemyHealthController : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
         else level2 = true;
 
-        specialEnemy = false;
-        probabilidad = 2;
+        //specialEnemy = false;
+        probabilidad = 13;
         firstTime = true;
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
@@ -48,6 +49,11 @@ public class EnemyHealthController : MonoBehaviour
             if(numAleatorio == 1 && !level1 && !level2)
             {
                 specialEnemy = true;
+                
+            }
+
+            if (specialEnemy)
+            {
                 var particle = Instantiate(specialParticles, this.transform.position, Quaternion.identity);
                 particle.transform.parent = this.transform;
             }
@@ -91,7 +97,7 @@ public class EnemyHealthController : MonoBehaviour
             if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
         }
 
-        if (collision.tag == "slash")
+        if (collision.tag == "slash" && !antiSlash)
         {
             if (!inmortal)
             {

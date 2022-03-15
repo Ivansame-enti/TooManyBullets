@@ -25,7 +25,7 @@ public class antiBulletSystem : MonoBehaviour
         {
             if (ControllerInput.Xbox_One_Controller)
             {
-                if ((Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetButtonDown("RB") || Input.GetButtonDown("XboxA"))) && timer >= antiBulletdelay)
+                if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("RB")) && timer >= antiBulletdelay)
                 {
                     FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
                     //this.transform.Find("Shield").gameObject.SetActive(true);
