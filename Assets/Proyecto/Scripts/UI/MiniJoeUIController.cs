@@ -85,9 +85,9 @@ public class MiniJoeUIController : MonoBehaviour
                 //Instantiate(healParticle, newHeal.transform.position, Quaternion.identity);
                 Instantiate(healParticle, new Vector2(newHeal.transform.position.x, newHeal.transform.position.y-0.2f), Quaternion.identity);
                 //Instantiate(healParticle, new Vector2(newHeal.transform.position.x + 0.5f, newHeal.transform.position.y), Quaternion.identity);
-                newHeal.GetComponent<Animator>().SetBool("New", true);
+                //newHeal.GetComponent<Animator>().SetBool("New", true);
             }
-            else newHeal.GetComponent<Animator>().SetBool("New", false);
+            //else newHeal.GetComponent<Animator>().SetBool("New", false);
             lastCharges = mhc.currenntHealsAvailable;
 
             if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo

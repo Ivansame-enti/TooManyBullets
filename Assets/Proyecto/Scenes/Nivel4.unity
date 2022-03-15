@@ -6659,7 +6659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1155921164
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8144,7 +8144,7 @@ MonoBehaviour:
   TextPro: {fileID: 1627474784}
   newHeal: {fileID: 1155921165}
   miniJoe: {fileID: 1727879313}
-  healParticle: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
+  healParticle: {fileID: 7346800036578399500, guid: 2c8adca3bad351a42bdf89771186839b,
     type: 3}
 --- !u!114 &1505322686
 MonoBehaviour:
@@ -9427,7 +9427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healTimer: 1
   healAmmount: 0.2
-  healsAvailable: 2
+  healsAvailable: 1
   currenntHealsAvailable: 0
   timer: 0
   phc: {fileID: 781798019}

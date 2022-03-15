@@ -278,7 +278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &115938431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healParticle
       value: 
-      objectReference: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
+      objectReference: {fileID: 7346800036578399500, guid: 2c8adca3bad351a42bdf89771186839b,
         type: 3}
     - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
@@ -538,6 +538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: healAmmount
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236535606439622, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: healsAvailable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3969236535655275956, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}

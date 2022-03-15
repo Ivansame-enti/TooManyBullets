@@ -1296,18 +1296,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &206286492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206286487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &208133238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,18 +3549,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &671809474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671809469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &681461051
 GameObject:
   m_ObjectHideFlags: 0
@@ -8267,18 +8243,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1298458390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298458385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1320955225
 GameObject:
   m_ObjectHideFlags: 0
@@ -10426,18 +10390,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1704976540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704976535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1705159449
 GameObject:
   m_ObjectHideFlags: 0
@@ -17891,54 +17843,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2017424721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017424701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2017424722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017424702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2017424723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017424703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2017424724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017424704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a878783d1fa7344e8a58ebab9c37f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2069169893
 GameObject:
   m_ObjectHideFlags: 0
