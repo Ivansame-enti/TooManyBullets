@@ -16,7 +16,8 @@ public class EnemyHealthController : MonoBehaviour
     public int probabilidad;
     private int numAleatorio;
     private bool firstTime;
-    private bool specialEnemy;
+    public bool specialEnemy=false;
+    public bool antiSlash = false;
     public GameObject specialParticles;
     private bool level1;
     private bool level2;
@@ -29,8 +30,8 @@ public class EnemyHealthController : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
         else level2 = true;
 
-        specialEnemy = false;
-        probabilidad = 7;
+        //specialEnemy = false;
+        probabilidad = 11;
         firstTime = true;
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
@@ -44,10 +45,15 @@ public class EnemyHealthController : MonoBehaviour
         if (firstTime)
         {
             numAleatorio = Random.Range(1, probabilidad);
-            Debug.Log(numAleatorio);
+            //Debug.Log(numAleatorio);
             if(numAleatorio == 1 && !level1 && !level2)
             {
                 specialEnemy = true;
+                
+            }
+
+            if (specialEnemy)
+            {
                 var particle = Instantiate(specialParticles, this.transform.position, Quaternion.identity);
                 particle.transform.parent = this.transform;
             }
@@ -56,6 +62,10 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
         if (health <= 0)
         {
+            if (specialEnemy)
+            {
+                GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable++;
+            }
             if (ending != null) ending.EnemyDies(this.gameObject);
             if (transform.parent != null && transform.parent.gameObject.tag == "container")
                 Destroy(this.transform.parent.gameObject);
@@ -64,7 +74,7 @@ public class EnemyHealthController : MonoBehaviour
             Instantiate(deathPS2, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
             Instantiate(swPs2, this.transform.position, Quaternion.identity);
-            FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
+            FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death"); 
         }
     }
 
@@ -87,7 +97,7 @@ public class EnemyHealthController : MonoBehaviour
             if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
         }
 
-        if (collision.tag == "slash")
+        if (collision.tag == "slash" && !antiSlash)
         {
             if (!inmortal)
             {

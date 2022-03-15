@@ -44,7 +44,7 @@ public class MiniJoeLaserController : MonoBehaviour
 
                 if (ControllerInput.Xbox_One_Controller)
                 {
-                    if (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetButtonDown("RB") || Input.GetButtonDown("XboxA")))
+                    if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("RB"))
                     {
                         timerLaser = 0;
                         warningTimer = true;

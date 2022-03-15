@@ -59,7 +59,7 @@ public class DashController : MonoBehaviour
 
             if (ControllerInput.Xbox_One_Controller)
             {
-                if ((Input.GetAxis("RT")!=0 || Input.GetAxis("LT")!=0 || Input.GetKeyDown("space")) && this.GetComponent<movement>().isMoving)
+                if ((Input.GetAxis("RT")!=0 || Input.GetAxis("LT")!=0 || Input.GetKeyDown("space") || Input.GetButtonDown("XboxA")) && this.GetComponent<movement>().isMoving)
                 {
                     rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                     timer = dashDelay;

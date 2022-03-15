@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class MiniJoeUIController : MonoBehaviour
 {
     //public GameObject plant;
@@ -14,6 +16,8 @@ public class MiniJoeUIController : MonoBehaviour
     public GameObject pasive;
     public Image pasiveImage;
     public Image pasiveImageGreen;
+    public TextMeshProUGUI TextPro;
+    public Image newHeal;
 
     private MiniJoeHealController mhc;
     private antiBulletSystem abs;
@@ -21,11 +25,14 @@ public class MiniJoeUIController : MonoBehaviour
     private MiniJoe m;
     public GameObject miniJoe;
 
+    public GameObject healParticle;
+
     private Color firstColorPlant;
     private Color firstColorPasive;
     private Color originalColor;
     private bool nivel3;
     private bool fadeOut;
+    private int lastCharges;
     //public bool active;
     //public bool miniJoeIn;
 
@@ -43,6 +50,7 @@ public class MiniJoeUIController : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Nivel3") nivel3 = false;
         else nivel3 = true;
         originalColor = activeIn.GetComponent<Image>().color;
+        lastCharges = mhc.currenntHealsAvailable;
     }
 
     // Update is called once per frame
@@ -52,26 +60,39 @@ public class MiniJoeUIController : MonoBehaviour
         {
             plantImage.enabled = false;
             plantImageGreen.enabled = false;
-            
+
         }
 
         if (miniJoe != null)
         {
-            if (m.timer >= m.plantCD) //Curacion
+            
+            pasive.SetActive(true);
+
+            if (mhc.currenntHealsAvailable > 0) //Curacion
             {
-                plantImage.gameObject.GetComponent<Animator>().enabled = true;
+                //plantImage.gameObject.GetComponent<Animator>().enabled = true;
+                pasiveImage.gameObject.GetComponent<Animator>().enabled = true;
             }
             else
             {
-                plantImage.gameObject.GetComponent<Animator>().enabled = false;
-                plantImage.color = firstColorPlant;
+                pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
+                pasiveImage.color = firstColorPasive;
             }
+            //pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
+            TextPro.text = mhc.currenntHealsAvailable.ToString();
+            if (mhc.currenntHealsAvailable > lastCharges)
+            {
+                //Instantiate(healParticle, newHeal.transform.position, Quaternion.identity);
+                Instantiate(healParticle, new Vector2(newHeal.transform.position.x, newHeal.transform.position.y-0.2f), Quaternion.identity);
+                //Instantiate(healParticle, new Vector2(newHeal.transform.position.x + 0.5f, newHeal.transform.position.y), Quaternion.identity);
+                //newHeal.GetComponent<Animator>().SetBool("New", true);
+            }
+            //else newHeal.GetComponent<Animator>().SetBool("New", false);
+            lastCharges = mhc.currenntHealsAvailable;
 
-            plantImageGreen.fillAmount = m.timer / m.plantCD;
-            
             if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo
             {
-                pasive.SetActive(false);
+                //pasive.SetActive(false);
                 activeIn.SetActive(true);
                 /*
                 pasive.SetActive(true);
@@ -89,7 +110,7 @@ public class MiniJoeUIController : MonoBehaviour
                 activeIn.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 //pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
 
-                activeIn.transform.position = new Vector3(miniJoe.transform.position.x+0.25f, miniJoe.transform.position.y - 0.3f, 1);
+                activeIn.transform.position = new Vector3(miniJoe.transform.position.x + 0.25f, miniJoe.transform.position.y - 0.3f, 1);
 
                 activeIn.GetComponent<Image>().fillAmount = abs.timer / abs.antiBulletdelay;
 
@@ -115,23 +136,11 @@ public class MiniJoeUIController : MonoBehaviour
             else //Minioe plantado
             {
                 //pasive.SetActive(false);
-                pasive.SetActive(true);
-
-                if (mhc.currenntHealsAvailable > 0) //Curacion
-                {
-                    //plantImage.gameObject.GetComponent<Animator>().enabled = true;
-                    pasiveImage.gameObject.GetComponent<Animator>().enabled = true;
-                }
-                else
-                {
-                    pasiveImage.gameObject.GetComponent<Animator>().enabled = false;
-                    pasiveImage.color = firstColorPasive;
-                }
-                pasiveImageGreen.fillAmount = ((float)mhc.currenntHealsAvailable) / ((float)mhc.healsAvailable);
+                
 
                 //activeOutImageGreen.fillAmount = mlc.timerLaser / mlc.laserCoolDown;
-                activeIn.gameObject.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
-                activeIn.transform.position = new Vector3(miniJoe.transform.position.x+0.65f, miniJoe.transform.position.y-0.8f, 1);
+                activeIn.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                activeIn.transform.position = new Vector3(miniJoe.transform.position.x + 0.65f, miniJoe.transform.position.y - 0.8f, 1);
 
                 activeIn.GetComponent<Image>().fillAmount = mlc.timerLaser / mlc.laserCoolDown;
 
