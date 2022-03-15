@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attack = Random.Range(1, 4);
+        attack = Random.Range(1, 5);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
     }
@@ -28,11 +28,11 @@ public class Boss : MonoBehaviour
     void Update()
     {
 
-        if(playerH.dead == false)
+        if (playerH.dead == false)
         {
             leftEye.transform.position = Vector2.MoveTowards(leftEye.transform.position, player.transform.position, speed * Time.deltaTime);
             rightEye.transform.position = Vector2.MoveTowards(rightEye.transform.position, player.transform.position, speed * Time.deltaTime);
-            
+        }
             if(bossHealth.health >= bossHealth.maxHealth / 2)
             {
                 if (attack == 1)
@@ -49,6 +49,10 @@ public class Boss : MonoBehaviour
                         cooldownOn = false;
                         timer = 0;
                         bossLaser.finish = false;
+                        if (attack == 1)
+                        {
+                            attack = Random.Range(1, 5);
+                        }
                     }
                     else
                     {
@@ -65,6 +69,10 @@ public class Boss : MonoBehaviour
                     if (timer >= bulletsDuration + cooldownAttack)
                     {
                         attack = Random.Range(1, 5);
+                        if (attack == 2)
+                        {
+                            attack = Random.Range(1, 5);
+                        }
                         timer = 0;
                     }
                     else
@@ -84,6 +92,10 @@ public class Boss : MonoBehaviour
                     if (timer >= dropDuration + cooldownAttack + 5)
                     {
                         attack = Random.Range(1, 5);
+                        if (attack == 3)
+                        {
+                            attack = Random.Range(1, 5);
+                        }
                         timer = 0;
                     }
                     else
@@ -102,6 +114,10 @@ public class Boss : MonoBehaviour
                     if (timer >= multiLaserDuration + cooldownAttack)
                     {
                         attack = Random.Range(1, 5);
+                        if (attack == 4)
+                        {
+                            attack = Random.Range(1, 5);
+                        }
                         timer = 0;
                     }
                     else
@@ -128,12 +144,13 @@ public class Boss : MonoBehaviour
                     {
                         bullets.SetActive(false);
                         laser.SetActive(false);
+                        bossLaser.finish = false;
                         cooldownOn = true;
                     }
                     if (timer >= cooldownAttack && cooldownOn == true)
                     {
                         attack = Random.Range(1, 3);
-                        bossLaser.finish = false;
+
                         cooldownOn = false;
                         timer = 0;
                     }
@@ -168,5 +185,5 @@ public class Boss : MonoBehaviour
 
         }
 
-    }
+    
 }

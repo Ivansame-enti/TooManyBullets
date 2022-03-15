@@ -42633,9 +42633,9 @@ MonoBehaviour:
   waterDrop: {fileID: 1842885091}
   multiLaser: {fileID: 746749350}
   speed: 2
-  bulletsDuration: 5
-  dropDuration: 8
-  multiLaserDuration: 5
+  bulletsDuration: 2
+  dropDuration: 2
+  multiLaserDuration: 2
   cooldownAttack: 6
 --- !u!60 &1114626126
 PolygonCollider2D:
@@ -69715,9 +69715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ecb42d861cb2a4a8e8a8ee70860373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRotation: 50
+  speedRotation: 40
   fireRate: 3
-  attackDuration: 5
+  attackDuration: 2
   warningTime: 2
   mLaserBeam: {fileID: 473748111}
   mLaserBeam2: {fileID: 48781353}
