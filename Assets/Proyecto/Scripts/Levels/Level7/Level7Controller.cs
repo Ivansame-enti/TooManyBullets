@@ -13,6 +13,8 @@ public class Level7Controller : MonoBehaviour
     public GameObject phase21, phase22, phase23, phase24, phase25;
     public GameObject multi2, multi4;
     private GameObject multi2a, multi4a;
+    public GameObject enemigo31, enemigo32, enemigo33, enemigo34, enemigo35, enemigo36;
+    public GameObject enemigo41, enemigo42, enemigo43, enemigo44, enemigo45, enemigo46;
     private int phasecounter;
     private bool oneTime;
     private float time = 0.0f, timeaux = 0.0f;
@@ -24,10 +26,10 @@ public class Level7Controller : MonoBehaviour
     {
 
 
-        // scenario.SetActive(true);
-        //phase1.SetActive(true); 
-        scenario.SetActive(true);
-        phase1.SetActive(true);
+         scenario.SetActive(true);
+       phase1.SetActive(true); 
+       // scenario.SetActive(false);
+    //    phase4.SetActive(true);
     }
 
     // Update is called once per frame
@@ -89,14 +91,19 @@ public class Level7Controller : MonoBehaviour
 
        
         }
-        if (phase3.transform.childCount <= 1)
+        if (phase3 && enemigo31 == null && enemigo32 == null && enemigo33 == null && enemigo34 == null && enemigo35 == null && enemigo36==null)
         {
+            phase3.SetActive(false);
+            multi2a.SetActive(false);
+            multi4a.SetActive(false);
             phase4.SetActive(true);
+            scenario.SetActive(false);
         }
 
-            if (phase4.transform.childCount <= 0)
+
+            if (phase4 && enemigo41 == null && enemigo42 == null && enemigo43 == null && enemigo44 == null && enemigo45 == null && enemigo46 == null)
         {
-            //victorycontroller.victory = true;
+            victorycontroller.victory = true;
 
         }
     }
