@@ -7,6 +7,7 @@ public class EnemigoMDelay : MonoBehaviour
     // Start is called before the first frame update
    
     private float time = 0.0f;
+    private bool flag = false;
     void Start()
     {
         GameObject thePlayer = GameObject.Find("Enemy2");
@@ -25,7 +26,7 @@ public class EnemigoMDelay : MonoBehaviour
     {
 
 
-
+        if (!flag) { 
         time += Time.deltaTime;
         if (time >= 2.0f)
         {
@@ -38,6 +39,8 @@ public class EnemigoMDelay : MonoBehaviour
             enemy.movementSpeed = 400.0f;
             enemy2.movementSpeed = 400.0f;
             enemy3.movementSpeed = 400.0f;
+            flag = true;
+        }
         }
     }
 
