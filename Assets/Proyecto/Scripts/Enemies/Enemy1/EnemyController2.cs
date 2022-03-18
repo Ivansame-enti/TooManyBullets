@@ -24,14 +24,14 @@ public class EnemyController2 : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Nivel6")
         {
-            bulletSpeed = 50f;
+            bulletSpeed = 15f;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Nivel6" && bulletSpeed>10)
+        if (SceneManager.GetActiveScene().name == "Nivel6" && bulletSpeed>3)
         {
             bulletSpeed -=Time.deltaTime*3;
             //Debug.Log(bulletSpeed);
