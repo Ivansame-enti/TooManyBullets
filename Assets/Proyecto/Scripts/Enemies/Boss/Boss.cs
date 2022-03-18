@@ -13,15 +13,17 @@ public class Boss : MonoBehaviour
     public GameObject laser,bullets,waterDrop,multiLaser;
     public float speed;
     private int attack;
-    private bool startPhase2,cooldownOn;
+    private bool startPhase2,cooldownOn,bulletAnim;
     private float timer;
     public float bulletsDuration,dropDuration,multiLaserDuration,cooldownAttack;
+    public Animation anim;
     // Start is called before the first frame update
     void Start()
     {
         attack = Random.Range(1, 5);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
+        anim = gameObject.GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -61,6 +63,13 @@ public class Boss : MonoBehaviour
                 }
                 if (attack == 2)
                 {
+                if(bulletAnim == false)
+                {
+                    this.GetComponent<Animator>().SetBool("flag", true);
+                }
+
+                if(bulletAnim == true)
+                {
                     bullets.SetActive(true);
                     if (timer >= bulletsDuration)
                     {
@@ -69,17 +78,16 @@ public class Boss : MonoBehaviour
                     if (timer >= bulletsDuration + cooldownAttack)
                     {
                         attack = Random.Range(1, 5);
-                        if (attack == 2)
-                        {
-                            attack = Random.Range(1, 5);
-                        }
                         timer = 0;
+                        bulletAnim = false;
                     }
                     else
                     {
                         timer += Time.deltaTime;
                     }
                 }
+
+            }
 
                 if (attack == 3)
                 {
@@ -225,5 +233,12 @@ public class Boss : MonoBehaviour
 
         }
 
-    
+    public void AlertObservers(string message)
+    {
+        if (message.Equals("AttackAnimationEnded"))
+        {
+            this.GetComponent<Animator>().SetBool("flag", false);
+            bulletAnim = true;
+        }
+    }
 }
