@@ -13,23 +13,20 @@ public class Boss : MonoBehaviour
     public GameObject laser,bullets,waterDrop,multiLaser;
     public float speed;
     private int attack;
-    private bool startPhase2,cooldownOn,bulletAnim;
+    private bool startPhase2,cooldownOn;
     private float timer;
     public float bulletsDuration,dropDuration,multiLaserDuration,cooldownAttack;
-    public Animation anim;
     // Start is called before the first frame update
     void Start()
     {
         attack = Random.Range(1, 5);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
-        anim = gameObject.GetComponent<Animation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (playerH.dead == false)
         {
             leftEye.transform.position = Vector2.MoveTowards(leftEye.transform.position, player.transform.position, speed * Time.deltaTime);
@@ -63,13 +60,6 @@ public class Boss : MonoBehaviour
                 }
                 if (attack == 2)
                 {
-                if(bulletAnim == false)
-                {
-                    this.GetComponent<Animator>().SetBool("flag", true);
-                }
-
-                if(bulletAnim == true)
-                {
                     bullets.SetActive(true);
                     if (timer >= bulletsDuration)
                     {
@@ -79,13 +69,12 @@ public class Boss : MonoBehaviour
                     {
                         attack = Random.Range(1, 5);
                         timer = 0;
-                        bulletAnim = false;
                     }
                     else
                     {
                         timer += Time.deltaTime;
                     }
-                }
+                
 
             }
 
@@ -232,13 +221,4 @@ public class Boss : MonoBehaviour
 
 
         }
-
-    public void AlertObservers(string message)
-    {
-        if (message.Equals("AttackAnimationEnded"))
-        {
-            this.GetComponent<Animator>().SetBool("flag", false);
-            bulletAnim = true;
-        }
-    }
 }
