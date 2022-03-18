@@ -1060,7 +1060,11 @@ MonoBehaviour:
   ending: {fileID: 0}
   inmortal: 0
   probabilidad: 0
+  specialEnemy: 0
+  antiSlash: 0
   specialParticles: {fileID: 7346800036578399500, guid: 5a3bc6ff30742b043b6faa1559f134aa,
+    type: 3}
+  specialParticles2: {fileID: 7346800036578399500, guid: 39b8b51b22e1da643a46f336964f93a0,
     type: 3}
 --- !u!60 &820220229451798905
 PolygonCollider2D:
