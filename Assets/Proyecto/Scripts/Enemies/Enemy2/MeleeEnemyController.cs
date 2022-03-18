@@ -21,6 +21,7 @@ public class MeleeEnemyController : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         timer = knockbackDuration;
+        this.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -88,6 +89,7 @@ public class MeleeEnemyController : MonoBehaviour
     {
         if (message.Equals("SpawnAnimationEnded"))
         {
+            this.GetComponent<PolygonCollider2D>().enabled = true;
             spawnComplete = true;
             Instantiate(finishSpawnParticles, this.transform.position, Quaternion.identity);
         }

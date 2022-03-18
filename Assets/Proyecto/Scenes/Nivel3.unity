@@ -394,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -1498,7 +1498,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -1592,7 +1592,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -7234,6 +7234,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6094048694357508492, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
+      propertyPath: specialEnemy
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
 --- !u!4 &1128307709 stripped
@@ -7332,7 +7337,7 @@ GameObject:
   - component: {fileID: 1143613763}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7493,7 +7498,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -9947,7 +9952,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -15339,7 +15344,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -15442,7 +15447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healTimer: 1
   healAmmount: 0.2
-  healsAvailable: 2
+  healsAvailable: 1
   currenntHealsAvailable: 0
   timer: 0
   phc: {fileID: 781798019}

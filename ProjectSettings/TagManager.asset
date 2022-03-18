@@ -21,6 +21,7 @@ TagManager:
   - zona
   - Minijoe
   - Wall
+  - Target
   layers:
   - Default
   - TransparentFX

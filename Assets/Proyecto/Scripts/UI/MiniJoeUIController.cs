@@ -83,7 +83,7 @@ public class MiniJoeUIController : MonoBehaviour
             if (mhc.currenntHealsAvailable > lastCharges)
             {
                 //Instantiate(healParticle, newHeal.transform.position, Quaternion.identity);
-                Instantiate(healParticle, new Vector2(newHeal.transform.position.x, newHeal.transform.position.y-0.2f), Quaternion.identity);
+                //Instantiate(healParticle, new Vector2(newHeal.transform.position.x, newHeal.transform.position.y-0.2f), Quaternion.identity);
                 //Instantiate(healParticle, new Vector2(newHeal.transform.position.x + 0.5f, newHeal.transform.position.y), Quaternion.identity);
                 //newHeal.GetComponent<Animator>().SetBool("New", true);
             }

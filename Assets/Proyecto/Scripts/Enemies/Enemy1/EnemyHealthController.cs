@@ -19,8 +19,10 @@ public class EnemyHealthController : MonoBehaviour
     public bool specialEnemy=false;
     public bool antiSlash = false;
     public GameObject specialParticles;
+    public GameObject specialParticles2;
     private bool level1;
     private bool level2;
+   //public GameObject circle;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,7 @@ public class EnemyHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (firstTime)
         {
             numAleatorio = Random.Range(1, probabilidad);
@@ -64,7 +67,10 @@ public class EnemyHealthController : MonoBehaviour
         {
             if (specialEnemy)
             {
-                GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable++;
+                //particle.transform.parent = null;
+                //particle.transform.position = Vector3.MoveTowards(particle.transform.position, new Vector3(5f,5f,0f), Time.deltaTime * 5f);
+                Instantiate(specialParticles2, this.transform.position, Quaternion.identity);
+                //GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable++;
             }
             if (ending != null) ending.EnemyDies(this.gameObject);
             if (transform.parent != null && transform.parent.gameObject.tag == "container")
