@@ -26,7 +26,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Face
   - Water
   - UI
   - Post Processing
@@ -34,6 +34,10 @@ TagManager:
   - EnemyLaser
   - Explosion1
   - Explosion2
+  - Eye
+  - Iris
+  - Multilaser
+  - MiniJoeLaser
   - 
   - 
   - 
@@ -58,4 +62,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Cara
+    uniqueID: 3690136821
     locked: 0

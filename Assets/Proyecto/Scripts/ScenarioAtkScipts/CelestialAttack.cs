@@ -49,6 +49,7 @@ public class CelestialAttack : MonoBehaviour
     {
         Draw2DRay(laserPos1, laserPos2 * defDistanceRay);
         collisionLaser.transform.position = laserPos1;
+        collisionLaser.gameObject.layer = 11;
         laserParticles.transform.position = laserPos1;
         laserParticles2.transform.position = laserPos1;
     }
