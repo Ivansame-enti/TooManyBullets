@@ -3726,11 +3726,10 @@ MonoBehaviour:
   player: {fileID: 1496381702}
   character: {fileID: 1496381702}
   torretarea: {fileID: 1681465356}
-  pickArea: {fileID: 1682370685}
   displanted: 0
   miniJoelaser: {fileID: 721107496}
   timer: 0
-  plantCD: 0.2
+  plantCD: 0.5
   pickUpDistance: 3
   pause: {fileID: 70857486}
   searchEnemies: {fileID: 1861239880}

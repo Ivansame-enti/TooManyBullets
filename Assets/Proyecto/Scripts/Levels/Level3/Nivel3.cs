@@ -7,6 +7,7 @@ public class Nivel3 : MonoBehaviour
     public bool startLevel;
     public VictoryController victorycontroller;
     public GameObject enemies, scenarioAttacks, scenarioattack1, objects, tutorial;
+    public GameObject laserText, healText;
     public GameObject part1, part2, part3, part4, player;
     public PlayerHealthController playerIsDead;
     public GameObject laserXbox, laserPS4, laserKeyboard;
@@ -16,6 +17,8 @@ public class Nivel3 : MonoBehaviour
     {
         phc.currentHealth--;
         startLevel = false;
+        laserText.SetActive(false);
+        healText.SetActive(true);
     }
 
     // Update is called once per frame
@@ -42,8 +45,9 @@ public class Nivel3 : MonoBehaviour
         if (part1.transform.childCount <= 0 && playerIsDead.dead == false && phc.currentHealth==phc.health)
         {
             part2.SetActive(true);
+            laserText.SetActive(true);
+            healText.SetActive(false);
             objects.SetActive(true);
-
         }
 
         if (part2.transform.childCount <= 0)

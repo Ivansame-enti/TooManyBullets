@@ -9423,11 +9423,10 @@ MonoBehaviour:
   player: {fileID: 781798017}
   character: {fileID: 781798017}
   torretarea: {fileID: 903409431}
-  pickArea: {fileID: 1477822600}
   displanted: 0
   miniJoelaser: {fileID: 1121173044}
   timer: 0
-  plantCD: 0.2
+  plantCD: 0.5
   pickUpDistance: 3
   pause: {fileID: 1175201623}
   searchEnemies: {fileID: 2117776823}
