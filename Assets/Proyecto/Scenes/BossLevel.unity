@@ -1001,15 +1001,15 @@ MonoBehaviour:
   celestialAtk: {fileID: 903801136}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 2
+  activacionAtk: 5
+  activacionAtkGoing: 5
   collisionLaser: {fileID: 663630480}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 903801138}
   laserParticles: {fileID: 1109319384}
   laserParticles2: {fileID: 126196253}
-  minFrequencylaser: 2
-  maxFrequencylaser: 2
+  minFrequencylaser: 4
+  maxFrequencylaser: 4
 --- !u!1 &125485553
 GameObject:
   m_ObjectHideFlags: 0
@@ -32827,15 +32827,15 @@ MonoBehaviour:
   celestialAtk: {fileID: 1934237078}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 2
+  activacionAtk: 5
+  activacionAtkGoing: 5
   collisionLaser: {fileID: 690086657}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1934237080}
   laserParticles: {fileID: 1144840326}
   laserParticles2: {fileID: 352340322}
-  minFrequencylaser: 2
-  maxFrequencylaser: 2
+  minFrequencylaser: 4
+  maxFrequencylaser: 4
 --- !u!1 &732968143
 GameObject:
   m_ObjectHideFlags: 0
@@ -48977,15 +48977,15 @@ MonoBehaviour:
   celestialAtk: {fileID: 2043891520}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 2
+  activacionAtk: 5
+  activacionAtkGoing: 5
   collisionLaser: {fileID: 1079588053}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 2043891522}
   laserParticles: {fileID: 1261823990}
   laserParticles2: {fileID: 417509451}
-  minFrequencylaser: 2
-  maxFrequencylaser: 2
+  minFrequencylaser: 4
+  maxFrequencylaser: 4
 --- !u!1 &1144840326
 GameObject:
   m_ObjectHideFlags: 0
@@ -93949,15 +93949,15 @@ MonoBehaviour:
   celestialAtk: {fileID: 1905773761}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 2
+  activacionAtk: 5
+  activacionAtkGoing: 5
   collisionLaser: {fileID: 1417876094}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1905773763}
   laserParticles: {fileID: 1369051958}
   laserParticles2: {fileID: 1245987938}
-  minFrequencylaser: 2
-  maxFrequencylaser: 2
+  minFrequencylaser: 4
+  maxFrequencylaser: 4
 --- !u!1 &1525214578
 GameObject:
   m_ObjectHideFlags: 0
@@ -98892,15 +98892,15 @@ MonoBehaviour:
   celestialAtk: {fileID: 1290813651}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 2
+  activacionAtk: 5
+  activacionAtkGoing: 5
   collisionLaser: {fileID: 1992680103}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1290813653}
   laserParticles: {fileID: 1216857314}
   laserParticles2: {fileID: 628699828}
-  minFrequencylaser: 2
-  maxFrequencylaser: 2
+  minFrequencylaser: 4
+  maxFrequencylaser: 4
 --- !u!1 &1592462635
 GameObject:
   m_ObjectHideFlags: 0
@@ -98948,15 +98948,15 @@ MonoBehaviour:
   celestialAtk: {fileID: 1647520499}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 2
+  activacionAtk: 5
+  activacionAtkGoing: 5
   collisionLaser: {fileID: 1110938667}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1647520501}
   laserParticles: {fileID: 1988546267}
   laserParticles2: {fileID: 479447378}
-  minFrequencylaser: 2
-  maxFrequencylaser: 2
+  minFrequencylaser: 4
+  maxFrequencylaser: 4
 --- !u!1 &1600428473
 GameObject:
   m_ObjectHideFlags: 0
@@ -124510,7 +124510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1888137750
 Transform:
   m_ObjectHideFlags: 0
@@ -145169,15 +145169,15 @@ MonoBehaviour:
   celestialAtk: {fileID: 559521947}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 2
+  activacionAtk: 5
+  activacionAtkGoing: 5
   collisionLaser: {fileID: 984141327}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 559521949}
   laserParticles: {fileID: 367630764}
   laserParticles2: {fileID: 1026010293}
-  minFrequencylaser: 2
-  maxFrequencylaser: 2
+  minFrequencylaser: 4
+  maxFrequencylaser: 4
 --- !u!1001 &2121143723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145245,6 +145245,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 226.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: audios.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 001aecb2ed2fdc848a5b75fe0316d3ab, type: 3}
     - target: {fileID: 3969236534594426590, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_Camera
