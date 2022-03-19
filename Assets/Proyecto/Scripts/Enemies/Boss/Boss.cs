@@ -14,11 +14,14 @@ public class Boss : MonoBehaviour
     public float speed;
     private int attack;
     private bool startPhase2,cooldownOn;
-    private float timer;
+    private float timer,timer2;
     public float bulletsDuration,dropDuration,multiLaserDuration,cooldownAttack;
+    public GameObject superiorFace, inferiorFace, mouth;
+    private Color originalColor;
     // Start is called before the first frame update
     void Start()
     {
+        originalColor = superiorFace.GetComponent<SpriteRenderer>().color;
         attack = Random.Range(1, 5);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
@@ -61,10 +64,12 @@ public class Boss : MonoBehaviour
                 if (attack == 2)
                 {
                     bullets.SetActive(true);
+                    colorChange();
                     if (timer >= bulletsDuration)
                     {
                         bullets.SetActive(false);
-                    }
+                        originalChange();
+                }
                     if (timer >= bulletsDuration + cooldownAttack)
                     {
                         attack = Random.Range(1, 5);
@@ -160,6 +165,7 @@ public class Boss : MonoBehaviour
 
                 if (attack == 2)
                 {
+
                     multiLaser.SetActive(true);
                     waterDrop.SetActive(true);
                     if (timer >= multiLaserDuration)
@@ -221,4 +227,29 @@ public class Boss : MonoBehaviour
 
 
         }
+    public void colorChange()
+    {
+        superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, superiorFace.GetComponent<SpriteRenderer>().color.a);
+        inferiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, inferiorFace.GetComponent<SpriteRenderer>().color.a);
+        mouth.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, mouth.GetComponent<SpriteRenderer>().color.a);
+        Debug.Log("ola");
+        if (timer2 >= 1)
+        {
+            superiorFace.GetComponent<SpriteRenderer>().color = originalColor;
+            inferiorFace.GetComponent<SpriteRenderer>().color = originalColor;
+            mouth.GetComponent<SpriteRenderer>().color = originalColor;
+            timer2 = 0;
+        }
+        else
+        {
+            timer2 += Time.deltaTime;
+        }
+
+    }
+    public void originalChange()
+    {
+        superiorFace.GetComponent<SpriteRenderer>().color = originalColor;
+        inferiorFace.GetComponent<SpriteRenderer>().color = originalColor;
+        mouth.GetComponent<SpriteRenderer>().color = originalColor;
+    }
 }

@@ -48693,6 +48693,9 @@ MonoBehaviour:
   dropDuration: 2
   multiLaserDuration: 8
   cooldownAttack: 5
+  superiorFace: {fileID: 798945826}
+  inferiorFace: {fileID: 1857205907}
+  mouth: {fileID: 1014830183}
 --- !u!60 &1114626126
 PolygonCollider2D:
   m_ObjectHideFlags: 0
