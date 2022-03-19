@@ -145,32 +145,43 @@ public class Boss : MonoBehaviour
                 laser.SetActive(false);
                 multiLaser.SetActive(false);
                 attack = Random.Range(1,5);
-            }
+                originalChange();
+        }
             if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == true)
             {
                 if (attack == 1)
                 {
+                colorChange();
+                if (timer2 >= 2)
+                {
                     bullets.SetActive(true);
                     laser.SetActive(true);
-                if (timer >= bulletsDuration)
+                    if (timer >= bulletsDuration)
                     {
                         bullets.SetActive(false);
-                }
-                if (bossLaser.finish == true)
-                {
-                    laser.SetActive(false);
-                    
-                }
-                if (timer >= bulletsDuration + cooldownAttack)
+                        originalChange();
+                    }
+                    if (bossLaser.finish == true)
+                    {
+                        laser.SetActive(false);
+
+                    }
+                    if (timer >= bulletsDuration + cooldownAttack && bossLaser.finish == true)
                     {
                         attack = Random.Range(1, 5);
                         timer = 0;
+                        timer2 = 0;
                         bossLaser.finish = false;
-                }
+                    }
                     else
                     {
                         timer += Time.deltaTime;
                     }
+                }
+                else
+                {
+                    timer2 += Time.deltaTime;
+                }
             }
 
                 if (attack == 2)
@@ -196,33 +207,47 @@ public class Boss : MonoBehaviour
 
             if (attack == 3)
             {
-                bullets.SetActive(true);
-                waterDrop.SetActive(true);
-                if (timer >= bulletsDuration)
+                colorChange();
+                if (timer2 >= 2)
                 {
-                    bullets.SetActive(false);
-                    waterDrop.SetActive(false);
-                }
-                if (timer >= bulletsDuration + cooldownAttack)
-                {
-                    attack = Random.Range(1,5);
-                    timer = 0;
+                    bullets.SetActive(true);
+                    waterDrop.SetActive(true);
+                    if (timer >= bulletsDuration)
+                    {
+                        bullets.SetActive(false);
+                        waterDrop.SetActive(false);
+                        originalChange();
+                    }
+                    if (timer >= bulletsDuration + cooldownAttack)
+                    {
+                        attack = Random.Range(1, 5);
+                        timer = 0;
+                        timer2 = 0;
+                    }
+                    else
+                    {
+                        timer += Time.deltaTime;
+                    }
                 }
                 else
                 {
-                    timer += Time.deltaTime;
+                    timer2 += Time.deltaTime;
                 }
             }
             if (attack == 4)
             {
                 multiLaser.SetActive(true);
-                bullets.SetActive(true);
+                laser.SetActive(true);
                 if (timer >= multiLaserDuration)
                 {
                     multiLaser.SetActive(false);
-                    bullets.SetActive(false);
                 }
-                if (timer >= multiLaserDuration + cooldownAttack + 5)
+                if (bossLaser.finish == true)
+                {
+                    laser.SetActive(false);
+
+                }
+                if (timer >= multiLaserDuration + cooldownAttack + 5 && bossLaser.finish == true)
                 {
                     attack = Random.Range(1, 5);
                     timer = 0;
@@ -239,18 +264,12 @@ public class Boss : MonoBehaviour
         }
     public void colorChange()
     {
-       superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, superiorFace.GetComponent<SpriteRenderer>().color.a);
-       inferiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, inferiorFace.GetComponent<SpriteRenderer>().color.a);
-       mouth.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, mouth.GetComponent<SpriteRenderer>().color.a);
-       bulletGoing = true;
+        bulletGoing = true;
 
         
     }
     public void originalChange()
     {
-        superiorFace.GetComponent<SpriteRenderer>().color = originalColor;
-        inferiorFace.GetComponent<SpriteRenderer>().color = originalColor;
-        mouth.GetComponent<SpriteRenderer>().color = originalColor;
         bulletGoing = false;
     }
 }
