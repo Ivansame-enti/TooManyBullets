@@ -17,13 +17,12 @@ public class Boss : MonoBehaviour
     private float timer,timer2;
     public float bulletsDuration,dropDuration,multiLaserDuration,cooldownAttack;
     public bool bulletGoing;
-    public GameObject superiorFace, inferiorFace, mouth;
-    private Color originalColor;
+    private GameObject[] water;
+
     // Start is called before the first frame update
     void Start()
     {
-        originalColor = superiorFace.GetComponent<SpriteRenderer>().color;
-        attack = Random.Range(1, 5);
+        attack = Random.Range(1,2);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
     }
@@ -99,16 +98,18 @@ public class Boss : MonoBehaviour
                     if (timer >= dropDuration)
                     {
                         waterDrop.SetActive(false);
-                    }
 
-                    if (timer >= dropDuration + cooldownAttack + 5)
+                }
+                    if (timer >= dropDuration + cooldownAttack)
                     {
                         attack = Random.Range(1, 5);
-                        if (attack == 3)
-                        {
-                            attack = Random.Range(1, 5);
-                        }
-                        timer = 0;
+                    water = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                    foreach (GameObject bullet in water)
+                    {
+                        Destroy(bullet);
+                    }
+                    timer = 0;
                     }
                     else
                     {
