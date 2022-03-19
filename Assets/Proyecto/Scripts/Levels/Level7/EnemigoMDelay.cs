@@ -10,12 +10,12 @@ public class EnemigoMDelay : MonoBehaviour
     private bool flag = false;
     void Start()
     {
-        GameObject thePlayer = GameObject.Find("Enemy2");
-        GameObject thePlayer2 = GameObject.Find("Enemy22");
-        GameObject thePlayer3 = GameObject.Find("Enemy23");
-        MeleeEnemyController enemy = thePlayer.GetComponent<MeleeEnemyController>();
-        MeleeEnemyController enemy2 = thePlayer2.GetComponent<MeleeEnemyController>();
-        MeleeEnemyController enemy3 = thePlayer3.GetComponent<MeleeEnemyController>();
+        GameObject enemigo1 = GameObject.Find("Enemy2");
+        GameObject enemigo2 = GameObject.Find("Enemy22");
+        GameObject enemigo3 = GameObject.Find("Enemy23");
+        MeleeEnemyController enemy = enemigo1.GetComponent<MeleeEnemyController>();
+        MeleeEnemyController enemy2 = enemigo2.GetComponent<MeleeEnemyController>();
+        MeleeEnemyController enemy3 = enemigo3.GetComponent<MeleeEnemyController>();
         enemy.movementSpeed = 0.0f;
         enemy2.movementSpeed = 0.0f;
         enemy3.movementSpeed = 0.0f;
@@ -30,12 +30,12 @@ public class EnemigoMDelay : MonoBehaviour
         time += Time.deltaTime;
         if (time >= 2.0f)
         {
-            GameObject thePlayer = GameObject.Find("Enemy2");
-            GameObject thePlayer2 = GameObject.Find("Enemy22");
-            GameObject thePlayer3 = GameObject.Find("Enemy23");
-            MeleeEnemyController enemy = thePlayer.GetComponent<MeleeEnemyController>();
-            MeleeEnemyController enemy2 = thePlayer2.GetComponent<MeleeEnemyController>();
-            MeleeEnemyController enemy3 = thePlayer3.GetComponent<MeleeEnemyController>();
+            GameObject enemigo1 = GameObject.Find("Enemy2");
+            GameObject enemigo2 = GameObject.Find("Enemy22");
+            GameObject enemigo3 = GameObject.Find("Enemy23");
+            MeleeEnemyController enemy = enemigo1.GetComponent<MeleeEnemyController>();
+            MeleeEnemyController enemy2 = enemigo2.GetComponent<MeleeEnemyController>();
+            MeleeEnemyController enemy3 = enemigo3.GetComponent<MeleeEnemyController>();
             enemy.movementSpeed = 400.0f;
             enemy2.movementSpeed = 400.0f;
             enemy3.movementSpeed = 400.0f;
