@@ -76,9 +76,10 @@ public class CelestialAttack : MonoBehaviour
                 Random.Range(positionA.x, positionB.x),
                 Random.Range(positionB.y, positionB.y)
             );
+
             laserPos1 = new Vector2(
              (randomValor.x),
-              (randomValor.y + 12)
+              (randomValor.y+12)
             );
             laserPos2 = new Vector2(
              (randomValor.x),

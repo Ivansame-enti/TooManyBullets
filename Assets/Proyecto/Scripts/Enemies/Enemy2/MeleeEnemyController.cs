@@ -76,7 +76,7 @@ public class MeleeEnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name == "Enemy2")
+        if (col.gameObject.name == "Enemy2" || col.gameObject.name == "Enemy22" || col.gameObject.name == "Enemy23")
         {
             var force = transform.position - col.transform.position;
             force.Normalize();

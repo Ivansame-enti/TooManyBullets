@@ -100,7 +100,7 @@ public class EnemyHealthController : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("Shield"))
         {
-            if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
         }
 
         if (collision.tag == "slash" && !antiSlash)
@@ -111,7 +111,7 @@ public class EnemyHealthController : MonoBehaviour
                 health = health - collision.gameObject.GetComponent<MeleeAttackController>().damage;
                 healthBar.SetHealthBar(health, maxHealth);
             }
-            if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
             if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
         }
         if (collision.tag == "MjLaserCollider")
@@ -129,9 +129,9 @@ public class EnemyHealthController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (this.gameObject.name == "Enemy2" && col.collider.tag == "LaserCollider")
+        if ((this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") && col.collider.tag == "LaserCollider")
         {
-            if (this.gameObject.name == "Enemy2") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
         }
     }
     /*

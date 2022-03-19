@@ -23,7 +23,7 @@ public class SpecialEnemyParticles : MonoBehaviour
         if (Vector3.Distance(this.transform.position, target.transform.position) == 90f)
         {
             
-            GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable++;
+            if(GameObject.Find("MiniJoe")!=null) GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable++;
             Instantiate(heatHeal, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
