@@ -202,8 +202,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: -> Dash
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
+  m_sharedMaterial: {fileID: -5577958623563438809, guid: 91bff2c8b7ff83a40aba8e3541a25559,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -520,6 +521,7 @@ MonoBehaviour:
   phc: {fileID: 1875973678}
   healParticle: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
     type: 3}
+  player: {fileID: 0}
 --- !u!114 &32869312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +588,6 @@ MonoBehaviour:
   player: {fileID: 1875973676}
   character: {fileID: 1875973676}
   torretarea: {fileID: 1868210360}
-  pickArea: {fileID: 109706383}
   displanted: 0
   miniJoelaser: {fileID: 217267965}
   timer: 0
@@ -829,7 +830,7 @@ MonoBehaviour:
   tutorialNPC1: {fileID: 40393302}
   celestialAtk: {fileID: 222502162}
   m_lineRenderer: {fileID: 222502165}
-  collisionLaser: {fileID: 1947794825}
+  collisionLaser: {fileID: 0}
   defDistanceRay: 100
   laserParticles: {fileID: 1844496444}
   tutorialEnemy: {fileID: 518413281}
@@ -22852,7 +22853,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEFT JOYSTICK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -22916,7 +22917,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &416676720
@@ -23723,8 +23724,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: ->  ATTACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
+  m_sharedMaterial: {fileID: -5577958623563438809, guid: 91bff2c8b7ff83a40aba8e3541a25559,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33670,8 +33672,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: or
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
+  m_sharedMaterial: {fileID: -5577958623563438809, guid: 91bff2c8b7ff83a40aba8e3541a25559,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -34784,7 +34787,10 @@ MonoBehaviour:
   pasive: {fileID: 1868593139}
   pasiveImage: {fileID: 891290092}
   pasiveImageGreen: {fileID: 309412358}
+  TextPro: {fileID: 0}
+  newHeal: {fileID: 0}
   miniJoe: {fileID: 0}
+  healParticle: {fileID: 0}
 --- !u!114 &861389448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57121,8 +57127,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: SPACEBAR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
+  m_sharedMaterial: {fileID: -5577958623563438809, guid: 91bff2c8b7ff83a40aba8e3541a25559,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -58159,8 +58166,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: or
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
+  m_sharedMaterial: {fileID: -5577958623563438809, guid: 91bff2c8b7ff83a40aba8e3541a25559,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -63769,7 +63777,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 222502163}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1715241522
 ParticleSystemRenderer:
@@ -74062,7 +74070,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: ' -> MOVEMENT'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -74126,7 +74134,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1824426453
@@ -88833,7 +88841,7 @@ Transform:
   m_LocalScale: {x: 1, y: 3.5, z: -1}
   m_Children: []
   m_Father: {fileID: 222502163}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1868210360
 GameObject:
@@ -89906,12 +89914,6 @@ Transform:
   m_Father: {fileID: 1674677489}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1947794825 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1938160771, guid: ef2986ddabc6494429f7c42efca1be5b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2022966033}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1962841694
 PrefabInstance:
   m_ObjectHideFlags: 0
