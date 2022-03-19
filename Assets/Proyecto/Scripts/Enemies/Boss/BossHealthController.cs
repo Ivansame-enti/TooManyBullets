@@ -13,6 +13,7 @@ public class BossHealthController : MonoBehaviour
     public bool inmortal = false;
     public GameObject superiorFace, inferiorFace,mouth;
     private Color originalColor;
+    public BossController boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,6 @@ public class BossHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(hit);
-
         if(hit == true)
         {
             superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, superiorFace.GetComponent<SpriteRenderer>().color.a);
