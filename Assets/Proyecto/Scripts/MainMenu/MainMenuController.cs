@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject menuUI, optionsUI,levelSelectorUI;
-    public GameObject playButton, optionButton, exitButton,level1;
+    public GameObject menuUI, optionsUI,levelSelectorUI, creditsUI;
+    public GameObject playButton, optionButton, exitButton,level1,creditButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +49,14 @@ public class MainMenuController : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(exitButton);
+    }
+
+    public void Credits()
+    {
+        menuUI.SetActive(false);
+        creditsUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionButton);
     }
 
 
