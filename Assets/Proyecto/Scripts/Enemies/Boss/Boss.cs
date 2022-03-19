@@ -22,7 +22,7 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attack = Random.Range(1,2);
+        attack = Random.Range(1,5);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
     }
