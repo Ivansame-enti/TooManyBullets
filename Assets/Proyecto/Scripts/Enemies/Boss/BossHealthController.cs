@@ -14,6 +14,8 @@ public class BossHealthController : MonoBehaviour
     public GameObject superiorFace, inferiorFace,mouth;
     private Color originalColor;
     public Boss boss;
+    public VictoryController victory;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +84,7 @@ public class BossHealthController : MonoBehaviour
             Instantiate(swPs, this.transform.position, Quaternion.identity);
             Instantiate(swPs2, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
+            victory.victory = true;
         }
     }
 
