@@ -48702,7 +48702,7 @@ MonoBehaviour:
   speed: 2
   bulletsDuration: 5
   dropDuration: 2
-  multiLaserDuration: 12
+  multiLaserDuration: 13
   cooldownAttack: 5
   bulletGoing: 0
 --- !u!60 &1114626126
@@ -145704,6 +145704,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1329259016}
+    - target: {fileID: 3969236534594426590, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236534767096870, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_Camera

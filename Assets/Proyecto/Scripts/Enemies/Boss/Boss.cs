@@ -196,7 +196,7 @@ public class Boss : MonoBehaviour
                         multiLaser.SetActive(false);
                         waterDrop.SetActive(false);
                     }
-                    if (timer >= multiLaserDuration + cooldownAttack + 5)
+                    if (timer >= multiLaserDuration + cooldownAttack)
                     {
                         attack = Random.Range(1, 5);
                     water = GameObject.FindGameObjectsWithTag("EnemyBullet");
