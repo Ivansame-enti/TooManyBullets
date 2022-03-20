@@ -12,7 +12,7 @@ public class BossHealthController : MonoBehaviour
     public GameObject swPs, swPs2;
     public bool inmortal = false;
     public GameObject superiorFace, inferiorFace,mouth;
-    private Color originalColor;
+    public Color originalColor;
     public Boss boss;
     public VictoryController victory;
     
@@ -26,7 +26,7 @@ public class BossHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hit == true && boss.bulletGoing == false)
+        if(hit == true)
         {
             superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, superiorFace.GetComponent<SpriteRenderer>().color.a);
             inferiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, inferiorFace.GetComponent<SpriteRenderer>().color.a);
@@ -43,32 +43,8 @@ public class BossHealthController : MonoBehaviour
             {
                 timer += Time.deltaTime;
             }
-        }
+        
 
-        if(boss.bulletGoing == true && hit == false)
-        {
-            superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, superiorFace.GetComponent<SpriteRenderer>().color.a);
-            inferiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, inferiorFace.GetComponent<SpriteRenderer>().color.a);
-            mouth.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, mouth.GetComponent<SpriteRenderer>().color.a);
-        }
-        else if (hit == true && boss.bulletGoing == true)
-        {
-            superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, superiorFace.GetComponent<SpriteRenderer>().color.a);
-            inferiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, inferiorFace.GetComponent<SpriteRenderer>().color.a);
-            mouth.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, mouth.GetComponent<SpriteRenderer>().color.a);
-
-            if (timer >= hitColor)
-            {
-                superiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, superiorFace.GetComponent<SpriteRenderer>().color.a);
-                inferiorFace.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, inferiorFace.GetComponent<SpriteRenderer>().color.a);
-                mouth.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, mouth.GetComponent<SpriteRenderer>().color.a);
-                hit = false;
-                timer = 0;
-            }
-            else
-            {
-                timer += Time.deltaTime;
-            }
 
 
 

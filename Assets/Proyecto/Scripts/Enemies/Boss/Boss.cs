@@ -10,7 +10,8 @@ public class Boss : MonoBehaviour
     public PlayerHealthController playerH;
     public BossLaser bossLaser;
     public BossHealthController bossHealth;
-    public GameObject laser,bullets,waterDrop,multiLaser;
+    public GameObject laser,bullets,waterDrop,multiLaser,irisL,irisR;
+    private Color irisColor;
     public float speed;
     private int attack;
     private bool startPhase2,cooldownOn;
@@ -25,6 +26,7 @@ public class Boss : MonoBehaviour
         attack = Random.Range(1,5);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
+        irisColor = irisL.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -146,7 +148,8 @@ public class Boss : MonoBehaviour
                 laser.SetActive(false);
                 multiLaser.SetActive(false);
                 attack = Random.Range(1,5);
-                originalChange();
+                bossHealth.originalColor = new Color(255, 0, 0);
+            originalChange();
         }
             if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == true)
             {
@@ -266,11 +269,15 @@ public class Boss : MonoBehaviour
     public void colorChange()
     {
         bulletGoing = true;
+        irisL.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255, irisL.GetComponent<SpriteRenderer>().color.a);
+        irisR.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255, irisR.GetComponent<SpriteRenderer>().color.a);
 
-        
+
     }
     public void originalChange()
     {
         bulletGoing = false;
+        irisL.GetComponent<SpriteRenderer>().color = irisColor;
+        irisR.GetComponent<SpriteRenderer>().color = irisColor;
     }
 }
