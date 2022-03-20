@@ -386,9 +386,9 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1949330019}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 1668559645}
+    m_SelectOnLeft: {fileID: 1949330019}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -2119,9 +2119,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1606602418}
-        m_TargetAssemblyTypeName: CreditsMenuController, Assembly-CSharp
-        m_MethodName: Done
+      - m_Target: {fileID: 825704590}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: Return
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2622,7 +2622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &668121588
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3310,6 +3310,7 @@ MonoBehaviour:
   exitButton: {fileID: 1668559643}
   level1: {fileID: 2057940513}
   creditButton: {fileID: 92738006}
+  backButton: {fileID: 486056676}
   pantalla: {fileID: 1020360458}
 --- !u!1 &870345877
 GameObject:
@@ -5095,7 +5096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1218243315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6973,7 +6974,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606602415}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36bf07b758aa02649b0d21ebe21e7a16, type: 3}
   m_Name: 
