@@ -187,10 +187,8 @@ public class Boss : MonoBehaviour
                     timer2 += Time.deltaTime;
                 }
             }
-
                 if (attack == 2)
                 {
-
                     multiLaser.SetActive(true);
                     waterDrop.SetActive(true);
                     if (timer >= multiLaserDuration)
@@ -201,7 +199,13 @@ public class Boss : MonoBehaviour
                     if (timer >= multiLaserDuration + cooldownAttack + 5)
                     {
                         attack = Random.Range(1, 5);
-                        timer = 0;
+                    water = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                    foreach (GameObject bullet in water)
+                    {
+                        Destroy(bullet);
+                    }
+                    timer = 0;
                     }
                     else
                     {
@@ -225,6 +229,12 @@ public class Boss : MonoBehaviour
                     if (timer >= bulletsDuration + cooldownAttack)
                     {
                         attack = Random.Range(1, 5);
+                        water = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                        foreach (GameObject bullet in water)
+                        {
+                            Destroy(bullet);
+                        }
                         timer = 0;
                         timer2 = 0;
                     }

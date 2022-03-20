@@ -1001,8 +1001,8 @@ MonoBehaviour:
   celestialAtk: {fileID: 903801136}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 1
+  activacionAtk: 2
+  activacionAtkGoing: 3
   collisionLaser: {fileID: 663630480}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 903801138}
@@ -32827,8 +32827,8 @@ MonoBehaviour:
   celestialAtk: {fileID: 1934237078}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 1
+  activacionAtk: 2
+  activacionAtkGoing: 3
   collisionLaser: {fileID: 690086657}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1934237080}
@@ -48702,7 +48702,7 @@ MonoBehaviour:
   speed: 2
   bulletsDuration: 5
   dropDuration: 2
-  multiLaserDuration: 10
+  multiLaserDuration: 12
   cooldownAttack: 5
   bulletGoing: 0
 --- !u!60 &1114626126
@@ -48987,8 +48987,8 @@ MonoBehaviour:
   celestialAtk: {fileID: 2043891520}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 1
+  activacionAtk: 2
+  activacionAtkGoing: 3
   collisionLaser: {fileID: 1079588053}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 2043891522}
@@ -94067,8 +94067,8 @@ MonoBehaviour:
   celestialAtk: {fileID: 1905773761}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 1
+  activacionAtk: 2
+  activacionAtkGoing: 3
   collisionLaser: {fileID: 1417876094}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1905773763}
@@ -99010,8 +99010,8 @@ MonoBehaviour:
   celestialAtk: {fileID: 1290813651}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 1
+  activacionAtk: 2
+  activacionAtkGoing: 3
   collisionLaser: {fileID: 1992680103}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1290813653}
@@ -99066,8 +99066,8 @@ MonoBehaviour:
   celestialAtk: {fileID: 1647520499}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 1
+  activacionAtk: 2
+  activacionAtkGoing: 3
   collisionLaser: {fileID: 1110938667}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1647520501}
@@ -145592,8 +145592,8 @@ MonoBehaviour:
   celestialAtk: {fileID: 559521947}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
-  activacionAtk: 1
-  activacionAtkGoing: 1
+  activacionAtk: 2
+  activacionAtkGoing: 3
   collisionLaser: {fileID: 984141327}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 559521949}
