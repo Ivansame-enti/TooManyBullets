@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3532398384952687231}
   - component: {fileID: 3532398384952687224}
   - component: {fileID: 3532398384952687225}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1041,20 +1041,20 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 3.145946
-          outSlope: 3.145946
+          inSlope: 1.729929
+          outSlope: 1.729929
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.15463915
+          outWeight: 0.43276277
         - serializedVersion: 3
           time: 1
-          value: 0.47297287
-          inSlope: -1.6272119
-          outSlope: -1.6272119
+          value: 0.25675339
+          inSlope: -2.580965
+          outSlope: -2.580965
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.1494847
+          inWeight: 0.18011421
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2

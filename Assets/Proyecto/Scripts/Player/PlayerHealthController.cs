@@ -22,11 +22,14 @@ public class PlayerHealthController : MonoBehaviour
     {
         //if (timer <= 0)
         //{
-            currentHealth--;
-            shakeCamera.SetTrigger("Shake");
-            timer = inmortalTime;
-            Time.timeScale = 0.2f;
-            if (currentHealth > 0) FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
+        if (currentHealth > 0 && currentHealth < 1) currentHealth = 0;
+        if (currentHealth > 1 && currentHealth < 2) currentHealth = 1;
+        if (currentHealth > 2 && currentHealth < 3) currentHealth = 2;
+        currentHealth--;
+        shakeCamera.SetTrigger("Shake");
+        timer = inmortalTime;
+        Time.timeScale = 0.2f;
+        if (currentHealth > 0) FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
         //}
     }
 
@@ -47,51 +50,54 @@ public class PlayerHealthController : MonoBehaviour
 
         if (timer > 0) //Tiempo donde es imnnune porque le han golpeado
         {
-            if(Time.timeScale < 1.0f && currentHealth > 0 && pause.pauseState != true)
+            if (Time.timeScale < 1.0f && currentHealth > 0 && pause.pauseState != true)
             {
                 Time.timeScale += Time.deltaTime;
                 hitInmunity = true;
-                
+
             }
-            
-            if(timer2 <= 0) // Timer que controla el parpadeo que inndica la inmortalidad
+
+            if (timer2 <= 0) // Timer que controla el parpadeo que inndica la inmortalidad
             {
                 if (this.GetComponent<SpriteRenderer>().color.a == 0f)
                 {
                     this.GetComponent<SpriteRenderer>().color = new Color(this.GetComponent<SpriteRenderer>().color.r, this.GetComponent<SpriteRenderer>().color.g, this.GetComponent<SpriteRenderer>().color.b, 1f);
-                } else
+                }
+                else
                 {
                     this.GetComponent<SpriteRenderer>().color = new Color(this.GetComponent<SpriteRenderer>().color.r, this.GetComponent<SpriteRenderer>().color.g, this.GetComponent<SpriteRenderer>().color.b, 0f);
                 }
                 timer2 = blinkTime;
-            } else
+            }
+            else
             {
                 timer2 -= Time.deltaTime;
             }
 
             timer -= Time.deltaTime;
-        } else //Vuelve a la normalidad
+        }
+        else //Vuelve a la normalidad
         {
             if (hitInmunity == true)
             {
                 Time.timeScale = 1.0f;
                 hitInmunity = false;
             }
-            
+
             this.GetComponent<SpriteRenderer>().color = new Color(this.GetComponent<SpriteRenderer>().color.r, this.GetComponent<SpriteRenderer>().color.g, this.GetComponent<SpriteRenderer>().color.b, 1f);
         }
 
         //Debug.Log("Vida" + currentHealth);
         //Debug.Log(Time.timeScale);
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDeath");
             Time.timeScale = 1.0f;
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             dead = true;
             Destroy(this.gameObject);
-            
+
         }
     }
 
@@ -105,7 +111,7 @@ public class PlayerHealthController : MonoBehaviour
                 Destroy(collision.gameObject);
             }
 
-            if(collision.tag == "LaserColliderEnemy") dealDamage();
+            if (collision.tag == "LaserColliderEnemy") dealDamage();
         }
     }
 
@@ -116,10 +122,10 @@ public class PlayerHealthController : MonoBehaviour
             if (col.collider.tag == "LaserCollider") dealDamage();
         }
 
-        if (col.collider.tag == "enemy" && col.gameObject.name=="Enemy2")
+        if (col.collider.tag == "enemy" && (col.gameObject.name == "Enemy2" || col.gameObject.name == "Enemy22" || col.gameObject.name == "Enemy23"))
         {
             col.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
-            if(timer <= 0) dealDamage();
+            if (timer <= 0) dealDamage();
         }
     }
 }

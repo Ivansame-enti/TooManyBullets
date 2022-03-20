@@ -41,19 +41,55 @@ public class MiniJoeLaserController : MonoBehaviour
             {
                 //CREACION DEL LASER
                 //Comienza con feedback al jugador
-                if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("R1"))
+
+                if (ControllerInput.Xbox_One_Controller)
                 {
-                    timerLaser = 0;
-                    warningTimer = true;
-                    mLaserBeam.SetActive(true);
-                    //m_lineRenderer.SetColors(Color.white,Color.white);
-                    m_lineRenderer.colorGradient = originalLaserColor;
-                    //m_lineRenderer.endColor = Color.white;
-                    //m_lineRenderer.SetWidth(0.15f,0.15f);
-                    m_lineRenderer.startWidth = 0.20f;
-                    m_lineRenderer.endWidth = 0.10f;
-                    warning = true;
+                    if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("RB"))
+                    {
+                        timerLaser = 0;
+                        warningTimer = true;
+                        mLaserBeam.SetActive(true);
+                        //m_lineRenderer.SetColors(Color.white,Color.white);
+                        m_lineRenderer.colorGradient = originalLaserColor;
+                        //m_lineRenderer.endColor = Color.white;
+                        //m_lineRenderer.SetWidth(0.15f,0.15f);
+                        m_lineRenderer.startWidth = 0.20f;
+                        m_lineRenderer.endWidth = 0.10f;
+                        warning = true;
+                    }
                 }
+                else if (ControllerInput.PS4_Controller)
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("R1"))
+                    {
+                        timerLaser = 0;
+                        warningTimer = true;
+                        mLaserBeam.SetActive(true);
+                        //m_lineRenderer.SetColors(Color.white,Color.white);
+                        m_lineRenderer.colorGradient = originalLaserColor;
+                        //m_lineRenderer.endColor = Color.white;
+                        //m_lineRenderer.SetWidth(0.15f,0.15f);
+                        m_lineRenderer.startWidth = 0.20f;
+                        m_lineRenderer.endWidth = 0.10f;
+                        warning = true;
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    {
+                        timerLaser = 0;
+                        warningTimer = true;
+                        mLaserBeam.SetActive(true);
+                        //m_lineRenderer.SetColors(Color.white,Color.white);
+                        m_lineRenderer.colorGradient = originalLaserColor;
+                        //m_lineRenderer.endColor = Color.white;
+                        //m_lineRenderer.SetWidth(0.15f,0.15f);
+                        m_lineRenderer.startWidth = 0.20f;
+                        m_lineRenderer.endWidth = 0.10f;
+                        warning = true;
+                    }
+                }                
             }
             else if(timerLaser <= laserCoolDown)
             {
@@ -73,7 +109,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 m_lineRenderer.startWidth = 0.20f;
                 m_lineRenderer.endWidth = 0.10f;
                 FindObjectOfType<AudioManagerController>().AudioPlay("MiniJoeLaser");
-                playerPosition.GetComponent<movement>().speed /= 2;
+                //playerPosition.GetComponent<movement>().speed /= 2;
             }
             
             //LASER SE CIERRA
@@ -82,7 +118,7 @@ public class MiniJoeLaserController : MonoBehaviour
                 shooting = false;
                 boolParticles = false;
                 mLaserBeam.SetActive(false);
-                playerPosition.GetComponent<movement>().speed *= 2;
+                //playerPosition.GetComponent<movement>().speed *= 2;
                 if (col != null) Destroy(col.gameObject);
             }
             else

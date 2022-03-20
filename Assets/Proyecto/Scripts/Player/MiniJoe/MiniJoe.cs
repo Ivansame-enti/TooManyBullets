@@ -21,7 +21,7 @@ public class MiniJoe : MonoBehaviour
     public GameObject player;
     public GameObject character;
     public GameObject torretarea;
-    public GameObject pickArea;
+    //public GameObject pickArea;
     private bool enemya = false;
     private bool checkenemyinrange = false;
     public bool displanted = false;
@@ -33,10 +33,18 @@ public class MiniJoe : MonoBehaviour
     public PauseController pause;
     private bool nivel3;
     public GameObject searchEnemies;
-
+    private bool nivel6;
     private bool level2;
+    private bool minijoePicked;
+    private float speed;
+    private Vector3 defaultScale;
+    
     void Start()
     {
+        defaultScale = torretarea.transform.localScale;
+        speed = 15f;
+        minijoePicked = false;
+        //playerSpeed = player.GetComponent<movement>().speed;
         //fireRate = 1f;
         nextFire = Time.time;
         timer = plantCD;
@@ -44,6 +52,8 @@ public class MiniJoe : MonoBehaviour
         else level2 = true;
         if (SceneManager.GetActiveScene().name != "Nivel3") nivel3 = false;
         else nivel3 = true;
+        if (SceneManager.GetActiveScene().name != "Nivel6") nivel6 = false;
+        else nivel6 = true;
     }
 
     // Update is called once per frame
@@ -60,18 +70,27 @@ public class MiniJoe : MonoBehaviour
                 this.transform.position = new Vector2(0, 0);
             }
 
+            if (nivel6)
+            {
+                this.GetComponent<BoxCollider2D>().enabled = true;
+                minijoe.transform.parent = null;
+                flagS = true;
+                this.transform.position = new Vector2(20.5f, 0);
+                nivel6 = false;
+            }
+
             if (displanted)
             {
                 //gos = GameObject.FindGameObjectsWithTag("enemy");
 
-                if(gos.Count >= 1) gos.Clear(); //Limpia la lista
+                if (gos.Count >= 1) gos.Clear(); //Limpia la lista
                 var children = searchEnemies.GetComponentsInChildren<Transform>(); //Busca en el objeto que contiene el nivel
 
                 foreach (var child in children)
                 {
                     if (child.tag == "enemy") //Recoge a los hijos que 
                         gos.Add(child.gameObject);
-                        //Debug.Log("Hola");
+                    //Debug.Log("Hola");
                 }
                 /*
                 if (gos.Length >= 1)
@@ -118,14 +137,37 @@ public class MiniJoe : MonoBehaviour
             }
 
 
-            if (displanted == false && timer >= plantCD && !level2)
+            if (displanted == false && timer >= plantCD && !level2 && !minijoePicked)
             {
-                if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
+                if (ControllerInput.Xbox_One_Controller)
                 {
-                    this.GetComponent<BoxCollider2D>().enabled = true;
-                    timer = 0;
-                    minijoe.transform.parent = null;
-                    flagS = true;
+                    if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("LB")) //Plantar a minijoe
+                    {
+                        this.GetComponent<BoxCollider2D>().enabled = true;
+                        timer = 0;
+                        minijoe.transform.parent = null;
+                        flagS = true;
+                    }
+                }
+                else if (ControllerInput.PS4_Controller)
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) //Plantar a minijoe
+                    {
+                        this.GetComponent<BoxCollider2D>().enabled = true;
+                        timer = 0;
+                        minijoe.transform.parent = null;
+                        flagS = true;
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftControl)) //Plantar a minijoe
+                    {
+                        this.GetComponent<BoxCollider2D>().enabled = true;
+                        timer = 0;
+                        minijoe.transform.parent = null;
+                        flagS = true;
+                    }
                 }
             }
             else if (timer <= plantCD)
@@ -153,38 +195,90 @@ public class MiniJoe : MonoBehaviour
 
                 if (displanted == true)
                 {
-                    if (distancia < pickUpDistance)
+                    //if (distancia < pickUpDistance)
+                    //{
+                    //pickArea.SetActive(true);
+                    if (timer >= plantCD && !minijoePicked)
                     {
-                        pickArea.SetActive(true);
-                        if (timer >= plantCD)
+                        if (ControllerInput.Xbox_One_Controller)
                         {
-                            if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) && !nivel3) //Recoger a minijoe
+                            if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("LB")) && !nivel3) //Recoger a minijoe
                             {
                                 this.GetComponent<BoxCollider2D>().enabled = false;
                                 timer = 0;
-                                Example(padre);
-
-                                pickArea.SetActive(false);
+                                //Example(padre);
+                                minijoePicked = true;
+                                //pickArea.SetActive(false);
 
                                 torretarea.SetActive(false);
 
                                 torretarea.transform.parent = null;
 
-                                minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                                //minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
                                 torretarea.transform.SetParent(padre2);
 
+                                //player.GetComponent<movement>().speed = playerSpeed;
                                 miniJoelaser.SetActive(false);
                                 flagS = false;
                                 displanted = false;
 
                             }
                         }
-                        else if (timer <= plantCD)
+                        else if (ControllerInput.PS4_Controller)
                         {
-                            timer += Time.deltaTime;
+                            if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("L1")) && !nivel3) //Recoger a minijoe
+                            {
+                                this.GetComponent<BoxCollider2D>().enabled = false;
+                                timer = 0;
+                                //Example(padre);
+                                minijoePicked = true;
+                                //pickArea.SetActive(false);
+
+                                torretarea.SetActive(false);
+
+                                torretarea.transform.parent = null;
+
+                               // minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                                torretarea.transform.SetParent(padre2);
+
+                                //player.GetComponent<movement>().speed = playerSpeed;
+                                miniJoelaser.SetActive(false);
+                                flagS = false;
+                                displanted = false;
+
+                            }
+                        }
+                        else
+                        {
+                            if (Input.GetKeyDown(KeyCode.LeftControl) && !nivel3) //Recoger a minijoe
+                            {
+                                this.GetComponent<BoxCollider2D>().enabled = false;
+                                timer = 0;
+                                //Example(padre);
+                                minijoePicked = true;
+                                //pickArea.SetActive(false);
+
+                                torretarea.SetActive(false);
+
+                                torretarea.transform.parent = null;
+
+                                //minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                                torretarea.transform.SetParent(padre2);
+
+                                //player.GetComponent<movement>().speed = playerSpeed;
+                                miniJoelaser.SetActive(false);
+                                flagS = false;
+                                displanted = false;
+
+                            }
                         }
                     }
-                    else pickArea.SetActive(false);
+                    else if (timer <= plantCD)
+                    {
+                        timer += Time.deltaTime;
+                    }
+                    //}
+                    //else pickArea.SetActive(false);
 
                 }
                 else
@@ -207,8 +301,21 @@ public class MiniJoe : MonoBehaviour
         }
 
 
+        if (minijoePicked)
+        {
+            this.transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            
+            if (Vector3.Distance(this.transform.position, player.transform.position) <= 1f)
+            {
+                torretarea.transform.localScale= defaultScale;
+                //Debug.Log(Vector3.Distance(this.transform.position, player.transform.position));
+                Example(padre);
+                minijoe.transform.localScale = new Vector2(0.7f, 0.7f);
+                minijoePicked = false;
+            }
+        }
 
-        if (displanted == false && pause.pauseState == false)
+        if (displanted == false && pause.pauseState == false && minijoePicked == false)
         {
             Vector3 posicion = character.transform.position;
 
@@ -234,11 +341,6 @@ public class MiniJoe : MonoBehaviour
         else if (displanted == true)
         {
             positionList.Clear();
-        }
-
-        if (nivel3)
-        {
-
         }
     }
 

@@ -56,13 +56,36 @@ public class DashController : MonoBehaviour
         if (timer <= 0) //Delay entre dash
         {
             this.GetComponent<SpriteRenderer>().color = new Color(255, 140, 0, this.GetComponent<SpriteRenderer>().color.a);
-            if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space")) && this.GetComponent<movement>().isMoving)
+
+            if (ControllerInput.Xbox_One_Controller)
             {
-                rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
-                timer = dashDelay;
-                timer2 = dashTime;
-                FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDash");
+                if ((Input.GetAxis("RT")!=0 || Input.GetAxis("LT")!=0 || Input.GetKeyDown("space") || Input.GetButtonDown("XboxA")) && this.GetComponent<movement>().isMoving)
+                {
+                    rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
+                    timer = dashDelay;
+                    timer2 = dashTime;
+                    FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDash");
+                }
             }
+            else if (ControllerInput.PS4_Controller)
+            {
+                if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space") || Input.GetButtonDown("PlayX")) && this.GetComponent<movement>().isMoving)
+                {
+                    rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
+                    timer = dashDelay;
+                    timer2 = dashTime;
+                    FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDash");
+                }
+            } else
+            {
+                if (Input.GetKeyDown("space") && this.GetComponent<movement>().isMoving)
+                {
+                    rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
+                    timer = dashDelay;
+                    timer2 = dashTime;
+                    FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDash");
+                }
+            }      
         } else
         {
             this.GetComponent<SpriteRenderer>().color = new Color(0, 214, 255, this.GetComponent<SpriteRenderer>().color.a);

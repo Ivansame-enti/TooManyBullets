@@ -27,21 +27,60 @@ public class PauseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) && pauseState == false && isDead.dead == false)
+        if (ControllerInput.Xbox_One_Controller)
         {
-            pauseState = true;
-            pauseUI.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(continueUI);
-            Time.timeScale = 0f;
-        }
+            if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("StartXbox")) && pauseState == false && isDead.dead == false)
+            {
+                pauseState = true;
+                pauseUI.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(continueUI);
+                Time.timeScale = 0f;
+            }
 
-        else if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) && pauseState == true)
-        {
-            pauseState = false;
-            pauseUI.SetActive(false);
-            Time.timeScale = 1;
+            else if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("StartXbox")) && pauseState == true)
+            {
+                pauseState = false;
+                pauseUI.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
+        else if (ControllerInput.PS4_Controller)
+        {
+            if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) && pauseState == false && isDead.dead == false)
+            {
+                pauseState = true;
+                pauseUI.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(continueUI);
+                Time.timeScale = 0f;
+            }
+
+            else if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) && pauseState == true)
+            {
+                pauseState = false;
+                pauseUI.SetActive(false);
+                Time.timeScale = 1;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && pauseState == false && isDead.dead == false)
+            {
+                pauseState = true;
+                pauseUI.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(continueUI);
+                Time.timeScale = 0f;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Escape) && pauseState == true)
+            {
+                pauseState = false;
+                pauseUI.SetActive(false);
+                Time.timeScale = 1;
+            }
+        }  
     }
 
     public void continueButton()

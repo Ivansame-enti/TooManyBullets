@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController2 : MonoBehaviour
 {
@@ -20,11 +21,22 @@ public class EnemyController2 : MonoBehaviour
         spawnParticles = Instantiate(spawnParticles, this.transform.position, Quaternion.identity);
 
         timerBullet = Time.deltaTime + Random.Range(bulletFrequencyMin, bulletFrequencyMax);
+
+        if (SceneManager.GetActiveScene().name == "Nivel6")
+        {
+            bulletSpeed = 15f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Nivel6" && bulletSpeed>3)
+        {
+            bulletSpeed -=Time.deltaTime*3;
+            //Debug.Log(bulletSpeed);
+        }
+
         if (spawnParticles != null)
         {
             Destroy(spawnParticles.gameObject, 1f);

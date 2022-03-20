@@ -13,12 +13,14 @@ public class EnemyController : MonoBehaviour
     private float radius = 5f;
     public GameObject spawnParticles;
     public Animation anim;
+    private bool firstTime;
 
     //private int angle;
 
     // Start is called before the first frame update
     void Start()
     {
+        firstTime = true;
         anim = gameObject.GetComponent<Animation>();
 
         spawnParticles = Instantiate(spawnParticles, this.transform.position, Quaternion.identity);
@@ -29,6 +31,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(this.gameObject.name == "EnemyInstant" && firstTime)
+        {
+            timerBullet = 0;
+        }
+
         if(spawnParticles != null)
         {
             Destroy(spawnParticles.gameObject, 1f);
@@ -42,6 +49,7 @@ public class EnemyController : MonoBehaviour
             anim.Play("warningRangedEnemy");
             
         }
+        firstTime = false;
     }
 
     public void AlertObservers(string message)

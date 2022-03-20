@@ -23,23 +23,68 @@ public class antiBulletSystem : MonoBehaviour
     {
         if (GetComponent<MiniJoe>().displanted == false)
         {
-            if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("R1")) && timer >= antiBulletdelay)
+            if (ControllerInput.Xbox_One_Controller)
             {
-                FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
-                //this.transform.Find("Shield").gameObject.SetActive(true);
-                antiBulletPower.transform.position = this.transform.position;
-                antiBulletPowerClone = Instantiate(antiBulletPower, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
-                //particles = Instantiate(PS, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
-                //antiBulletPowerClone.transform.parent = gameObject.transform;
-                Destroy(antiBulletPowerClone.gameObject, 2f);
-                antiBulletPowerClone2 = Instantiate(antiBulletPowerRest, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
-                //antiBulletPowerClone.transform.parent = gameObject.transform;
-                Destroy(antiBulletPowerClone2.gameObject, 2f);
-                timer = 0;
+                if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("RB")) && timer >= antiBulletdelay)
+                {
+                    FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
+                    //this.transform.Find("Shield").gameObject.SetActive(true);
+                    antiBulletPower.transform.position = this.transform.position;
+                    antiBulletPowerClone = Instantiate(antiBulletPower, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //particles = Instantiate(PS, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //antiBulletPowerClone.transform.parent = gameObject.transform;
+                    Destroy(antiBulletPowerClone.gameObject, 2f);
+                    antiBulletPowerClone2 = Instantiate(antiBulletPowerRest, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //antiBulletPowerClone.transform.parent = gameObject.transform;
+                    Destroy(antiBulletPowerClone2.gameObject, 2f);
+                    timer = 0;
+                }
+                else if (timer <= antiBulletdelay)
+                {
+                    timer += Time.deltaTime;
+                }
             }
-            else if (timer <= antiBulletdelay)
+            else if (ControllerInput.PS4_Controller)
             {
-                timer += Time.deltaTime;
+                if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("R1")) && timer >= antiBulletdelay)
+                {
+                    FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
+                    //this.transform.Find("Shield").gameObject.SetActive(true);
+                    antiBulletPower.transform.position = this.transform.position;
+                    antiBulletPowerClone = Instantiate(antiBulletPower, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //particles = Instantiate(PS, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //antiBulletPowerClone.transform.parent = gameObject.transform;
+                    Destroy(antiBulletPowerClone.gameObject, 2f);
+                    antiBulletPowerClone2 = Instantiate(antiBulletPowerRest, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //antiBulletPowerClone.transform.parent = gameObject.transform;
+                    Destroy(antiBulletPowerClone2.gameObject, 2f);
+                    timer = 0;
+                }
+                else if (timer <= antiBulletdelay)
+                {
+                    timer += Time.deltaTime;
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.LeftShift) && timer >= antiBulletdelay)
+                {
+                    FindObjectOfType<AudioManagerController>().AudioPlay("ShieldEffect");
+                    //this.transform.Find("Shield").gameObject.SetActive(true);
+                    antiBulletPower.transform.position = this.transform.position;
+                    antiBulletPowerClone = Instantiate(antiBulletPower, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //particles = Instantiate(PS, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //antiBulletPowerClone.transform.parent = gameObject.transform;
+                    Destroy(antiBulletPowerClone.gameObject, 2f);
+                    antiBulletPowerClone2 = Instantiate(antiBulletPowerRest, new Vector2(this.transform.position.x, this.transform.position.y), this.transform.rotation);
+                    //antiBulletPowerClone.transform.parent = gameObject.transform;
+                    Destroy(antiBulletPowerClone2.gameObject, 2f);
+                    timer = 0;
+                }
+                else if (timer <= antiBulletdelay)
+                {
+                    timer += Time.deltaTime;
+                }
             }
 
             if (antiBulletPowerClone != null && antiBulletPowerClone2 != null)

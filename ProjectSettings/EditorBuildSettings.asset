@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Proyecto/Scenes/Nivel5.unity
     guid: 4c0ef63ba7ac85d41987dc8d3ef9b561
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/Nivel6.unity
+    guid: 5c6c1fff9fe3b1140b82c738c0355ef5
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/Nivel7.unity
+    guid: 7bdd3c86e5b23d548b7872bd11475c10
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/BossLevel.unity
+    guid: be76555fb8c0f6f428d88adf78b16681
   m_configObjects: {}

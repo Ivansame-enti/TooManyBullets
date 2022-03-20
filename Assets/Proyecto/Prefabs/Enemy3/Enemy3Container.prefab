@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 161073324}
   - component: {fileID: 161073327}
   - component: {fileID: 161073326}
+  - component: {fileID: 62619835939940246}
   m_Layer: 0
   m_Name: mLaser
   m_TagString: Untagged
@@ -192,6 +193,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.571424, y: 28.571424}
   m_EdgeRadius: 0
+--- !u!50 &62619835939940246
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161073323}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &183795805
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +651,7 @@ GameObject:
   - component: {fileID: 1629374872}
   - component: {fileID: 1629374875}
   - component: {fileID: 1629374874}
+  - component: {fileID: 4233363101272934105}
   m_Layer: 0
   m_Name: mLaser3
   m_TagString: Untagged
@@ -810,6 +833,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.571424, y: 28.571424}
   m_EdgeRadius: 0
+--- !u!50 &4233363101272934105
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629374871}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1908198004
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +928,7 @@ GameObject:
   - component: {fileID: 1766611725925682144}
   - component: {fileID: 820220229451798905}
   - component: {fileID: 820220229451798906}
+  - component: {fileID: 811148699614947696}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: enemy
@@ -1004,13 +1049,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fb8a6df574caa458cdaa5a0c352e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 40
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
   deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
+  deathPS2: {fileID: 5031804150630487784, guid: e283fea6115d5874d8a2c6a4b030d557,
+    type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
+  swPs2: {fileID: 3532398384952687226, guid: 3f3434e482f650b4db5bff534b3041d4, type: 3}
   healthBar: {fileID: 6617125929742434301}
   ending: {fileID: 0}
   inmortal: 0
+  probabilidad: 0
+  specialEnemy: 0
+  antiSlash: 0
+  specialParticles: {fileID: 7346800036578399500, guid: 5a3bc6ff30742b043b6faa1559f134aa,
+    type: 3}
+  specialParticles2: {fileID: 7346800036578399500, guid: 39b8b51b22e1da643a46f336964f93a0,
+    type: 3}
 --- !u!60 &820220229451798905
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1084,6 +1139,25 @@ MonoBehaviour:
   exclamation1: {fileID: 183795805}
   exclamation2: {fileID: 1269258206}
   exclamation3: {fileID: 1550579006}
+--- !u!95 &811148699614947696
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766611725925682156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67054fed75d8d9c499a5f9638e2e7f42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5505969530509433776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,6 +1697,7 @@ GameObject:
   - component: {fileID: 2534632141051010691}
   - component: {fileID: 647307500902865926}
   - component: {fileID: 6250912909240237694}
+  - component: {fileID: 6130133447589609781}
   m_Layer: 0
   m_Name: mLaser2
   m_TagString: Untagged
@@ -1804,3 +1879,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.571424, y: 28.571424}
   m_EdgeRadius: 0
+--- !u!50 &6130133447589609781
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207068141202247034}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

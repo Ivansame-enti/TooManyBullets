@@ -16,9 +16,32 @@ public class LaserEnemyController : MonoBehaviour
     private Gradient originalLaserColor;
     private BoxCollider2D col, col2, col3;
     private bool warning = false;
+    private bool animFinished;
+    private bool activeAnimation;
+    Gradient gradient;
+    GradientColorKey[] colorKey;
+    GradientAlphaKey[] alphaKey;
     // Start is called before the first frame update
     void Start()
     {
+        gradient = new Gradient();
+        colorKey = new GradientColorKey[2];
+        colorKey[0].color = Color.red;
+        colorKey[0].time = 0.0f;
+        colorKey[1].color = Color.blue;
+        colorKey[1].time = 0.0f;
+
+        // Populate the alpha  keys at relative time 0 and 1  (0 and 100%)
+        alphaKey = new GradientAlphaKey[2];
+        alphaKey[0].alpha = 1.0f;
+        alphaKey[0].time = 0.0f;
+        alphaKey[1].alpha = 1.0f;
+        alphaKey[1].time = 1.0f;
+
+        gradient.SetKeys(colorKey, alphaKey);
+
+        activeAnimation = true;
+        animFinished = true;
         originalRotation = exclamation1.transform.rotation;
         originalLaserColor = mLaserBeam.GetComponent<LineRenderer>().colorGradient;
         /*
@@ -51,48 +74,91 @@ public class LaserEnemyController : MonoBehaviour
 
         if (timer >= fireRate)
         {
-            warning = false;
-            exclamation1.SetActive(false);
-            exclamation2.SetActive(false);
-            exclamation3.SetActive(false);
-
-            ShootLaser();
-
-            mLaserBeam.SetActive(true);
-            //mLaserBeam.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
-            //mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 255, 0);
-            //mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 255, 0);
-            //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
-            mLaserBeam.GetComponent<LineRenderer>().startWidth = 0.30f;
-            mLaserBeam.GetComponent<LineRenderer>().endWidth = 0.30f;
-
-            mLaserBeam2.SetActive(true);
-            //mLaserBeam2.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
-            //mLaserBeam2.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
-            //mLaserBeam2.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
-            //mLaserBeam2.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
-            mLaserBeam2.GetComponent<LineRenderer>().startWidth = 0.30f;
-            mLaserBeam2.GetComponent<LineRenderer>().endWidth = 0.30f;
-
-            mLaserBeam3.SetActive(true);
-            //mLaserBeam3.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
-            //mLaserBeam3.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
-            //mLaserBeam3.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
-            //mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
-            mLaserBeam3.GetComponent<LineRenderer>().startWidth = 0.30f;
-            mLaserBeam3.GetComponent<LineRenderer>().endWidth = 0.30f;
-
-            if (timer2 >= attackDuration)
+            if (activeAnimation)
             {
-                timer = 0;
-                timer2 = 0;
-                mLaserBeam.SetActive(false);
-                mLaserBeam2.SetActive(false);
-                mLaserBeam3.SetActive(false);
+                this.GetComponent<Animator>().SetBool("Attack", true);
+                animFinished = false;
+                activeAnimation = false;
             }
-            else
+            if (animFinished)
             {
-                timer2 += Time.deltaTime;
+                warning = false;
+                exclamation1.SetActive(false);
+                exclamation2.SetActive(false);
+                exclamation3.SetActive(false);
+
+                ShootLaser();
+
+                mLaserBeam.SetActive(true);
+                //mLaserBeam.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+                //mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam.GetComponent<LineRenderer>().colorGradient = gradient;
+                mLaserBeam.GetComponent<LineRenderer>().startWidth = 0.30f;
+                mLaserBeam.GetComponent<LineRenderer>().endWidth = 0.30f;
+
+                mLaserBeam2.SetActive(true);
+                //mLaserBeam2.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+                //mLaserBeam2.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
+                //mLaserBeam2.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
+                //mLaserBeam2.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam2.GetComponent<LineRenderer>().colorGradient = gradient;
+                mLaserBeam2.GetComponent<LineRenderer>().startWidth = 0.30f;
+                mLaserBeam2.GetComponent<LineRenderer>().endWidth = 0.30f;
+
+                mLaserBeam3.SetActive(true);
+                //mLaserBeam3.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+                //mLaserBeam3.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
+                //mLaserBeam3.GetComponent<LineRenderer>().endColor = new Color(255, 125, 0);
+                //mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam3.GetComponent<LineRenderer>().colorGradient = gradient;
+                mLaserBeam3.GetComponent<LineRenderer>().startWidth = 0.30f;
+                mLaserBeam3.GetComponent<LineRenderer>().endWidth = 0.30f;
+
+                if (timer2 >= attackDuration)
+                {
+                    timer = 0;
+                    timer2 = 0;
+                    mLaserBeam.SetActive(false);
+                    mLaserBeam2.SetActive(false);
+                    mLaserBeam3.SetActive(false);
+                }
+                else
+                {
+                    timer2 += Time.deltaTime;
+                }
+            } else
+            {
+                //activeAnimation = true;
+                warning = true;
+                ShootLaser();
+
+                //laser1Warning.transform.position = new Vector3(laser1Pos2) * Time.deltaTime;
+                /*exclamation1.SetActive(true);
+                exclamation2.SetActive(true);
+                exclamation3.SetActive(true);*/
+
+                mLaserBeam.SetActive(true);
+                mLaserBeam.GetComponent<LineRenderer>().colorGradient = originalLaserColor;
+                //mLaserBeam.GetComponent<LineRenderer>().SetColors(Color.white, Color.white);
+                //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.15f, 0.15f);
+                mLaserBeam.GetComponent<LineRenderer>().startWidth = 0.25f;
+                mLaserBeam.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+                mLaserBeam2.SetActive(true);
+                mLaserBeam2.GetComponent<LineRenderer>().colorGradient = originalLaserColor;
+                //mLaserBeam2.GetComponent<LineRenderer>().SetColors(Color.white, Color.white);
+                //mLaserBeam2.GetComponent<LineRenderer>().SetWidth(0.15f, 0.15f);
+                mLaserBeam2.GetComponent<LineRenderer>().startWidth = 0.25f;
+                mLaserBeam2.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+                mLaserBeam3.SetActive(true);
+                mLaserBeam3.GetComponent<LineRenderer>().colorGradient = originalLaserColor;
+                //mLaserBeam3.GetComponent<LineRenderer>().SetColors(Color.white, Color.white);
+                //mLaserBeam3.GetComponent<LineRenderer>().SetWidth(0.15f, 0.15f);
+                mLaserBeam3.GetComponent<LineRenderer>().startWidth = 0.25f;
+                mLaserBeam3.GetComponent<LineRenderer>().endWidth = 0.15f;
             }
 
         }
@@ -100,6 +166,7 @@ public class LaserEnemyController : MonoBehaviour
         {
             if (timer >= fireRate - warningTime)
             {
+                activeAnimation = true;
                 warning = true;
                 ShootLaser();
 
@@ -249,6 +316,15 @@ public class LaserEnemyController : MonoBehaviour
                 angle = Mathf.Rad2Deg * Mathf.Atan(angle);
                 col3.transform.Rotate(0, 0, angle);
             }
+        }
+    }
+
+    public void Attack(string message)
+    {
+        if (message.Equals("Attack"))
+        {
+            this.GetComponent<Animator>().SetBool("Attack", false);
+            animFinished = true;
         }
     }
 }

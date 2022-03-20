@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class SelectLevelsButton : MonoBehaviour
 {
     public GameObject menuUI, levelSelectorUI;
-    public GameObject returnButton,level1, level2, level3, level4, level5;
+    public GameObject returnButton,level1, level2, level3, level4, level5, level6, level7, level8;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +41,21 @@ public class SelectLevelsButton : MonoBehaviour
     public void PlayLevel5Button()
     {
         SceneManager.LoadScene("Nivel5");
+    }
+
+    public void PlayLevel6Button()
+    {
+        SceneManager.LoadScene("Nivel6");
+    }
+
+    public void PlayLevel7Button()
+    {
+        SceneManager.LoadScene("Nivel7");
+    }
+
+    public void PlayLevel8Button()
+    {
+        SceneManager.LoadScene("BossLevel");
     }
 
 
