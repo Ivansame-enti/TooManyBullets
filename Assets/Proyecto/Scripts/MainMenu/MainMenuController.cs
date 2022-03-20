@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public GameObject menuUI, optionsUI,levelSelectorUI, creditsUI;
     public GameObject playButton, optionButton, exitButton,level1,creditButton;
+    public GameObject pantalla;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +56,7 @@ public class MainMenuController : MonoBehaviour
     {
         menuUI.SetActive(false);
         creditsUI.SetActive(true);
+        pantalla.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionButton);
     }
