@@ -103,6 +103,7 @@ public class Level2Controller : MonoBehaviour
             Destroy(collision.transform.parent.gameObject);
             enemiesDestroyed++;
             textPro.text = enemiesDestroyed.ToString();
+            FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
             if (enemiesDestroyed == 2)
             {
                 //helpText.SetActive(false);

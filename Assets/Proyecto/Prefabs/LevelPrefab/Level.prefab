@@ -1854,7 +1854,10 @@ MonoBehaviour:
   pasive: {fileID: 3969236535942356051}
   pasiveImage: {fileID: 3969236535635940374}
   pasiveImageGreen: {fileID: 3969236534759043858}
+  TextPro: {fileID: 0}
+  newHeal: {fileID: 0}
   miniJoe: {fileID: 3969236535606439623}
+  healParticle: {fileID: 0}
 --- !u!1 &3969236534526165465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,6 +2010,18 @@ MonoBehaviour:
   - name: Victory
     clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
     volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyAttack
+    clip: {fileID: 8300000, guid: f9c91d94c15f40943b40220b5851d681, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -5324,7 +5339,6 @@ MonoBehaviour:
   player: {fileID: 3969236534129587907}
   character: {fileID: 3969236534129587907}
   torretarea: {fileID: 3969236534749704137}
-  pickArea: {fileID: 3969236534749429688}
   displanted: 0
   miniJoelaser: {fileID: 3969236535995282925}
   timer: 0
@@ -5395,6 +5409,7 @@ MonoBehaviour:
   phc: {fileID: 3969236534129587925}
   healParticle: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
     type: 3}
+  player: {fileID: 0}
 --- !u!61 &3969236535606439628
 BoxCollider2D:
   m_ObjectHideFlags: 0

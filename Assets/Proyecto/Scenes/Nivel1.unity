@@ -56829,6 +56829,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: EnemyAttack
+    clip: {fileID: 8300000, guid: f9c91d94c15f40943b40220b5851d681, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   audioMixer: {fileID: 24300002, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
 --- !u!1 &1345892689
 GameObject:
