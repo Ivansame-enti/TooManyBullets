@@ -32,6 +32,7 @@ public class MainMenuController : MonoBehaviour
     {
         menuUI.SetActive(false);
         levelSelectorUI.SetActive(true);
+        pantalla.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(playButton);
     }
@@ -40,6 +41,7 @@ public class MainMenuController : MonoBehaviour
     {
         menuUI.SetActive(false);
         optionsUI.SetActive(true);
+        pantalla.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionButton);
     }
