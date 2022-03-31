@@ -77,9 +77,9 @@ public class EnemyHealthController : MonoBehaviour
                 Destroy(this.transform.parent.gameObject);
             else Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
-            Instantiate(deathPS2, this.transform.position, Quaternion.identity);
-            Instantiate(swPs, this.transform.position, Quaternion.identity);
-            Instantiate(swPs2, this.transform.position, Quaternion.identity);
+            //Instantiate(deathPS2, this.transform.position, Quaternion.identity);
+            //Instantiate(swPs, this.transform.position, Quaternion.identity);
+            //Instantiate(swPs2, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death"); 
         }
     }

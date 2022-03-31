@@ -84037,6 +84037,12 @@ PrefabInstance:
       propertyPath: bulletFrequencyMin
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6094048694357508492, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
+      propertyPath: deathPS
+      value: 
+      objectReference: {fileID: 2738825157103236572, guid: d683fdff45bbbb44bb4a41cbd16c1da9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39a9eb4c4ea392489762ef2210a2d79, type: 3}
 --- !u!1 &1865719901
