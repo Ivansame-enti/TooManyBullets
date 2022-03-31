@@ -1977,7 +1977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
-  deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
+  deathPS: {fileID: 2738825157103236572, guid: d683fdff45bbbb44bb4a41cbd16c1da9, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
   healthBar: {fileID: 760735081}
 --- !u!1 &203756848
@@ -34565,7 +34565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
-  deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
+  deathPS: {fileID: 2738825157103236572, guid: d683fdff45bbbb44bb4a41cbd16c1da9, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
   healthBar: {fileID: 492162187}
 --- !u!1 &811140959
@@ -34967,7 +34967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
-  deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
+  deathPS: {fileID: 2738825157103236572, guid: d683fdff45bbbb44bb4a41cbd16c1da9, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
   healthBar: {fileID: 829736589}
 --- !u!1 &891290089
@@ -57020,7 +57020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
-  deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
+  deathPS: {fileID: 2738825157103236572, guid: d683fdff45bbbb44bb4a41cbd16c1da9, type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
   healthBar: {fileID: 1508255759}
 --- !u!1 &1417950094

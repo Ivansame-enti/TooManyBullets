@@ -26,7 +26,7 @@ public class TutorialEnemy : MonoBehaviour
         {
             Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
-            Instantiate(swPs, this.transform.position, Quaternion.identity);
+            //Instantiate(swPs, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
         }
     }
