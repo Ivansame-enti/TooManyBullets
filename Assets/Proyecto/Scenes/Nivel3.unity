@@ -2906,6 +2906,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Laser
+    clip: {fileID: 8300000, guid: 616869a7048217940a74956546a568b1, type: 3}
+    volume: 0.2
+    pitch: 0.8
+    loop: 1
+    source: {fileID: 0}
   audioMixer: {fileID: 24300002, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
 --- !u!4 &453757451 stripped
 Transform:

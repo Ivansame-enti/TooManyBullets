@@ -63,6 +63,6 @@ public class AudioManagerController : MonoBehaviour
             Debug.Log("Audio not found");
             return;
         }
-        a.source.Pause();
+        a.source.Stop();
     }
 }
