@@ -99,7 +99,7 @@ public class PlayerHealthController : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-        if(currentHealth == 1)
+        if(currentHealth < 2)
         {
             lowHealthPanel.SetActive(true);
         }
