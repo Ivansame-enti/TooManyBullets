@@ -103,7 +103,7 @@ public class CelestialAttack : MonoBehaviour
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
-            FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
+            //FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             //Debug.Log("funciona");
             atkExist = false;
             atkGoing = true;
@@ -122,7 +122,7 @@ public class CelestialAttack : MonoBehaviour
 
         if (timerAttack <= 0 && atkGoing)
         {
-            FindObjectOfType<AudioManagerController>().AudioPause("Laser");
+            //FindObjectOfType<AudioManagerController>().AudioPause("Laser");
             atkGoing = false;
             celestialAtk.SetActive(false);
             laserParticles.SetActive(false);

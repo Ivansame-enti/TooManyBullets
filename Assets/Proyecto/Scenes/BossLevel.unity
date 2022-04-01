@@ -145761,7 +145761,7 @@ PrefabInstance:
     - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: audios.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
@@ -145790,6 +145790,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
+      propertyPath: audios.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 64ce65f15f46d894fbe22abf450b0e54, type: 3}
+    - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: audios.Array.data[11].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: audios.Array.data[11].name
+      value: LowHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
       propertyPath: audios.Array.data[9].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -145802,6 +145817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: audios.Array.data[10].volume
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: audios.Array.data[11].volume
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3969236534594426590, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}

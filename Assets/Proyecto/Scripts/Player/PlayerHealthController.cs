@@ -16,6 +16,7 @@ public class PlayerHealthController : MonoBehaviour
     private bool hitInmunity;
     public bool dead;
     public PauseController pause;
+    private AudioManagerController audioManager;
 
 
     private void dealDamage()
@@ -29,7 +30,7 @@ public class PlayerHealthController : MonoBehaviour
         shakeCamera.SetTrigger("Shake");
         timer = inmortalTime;
         Time.timeScale = 0.2f;
-        if (currentHealth > 0) FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
+        if (currentHealth > 0) audioManager.AudioPlay("PlayerHit");
         //}
     }
 
@@ -37,6 +38,7 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = health;
+        audioManager = FindObjectOfType<AudioManagerController>();
     }
 
     // Update is called once per frame
@@ -90,9 +92,26 @@ public class PlayerHealthController : MonoBehaviour
         //Debug.Log("Vida" + currentHealth);
         //Debug.Log(Time.timeScale);
 
+        if (currentHealth<2)
+        {
+            if (audioManager.GetAudioPlaying("MainTheme"))
+            {
+                audioManager.AudioPause("MainTheme");
+                audioManager.AudioPlay("LowHealth");
+            }
+        }
+        else
+        {
+            if (audioManager.GetAudioPlaying("LowHealth"))
+            {
+                audioManager.AudioPlay("MainTheme");
+                audioManager.AudioStop("LowHealth");
+            }
+        }
+
         if (currentHealth <= 0)
         {
-            FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDeath");
+            audioManager.AudioPlay("PlayerDeath");
             Time.timeScale = 1.0f;
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             dead = true;
