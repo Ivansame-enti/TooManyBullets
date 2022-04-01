@@ -2369,10 +2369,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stay away from the companion's area to heal yourself
+  m_text: STAY AWAY FROM THE COMPANION'S AREA TO HEAL YOURSELF
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
-  m_sharedMaterial: {fileID: -5577958623563438809, guid: 91bff2c8b7ff83a40aba8e3541a25559,
+  m_fontAsset: {fileID: 11400000, guid: 3211a01c24db2e243842a9998d619b95, type: 2}
+  m_sharedMaterial: {fileID: -7600977283345278244, guid: 3211a01c24db2e243842a9998d619b95,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2685,8 +2685,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: -> Laser
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 91bff2c8b7ff83a40aba8e3541a25559, type: 2}
-  m_sharedMaterial: {fileID: -5577958623563438809, guid: 91bff2c8b7ff83a40aba8e3541a25559,
+  m_fontAsset: {fileID: 11400000, guid: 3211a01c24db2e243842a9998d619b95, type: 2}
+  m_sharedMaterial: {fileID: -7600977283345278244, guid: 3211a01c24db2e243842a9998d619b95,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

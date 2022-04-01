@@ -563,6 +563,7 @@ MonoBehaviour:
   spawnParticles: {fileID: 9092008219153462090, guid: 2edcd942b7f5040468c672d1d2d0188b,
     type: 3}
   anim: {fileID: 102427436}
+  enemy: {fileID: 3782049486628547874}
 --- !u!114 &6094048694357508492
 MonoBehaviour:
   m_ObjectHideFlags: 0
