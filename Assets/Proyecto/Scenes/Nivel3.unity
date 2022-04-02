@@ -2914,7 +2914,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Plim
     clip: {fileID: 8300000, guid: f0cfcca7704b74b4bbc93ec8591c83e1, type: 3}
-    volume: 0.1
+    volume: 0.2
     pitch: 1
     loop: 0
     audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
@@ -2934,6 +2934,22 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: MeleeAttack
+    clip: {fileID: 8300000, guid: 8a6092093d82d2140bbec3a735257f78, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: Laser
+    clip: {fileID: 8300000, guid: 046e1e655483f3644a62fee4e5d7db2a, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
       type: 2}
     source: {fileID: 0}
 --- !u!4 &453757451 stripped
