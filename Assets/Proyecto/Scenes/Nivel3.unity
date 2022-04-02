@@ -2909,7 +2909,7 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
     loop: 0
-    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
       type: 2}
     source: {fileID: 0}
   - name: Plim
@@ -6319,8 +6319,6 @@ MonoBehaviour:
   phc: {fileID: 781798019}
   pc: {fileID: 1175201623}
   pause: {fileID: -479847172580449574, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
-  unPause: {fileID: -6236854391061281409, guid: 002fc808a9a3e4644b65792ddba2d7a6,
-    type: 2}
 --- !u!1001 &1043383087
 PrefabInstance:
   m_ObjectHideFlags: 0
