@@ -34881,6 +34881,7 @@ Transform:
   m_Children:
   - {fileID: 1344344102}
   - {fileID: 2020382165}
+  - {fileID: 1787740387}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56780,74 +56781,97 @@ MonoBehaviour:
     volume: 0.1
     pitch: 3
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: 9d83ca94c59ce954da29c5af6b85fc2a, type: 3}
-    volume: 0.02
+    volume: 0.05
     pitch: 1
     loop: 1
+    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Enemy1Death
     clip: {fileID: 8300000, guid: 269ff17cfa80a1e4585dd82f1bab636f, type: 3}
     volume: 0.1
     pitch: 2.5
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 4512ef37ab8fe984e8586e901184a7a5, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 5c05faba7a2b5a547b7b4d181feba6bd, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Enemy1Hit
     clip: {fileID: 8300000, guid: 0c56afb8583625347a4751cc098eb176, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: ShieldEffect
     clip: {fileID: 8300000, guid: bb72427cdfed91f4fb5a37739f8758fb, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: MiniJoeLaser
     clip: {fileID: 8300000, guid: a67ab2c9aa484184f8c729fc8c4c0658, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Victory
     clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Plim
     clip: {fileID: 8300000, guid: f0cfcca7704b74b4bbc93ec8591c83e1, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: EnemyAttack
     clip: {fileID: 8300000, guid: f9c91d94c15f40943b40220b5851d681, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: LowHealth
     clip: {fileID: 8300000, guid: 64ce65f15f46d894fbe22abf450b0e54, type: 3}
     volume: 0.15
     pitch: 1
     loop: 1
+    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
-  audioMixer: {fileID: 24300002, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
 --- !u!1 &1345892689
 GameObject:
   m_ObjectHideFlags: 0
@@ -73895,6 +73919,53 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1787740386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787740387}
+  - component: {fileID: 1787740388}
+  m_Layer: 0
+  m_Name: SnapshotsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1787740387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787740386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 874424673}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1787740388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787740386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a286ad4a314b134f8fb8e02fbc908cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalHealth: {fileID: 24500006, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
+  lowHealth: {fileID: -4191388564722943637, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+    type: 2}
+  phc: {fileID: 1875973678}
 --- !u!1 &1805422106
 GameObject:
   m_ObjectHideFlags: 0

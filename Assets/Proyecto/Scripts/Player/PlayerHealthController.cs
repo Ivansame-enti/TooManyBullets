@@ -92,23 +92,6 @@ public class PlayerHealthController : MonoBehaviour
         //Debug.Log("Vida" + currentHealth);
         //Debug.Log(Time.timeScale);
 
-        if (currentHealth<2)
-        {
-            if (audioManager.GetAudioPlaying("MainTheme"))
-            {
-                audioManager.AudioPause("MainTheme");
-                audioManager.AudioPlay("LowHealth");
-            }
-        }
-        else
-        {
-            if (audioManager.GetAudioPlaying("LowHealth"))
-            {
-                audioManager.AudioPlay("MainTheme");
-                audioManager.AudioStop("LowHealth");
-            }
-        }
-
         if (currentHealth <= 0)
         {
             audioManager.AudioPlay("PlayerDeath");
