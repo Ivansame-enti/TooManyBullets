@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
     public GameObject ps4Moviment, keyboardMovement, xboxAttack,PS4Attack,PS4Dash,xboxDash,keyboarDash,keyboardAttack;
     public movement movementToZero;
     public Nivel1 lvl1;
-    public GameObject tutorialEnemies,player;
+    public GameObject tutorialEnemies,player,particles,particles1;
 
 
     //private new Vector2();
@@ -111,8 +111,8 @@ public class Tutorial : MonoBehaviour
         }
         if(flag == 1)
         {
-            
-           tutorialImageDash.SetActive(false);
+            this.GetComponent<SpriteRenderer>().enabled = false;
+            tutorialImageDash.SetActive(false);
            tutorialImageAttack.SetActive(true);
            celestialAtk.SetActive(false);
            tutorialEnemy.SetActive(true);
@@ -126,8 +126,10 @@ public class Tutorial : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("PlayerTag"))
         {
+            particles1 = Instantiate(particles, this.transform.position, Quaternion.identity);
             tutorial();
             flag++;
+            
         }
     }
     void ShootLaser()
