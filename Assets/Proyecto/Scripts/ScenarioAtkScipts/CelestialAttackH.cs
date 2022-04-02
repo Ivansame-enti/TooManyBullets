@@ -90,7 +90,7 @@ public class CelestialAttackH : MonoBehaviour
               (randomValor.y + random)
             );
 
-            laserParticles.transform.rotation = new Quaternion(90, 90, 0, 1);
+            laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
            
             warningClone = Instantiate(warning, new Vector2(randomValor.x+random, randomValor.y+random), warning.transform.rotation);
             warningClone.transform.rotation = new Quaternion(90, 90, 0, 1);
@@ -119,11 +119,11 @@ public class CelestialAttackH : MonoBehaviour
             Destroy(warningClone.gameObject);
             ShootLaser();
             celestialAtk.SetActive(true);
-            laserParticles2.transform.rotation = new Quaternion(90, 90, 0, 1);
-            laserParticles2.transform.position = new Vector2(30, laserPos1.y); ;
+            laserParticles2.transform.rotation = new Quaternion(0, 0, 0, 1);
+            laserParticles2.transform.position = new Vector2(-30, laserPos1.y); 
             laserParticles2.SetActive(true);
-            laserParticles.transform.rotation = new Quaternion(90, 90, 0, 1);
-            laserParticles.transform.position = new Vector2(30, laserPos1.y); ;
+            laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
+            laserParticles.transform.position = new Vector2(-30, laserPos1.y+4); 
             laserParticles.SetActive(true);
             timerAttack = activacionAtk;
 
