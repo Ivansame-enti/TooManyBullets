@@ -73966,6 +73966,8 @@ MonoBehaviour:
   lowHealth: {fileID: -4191388564722943637, guid: 002fc808a9a3e4644b65792ddba2d7a6,
     type: 2}
   phc: {fileID: 1875973678}
+  pc: {fileID: 1986164629}
+  pause: {fileID: -479847172580449574, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
 --- !u!1 &1805422106
 GameObject:
   m_ObjectHideFlags: 0
