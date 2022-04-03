@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public GameObject spawnParticles;
     public Animation anim;
     private bool firstTime;
+    public bool muteAttack=false;
 
     //private int angle;
 
@@ -72,7 +73,7 @@ public class EnemyController : MonoBehaviour
                 var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletDirection.x, bulletDirection.y);
                 angle += angleStep;
-                FindObjectOfType<AudioManagerController>().AudioPlay("EnemyAttack");
+                if(!muteAttack) FindObjectOfType<AudioManagerController>().AudioPlay("EnemyAttack");
             }
         }
     }
