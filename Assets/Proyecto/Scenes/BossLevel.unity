@@ -145712,6 +145712,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3969236534129587914, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534129587914, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534129587919, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: xDash
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534129587919, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: yDash
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236534129587919, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: dashDelay

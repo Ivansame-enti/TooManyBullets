@@ -11818,6 +11818,8 @@ MonoBehaviour:
   dashTime: 0.15
   particle_delay: 0
   dashTrail: {fileID: 0}
+  xDash: 0.09
+  yDash: 0.15
 --- !u!114 &1496381707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11837,6 +11839,7 @@ MonoBehaviour:
   minijoe: {fileID: 0}
   movementDirection: {x: 0, y: 0}
   toRotation: {x: 0, y: 0, z: 0, w: 0}
+  scaleChange: {x: 0, y: 0, z: 0}
 --- !u!50 &1496381708
 Rigidbody2D:
   serializedVersion: 4
@@ -11944,7 +11947,7 @@ Transform:
   m_GameObject: {fileID: 1496381702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -21.59, y: -2.7630453, z: -0.8409917}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
   - {fileID: 824828168}
   m_Father: {fileID: 183242558}
