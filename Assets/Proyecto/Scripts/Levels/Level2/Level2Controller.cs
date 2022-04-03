@@ -19,9 +19,12 @@ public class Level2Controller : MonoBehaviour
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
     public Sprite square;
+    private AudioManagerController audio;
+    public SnapshotsController sc;
     // Start is called before the first frame update
     void Start()
     {
+        audio = FindObjectOfType<AudioManagerController>();
         phasecounter = 0;
         phase1.SetActive(true);
         phase2.SetActive(false);
@@ -34,6 +37,11 @@ public class Level2Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(phasecounter == 0)
+        {
+            if(!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+        } else audio.AudioStop("Bloops");
+
         if (ControllerInput.Xbox_One_Controller == true)
         {
             shieldXbox.SetActive(true);

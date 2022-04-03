@@ -2043,6 +2043,14 @@ MonoBehaviour:
     loop: 1
     audioMixer: {fileID: 0}
     source: {fileID: 0}
+  - name: WaterDrop
+    clip: {fileID: 8300000, guid: e20af46d3b9f7b84aa6daa34eb4d7d5f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
 --- !u!1 &3969236534594426578
 GameObject:
   m_ObjectHideFlags: 0

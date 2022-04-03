@@ -317,6 +317,7 @@ MonoBehaviour:
   shieldPS4: {fileID: 1908571842}
   shieldKeyboard: {fileID: 717406648}
   square: {fileID: 7482667652216324306, guid: 0301c57fc0265ca47b37f7318479f950, type: 3}
+  sc: {fileID: 0}
 --- !u!212 &40393305
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7060,6 +7061,11 @@ PrefabInstance:
       objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3047171144505302195, guid: 1e3cfe223b840554782f590c4bb8042d,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047171144505302195, guid: 1e3cfe223b840554782f590c4bb8042d,
+        type: 3}
       propertyPath: positionA.x
       value: -21
       objectReference: {fileID: 0}
@@ -9006,6 +9012,22 @@ MonoBehaviour:
   - name: Laser
     clip: {fileID: 8300000, guid: 046e1e655483f3644a62fee4e5d7db2a, type: 3}
     volume: 0.3
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: WaterDrop
+    clip: {fileID: 8300000, guid: e20af46d3b9f7b84aa6daa34eb4d7d5f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: Bloops
+    clip: {fileID: 8300000, guid: e20af46d3b9f7b84aa6daa34eb4d7d5f, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 1
     audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
