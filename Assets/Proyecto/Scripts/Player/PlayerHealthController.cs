@@ -12,7 +12,7 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
-    public GameObject deathPS;
+    public GameObject deathPS,lowHealthPanel;
     private bool hitInmunity;
     public bool dead;
     public PauseController pause;
@@ -98,6 +98,14 @@ public class PlayerHealthController : MonoBehaviour
             dead = true;
             Destroy(this.gameObject);
 
+        }
+        if(currentHealth < 2)
+        {
+            lowHealthPanel.SetActive(true);
+        }
+        else
+        {
+            lowHealthPanel.SetActive(false);
         }
     }
 

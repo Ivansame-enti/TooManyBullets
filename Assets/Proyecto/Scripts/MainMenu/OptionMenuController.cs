@@ -13,7 +13,7 @@ public class OptionMenuController : MonoBehaviour
     public AudioMixer am;
     public Slider vol;
     public float vol_aux;
-
+    public GameObject pantalla;
     public Dropdown dropdown;
     Resolution[] available_resolutions;
     private List<string> resolutions = new List<string>();
@@ -71,6 +71,7 @@ public class OptionMenuController : MonoBehaviour
     public void Done()
     {
         menuUI.SetActive(true);
+        pantalla.SetActive(false);
         optionsUI.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(doneObject);
