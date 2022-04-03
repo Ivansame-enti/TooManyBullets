@@ -12,7 +12,6 @@ public class Enemy1BulletController : MonoBehaviour
 
     public float scaleTime;
     public GameObject destroyPS,shield;
-    
 
     /*public void SetDirection(Vector2 dir)
     {
@@ -22,7 +21,6 @@ public class Enemy1BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
