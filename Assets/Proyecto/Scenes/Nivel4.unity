@@ -3430,6 +3430,8 @@ GameObject:
   - component: {fileID: 761246988}
   - component: {fileID: 761246987}
   - component: {fileID: 761246986}
+  - component: {fileID: 761246989}
+  - component: {fileID: 761246990}
   m_Layer: 0
   m_Name: Shield5
   m_TagString: DestroyBulletCollider
@@ -3518,6 +3520,35 @@ Transform:
   m_Father: {fileID: 729137743}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761246989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761246985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b79e675f51d284daa07042632d7621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldAnim: {fileID: 761246990}
+--- !u!111 &761246990
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761246985}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &764848011
 GameObject:
   m_ObjectHideFlags: 0
@@ -5620,6 +5651,8 @@ GameObject:
   - component: {fileID: 1012004315}
   - component: {fileID: 1012004314}
   - component: {fileID: 1012004313}
+  - component: {fileID: 1012004316}
+  - component: {fileID: 1012004317}
   m_Layer: 0
   m_Name: Shield3
   m_TagString: DestroyBulletCollider
@@ -5708,6 +5741,35 @@ Transform:
   m_Father: {fileID: 729137743}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1012004316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012004312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b79e675f51d284daa07042632d7621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldAnim: {fileID: 1012004317}
+--- !u!111 &1012004317
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012004312}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1041254761
 GameObject:
   m_ObjectHideFlags: 0
@@ -5811,6 +5873,8 @@ GameObject:
   - component: {fileID: 1041908925}
   - component: {fileID: 1041908924}
   - component: {fileID: 1041908923}
+  - component: {fileID: 1041908926}
+  - component: {fileID: 1041908927}
   m_Layer: 0
   m_Name: Shield4
   m_TagString: DestroyBulletCollider
@@ -5899,6 +5963,35 @@ Transform:
   m_Father: {fileID: 729137743}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1041908926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041908922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b79e675f51d284daa07042632d7621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldAnim: {fileID: 1041908927}
+--- !u!111 &1041908927
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041908922}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1043933212
 GameObject:
   m_ObjectHideFlags: 0
@@ -9342,6 +9435,8 @@ GameObject:
   - component: {fileID: 1719505091}
   - component: {fileID: 1719505090}
   - component: {fileID: 1719505089}
+  - component: {fileID: 1719505092}
+  - component: {fileID: 1719505093}
   m_Layer: 0
   m_Name: Shield1
   m_TagString: DestroyBulletCollider
@@ -9430,6 +9525,35 @@ Transform:
   m_Father: {fileID: 729137743}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719505092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719505088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b79e675f51d284daa07042632d7621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldAnim: {fileID: 1719505093}
+--- !u!111 &1719505093
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719505088}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1727879313
 GameObject:
   m_ObjectHideFlags: 0
@@ -10914,6 +11038,8 @@ GameObject:
   - component: {fileID: 2018133042}
   - component: {fileID: 2018133041}
   - component: {fileID: 2018133040}
+  - component: {fileID: 2018133043}
+  - component: {fileID: 2018133044}
   m_Layer: 0
   m_Name: Shield2
   m_TagString: DestroyBulletCollider
@@ -11002,6 +11128,35 @@ Transform:
   m_Father: {fileID: 729137743}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2018133043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018133039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b79e675f51d284daa07042632d7621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldAnim: {fileID: 2018133044}
+--- !u!111 &2018133044
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018133039}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78a1ff43d88fb5d48a292222f45c5261, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!4 &2019047615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6617125929960289015, guid: 1521eeb281c9c4d488e5fff76e369a8c,
