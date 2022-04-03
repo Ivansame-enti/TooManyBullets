@@ -2945,7 +2945,7 @@ MonoBehaviour:
       type: 2}
     source: {fileID: 0}
   - name: Laser
-    clip: {fileID: 8300000, guid: 6908b2996a037dc48a4cd0dd0bd7c66e, type: 3}
+    clip: {fileID: 8300000, guid: 4c85be90de922c34596372b2b3beb208, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1

@@ -64,6 +64,7 @@ public class CelestialAttack : MonoBehaviour
     {
         if (nextActionTime <= 0) //Hace warning
         {
+            FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
             reduceWidth = false;
             width = originalWidth;
@@ -105,7 +106,7 @@ public class CelestialAttack : MonoBehaviour
         {
             //FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             //Debug.Log("funciona");
-            FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
+            
             atkExist = false;
             atkGoing = true;
             Destroy(warningClone.gameObject);
@@ -135,7 +136,7 @@ public class CelestialAttack : MonoBehaviour
             {
                 if (width > 0)
                 {
-                    FindObjectOfType<AudioManagerController>().AudioStop("Laser");
+                    
                     //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime;
@@ -144,7 +145,11 @@ public class CelestialAttack : MonoBehaviour
                     laserParticles.SetActive(false);
                     laserParticles2.SetActive(false);
                 }
-                if (width <= 0) timerAttack -= Time.deltaTime;
+                if (width <= 0)
+                {
+                    FindObjectOfType<AudioManagerController>().AudioStop("Laser");
+                    timerAttack -= Time.deltaTime;
+                }
             }
             if (timerAttack <= 0.2 && atkGoing) reduceWidth = true;
             else timerAttack -= Time.deltaTime;
