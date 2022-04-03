@@ -2536,16 +2536,24 @@ MonoBehaviour:
       type: 2}
     source: {fileID: 0}
   - name: Laser
-    clip: {fileID: 8300000, guid: 046e1e655483f3644a62fee4e5d7db2a, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: 676c19470b782884b96c5587c5a429fd, type: 3}
+    volume: 0.15
     pitch: 1
-    loop: 1
+    loop: 0
     audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
       type: 2}
     source: {fileID: 0}
   - name: WaterDrop
     clip: {fileID: 8300000, guid: e20af46d3b9f7b84aa6daa34eb4d7d5f, type: 3}
     volume: 0.1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: EnemyLaser
+    clip: {fileID: 8300000, guid: 32145c45153e0d7488eacae87bb4500d, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,

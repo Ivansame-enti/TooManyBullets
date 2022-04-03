@@ -30,6 +30,7 @@ public class CelestialAttack : MonoBehaviour
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
     private float boxColliderX;
+    //private PauseController pc;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class CelestialAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //pc = FindObjectOfType<PauseController>();
         width = 2.0f;
         originalWidth = celestialAtk.GetComponent<LineRenderer>().startWidth;
         reduceWidth = false;
@@ -64,7 +66,7 @@ public class CelestialAttack : MonoBehaviour
     {
         if (nextActionTime <= 0) //Hace warning
         {
-            FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
+            
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
             reduceWidth = false;
             width = originalWidth;
@@ -106,7 +108,7 @@ public class CelestialAttack : MonoBehaviour
         {
             //FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             //Debug.Log("funciona");
-            
+            FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             atkExist = false;
             atkGoing = true;
             Destroy(warningClone.gameObject);

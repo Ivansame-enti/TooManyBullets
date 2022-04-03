@@ -21,9 +21,11 @@ public class Level2Controller : MonoBehaviour
     public Sprite square;
     private AudioManagerController audio;
     public SnapshotsController sc;
+    private PauseController pc;
     // Start is called before the first frame update
     void Start()
     {
+        pc = FindObjectOfType<PauseController>();
         audio = FindObjectOfType<AudioManagerController>();
         phasecounter = 0;
         phase1.SetActive(true);
@@ -39,7 +41,7 @@ public class Level2Controller : MonoBehaviour
     {
         if(phasecounter == 0)
         {
-            if(!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+            if(!audio.GetAudioPlaying("Bloops") && pc.pauseState==false) audio.AudioPlay("Bloops");
         } else audio.AudioStop("Bloops");
 
         if (ControllerInput.Xbox_One_Controller == true)
