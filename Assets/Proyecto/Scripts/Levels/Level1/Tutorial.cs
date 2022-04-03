@@ -20,7 +20,8 @@ public class Tutorial : MonoBehaviour
     public GameObject ps4Moviment, keyboardMovement, xboxAttack,PS4Attack,PS4Dash,xboxDash,keyboarDash,keyboardAttack;
     public movement movementToZero;
     public Nivel1 lvl1;
-    public GameObject tutorialEnemies,player,particles,particles1;
+    public GameObject tutorialEnemies,player,particles;
+    private GameObject particles1;
 
 
     //private new Vector2();

@@ -10,6 +10,8 @@ public class Level5Controller : MonoBehaviour
     public GameObject phase4;
     public GameObject scenario;
     public GameObject arrowCanvas;
+    public GameObject particles;
+    private GameObject particles1;
     private int phasecounter;
     private bool oneTime;
     // Start is called before the first frame update
@@ -60,6 +62,7 @@ public class Level5Controller : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("PlayerTag"))
         {
+            particles1 = Instantiate(particles, this.transform.position, Quaternion.identity);
             if (phasecounter == 0)
             {
                 arrowCanvas.SetActive(false);

@@ -14,7 +14,8 @@ public class Level2Controller : MonoBehaviour
     public GameObject phase2;
     public GameObject phase3;
     public GameObject phase4;
-    public GameObject shieldTutorial,shieldXbox, shieldPS4, shieldKeyboard;
+    public GameObject shieldTutorial,shieldXbox, shieldPS4, shieldKeyboard, particles;
+    private GameObject particles1;
     private int phasecounter;
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
@@ -69,6 +70,7 @@ public class Level2Controller : MonoBehaviour
                 //Destroy(this.GetComponent<SpriteRenderer>());
                 //Destroy(this.GetComponent<Rigidbody2D>());
                 //Destroy(this.GetComponent<CircleCollider2D>());
+                particles1 = Instantiate(particles, this.transform.position, Quaternion.identity);
                 shieldTutorial.SetActive(false);
                 phase1.SetActive(false);
                 phase2.SetActive(true);
@@ -78,6 +80,8 @@ public class Level2Controller : MonoBehaviour
                 phasecounter++;
             } else if (phasecounter == 1)
             {
+                
+                particles1 = Instantiate(particles, this.transform.position, Quaternion.identity);
                 GameObject[] bullets;
                 bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
@@ -90,6 +94,7 @@ public class Level2Controller : MonoBehaviour
                 textUI.SetActive(true);
                 counterUI.SetActive(true);
                 textPro.text = enemiesDestroyed.ToString();
+                GetComponent<Animation>().enabled = false;
                 this.GetComponent<SpriteRenderer>().sprite = square;
                 this.transform.localScale = new Vector3(8,7,0);
                 this.transform.position = new Vector3(24.5f, -0.3f, 0);
@@ -101,6 +106,7 @@ public class Level2Controller : MonoBehaviour
         if (collision.gameObject.tag == "enemy")
         {
             Destroy(collision.transform.parent.gameObject);
+            particles1 = Instantiate(particles, this.transform.position, Quaternion.identity);
             enemiesDestroyed++;
             textPro.text = enemiesDestroyed.ToString();
             if (enemiesDestroyed == 2)

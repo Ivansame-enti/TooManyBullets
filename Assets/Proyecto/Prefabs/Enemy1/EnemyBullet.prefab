@@ -122,6 +122,8 @@ MonoBehaviour:
   scaleTime: 0.15
   destroyPS: {fileID: 4689059412065698976, guid: ab92477987428e74581cb1feefefcdc1,
     type: 3}
+  shield: {fileID: 992472117996138310, guid: fff428999e4d041459e73ca8532dc7e3, type: 3}
+  shieldAnim: {fileID: 0}
 --- !u!61 &6604681057613123730
 BoxCollider2D:
   m_ObjectHideFlags: 0
