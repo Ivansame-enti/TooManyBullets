@@ -9,7 +9,7 @@ public class CelestialAttack : MonoBehaviour
     public Vector2 positionA, positionB;
     private float nextActionTime = 0.0f;
     private float warningTiming;
-
+   
     private float timerWarning;
     private float timerAttack;
     public float activacionAtk;
@@ -30,7 +30,8 @@ public class CelestialAttack : MonoBehaviour
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
     private float boxColliderX;
-
+    public float ScaleX, ScaleY, ScaleZ;
+    private Vector3 scaleChange, originalScale;
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -40,6 +41,8 @@ public class CelestialAttack : MonoBehaviour
     {
         width = 2.0f;
         originalWidth = celestialAtk.GetComponent<LineRenderer>().startWidth;
+       
+      
         reduceWidth = false;
         originalBoxColliderSizeX = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.x;
         originalBoxColliderSizeY = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.y;
@@ -64,6 +67,8 @@ public class CelestialAttack : MonoBehaviour
     {
         if (nextActionTime <= 0) //Hace warning
         {
+            originalScale = new Vector3(ScaleX,ScaleY,ScaleZ);
+            laserParticles2.transform.localScale = originalScale;
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
             reduceWidth = false;
             width = originalWidth;
@@ -133,13 +138,19 @@ public class CelestialAttack : MonoBehaviour
             {
                 if (width > 0)
                 {
+
                     //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
                     celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
-                    laserParticles.SetActive(false);
-                    laserParticles2.SetActive(false);
+
+                    scaleChange = new Vector3(-0.02f, 0, 0);
+                    laserParticles2.transform.localScale += scaleChange;
+                  //  transform.localScale = new Vector3(width-1, width-1, width-1);
+                  
+                    //Vector3 laserParticles2 = transform.localScale;
+                    //transform.localScale = new Vector3(width-1, width-1, width-1);
                 }
                 if (width <= 0) timerAttack -= Time.deltaTime;
             }

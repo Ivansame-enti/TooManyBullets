@@ -31,6 +31,8 @@ public class CelestialAttackH : MonoBehaviour
     private float originalBoxColliderSizeY;
     private float boxColliderX;
     private float random;
+    public float ScaleX, ScaleY, ScaleZ;
+    private Vector3 scaleChange, originalScale;
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -66,6 +68,9 @@ public class CelestialAttackH : MonoBehaviour
     {
         if (nextActionTime <= 0) //Hace warning
         {
+
+            originalScale = new Vector3(ScaleX, ScaleY, ScaleZ);
+            laserParticles2.transform.localScale = originalScale;
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
             reduceWidth = false;
             width = originalWidth;
@@ -152,8 +157,9 @@ public class CelestialAttackH : MonoBehaviour
                     boxColliderX -= Time.deltaTime;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
                     celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
-                    laserParticles.SetActive(false);
-                    laserParticles2.SetActive(false);
+
+                    scaleChange = new Vector3(0, -0.02f, 0);
+                    laserParticles2.transform.localScale += scaleChange;
                 }
                 if (width <= 0) timerAttack -= Time.deltaTime;
             }
