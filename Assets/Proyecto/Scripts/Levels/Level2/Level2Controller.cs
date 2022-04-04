@@ -19,9 +19,14 @@ public class Level2Controller : MonoBehaviour
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
     public Sprite square;
+    private AudioManagerController audio;
+    public SnapshotsController sc;
+    private PauseController pc;
     // Start is called before the first frame update
     void Start()
     {
+        pc = FindObjectOfType<PauseController>();
+        audio = FindObjectOfType<AudioManagerController>();
         phasecounter = 0;
         phase1.SetActive(true);
         phase2.SetActive(false);
@@ -34,6 +39,11 @@ public class Level2Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(phasecounter == 0)
+        {
+            if(!audio.GetAudioPlaying("Bloops") && pc.pauseState==false) audio.AudioPlay("Bloops");
+        } else audio.AudioStop("Bloops");
+
         if (ControllerInput.Xbox_One_Controller == true)
         {
             shieldXbox.SetActive(true);
@@ -66,6 +76,7 @@ public class Level2Controller : MonoBehaviour
         {
             if (phasecounter == 0)
             {
+                audio.AudioPlay("Plim");
                 //Destroy(this.GetComponent<SpriteRenderer>());
                 //Destroy(this.GetComponent<Rigidbody2D>());
                 //Destroy(this.GetComponent<CircleCollider2D>());
@@ -95,6 +106,7 @@ public class Level2Controller : MonoBehaviour
                 this.transform.position = new Vector3(24.5f, -0.3f, 0);
                 this.gameObject.AddComponent<BoxCollider2D>();
                 phasecounter++;
+                audio.AudioPlay("Plim");
             }
         }
 
@@ -103,6 +115,7 @@ public class Level2Controller : MonoBehaviour
             Destroy(collision.transform.parent.gameObject);
             enemiesDestroyed++;
             textPro.text = enemiesDestroyed.ToString();
+            FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
             if (enemiesDestroyed == 2)
             {
                 //helpText.SetActive(false);

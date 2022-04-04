@@ -3208,56 +3208,81 @@ MonoBehaviour:
     volume: 0.1
     pitch: 3
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: 9d83ca94c59ce954da29c5af6b85fc2a, type: 3}
     volume: 0.02
     pitch: 1
     loop: 1
+    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Enemy1Death
     clip: {fileID: 8300000, guid: 269ff17cfa80a1e4585dd82f1bab636f, type: 3}
     volume: 0.1
     pitch: 2.5
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 4512ef37ab8fe984e8586e901184a7a5, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 5c05faba7a2b5a547b7b4d181feba6bd, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Enemy1Hit
     clip: {fileID: 8300000, guid: 0c56afb8583625347a4751cc098eb176, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: ShieldEffect
     clip: {fileID: 8300000, guid: bb72427cdfed91f4fb5a37739f8758fb, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: MiniJoeLaser
     clip: {fileID: 8300000, guid: a67ab2c9aa484184f8c729fc8c4c0658, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: MenuTheme
     clip: {fileID: 8300000, guid: 5208d1ca7cc29114aa68f02395b16992, type: 3}
-    volume: 0.1
+    volume: 0.15
     pitch: 1
     loop: 1
+    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
-  audioMixer: {fileID: 24300002, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
+  - name: EnemyAttack
+    clip: {fileID: 8300000, guid: f9c91d94c15f40943b40220b5851d681, type: 3}
+    volume: 0
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
 --- !u!1 &825704588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4541,7 +4566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -354.69992, y: -200}
+  m_AnchoredPosition: {x: -354.70004, y: -200}
   m_SizeDelta: {x: 97.55896, y: 61.153442}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1020360460
@@ -6420,6 +6445,55 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1521758918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1521758919}
+  - component: {fileID: 1521758920}
+  m_Layer: 0
+  m_Name: SnapshotsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1521758919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521758918}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1703307366}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1521758920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521758918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a286ad4a314b134f8fb8e02fbc908cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalHealth: {fileID: 24500006, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
+  lowHealth: {fileID: -4191388564722943637, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+    type: 2}
+  phc: {fileID: 0}
+  pc: {fileID: 0}
+  pause: {fileID: -479847172580449574, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
 --- !u!1 &1550046819
 GameObject:
   m_ObjectHideFlags: 0
@@ -7475,6 +7549,7 @@ Transform:
   m_Children:
   - {fileID: 817556804}
   - {fileID: 1220233285}
+  - {fileID: 1521758919}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

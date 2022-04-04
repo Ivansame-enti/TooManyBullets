@@ -7,7 +7,7 @@ public class AudioManagerController : MonoBehaviour
 {
 
     public Sound[] audios;
-    public AudioMixerGroup audioMixer;
+    //public AudioMixerGroup audioMixer;
 
     void Awake()
     {
@@ -15,7 +15,7 @@ public class AudioManagerController : MonoBehaviour
         {
             
             a.source = gameObject.AddComponent<AudioSource>();
-            a.source.outputAudioMixerGroup = audioMixer;
+            a.source.outputAudioMixerGroup = a.audioMixer;
 
             a.source.clip = a.clip;
 
@@ -64,5 +64,28 @@ public class AudioManagerController : MonoBehaviour
             return;
         }
         a.source.Pause();
+    }
+
+    public bool GetAudioPlaying(string name)
+    {
+        Sound a = Array.Find(audios, audio => audio.name == name);
+        if (a == null)
+        {
+            Debug.Log("Audio not found");
+            return false;
+        }
+        if (a.source.isPlaying) return true;
+        else return false;
+    }
+
+    public void AudioStop(string name)
+    {
+        Sound a = Array.Find(audios, audio => audio.name == name);
+        if (a == null)
+        {
+            Debug.Log("Audio not found");
+            return;
+        }
+        a.source.Stop();
     }
 }

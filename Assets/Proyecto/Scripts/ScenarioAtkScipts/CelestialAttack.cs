@@ -30,6 +30,7 @@ public class CelestialAttack : MonoBehaviour
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
     private float boxColliderX;
+    //private PauseController pc;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class CelestialAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //pc = FindObjectOfType<PauseController>();
         width = 2.0f;
         originalWidth = celestialAtk.GetComponent<LineRenderer>().startWidth;
         reduceWidth = false;
@@ -64,6 +66,7 @@ public class CelestialAttack : MonoBehaviour
     {
         if (nextActionTime <= 0) //Hace warning
         {
+            
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
             reduceWidth = false;
             width = originalWidth;
@@ -103,7 +106,9 @@ public class CelestialAttack : MonoBehaviour
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
+            //FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             //Debug.Log("funciona");
+            FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             atkExist = false;
             atkGoing = true;
             Destroy(warningClone.gameObject);
@@ -133,6 +138,7 @@ public class CelestialAttack : MonoBehaviour
             {
                 if (width > 0)
                 {
+                    
                     //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime;
@@ -141,7 +147,11 @@ public class CelestialAttack : MonoBehaviour
                     laserParticles.SetActive(false);
                     laserParticles2.SetActive(false);
                 }
-                if (width <= 0) timerAttack -= Time.deltaTime;
+                if (width <= 0)
+                {
+                    FindObjectOfType<AudioManagerController>().AudioStop("Laser");
+                    timerAttack -= Time.deltaTime;
+                }
             }
             if (timerAttack <= 0.2 && atkGoing) reduceWidth = true;
             else timerAttack -= Time.deltaTime;

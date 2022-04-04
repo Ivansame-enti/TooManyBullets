@@ -394,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemyInstant
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -404,7 +404,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.93
+      value: 20.28
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -458,13 +458,18 @@ PrefabInstance:
       objectReference: {fileID: 1794490012}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
+      propertyPath: muteAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -1896,6 +1901,7 @@ Transform:
   m_Children:
   - {fileID: 1900006329}
   - {fileID: 693108790}
+  - {fileID: 1767603098}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2557,7 +2563,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemyInstant
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -2572,7 +2578,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.24
+      value: 8.98
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -2621,13 +2627,18 @@ PrefabInstance:
       objectReference: {fileID: 1794490012}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
+      propertyPath: muteAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -5569,6 +5580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
+      propertyPath: muteAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
       propertyPath: bulletSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -5594,7 +5610,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemyInstant
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -5604,7 +5620,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.03
+      value: -24.38
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -5658,13 +5674,18 @@ PrefabInstance:
       objectReference: {fileID: 1794490012}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
+      propertyPath: muteAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -6135,7 +6156,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547874, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemyInstant
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -6150,7 +6171,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.77
+      value: -16.61
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -6199,13 +6220,18 @@ PrefabInstance:
       objectReference: {fileID: 1794490012}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
+      propertyPath: muteAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -7892,6 +7918,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
+      propertyPath: muteAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
       propertyPath: bulletSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -8706,6 +8737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
+      propertyPath: muteAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
       propertyPath: bulletSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -8878,6 +8914,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763325485}
   m_CullTransparentMesh: 1
+--- !u!1 &1767603097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767603098}
+  - component: {fileID: 1767603099}
+  m_Layer: 0
+  m_Name: SnapshotsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1767603098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767603097}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 294744179}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767603099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767603097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a286ad4a314b134f8fb8e02fbc908cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalHealth: {fileID: 24500006, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
+  lowHealth: {fileID: -4191388564722943637, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+    type: 2}
+  phc: {fileID: 1496381712}
+  pc: {fileID: 70857486}
+  pause: {fileID: -479847172580449574, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
 --- !u!1 &1780767745
 GameObject:
   m_ObjectHideFlags: 0
@@ -9280,56 +9365,137 @@ MonoBehaviour:
     volume: 0.1
     pitch: 3
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: 10bcbe8e243ccd84294135981743f308, type: 3}
-    volume: 0.02
+    volume: 0.05
     pitch: 1
     loop: 1
+    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Enemy1Death
     clip: {fileID: 8300000, guid: 269ff17cfa80a1e4585dd82f1bab636f, type: 3}
     volume: 0.1
     pitch: 2.5
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 4512ef37ab8fe984e8586e901184a7a5, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 5c05faba7a2b5a547b7b4d181feba6bd, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Enemy1Hit
     clip: {fileID: 8300000, guid: 0c56afb8583625347a4751cc098eb176, type: 3}
-    volume: 0.1
+    volume: 0.2
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: ShieldEffect
     clip: {fileID: 8300000, guid: bb72427cdfed91f4fb5a37739f8758fb, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: MiniJoeLaser
     clip: {fileID: 8300000, guid: a67ab2c9aa484184f8c729fc8c4c0658, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
   - name: Victory
     clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
     source: {fileID: 0}
-  audioMixer: {fileID: 24300002, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
+  - name: Plim
+    clip: {fileID: 8300000, guid: 5bb136bf16333e2408abc3f89d6b6e81, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: EnemyAttack
+    clip: {fileID: 8300000, guid: f9c91d94c15f40943b40220b5851d681, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: LowHealth
+    clip: {fileID: 8300000, guid: 64ce65f15f46d894fbe22abf450b0e54, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: 3298766830531849344, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: MeleeAttack
+    clip: {fileID: 8300000, guid: 8a6092093d82d2140bbec3a735257f78, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: Laser
+    clip: {fileID: 8300000, guid: 676c19470b782884b96c5587c5a429fd, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: WaterDrop
+    clip: {fileID: 8300000, guid: e20af46d3b9f7b84aa6daa34eb4d7d5f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: MachineGun
+    clip: {fileID: 8300000, guid: f9c91d94c15f40943b40220b5851d681, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
+  - name: EnemyLaser
+    clip: {fileID: 8300000, guid: 32145c45153e0d7488eacae87bb4500d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
 --- !u!1 &1922321948
 GameObject:
   m_ObjectHideFlags: 0
@@ -10143,6 +10309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
+      propertyPath: muteAttack
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}

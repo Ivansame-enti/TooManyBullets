@@ -42,6 +42,7 @@ public class MiniJoeHealController : MonoBehaviour
                     phc.currentHealth = Mathf.Round(phc.currentHealth * 10.0f) * 0.1f; //Resondear a unn decimal porque a veces no se suma bien
                     if (phc.currentHealth == 3.0f || phc.currentHealth == 2.0f || phc.currentHealth == 1.0f)
                     {
+                        FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
                         //timer2 = 0;
                         currenntHealsAvailable--;
                         //healedOnce = true;

@@ -1854,7 +1854,10 @@ MonoBehaviour:
   pasive: {fileID: 3969236535942356051}
   pasiveImage: {fileID: 3969236535635940374}
   pasiveImageGreen: {fileID: 3969236534759043858}
+  TextPro: {fileID: 0}
+  newHeal: {fileID: 0}
   miniJoe: {fileID: 3969236535606439623}
+  healParticle: {fileID: 0}
 --- !u!1 &3969236534526165465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,56 +1964,93 @@ MonoBehaviour:
     volume: 0.1
     pitch: 3
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: 10bcbe8e243ccd84294135981743f308, type: 3}
     volume: 0.02
     pitch: 1
     loop: 1
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: Enemy1Death
     clip: {fileID: 8300000, guid: 269ff17cfa80a1e4585dd82f1bab636f, type: 3}
     volume: 0.1
     pitch: 2.5
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 4512ef37ab8fe984e8586e901184a7a5, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: 5c05faba7a2b5a547b7b4d181feba6bd, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: Enemy1Hit
     clip: {fileID: 8300000, guid: 0c56afb8583625347a4751cc098eb176, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: ShieldEffect
     clip: {fileID: 8300000, guid: bb72427cdfed91f4fb5a37739f8758fb, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: MiniJoeLaser
     clip: {fileID: 8300000, guid: a67ab2c9aa484184f8c729fc8c4c0658, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
   - name: Victory
     clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
+    audioMixer: {fileID: 0}
     source: {fileID: 0}
-  audioMixer: {fileID: 24300002, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 7b61bcb39841cfa4e9c5b39f40ba78f4, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: EnemyAttack
+    clip: {fileID: 8300000, guid: f9c91d94c15f40943b40220b5851d681, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: LowHealth
+    clip: {fileID: 8300000, guid: 64ce65f15f46d894fbe22abf450b0e54, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: WaterDrop
+    clip: {fileID: 8300000, guid: e20af46d3b9f7b84aa6daa34eb4d7d5f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
 --- !u!1 &3969236534594426578
 GameObject:
   m_ObjectHideFlags: 0
@@ -4024,6 +4064,7 @@ Transform:
   m_Children:
   - {fileID: 3969236534531769468}
   - {fileID: 3969236536006479859}
+  - {fileID: 6387317940844241089}
   m_Father: {fileID: 6358306872091050042}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5324,7 +5365,6 @@ MonoBehaviour:
   player: {fileID: 3969236534129587907}
   character: {fileID: 3969236534129587907}
   torretarea: {fileID: 3969236534749704137}
-  pickArea: {fileID: 3969236534749429688}
   displanted: 0
   miniJoelaser: {fileID: 3969236535995282925}
   timer: 0
@@ -5395,6 +5435,7 @@ MonoBehaviour:
   phc: {fileID: 3969236534129587925}
   healParticle: {fileID: 7346800036578399500, guid: e322bca0860dbd540915f9d39c256299,
     type: 3}
+  player: {fileID: 0}
 --- !u!61 &3969236535606439628
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6799,6 +6840,55 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &8259418529775543653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6387317940844241089}
+  - component: {fileID: 7772088897099687551}
+  m_Layer: 0
+  m_Name: SnapshotsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6387317940844241089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259418529775543653}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3969236535079501750}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7772088897099687551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259418529775543653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a286ad4a314b134f8fb8e02fbc908cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalHealth: {fileID: 24500006, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
+  lowHealth: {fileID: -4191388564722943637, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+    type: 2}
+  phc: {fileID: 3969236534129587925}
+  pc: {fileID: 3969236535286578379}
+  pause: {fileID: -479847172580449574, guid: 002fc808a9a3e4644b65792ddba2d7a6, type: 2}
 --- !u!1001 &3969236534450827729
 PrefabInstance:
   m_ObjectHideFlags: 0
