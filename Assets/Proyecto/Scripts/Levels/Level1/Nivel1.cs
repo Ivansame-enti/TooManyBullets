@@ -10,6 +10,7 @@ public class Nivel1 : MonoBehaviour
     private bool firstTime;
     public VictoryController victoryController;
     //public GameObject laser;
+    public DashController dc;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Nivel1 : MonoBehaviour
         
         if (startLevel == true && firstTime)
         {
+            dc.canDash = true;
             firstTime = false;
             FindObjectOfType<Tutorial>().tutorialImageAttack.SetActive(false);
             part1.SetActive(true);
