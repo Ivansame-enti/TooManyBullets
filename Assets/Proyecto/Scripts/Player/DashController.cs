@@ -15,11 +15,13 @@ public class DashController : MonoBehaviour
     public float particle_delay;
     public TrailRenderer dashTrail;
     private Vector3 scaleChange;
-    public float xDash, yDash;
+    private float xDash, yDash;
 
     // Start is called before the first frame update
     void Start()
     {
+        xDash = 0.06f;
+        yDash = 0.1f;
         rb = GetComponent<Rigidbody2D>();
         particle_delay = dashDelay/30;
     }
@@ -56,9 +58,9 @@ public class DashController : MonoBehaviour
 
         if (timer <= 0) //Delay entre dash
         {
-            this.GetComponent<SpriteRenderer>().color = new Color(255, 140, 0, this.GetComponent<SpriteRenderer>().color.a);
-            scaleChange = new Vector3(0.15f, 0.15f, 0);
+            scaleChange = new Vector3(0.1f, 0.1f, 0);
             this.transform.localScale = scaleChange;
+            this.GetComponent<SpriteRenderer>().color = new Color(255, 140, 0, this.GetComponent<SpriteRenderer>().color.a);
             if (ControllerInput.Xbox_One_Controller)
             {
                 if ((Input.GetAxis("RT")!=0 || Input.GetAxis("LT")!=0 || Input.GetKeyDown("space") || Input.GetButtonDown("XboxA")) && this.GetComponent<movement>().isMoving)

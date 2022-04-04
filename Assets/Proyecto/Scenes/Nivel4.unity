@@ -4354,8 +4354,6 @@ MonoBehaviour:
   dashTime: 0.15
   particle_delay: 0
   dashTrail: {fileID: 0}
-  xDash: 0.09
-  yDash: 0.15
 --- !u!114 &781798024
 MonoBehaviour:
   m_ObjectHideFlags: 0
