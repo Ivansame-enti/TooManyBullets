@@ -55,11 +55,13 @@ public class DashController : MonoBehaviour
             //this.GetComponent<TrailRenderer>().enabled = true;
             timer2 -= Time.deltaTime;
         }
-
-        if (timer <= 0) //Delay entre dash
+        if(timer <= 0 + 0.5)
         {
             scaleChange = new Vector3(0.1f, 0.1f, 0);
             this.transform.localScale = scaleChange;
+        }
+        if (timer <= 0) //Delay entre dash
+        {
             this.GetComponent<SpriteRenderer>().color = new Color(255, 140, 0, this.GetComponent<SpriteRenderer>().color.a);
             if (ControllerInput.Xbox_One_Controller)
             {
