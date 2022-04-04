@@ -70,6 +70,7 @@ public class Boss : MonoBehaviour
             } else if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
             if (attack == 2)
             {
+                if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
@@ -77,6 +78,7 @@ public class Boss : MonoBehaviour
 
                     if (timer >= bulletsDuration)
                     {
+                        if (audio.GetAudioPlaying("MachineGun")) audio.AudioStop("MachineGun");
                         bullets.SetActive(false);
                         originalChange();
 
@@ -165,6 +167,7 @@ public class Boss : MonoBehaviour
         {
             if (attack == 1)
             {
+                if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
@@ -173,6 +176,7 @@ public class Boss : MonoBehaviour
                     laser.SetActive(true);
                     if (timer >= bulletsDuration)
                     {
+                        if (audio.GetAudioPlaying("MachineGun")) audio.AudioStop("MachineGun");
                         bullets.SetActive(false);
                         originalChange();
                     }
@@ -231,6 +235,7 @@ public class Boss : MonoBehaviour
 
             if (attack == 3)
             {
+                if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
@@ -239,6 +244,7 @@ public class Boss : MonoBehaviour
                     if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
                     if (timer >= bulletsDuration)
                     {
+                        if (audio.GetAudioPlaying("MachineGun")) audio.AudioStop("MachineGun");
                         bullets.SetActive(false);
                         waterDrop.SetActive(false);
                         originalChange();
