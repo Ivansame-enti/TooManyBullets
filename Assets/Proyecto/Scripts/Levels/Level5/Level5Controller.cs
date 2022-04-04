@@ -62,6 +62,7 @@ public class Level5Controller : MonoBehaviour
         {
             if (phasecounter == 0)
             {
+                FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
                 arrowCanvas.SetActive(false);
                 //arrowCanvas.transform.position = new Vector3(-300 ,45, 0);
                 //arrowCanvas.GetComponent<RectTransform>().position = new Vector3(-300, 45, 0);
@@ -70,6 +71,7 @@ public class Level5Controller : MonoBehaviour
             }
             else if (phasecounter == 1)
             {
+                FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
                 //arrowCanvas.SetActive(false);
                 phase1.SetActive(false);
                 phase2.SetActive(true);

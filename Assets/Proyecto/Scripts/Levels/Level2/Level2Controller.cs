@@ -76,6 +76,7 @@ public class Level2Controller : MonoBehaviour
         {
             if (phasecounter == 0)
             {
+                audio.AudioPlay("Plim");
                 //Destroy(this.GetComponent<SpriteRenderer>());
                 //Destroy(this.GetComponent<Rigidbody2D>());
                 //Destroy(this.GetComponent<CircleCollider2D>());
@@ -105,6 +106,7 @@ public class Level2Controller : MonoBehaviour
                 this.transform.position = new Vector3(24.5f, -0.3f, 0);
                 this.gameObject.AddComponent<BoxCollider2D>();
                 phasecounter++;
+                audio.AudioPlay("Plim");
             }
         }
 

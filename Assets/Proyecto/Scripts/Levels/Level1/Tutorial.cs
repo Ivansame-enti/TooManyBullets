@@ -126,6 +126,7 @@ public class Tutorial : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("PlayerTag"))
         {
+            FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
             tutorial();
             flag++;
         }
