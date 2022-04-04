@@ -201,6 +201,7 @@ public class Boss : MonoBehaviour
             if (attack == 2)
             {
                 //audio.AudioPlay("Laser");
+                if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
                 multiLaser.SetActive(true);
                 waterDrop.SetActive(true);
                 if (timer >= multiLaserDuration)
@@ -211,7 +212,7 @@ public class Boss : MonoBehaviour
                 }
                 if (timer >= multiLaserDuration + cooldownAttack)
                 {
-                    if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+                    
                     attack = Random.Range(1, 5);
                     water = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
@@ -235,6 +236,7 @@ public class Boss : MonoBehaviour
                 {
                     bullets.SetActive(true);
                     waterDrop.SetActive(true);
+                    if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
                     if (timer >= bulletsDuration)
                     {
                         bullets.SetActive(false);
@@ -243,7 +245,7 @@ public class Boss : MonoBehaviour
                     }
                     if (timer >= bulletsDuration + cooldownAttack)
                     {
-                        if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+                        
                         attack = Random.Range(1, 5);
                         water = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
