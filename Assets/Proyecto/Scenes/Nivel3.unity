@@ -1304,7 +1304,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 40}
+  m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &206286487 stripped
 GameObject:
@@ -7551,6 +7551,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2117776825}
     m_Modifications:
+    - target: {fileID: 1299140480, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299140482, guid: 1e3cfe223b840554782f590c4bb8042d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3047171143738870034, guid: 1e3cfe223b840554782f590c4bb8042d,
         type: 3}
       propertyPath: m_RootOrder
