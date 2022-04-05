@@ -1748,15 +1748,15 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 21781
+        ctime1: 23516
         ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
-        atime1: 65535
+        atime0: 193
+        atime1: 65150
         atime2: 0
         atime3: 0
         atime4: 0
@@ -13397,8 +13397,6 @@ MonoBehaviour:
   dashTime: 0.15
   particle_delay: 0
   dashTrail: {fileID: 0}
-  xDash: 0.09
-  yDash: 0.15
 --- !u!114 &1315369029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17357,7 +17355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.14801025, y: -1.3630066}
+  m_AnchoredPosition: {x: -0.14794922, y: -1.3630371}
   m_SizeDelta: {x: 7.559, y: 10.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1878980935

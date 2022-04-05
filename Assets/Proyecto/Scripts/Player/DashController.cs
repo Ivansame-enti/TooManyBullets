@@ -55,7 +55,7 @@ public class DashController : MonoBehaviour
             //this.GetComponent<TrailRenderer>().enabled = true;
             timer2 -= Time.deltaTime;
         }
-        if(timer <= 0 + 0.5)
+        if(timer <= 0.5f)
         {
             scaleChange = new Vector3(0.1f, 0.1f, 0);
             this.transform.localScale = scaleChange;
@@ -68,6 +68,7 @@ public class DashController : MonoBehaviour
                 if ((Input.GetAxis("RT")!=0 || Input.GetAxis("LT")!=0 || Input.GetKeyDown("space") || Input.GetButtonDown("XboxA")) && this.GetComponent<movement>().isMoving)
                 {
                     scaleChange = new Vector3(xDash, yDash, 0);
+                    this.transform.localScale = scaleChange;
                     rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                     timer = dashDelay;
                     timer2 = dashTime;
@@ -79,6 +80,7 @@ public class DashController : MonoBehaviour
                 if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space") || Input.GetButtonDown("PlayX")) && this.GetComponent<movement>().isMoving)
                 {
                     scaleChange = new Vector3(xDash, yDash, 0);
+                    this.transform.localScale = scaleChange;
                     rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                     timer = dashDelay;
                     timer2 = dashTime;

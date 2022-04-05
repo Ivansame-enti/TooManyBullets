@@ -53,6 +53,13 @@ public class Level2Controller : MonoBehaviour
             shieldPS4.SetActive(false);
             shieldKeyboard.SetActive(true);
         }
+
+        if (phasecounter == 2)
+        {
+            //Debug.Log("aaaaaaa");
+            //this.GetComponent<ParticleSystem>().startSpeed = 10f;
+            Destroy(this.GetComponent<ParticleSystem>());
+        }
         if (phasecounter == 4)
         {
             phase3.SetActive(false);
