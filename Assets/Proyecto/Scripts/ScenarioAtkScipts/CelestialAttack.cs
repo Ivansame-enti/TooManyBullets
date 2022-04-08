@@ -141,11 +141,11 @@ public class CelestialAttack : MonoBehaviour
 
                     //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
-                    boxColliderX -= Time.deltaTime;
+                    boxColliderX -= Time.deltaTime*2;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
                     celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
 
-                    scaleChange = new Vector3(-0.02f, 0, 0);
+                    scaleChange = new Vector3(-0.015f, 0, 0);
                     laserParticles2.transform.localScale += scaleChange;
                   //  transform.localScale = new Vector3(width-1, width-1, width-1);
                   

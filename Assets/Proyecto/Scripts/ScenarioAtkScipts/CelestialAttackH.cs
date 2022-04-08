@@ -29,7 +29,7 @@ public class CelestialAttackH : MonoBehaviour
     private bool reduceWidth;
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
-    private float boxColliderX;
+    private float boxColliderX, boxColliderY;
     private float random;
     public float ScaleX, ScaleY, ScaleZ;
     private Vector3 scaleChange, originalScale;
@@ -75,6 +75,8 @@ public class CelestialAttackH : MonoBehaviour
             reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
+            boxColliderY = originalBoxColliderSizeY;
+
             celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
             celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
@@ -155,10 +157,11 @@ public class CelestialAttackH : MonoBehaviour
                     //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime;
-                    celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
+                    boxColliderY -= Time.deltaTime;
+                    celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, boxColliderY);
                     celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
 
-                    scaleChange = new Vector3(0, -0.02f, 0);
+                    scaleChange = new Vector3(0, -0.015f, 0);
                     laserParticles2.transform.localScale += scaleChange;
                 }
                 if (width <= 0) timerAttack -= Time.deltaTime;

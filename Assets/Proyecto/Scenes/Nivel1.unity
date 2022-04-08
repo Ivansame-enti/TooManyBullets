@@ -7038,12 +7038,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warning: {fileID: 3155916317594727544, guid: 64cf9927fb942c7479dcbd9a578e902c, type: 3}
-  celestialAtk: {fileID: 1300025215}
+  celestialAtk: {fileID: 1100808633}
   positionA: {x: -21, y: 0}
   positionB: {x: 21, y: 0}
   activacionAtk: 3
   activacionAtkGoing: 6
-  collisionLaser: {fileID: 413350747}
+  collisionLaser: {fileID: 182637717}
   defDistanceRay: 20
   m_lineRenderer: {fileID: 1300025217}
   laserParticles: {fileID: 1279187075}
@@ -37083,7 +37083,7 @@ Transform:
   m_GameObject: {fileID: 411005434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5, y: 0, z: -0}
-  m_LocalScale: {x: 2.3, y: 1, z: 1}
+  m_LocalScale: {x: 1.6, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 222502163}
   m_RootOrder: 5
@@ -70270,7 +70270,7 @@ Transform:
   m_GameObject: {fileID: 1176827233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.8831179, y: 4.061241, z: -2.8916438}
-  m_LocalScale: {x: 1, y: 4, z: 1}
+  m_LocalScale: {x: 0.8, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 222502163}
   m_RootOrder: 4
