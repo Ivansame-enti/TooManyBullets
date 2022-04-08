@@ -22,6 +22,8 @@ public class Level2Controller : MonoBehaviour
     private AudioManagerController audio;
     public SnapshotsController sc;
     private PauseController pc;
+    public TextMeshProUGUI phaseInfo;
+    public Animation textAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +31,14 @@ public class Level2Controller : MonoBehaviour
         audio = FindObjectOfType<AudioManagerController>();
         phasecounter = 0;
         phase1.SetActive(true);
+        phaseInfo.text = "Phase 1/4";
+        textAnim.Play("phaseInfo");
         phase2.SetActive(false);
         phase3.SetActive(false);
         phase4.SetActive(false);
         enemiesDestroyed = 0;
         textPro = counterUI.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+
     }
 
     // Update is called once per frame
@@ -67,6 +72,8 @@ public class Level2Controller : MonoBehaviour
             phase3.SetActive(false);
             phase4.SetActive(true);
             this.gameObject.SetActive(false);
+            phaseInfo.text = "Phase 4/4";
+            textAnim.Play("phaseInfo");
         }
     }
 
@@ -76,6 +83,8 @@ public class Level2Controller : MonoBehaviour
         {
             if (phasecounter == 0)
             {
+                phaseInfo.text = "Phase 2/4";
+                textAnim.Play("phaseInfo");
                 audio.AudioPlay("Plim");
                 //Destroy(this.GetComponent<SpriteRenderer>());
                 //Destroy(this.GetComponent<Rigidbody2D>());
@@ -89,6 +98,8 @@ public class Level2Controller : MonoBehaviour
                 phasecounter++;
             } else if (phasecounter == 1)
             {
+                phaseInfo.text = "Phase 3/4";
+                textAnim.Play("phaseInfo");
                 GameObject[] bullets;
                 bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
