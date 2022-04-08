@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShockWave
+  m_Name: TutorialShockWave
   m_Shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: EFFECT_BUMP _ALPHABLEND_ON _FADING_ON _NORMALMAP
   m_LightmapFlags: 0
@@ -68,8 +68,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.6
     - _DistortionEnabled: 1
-    - _DistortionStrength: 0.2
-    - _DistortionStrengthScaled: 0.020000001
+    - _DistortionStrength: 0.1
+    - _DistortionStrengthScaled: 0.010000001
     - _DstBlend: 10
     - _EmissionEnabled: 0
     - _FlipbookMode: 0

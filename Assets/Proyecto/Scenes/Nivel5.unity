@@ -2157,7 +2157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &501179804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11818,8 +11818,6 @@ MonoBehaviour:
   dashTime: 0.15
   particle_delay: 0
   dashTrail: {fileID: 0}
-  xDash: 0.09
-  yDash: 0.15
 --- !u!114 &1496381707
 MonoBehaviour:
   m_ObjectHideFlags: 0

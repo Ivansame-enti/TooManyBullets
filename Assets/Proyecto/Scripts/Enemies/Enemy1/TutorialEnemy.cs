@@ -8,7 +8,6 @@ public class TutorialEnemy : MonoBehaviour
     private float maxHealth;
     public GameObject hitPS;
     public GameObject deathPS;
-    public GameObject swPs;
     public HealthBarController healthBar;
 
     // Start is called before the first frame update
@@ -25,8 +24,7 @@ public class TutorialEnemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            Instantiate(deathPS, this.transform.position, Quaternion.identity);
-            //Instantiate(swPs, this.transform.position, Quaternion.identity);
+            if(deathPS != null) Instantiate(deathPS, new Vector3(this.transform.position.x, this.transform.position.y + 1.0f, this.transform.position.z), Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
         }
     }
