@@ -5365,7 +5365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &879815129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9879,7 +9879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1538649064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9916,15 +9916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ead3a7458db804c8749478760e01d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantImage: {fileID: 1766030346}
-  plantImageGreen: {fileID: 1870247048}
   fadeOutSpeed: 1
   activeIn: {fileID: 956589235}
-  pasive: {fileID: 879815128}
-  pasiveImage: {fileID: 1143613764}
-  pasiveImageGreen: {fileID: 1519610399}
-  TextPro: {fileID: 1527441177}
-  newHeal: {fileID: 1254773482}
   miniJoe: {fileID: 1727879313}
   healParticle: {fileID: 7346800036578399500, guid: 2c8adca3bad351a42bdf89771186839b,
     type: 3}

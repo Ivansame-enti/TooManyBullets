@@ -2,37 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MiniJoeUIController : MonoBehaviour
 {
     //public GameObject plant;
-    public Image plantImage;
-    public Image plantImageGreen;
     public float fadeOutSpeed;
     public GameObject activeIn;
-
+    /*
     public GameObject pasive;
     public Image pasiveImage;
     public Image pasiveImageGreen;
     public TextMeshProUGUI TextPro;
     public Image newHeal;
-
-    private MiniJoeHealController mhc;
+    */
+    //private MiniJoeHealController mhc;
     private antiBulletSystem abs;
     private MiniJoeLaserController mlc;
-    private MiniJoe m;
+    //private MiniJoe m;
     public GameObject miniJoe;
 
     public GameObject healParticle;
 
-    private Color firstColorPlant;
-    private Color firstColorPasive;
+    //private Color firstColorPasive;
     private Color originalColor;
-    private bool nivel3;
     private bool fadeOut;
-    private float lastCharges;
+    //private float lastCharges;
     //public bool active;
     //public bool miniJoeIn;
 
@@ -40,34 +35,25 @@ public class MiniJoeUIController : MonoBehaviour
     void Start()
     {
         fadeOut = true;
-        mhc = miniJoe.gameObject.GetComponent<MiniJoeHealController>();
+        //mhc = miniJoe.gameObject.GetComponent<MiniJoeHealController>();
         abs = miniJoe.gameObject.GetComponent<antiBulletSystem>();
         mlc = miniJoe.gameObject.GetComponent<MiniJoeLaserController>();
-        m = miniJoe.gameObject.GetComponent<MiniJoe>();
+        //m = miniJoe.gameObject.GetComponent<MiniJoe>();
         //plant.SetActive(true);
-        firstColorPlant = plantImage.color;
-        firstColorPasive = pasiveImage.color;
-        if (SceneManager.GetActiveScene().name != "Nivel3") nivel3 = false;
-        else nivel3 = true;
+        //firstColorPasive = pasiveImage.color;
         originalColor = activeIn.GetComponent<Image>().color;
-        lastCharges = mhc.currenntHealsAvailable;
+        //lastCharges = mhc.currenntHealsAvailable;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (nivel3)
-        {
-            plantImage.enabled = false;
-            plantImageGreen.enabled = false;
-
-        }
 
         if (miniJoe != null)
         {
             
-            pasive.SetActive(true);
-
+            //pasive.SetActive(true);
+            /*
             if (mhc.currenntHealsAvailable > 0) //Curacion
             {
                 //plantImage.gameObject.GetComponent<Animator>().enabled = true;
@@ -89,7 +75,7 @@ public class MiniJoeUIController : MonoBehaviour
             }
             //else newHeal.GetComponent<Animator>().SetBool("New", false);
             lastCharges = mhc.currenntHealsAvailable;
-
+            */
             if (miniJoe.GetComponent<MiniJoe>().displanted == false) //Cuando miniJoe va contigo
             {
                 //pasive.SetActive(false);

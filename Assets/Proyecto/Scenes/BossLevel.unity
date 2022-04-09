@@ -145803,6 +145803,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 3969236534767096869, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: healsHealthBar
+      value: 
+      objectReference: {fileID: 2121143724}
     - target: {fileID: 3969236534767096870, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_Camera
@@ -145935,3 +145940,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04c2d495b45f9b4d89e31ed36467132, type: 3}
+--- !u!114 &2121143724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3548517163662753090, guid: d04c2d495b45f9b4d89e31ed36467132,
+    type: 3}
+  m_PrefabInstance: {fileID: 2121143723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

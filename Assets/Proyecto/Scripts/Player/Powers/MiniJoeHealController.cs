@@ -47,6 +47,7 @@ public class MiniJoeHealController : MonoBehaviour
                     {
                         //timer2 = 0;
                         //currenntHealsAvailable--;
+                        currenntHealsAvailable = lastCurrentHeals - 1.0f;
                         lastCurrentHeals = currenntHealsAvailable;
                         //healedOnce = true;
                     }

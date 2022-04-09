@@ -14,6 +14,6 @@ public class UIPlayerHealthController : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = (float)phc.currentHealth/phc.health;
-        healsHealthBar.fillAmount = mhc.currenntHealsAvailable / phc.health;
+        if(mhc!= null) healsHealthBar.fillAmount = mhc.currenntHealsAvailable / phc.health;
     }
 }
