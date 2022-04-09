@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Tutorial : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class Tutorial : MonoBehaviour
     public Nivel1 lvl1;
     public GameObject tutorialEnemies, player;
     public DashController dc;
-
+    public TextMeshProUGUI phaseInfo;
+    public Animation textAnim;
 
     //private new Vector2();
     // Start is called before the first frame update
@@ -36,6 +38,8 @@ public class Tutorial : MonoBehaviour
         laserPos1 = new Vector2(0, 30);
         laserPos2 = new Vector2(0, -100000000);
         tutorialEnemy.SetActive(false);
+        phaseInfo.text = "Phase 1/4";
+        textAnim.Play("phaseInfo");
     }
 
     // Update is called once per frame

@@ -19,9 +19,9 @@ public class Level2Controller : MonoBehaviour
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
     public Sprite square;
-    private AudioManagerController audio;
     public SnapshotsController sc;
     private PauseController pc;
+    private AudioManagerController audio;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
     // Start is called before the first frame update
