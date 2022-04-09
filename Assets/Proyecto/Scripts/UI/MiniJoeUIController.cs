@@ -32,7 +32,7 @@ public class MiniJoeUIController : MonoBehaviour
     private Color originalColor;
     private bool nivel3;
     private bool fadeOut;
-    private int lastCharges;
+    private float lastCharges;
     //public bool active;
     //public bool miniJoeIn;
 

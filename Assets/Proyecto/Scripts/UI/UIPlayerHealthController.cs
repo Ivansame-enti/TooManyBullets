@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class UIPlayerHealthController : MonoBehaviour
 {
     public Image healthBar;
+    public Image healsHealthBar;
     public PlayerHealthController phc;
+    public MiniJoeHealController mhc;
 
     // Update is called once per frame
     void Update()
     {
         healthBar.fillAmount = (float)phc.currentHealth/phc.health;
+        healsHealthBar.fillAmount = mhc.currenntHealsAvailable / phc.health;
     }
 }
