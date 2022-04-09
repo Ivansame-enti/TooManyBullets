@@ -34,6 +34,13 @@ public class Nivel1 : MonoBehaviour
         
         if (startLevel == true && firstTime)
         {
+            if (textFlag2 == true)
+            {
+                phaseInfo.text = "Phase 2/4";
+                textAnim.Play("phaseInfo");
+                audio.AudioPlay("Plim");
+                textFlag2 = false;
+            }
             dc.canDash = true;
             firstTime = false;
             FindObjectOfType<Tutorial>().tutorialImageAttack.SetActive(false);
