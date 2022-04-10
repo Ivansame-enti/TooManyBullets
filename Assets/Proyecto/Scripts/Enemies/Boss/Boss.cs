@@ -21,7 +21,7 @@ public class Boss : MonoBehaviour
     private GameObject[] water;
     private AudioManagerController audio;
     private PauseController pc;
-
+    private bool bossStart;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +41,7 @@ public class Boss : MonoBehaviour
             leftEye.transform.position = Vector2.MoveTowards(leftEye.transform.position, player.transform.position, speed * Time.deltaTime);
             rightEye.transform.position = Vector2.MoveTowards(rightEye.transform.position, player.transform.position, speed * Time.deltaTime);
         }
-        if (bossHealth.health >= bossHealth.maxHealth / 2)
+        if (bossHealth.health >= bossHealth.maxHealth / 2 && bossStart == true)
         {
             if (attack == 1)
             {                
@@ -151,7 +151,7 @@ public class Boss : MonoBehaviour
                 }
             }
         }
-        if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == false)
+        if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == false && bossStart == true)
         {
             if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
             if (audio.GetAudioPlaying("Bloops")) audio.AudioStop("Bloops");
@@ -319,4 +319,13 @@ public class Boss : MonoBehaviour
         irisL.GetComponent<SpriteRenderer>().color = irisColor;
         irisR.GetComponent<SpriteRenderer>().color = irisColor;
     }
+
+    public void AlertObservers(string message)
+    {
+        if (message.Equals("bossStart"))
+        {
+            bossStart = true;
+        }
+    }
+
 }
