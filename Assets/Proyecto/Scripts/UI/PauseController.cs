@@ -45,6 +45,7 @@ public class PauseController : MonoBehaviour
                     audio.AudioPause("Laser");
                     laser = true;
                 }
+
                 //if (audio.GetAudioPlaying("Bloops")) audio.AudioPause("Bloops");
                 pauseState = true;
                 pauseUI.SetActive(true);

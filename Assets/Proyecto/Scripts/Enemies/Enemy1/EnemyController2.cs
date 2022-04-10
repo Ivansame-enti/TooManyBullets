@@ -15,11 +15,13 @@ public class EnemyController2 : MonoBehaviour
     public GameObject spawnParticles;
     //private int angle;
     private AudioManagerController audio;
+    private PauseController pause;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        pause = FindObjectOfType<PauseController>();
         audio = FindObjectOfType<AudioManagerController>();
         spawnParticles = Instantiate(spawnParticles, this.transform.position, Quaternion.identity);
 
@@ -47,7 +49,7 @@ public class EnemyController2 : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
+        if (!audio.GetAudioPlaying("MachineGun") && !pause.pauseState) audio.AudioPlay("MachineGun");
 
         if (timer > timerBullet)
         {
