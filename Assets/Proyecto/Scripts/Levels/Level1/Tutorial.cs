@@ -25,7 +25,8 @@ public class Tutorial : MonoBehaviour
     public DashController dc;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
-
+    public GameObject particles;
+    //private GameObject particles1;
     //private new Vector2();
     // Start is called before the first frame update
     void Start()
@@ -132,9 +133,11 @@ public class Tutorial : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("PlayerTag"))
         {
+            Instantiate(particles, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
             tutorial();
             flag++;
+            
         }
     }
     void ShootLaser()

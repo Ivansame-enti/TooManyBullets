@@ -15,10 +15,14 @@ public class DashController : MonoBehaviour
     public float particle_delay;
     public TrailRenderer dashTrail;
     public bool canDash=true;
+    private Vector3 scaleChange;
+    private float xDash, yDash;
 
     // Start is called before the first frame update
     void Start()
     {
+        xDash = 0.06f;
+        yDash = 0.1f;
         rb = GetComponent<Rigidbody2D>();
         particle_delay = dashDelay/30;
     }
@@ -57,6 +61,12 @@ public class DashController : MonoBehaviour
                 timer2 -= Time.deltaTime;
             }
 
+            if (timer <= 0.5f)
+            {
+                scaleChange = new Vector3(0.1f, 0.1f, 0);
+                this.transform.localScale = scaleChange;
+            }
+
             if (timer <= 0) //Delay entre dash
             {
                 this.GetComponent<SpriteRenderer>().color = new Color(255, 140, 0, this.GetComponent<SpriteRenderer>().color.a);
@@ -65,6 +75,8 @@ public class DashController : MonoBehaviour
                 {
                     if ((Input.GetAxis("RT") != 0 || Input.GetAxis("LT") != 0 || Input.GetKeyDown("space") || Input.GetButtonDown("XboxA")) && this.GetComponent<movement>().isMoving)
                     {
+                        scaleChange = new Vector3(xDash, yDash, 0);
+                        this.transform.localScale = scaleChange;
                         rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                         timer = dashDelay;
                         timer2 = dashTime;
@@ -75,6 +87,8 @@ public class DashController : MonoBehaviour
                 {
                     if ((Input.GetButtonDown("R2") || Input.GetButtonDown("L2") || Input.GetKeyDown("space") || Input.GetButtonDown("PlayX")) && this.GetComponent<movement>().isMoving)
                     {
+                        scaleChange = new Vector3(xDash, yDash, 0);
+                        this.transform.localScale = scaleChange;
                         rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                         timer = dashDelay;
                         timer2 = dashTime;
@@ -85,6 +99,8 @@ public class DashController : MonoBehaviour
                 {
                     if (Input.GetKeyDown("space") && this.GetComponent<movement>().isMoving)
                     {
+                        scaleChange = new Vector3(xDash, yDash, 0);
+                        this.transform.localScale = scaleChange;
                         rb.velocity = this.GetComponent<movement>().lastMoveDir * dashDistance;
                         timer = dashDelay;
                         timer2 = dashTime;

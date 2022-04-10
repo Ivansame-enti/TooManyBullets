@@ -80,9 +80,9 @@ public class EnemyHealthController : MonoBehaviour
                 Destroy(this.transform.parent.gameObject);
             else Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
-            Instantiate(deathPS2, this.transform.position, Quaternion.identity);
-            Instantiate(swPs, this.transform.position, Quaternion.identity);
-            Instantiate(swPs2, this.transform.position, Quaternion.identity);
+            //Instantiate(deathPS2, this.transform.position, Quaternion.identity);
+            //Instantiate(swPs, this.transform.position, Quaternion.identity);
+            //Instantiate(swPs2, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death"); 
         }
     }
@@ -103,7 +103,15 @@ public class EnemyHealthController : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("Shield"))
         {
-            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23")
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 0));
+                this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+                var force = transform.position - collision.transform.position;
+                force.Normalize();
+                GetComponent<Rigidbody2D>().AddForce(force * 500);
+                //col.gameObject.GetComponent<Rigidbody2D>().AddForce(-force * 500);
+            }
         }
 
         if (collision.tag == "slash" && !antiSlash)
@@ -114,7 +122,14 @@ public class EnemyHealthController : MonoBehaviour
                 health = health - collision.gameObject.GetComponent<MeleeAttackController>().damage;
                 healthBar.SetHealthBar(health, maxHealth);
             }
-            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23")
+            {
+                //GetComponent<Rigidbody2D>().AddForce(new Vector2(0,0));
+                this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+                var force = transform.position - collision.transform.position;
+                force.Normalize();
+                GetComponent<Rigidbody2D>().AddForce(force * 500);
+            }
             if (health > 0) FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Hit");
         }
         if (collision.tag == "MjLaserCollider")
@@ -134,7 +149,11 @@ public class EnemyHealthController : MonoBehaviour
     {
         if ((this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") && col.collider.tag == "LaserCollider")
         {
-            if (this.gameObject.name == "Enemy2" || this.gameObject.name == "Enemy22" || this.gameObject.name == "Enemy23") this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            this.gameObject.GetComponent<MeleeEnemyController>().hitPlayer = true;
+            var force = transform.position - col.transform.position;
+            force.Normalize();
+            GetComponent<Rigidbody2D>().AddForce(force * 500);
+            
         }
     }
     /*

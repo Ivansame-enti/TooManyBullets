@@ -23,9 +23,23 @@ public class PlayerHealthController : MonoBehaviour
     {
         //if (timer <= 0)
         //{
-        if (currentHealth > 0 && currentHealth < 1) currentHealth = 0;
-        if (currentHealth > 1 && currentHealth < 2) currentHealth = 1;
-        if (currentHealth > 2 && currentHealth < 3) currentHealth = 2;
+        //Si se estaba curando
+        if (currentHealth > 0 && currentHealth < 1)
+        {
+            currentHealth = 0;
+            GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable = GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().lastCurrentHeals;
+        }
+        if (currentHealth > 1 && currentHealth < 2)
+        {
+            currentHealth = 1;
+            GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable = GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().lastCurrentHeals;
+        }
+        if (currentHealth > 2 && currentHealth < 3)
+        {
+            currentHealth = 2;
+            GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable = GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().lastCurrentHeals;
+        }
+
         currentHealth--;
         shakeCamera.SetTrigger("Shake");
         timer = inmortalTime;
