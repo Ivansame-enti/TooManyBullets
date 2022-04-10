@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 5463480565057043242}
---- !u!114 &5463480565057043242
+  - {fileID: 8209284031907889617}
+--- !u!114 &8209284031907889617
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,9 +32,9 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 400
+    value: 50
   threshold:
-    overrideState: 1
+    overrideState: 0
     value: 1
   softKnee:
     overrideState: 0

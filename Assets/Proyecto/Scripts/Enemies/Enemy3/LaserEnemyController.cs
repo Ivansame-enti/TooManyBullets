@@ -30,7 +30,7 @@ public class LaserEnemyController : MonoBehaviour
         audio = FindObjectOfType<AudioManagerController>();
         gradient = new Gradient();
         colorKey = new GradientColorKey[2];
-        colorKey[0].color = Color.red;
+        colorKey[0].color = Color.magenta;
         colorKey[0].time = 0.0f;
         colorKey[1].color = Color.blue;
         colorKey[1].time = 0.0f;
