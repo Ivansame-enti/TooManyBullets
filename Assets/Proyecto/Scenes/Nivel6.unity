@@ -1078,6 +1078,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3969236535703699025, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236535906652549, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_text
@@ -3587,7 +3592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.199997}
+  m_AnchoredPosition: {x: 0, y: -19.200012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1596382736
