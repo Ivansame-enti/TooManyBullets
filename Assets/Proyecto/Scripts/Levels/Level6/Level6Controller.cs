@@ -17,6 +17,7 @@ public class Level6Controller : MonoBehaviour
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
     private bool textFlag2, textFlag3, textFlag4;
+    private GameObject[] water;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,12 +73,19 @@ public class Level6Controller : MonoBehaviour
         {
             phase3.SetActive(false);
             phase4.SetActive(true);
+            scenario.SetActive(false);
             if (textFlag4 == true)
             {
                 phaseInfo.text = "Stage 4/4";
                 textAnim.Play("phaseInfo");
                 audioSFX.AudioPlay("Plim");
                 textFlag4 = false;
+                water = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                foreach (GameObject bullet in water)
+                {
+                    Destroy(bullet);
+                }
             }
             //lights.SetActive(true);
             phasecounter++;

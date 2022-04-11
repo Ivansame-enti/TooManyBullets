@@ -13,6 +13,7 @@ public class VictoryController : MonoBehaviour
     public bool victory;
     public static bool goingLS;
     private bool firstTime;
+    private GameObject[] water;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,13 @@ public class VictoryController : MonoBehaviour
         {
             if (firstTime)
             {
+                water = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                foreach (GameObject bullet in water)
+                {
+                    Destroy(bullet);
+                }
+
                 AudioManagerController audio = FindObjectOfType<AudioManagerController>();
                 if (audio.GetAudioPlaying("EnemyLaser"))
                 {

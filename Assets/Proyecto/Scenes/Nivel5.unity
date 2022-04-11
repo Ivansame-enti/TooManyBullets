@@ -469,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -2754,7 +2754,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -4915,6 +4915,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
+        type: 3}
+      propertyPath: bulletFrequencyMin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6094048694357508492, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: ending
@@ -5769,6 +5774,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1169509233}
     m_Modifications:
+    - target: {fileID: 820220229451798906, guid: 1521eeb281c9c4d488e5fff76e369a8c,
+        type: 3}
+      propertyPath: speedRotation
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1766611725925682144, guid: 1521eeb281c9c4d488e5fff76e369a8c,
         type: 3}
       propertyPath: ending
@@ -5843,6 +5853,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 192617561}
     m_Modifications:
+    - target: {fileID: 820220229451798906, guid: 1521eeb281c9c4d488e5fff76e369a8c,
+        type: 3}
+      propertyPath: speedRotation
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1766611725925682147, guid: 1521eeb281c9c4d488e5fff76e369a8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6094,7 +6109,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -6640,7 +6655,7 @@ PrefabInstance:
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
       propertyPath: bulletFrequencyMax
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782049486628547886, guid: f39a9eb4c4ea392489762ef2210a2d79,
         type: 3}
@@ -6661,6 +6676,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 192617561}
     m_Modifications:
+    - target: {fileID: 820220229451798906, guid: 1521eeb281c9c4d488e5fff76e369a8c,
+        type: 3}
+      propertyPath: speedRotation
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1766611725925682147, guid: 1521eeb281c9c4d488e5fff76e369a8c,
         type: 3}
       propertyPath: m_LocalPosition.x

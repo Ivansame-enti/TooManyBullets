@@ -157,7 +157,7 @@ public class Boss : MonoBehaviour
                 }
             }
         }
-        if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == false && bossStart == true)
+        if (bossHealth.health < bossHealth.maxHealth / 3 && startPhase2 == false && bossStart == true)
         {
             if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
             if (audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioStop("Bloops");
