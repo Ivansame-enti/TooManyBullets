@@ -187,7 +187,6 @@ MonoBehaviour:
   particles: {fileID: 6518881095785603196, guid: e6ef5c942b1374a44a696aed1ac5b60e,
     type: 3}
   square: {fileID: 7482667652216324306, guid: 0301c57fc0265ca47b37f7318479f950, type: 3}
-  sc: {fileID: 0}
   phaseInfo: {fileID: 1050474128}
   textAnim: {fileID: 1050474127}
 --- !u!212 &40393305
@@ -10083,7 +10082,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 30
   m_TargetDisplay: 0
 --- !u!1 &740164977
 GameObject:
@@ -13448,11 +13447,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0b0b35880b8d54aa62f46d008df630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionA: {x: -13, y: 5}
-  positionB: {x: -7, y: -5}
-  positionC: {x: 13, y: 5}
-  positionD: {x: 7, y: -5}
+  positionA: {x: -15, y: 10}
+  positionB: {x: 2, y: -10}
+  positionC: {x: 15, y: 10}
+  positionD: {x: -2, y: -10}
   firework: {fileID: 5156390496740564177, guid: 85fd81169f934cf40afa5a6f9fb7ebae,
+    type: 3}
+  firework2: {fileID: 5156390496740564177, guid: 4c7a72a56ab6b9b458c9194cb891dfbe,
+    type: 3}
+  firework3: {fileID: 5156390496740564177, guid: c964b4646dcc97f459bfc2333cdb923a,
+    type: 3}
+  firework4: {fileID: 5156390496740564177, guid: 531b0f2e1f1041f4d840646911d28410,
     type: 3}
   victoryUI: {fileID: 734276031}
   player: {fileID: 1469739031}
@@ -18802,7 +18807,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1940683179
 GameObject:

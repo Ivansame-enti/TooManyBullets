@@ -20,7 +20,6 @@ public class Level2Controller : MonoBehaviour
     private int enemiesDestroyed;
     private TextMeshProUGUI textPro;
     public Sprite square;
-    public SnapshotsController sc;
     private PauseController pc;
     private AudioManagerController audio;
     public TextMeshProUGUI phaseInfo;
@@ -97,7 +96,7 @@ public class Level2Controller : MonoBehaviour
                 //Destroy(this.GetComponent<SpriteRenderer>());
                 //Destroy(this.GetComponent<Rigidbody2D>());
                 //Destroy(this.GetComponent<CircleCollider2D>());
-                particles1 = Instantiate(particles, this.transform.position, Quaternion.identity);
+                Instantiate(particles, this.transform.position, Quaternion.identity);
                 shieldTutorial.SetActive(false);
                 phase1.SetActive(false);
                 phase2.SetActive(true);
@@ -116,6 +115,8 @@ public class Level2Controller : MonoBehaviour
                 {
                     Destroy(bullet);
                 }
+
+                Instantiate(particles, this.transform.position, Quaternion.identity);
                 phase2.SetActive(false);
                 phase3.SetActive(true);
                 textUI.SetActive(true);
