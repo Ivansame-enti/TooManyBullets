@@ -26,7 +26,7 @@ public class CelestialAtackM3 : MonoBehaviour
     public int minFrequencylaser, maxFrequencylaser;
     private float originalWidth;
     private float width;
-    private bool reduceWidth;
+    //private bool reduceWidth;
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
     private float boxColliderX;
@@ -40,7 +40,7 @@ public class CelestialAtackM3 : MonoBehaviour
     {
         width = 2.0f;
         originalWidth = celestialAtk.GetComponent<LineRenderer>().startWidth;
-        reduceWidth = false;
+        //reduceWidth = false;
         originalBoxColliderSizeX = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.x;
         originalBoxColliderSizeY = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.y;
     }
@@ -67,7 +67,7 @@ public class CelestialAtackM3 : MonoBehaviour
         if (nextActionTime <= 0) //Hace warning
         {
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
-            reduceWidth = false;
+            //reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
             celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);

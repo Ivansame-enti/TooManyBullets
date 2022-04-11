@@ -14,7 +14,7 @@ public class MiniJoeHealController : MonoBehaviour
     public float timer;
     //public float timer2;
     public PlayerHealthController phc;
-    private bool healedOnce;
+    //private bool healedOnce;
     public GameObject healParticle;
     public GameObject player;
     private float area2;
@@ -24,7 +24,7 @@ public class MiniJoeHealController : MonoBehaviour
     {
         area2 = 6.7f;
         timer = healTimer;
-        healedOnce = false;
+        //healedOnce = false;
         //timer2 = healDelay;
         currenntHealsAvailable = healsAvailable;
         lastCurrentHeals = currenntHealsAvailable;

@@ -22,12 +22,12 @@ public class EnemyHealthController : MonoBehaviour
     public GameObject specialParticles2;
     private bool level1;
     private bool level2;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     //public GameObject circle;
     // Start is called before the first frame update
     void Start()
     {
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
         else level1 = true;
 
@@ -74,7 +74,7 @@ public class EnemyHealthController : MonoBehaviour
                 Instantiate(specialParticles2, this.transform.position, Quaternion.identity);
                 //GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable++;
             }
-            if(this.name == "Enemy3") if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
+            if(this.name == "Enemy3") if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
             if (ending != null) ending.EnemyDies(this.gameObject);
             if (transform.parent != null && transform.parent.gameObject.tag == "container")
                 Destroy(this.transform.parent.gameObject);

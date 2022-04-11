@@ -12,14 +12,14 @@ public class Nivel3 : MonoBehaviour
     public PlayerHealthController playerIsDead;
     public GameObject laserXbox, laserPS4, laserKeyboard;
     public PlayerHealthController phc;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
     private bool textFlag2, textFlag3, textFlag4;
     // Start is called before the first frame update
     void Start()
     {
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         phc.currentHealth--;
         startLevel = false;
         laserText.SetActive(false);
@@ -60,7 +60,7 @@ public class Nivel3 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 2/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag2 = false;
             }
 
@@ -77,7 +77,7 @@ public class Nivel3 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 3/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag3 = false;
             }
 
@@ -91,7 +91,7 @@ public class Nivel3 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 4/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag4 = false;
             }
             scenarioattack1.SetActive(true);

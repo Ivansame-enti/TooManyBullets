@@ -21,14 +21,14 @@ public class Level2Controller : MonoBehaviour
     private TextMeshProUGUI textPro;
     public Sprite square;
     private PauseController pc;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
     // Start is called before the first frame update
     void Start()
     {
         pc = FindObjectOfType<PauseController>();
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         phasecounter = 0;
         phase1.SetActive(true);
         phaseInfo.text = "Stage 1/4";
@@ -46,8 +46,8 @@ public class Level2Controller : MonoBehaviour
     {
         if(phasecounter == 0)
         {
-            if(!audio.GetAudioPlaying("Bloops") && pc.pauseState==false) audio.AudioPlay("Bloops");
-        } else audio.AudioStop("Bloops");
+            if(!audioSFX.GetAudioPlaying("Bloops") && pc.pauseState==false) audioSFX.AudioPlay("Bloops");
+        } else audioSFX.AudioStop("Bloops");
 
         if (ControllerInput.Xbox_One_Controller == true)
         {
@@ -92,7 +92,7 @@ public class Level2Controller : MonoBehaviour
             {
                 phaseInfo.text = "Stage 2/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 //Destroy(this.GetComponent<SpriteRenderer>());
                 //Destroy(this.GetComponent<Rigidbody2D>());
                 //Destroy(this.GetComponent<CircleCollider2D>());
@@ -128,7 +128,7 @@ public class Level2Controller : MonoBehaviour
                 this.transform.position = new Vector3(24.5f, -0.3f, 0);
                 this.gameObject.AddComponent<BoxCollider2D>();
                 phasecounter++;
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
             }
         }
 

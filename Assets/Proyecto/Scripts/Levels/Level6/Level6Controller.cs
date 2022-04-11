@@ -13,14 +13,14 @@ public class Level6Controller : MonoBehaviour
     public GameObject scenario;
     public int phasecounter;
     public VictoryController victorycontroller;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
     private bool textFlag2, textFlag3, textFlag4;
     // Start is called before the first frame update
     void Start()
     {
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         phaseInfo.text = "Stage 1/4";
         textAnim.Play("phaseInfo");
         textFlag2 = true;
@@ -45,7 +45,7 @@ public class Level6Controller : MonoBehaviour
             {
                 phaseInfo.text = "Stage 2/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag2 = false;
             }
             scenario.SetActive(true);
@@ -61,7 +61,7 @@ public class Level6Controller : MonoBehaviour
             {
                 phaseInfo.text = "Stage 3/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag3 = false;
             }
             lights.SetActive(true);
@@ -76,7 +76,7 @@ public class Level6Controller : MonoBehaviour
             {
                 phaseInfo.text = "Stage 4/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag4 = false;
             }
             //lights.SetActive(true);

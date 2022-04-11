@@ -16,7 +16,7 @@ public class melee : MonoBehaviour
     float result, result2, result3, result4;
     public ParticleSystem particles;
     public PauseController pause;
-    private bool flagSpeed=false;
+    //private bool flagSpeed=false;
 
     /*private void Damage(float rotx, float roty, float rotx2, float roty2)
     {

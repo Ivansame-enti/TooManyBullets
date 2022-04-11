@@ -12,7 +12,7 @@ public class movement : MonoBehaviour
 
     public bool isMoving;
     public GameObject minijoe;
-    private float width;
+    //private float width;
 
     public Vector2 movementDirection;
     public Quaternion toRotation;
@@ -20,7 +20,7 @@ public class movement : MonoBehaviour
 
     private void Start()
     {
-        width = 0.15f;
+        //width = 0.15f;
     }
     void Update()
     {

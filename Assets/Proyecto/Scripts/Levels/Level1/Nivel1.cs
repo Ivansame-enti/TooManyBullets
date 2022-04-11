@@ -12,20 +12,19 @@ public class Nivel1 : MonoBehaviour
     public VictoryController victoryController;
     //public GameObject laser;
     public DashController dc;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
-    private bool textFlag2, textFlag3, textFlag4;
+    private bool textFlag2, textFlag3;
     // Start is called before the first frame update
     void Start()
     {
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         startLevel = false;
         clearPart1 = false;
         firstTime = true;
         textFlag2 = true;
         textFlag3 = true;
-        textFlag4 = true;
     }
 
     // Update is called once per frame
@@ -38,7 +37,7 @@ public class Nivel1 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 2/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag2 = false;
             }
             dc.canDash = true;
@@ -55,7 +54,7 @@ public class Nivel1 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 3/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag2 = false;
             }
         }
@@ -77,7 +76,7 @@ public class Nivel1 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 4/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag3 = false;
             }
             //scenarioAttacks.SetActive(true);

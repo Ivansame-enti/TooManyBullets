@@ -11,7 +11,7 @@ public class Nivel4 : MonoBehaviour
     public GameObject part1, part2, part3, part4, player, shilds;
     public GameObject plantTutorial, plantXbox, plantPS4, plantKeyboard;
     private bool textFlag2, textFlag3, textFlag4;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
 
@@ -19,7 +19,7 @@ public class Nivel4 : MonoBehaviour
     void Start()
     {
         startLevel = false;
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         phaseInfo.text = "Stage 1/4";
         textAnim.Play("phaseInfo");
         textFlag2 = true;
@@ -56,7 +56,7 @@ public class Nivel4 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 2/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag2 = false;
             }
             shilds.SetActive(true);
@@ -70,7 +70,7 @@ public class Nivel4 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 3/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag3 = false;
             }
             shilds.SetActive(false);
@@ -83,7 +83,7 @@ public class Nivel4 : MonoBehaviour
             {
                 phaseInfo.text = "Stage 4/4";
                 textAnim.Play("phaseInfo");
-                audio.AudioPlay("Plim");
+                audioSFX.AudioPlay("Plim");
                 textFlag4 = false;
             }
             // scenarioattack1.SetActive(true);

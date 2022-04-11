@@ -21,13 +21,13 @@ public class LaserEnemyController : MonoBehaviour
     Gradient gradient;
     GradientColorKey[] colorKey;
     GradientAlphaKey[] alphaKey;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     private PauseController pc;
     // Start is called before the first frame update
     void Start()
     {
         pc = FindObjectOfType<PauseController>();
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         gradient = new Gradient();
         colorKey = new GradientColorKey[2];
         colorKey[0].color = Color.magenta;
@@ -122,7 +122,7 @@ public class LaserEnemyController : MonoBehaviour
 
                 if (timer2 >= attackDuration)
                 {
-                    if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
+                    if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
                     timer = 0;
                     timer2 = 0;
                     mLaserBeam.SetActive(false);
@@ -209,7 +209,7 @@ public class LaserEnemyController : MonoBehaviour
             //DIBUJA LASER ENTRE DOS POSICIONES
             if (warning)
             {
-                if (!audio.GetAudioPlaying("EnemyLaser") && pc.pauseState==false) audio.AudioPlay("EnemyLaser");
+                if (!audioSFX.GetAudioPlaying("EnemyLaser") && pc.pauseState==false) audioSFX.AudioPlay("EnemyLaser");
                 //audio.AudioPlay("EnemyLaser");
                 Draw2DRay1(laser1Pos1, laser1Warning);
                 Draw2DRay2(laser2Pos1, laser2Warning);

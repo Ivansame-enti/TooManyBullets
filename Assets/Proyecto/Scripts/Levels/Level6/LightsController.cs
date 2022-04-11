@@ -8,7 +8,7 @@ public class LightsController : MonoBehaviour
     public float lightsOffDuration;
     public float timer;
     public float timer2;
-    private bool animFinished;
+    //private bool animFinished;
     private bool animFinished2;
     private bool lightOn = true;
     public GameObject playerLight;
@@ -18,7 +18,7 @@ public class LightsController : MonoBehaviour
     {
         timer = lightsOffTimer;
         timer2 = lightsOffDuration;
-        animFinished = true;
+        //animFinished = true;
         animFinished2 = true;
         //animFinished2 = true;
     }
@@ -32,7 +32,7 @@ public class LightsController : MonoBehaviour
             if (timer <= 0)
             {
                 timer = lightsOffTimer;
-                animFinished = false;
+                //animFinished = false;
                 playerLight.SetActive(true);
                 this.GetComponent<Animator>().SetBool("LightsOff", true);
                 playerLight.GetComponent<Animator>().SetBool("LightsOff", true);
@@ -98,7 +98,7 @@ public class LightsController : MonoBehaviour
     {
         if (mensaje.Equals("LightsOff"))
         {
-            animFinished = true;
+            //animFinished = true;
         }
     }
     /*
