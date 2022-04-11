@@ -460,6 +460,64 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: firework2
+      value: 
+      objectReference: {fileID: 5156390496740564177, guid: 4c7a72a56ab6b9b458c9194cb891dfbe,
+        type: 3}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: firework3
+      value: 
+      objectReference: {fileID: 5156390496740564177, guid: c964b4646dcc97f459bfc2333cdb923a,
+        type: 3}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: firework4
+      value: 
+      objectReference: {fileID: 5156390496740564177, guid: 531b0f2e1f1041f4d840646911d28410,
+        type: 3}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionA.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionA.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionB.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionB.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionC.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionC.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionD.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236534102394962, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: positionD.y
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236534129587914, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1076,7 +1134,7 @@ PrefabInstance:
     - target: {fileID: 3969236535655275956, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3969236535703699025, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
