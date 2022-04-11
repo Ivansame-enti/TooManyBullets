@@ -14,14 +14,14 @@ public class PauseController : MonoBehaviour
     public Slider vol;
     public Text sliderText;    
     public AudioMixer am;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     private bool laser, enemyLaser;
     // Start is called before the first frame update
     void Start()
     {
         laser = false;
         enemyLaser = false;
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         vol.value = PlayerPrefs.GetFloat("volume", 0.75f);
         sliderText.text = Mathf.RoundToInt(vol.value * 100) + "%";
         pauseUI.SetActive(false);
@@ -35,14 +35,14 @@ public class PauseController : MonoBehaviour
         {
             if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("StartXbox")) && pauseState == false && isDead.dead == false)
             {
-                if (audio.GetAudioPlaying("EnemyLaser"))
+                if (audioSFX.GetAudioPlaying("EnemyLaser"))
                 {
-                    audio.AudioPause("EnemyLaser");
+                    audioSFX.AudioPause("EnemyLaser");
                     enemyLaser = true;
                 }
-                if (audio.GetAudioPlaying("Laser"))
+                if (audioSFX.GetAudioPlaying("Laser"))
                 {
-                    audio.AudioPause("Laser");
+                    audioSFX.AudioPause("Laser");
                     laser = true;
                 }
 
@@ -58,12 +58,12 @@ public class PauseController : MonoBehaviour
             {
                 if (laser)
                 {
-                    audio.AudioPlay("Laser");
+                    audioSFX.AudioPlay("Laser");
                     laser = false;
                 }
                 if (enemyLaser)
                 {
-                    audio.AudioPlay("EnemyLaser");
+                    audioSFX.AudioPlay("EnemyLaser");
                     enemyLaser = false;
                 }
                 pauseState = false;
@@ -75,14 +75,14 @@ public class PauseController : MonoBehaviour
         {
             if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) && pauseState == false && isDead.dead == false)
             {
-                if (audio.GetAudioPlaying("EnemyLaser"))
+                if (audioSFX.GetAudioPlaying("EnemyLaser"))
                 {
-                    audio.AudioPause("EnemyLaser");
+                    audioSFX.AudioPause("EnemyLaser");
                     enemyLaser = true;
                 }
-                if (audio.GetAudioPlaying("Laser"))
+                if (audioSFX.GetAudioPlaying("Laser"))
                 {
-                    audio.AudioPause("Laser");
+                    audioSFX.AudioPause("Laser");
                     laser = true;
                 }
                 //if (audio.GetAudioPlaying("Bloops")) audio.AudioPause("Bloops");
@@ -97,12 +97,12 @@ public class PauseController : MonoBehaviour
             {
                 if (laser)
                 {
-                    audio.AudioPlay("Laser");
+                    audioSFX.AudioPlay("Laser");
                     laser = false;
                 }
                 if (enemyLaser)
                 {
-                    audio.AudioPlay("EnemyLaser");
+                    audioSFX.AudioPlay("EnemyLaser");
                     enemyLaser = false;
                 }
                 pauseState = false;
@@ -114,14 +114,14 @@ public class PauseController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape) && pauseState == false && isDead.dead == false)
             {
-                if (audio.GetAudioPlaying("EnemyLaser"))
+                if (audioSFX.GetAudioPlaying("EnemyLaser"))
                 {
-                    audio.AudioPause("EnemyLaser");
+                    audioSFX.AudioPause("EnemyLaser");
                     enemyLaser = true;
                 }
-                if (audio.GetAudioPlaying("Laser"))
+                if (audioSFX.GetAudioPlaying("Laser"))
                 {
-                    audio.AudioPause("Laser");
+                    audioSFX.AudioPause("Laser");
                     laser = true;
                 }
                 //if (audio.GetAudioPlaying("Bloops")) audio.AudioPause("Bloops");
@@ -136,12 +136,12 @@ public class PauseController : MonoBehaviour
             {
                 if (laser)
                 {
-                    audio.AudioPlay("Laser");
+                    audioSFX.AudioPlay("Laser");
                     laser = false;
                 }
                 if (enemyLaser)
                 {
-                    audio.AudioPlay("EnemyLaser");
+                    audioSFX.AudioPlay("EnemyLaser");
                     enemyLaser = false;
                 }
                 pauseState = false;

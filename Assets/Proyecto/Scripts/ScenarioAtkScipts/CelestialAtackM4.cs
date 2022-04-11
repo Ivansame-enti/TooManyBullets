@@ -31,10 +31,10 @@ public class CelestialAtackM4 : MonoBehaviour
     private float originalBoxColliderSizeY;
     private float boxColliderX;
     private float random;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     private void Awake()
     {
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         m_transform = GetComponent<Transform>();
     }
     // Start is called before the first frame update
@@ -72,7 +72,7 @@ public class CelestialAtackM4 : MonoBehaviour
             //reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
-            celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
+            //celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
             celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
             nextActionTime = warningTiming;
@@ -109,13 +109,13 @@ public class CelestialAtackM4 : MonoBehaviour
             if (!atkGoing && !atkExist)
             {
                 nextActionTime -= Time.deltaTime;
-                if (audio.GetAudioPlaying("Laser")) audio.AudioStop("Laser");
+                if (audioSFX.GetAudioPlaying("Laser")) audioSFX.AudioStop("Laser");
             }
         }
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
-            if (!audio.GetAudioPlaying("Laser")) audio.AudioPlay("Laser");
+            if (!audioSFX.GetAudioPlaying("Laser")) audioSFX.AudioPlay("Laser");
             //Debug.Log("funciona");
             atkExist = false;
             atkGoing = true;

@@ -15,14 +15,14 @@ public class BossHealthController : MonoBehaviour
     public Color originalColor;
     public Boss boss;
     public VictoryController victory;
-    private AudioManagerController audio;
+    //private AudioManagerController audioSFX;
 
     // Start is called before the first frame update
     void Start()
     {
         originalColor = superiorFace.GetComponent<SpriteRenderer>().color;
         maxHealth = health;
-        audio = FindObjectOfType<AudioManagerController>();
+        //audioSFX = FindObjectOfType<AudioManagerController>();
     }
 
     // Update is called once per frame

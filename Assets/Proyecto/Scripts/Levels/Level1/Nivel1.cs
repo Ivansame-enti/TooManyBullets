@@ -15,7 +15,7 @@ public class Nivel1 : MonoBehaviour
     private AudioManagerController audioSFX;
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
-    private bool textFlag2, textFlag3;
+    private bool textFlag2, textFlag3, textFlag4;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,7 @@ public class Nivel1 : MonoBehaviour
         firstTime = true;
         textFlag2 = true;
         textFlag3 = true;
+        textFlag4 = true;
     }
 
     // Update is called once per frame
@@ -50,12 +51,12 @@ public class Nivel1 : MonoBehaviour
         if (part1.transform.childCount <= 0)
         {
             part2.SetActive(true);
-            if (textFlag2 == true)
+            if (textFlag3 == true)
             {
                 phaseInfo.text = "Stage 3/4";
                 textAnim.Play("phaseInfo");
                 audioSFX.AudioPlay("Plim");
-                textFlag2 = false;
+                textFlag3 = false;
             }
         }
 
@@ -72,12 +73,12 @@ public class Nivel1 : MonoBehaviour
         if (part2.transform.childCount <= 0 && timer < 0)
         {
             part3.SetActive(true);
-            if (textFlag3 == true)
+            if (textFlag4 == true)
             {
                 phaseInfo.text = "Stage 4/4";
                 textAnim.Play("phaseInfo");
                 audioSFX.AudioPlay("Plim");
-                textFlag3 = false;
+                textFlag4 = false;
             }
             //scenarioAttacks.SetActive(true);
             multiLaser.SetActive(false);

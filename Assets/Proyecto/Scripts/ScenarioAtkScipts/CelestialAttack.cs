@@ -31,13 +31,13 @@ public class CelestialAttack : MonoBehaviour
     private float originalBoxColliderSizeY;
     private float boxColliderX;
     public float ScaleX, ScaleY, ScaleZ;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     private Vector3 scaleChange, originalScale;
     public bool laserCounter;
     public int laserTimes;
     private void Awake()
     {
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         m_transform = GetComponent<Transform>();
     }
     // Start is called before the first frame update
@@ -78,7 +78,7 @@ public class CelestialAttack : MonoBehaviour
             reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
-            celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
+            //celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
             celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
             nextActionTime = warningTiming;
@@ -111,7 +111,7 @@ public class CelestialAttack : MonoBehaviour
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
-            audio.AudioPlay("Laser");
+            audioSFX.AudioPlay("Laser");
             atkExist = false;
             atkGoing = true;
             Destroy(warningClone.gameObject);
@@ -148,7 +148,7 @@ public class CelestialAttack : MonoBehaviour
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime*2;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
-                    celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
+                    //celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
 
                     scaleChange = new Vector3(-0.015f, 0, 0);
                     laserParticles2.transform.localScale += scaleChange;
@@ -159,7 +159,7 @@ public class CelestialAttack : MonoBehaviour
                 }
                 if (width <= 0)
                 {
-                    audio.AudioStop("Laser");
+                    audioSFX.AudioStop("Laser");
                     timerAttack -= Time.deltaTime;
                 }
             }

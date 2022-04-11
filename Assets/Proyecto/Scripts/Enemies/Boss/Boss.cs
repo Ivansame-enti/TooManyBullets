@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
     public float bulletsDuration, dropDuration, multiLaserDuration, cooldownAttack;
     public bool bulletGoing;
     private GameObject[] water;
-    private AudioManagerController audio;
+    private AudioManagerController audioSFX;
     private PauseController pc;
     private bool bossStart,multiLaserFinish;
     public CelestialAttack cA;
@@ -28,7 +28,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
         pc = FindObjectOfType<PauseController>();
-        audio = FindObjectOfType<AudioManagerController>();
+        audioSFX = FindObjectOfType<AudioManagerController>();
         attack = Random.Range(1, 5);
         bullets.SetActive(false);
         waterDrop.SetActive(false);
@@ -48,7 +48,7 @@ public class Boss : MonoBehaviour
             if (attack == 1)
             {                
                 laser.SetActive(true);
-                if (!audio.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audio.AudioPlay("EnemyLaser");
+                if (!audioSFX.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audioSFX.AudioPlay("EnemyLaser");
                 if (bossLaser.finish == true)
                 {
                     laser.SetActive(false);
@@ -69,10 +69,10 @@ public class Boss : MonoBehaviour
                 {
                     timer += Time.deltaTime;
                 }
-            } else if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
+            } else if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
             if (attack == 2)
             {
-                if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
+                if (!audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
@@ -80,7 +80,7 @@ public class Boss : MonoBehaviour
 
                     if (timer >= bulletsDuration)
                     {
-                        if (audio.GetAudioPlaying("MachineGun")) audio.AudioStop("MachineGun");
+                        if (audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioStop("MachineGun");
                         bullets.SetActive(false);
                         originalChange();
 
@@ -108,7 +108,7 @@ public class Boss : MonoBehaviour
                 waterDrop.SetActive(true);
                 if (timer >= dropDuration)
                 {
-                    if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+                    if (!audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioPlay("Bloops");
                     waterDrop.SetActive(false);
                     //audio.AudioStop("Bloops");
                 }
@@ -122,7 +122,7 @@ public class Boss : MonoBehaviour
                         Destroy(bullet);
                     }
                     timer = 0;
-                    if (audio.GetAudioPlaying("Bloops")) audio.AudioStop("Bloops");
+                    if (audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioStop("Bloops");
                 }
                 else
                 {
@@ -159,8 +159,8 @@ public class Boss : MonoBehaviour
         }
         if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == false && bossStart == true)
         {
-            if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
-            if (audio.GetAudioPlaying("Bloops")) audio.AudioStop("Bloops");
+            if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
+            if (audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioStop("Bloops");
             startPhase2 = true;
             bullets.SetActive(false);
             laser.SetActive(false);
@@ -173,23 +173,23 @@ public class Boss : MonoBehaviour
         {
             if (attack == 1)
             {
-                if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
+                if (!audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
-                    if (!audio.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audio.AudioPlay("EnemyLaser");
+                    if (!audioSFX.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audioSFX.AudioPlay("EnemyLaser");
                     bullets.SetActive(true);
                     laser.SetActive(true);
                     if (timer >= bulletsDuration)
                     {
-                        if (audio.GetAudioPlaying("MachineGun")) audio.AudioStop("MachineGun");
+                        if (audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioStop("MachineGun");
                         bullets.SetActive(false);
                         originalChange();
                     }
                     if (bossLaser.finish == true)
                     {
                         laser.SetActive(false);
-                        if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
+                        if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
                     }
                     if (timer >= bulletsDuration + cooldownAttack && bossLaser.finish == true)
                     {
@@ -212,7 +212,7 @@ public class Boss : MonoBehaviour
             {
                 if (multiLaserFinish == false)
                 {
-                    if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+                    if (!audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioPlay("Bloops");
                     multiLaser.SetActive(true);
                     waterDrop.SetActive(true);
                     timer = 0;
@@ -234,7 +234,7 @@ public class Boss : MonoBehaviour
                     {
                         Destroy(bullet);
                     }
-                    if (audio.GetAudioPlaying("Bloops")) audio.AudioStop("Bloops");
+                    if (audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioStop("Bloops");
                     timer = 0;
                 }
                 else
@@ -245,16 +245,16 @@ public class Boss : MonoBehaviour
 
             if (attack == 3)
             {
-                if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
+                if (!audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
                     bullets.SetActive(true);
                     waterDrop.SetActive(true);
-                    if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+                    if (!audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioPlay("Bloops");
                     if (timer >= bulletsDuration)
                     {
-                        if (audio.GetAudioPlaying("MachineGun")) audio.AudioStop("MachineGun");
+                        if (audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioStop("MachineGun");
                         bullets.SetActive(false);
                         waterDrop.SetActive(false);
                         originalChange();
@@ -271,7 +271,7 @@ public class Boss : MonoBehaviour
                         }
                         timer = 0;
                         timer2 = 0;
-                        if (audio.GetAudioPlaying("Bloops")) audio.AudioStop("Bloops");
+                        if (audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioStop("Bloops");
                     }
                     else
                     {
@@ -290,14 +290,14 @@ public class Boss : MonoBehaviour
 
                 if (bossLaser.finish == false)
                 {
-                    if (!audio.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audio.AudioPlay("EnemyLaser");
+                    if (!audioSFX.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audioSFX.AudioPlay("EnemyLaser");
                     laser.SetActive(true);
                     timer = 0;
                 }
                 if (bossLaser.finish == true)
                 {
                     laser.SetActive(false);
-                    if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
+                    if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
                 }
 
                 if (multiLaserFinish == false)
