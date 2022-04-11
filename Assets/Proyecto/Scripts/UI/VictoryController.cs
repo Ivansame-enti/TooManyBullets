@@ -29,6 +29,14 @@ public class VictoryController : MonoBehaviour
             if (firstTime)
             {
                 AudioManagerController audio = FindObjectOfType<AudioManagerController>();
+                if (audio.GetAudioPlaying("EnemyLaser"))
+                {
+                    audio.AudioStop("EnemyLaser");
+                }
+                if (audio.GetAudioPlaying("Laser"))
+                {
+                    audio.AudioStop("Laser");
+                }
                 audio.AudioPlay("Victory");
                 audio.AudioPause("MainTheme");
                 if (GameObject.Find("MiniJoe")) GameObject.Find("MiniJoe").SetActive(false);
