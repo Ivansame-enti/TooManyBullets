@@ -31,8 +31,10 @@ public class CelestialAtackM4 : MonoBehaviour
     private float originalBoxColliderSizeY;
     private float boxColliderX;
     private float random;
+    private AudioManagerController audio;
     private void Awake()
     {
+        audio = FindObjectOfType<AudioManagerController>();
         m_transform = GetComponent<Transform>();
     }
     // Start is called before the first frame update
@@ -105,11 +107,15 @@ public class CelestialAtackM4 : MonoBehaviour
         else
         {
             if (!atkGoing && !atkExist)
+            {
                 nextActionTime -= Time.deltaTime;
+                if (audio.GetAudioPlaying("Laser")) audio.AudioStop("Laser");
+            }
         }
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
+            if (!audio.GetAudioPlaying("Laser")) audio.AudioPlay("Laser");
             //Debug.Log("funciona");
             atkExist = false;
             atkGoing = true;

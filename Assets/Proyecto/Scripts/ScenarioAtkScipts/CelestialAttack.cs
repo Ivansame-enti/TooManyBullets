@@ -32,8 +32,10 @@ public class CelestialAttack : MonoBehaviour
     private float boxColliderX;
     public float ScaleX, ScaleY, ScaleZ;
     private Vector3 scaleChange, originalScale;
+    private AudioManagerController audio;
     private void Awake()
     {
+        audio = FindObjectOfType<AudioManagerController>();
         m_transform = GetComponent<Transform>();
     }
     // Start is called before the first frame update
@@ -111,7 +113,7 @@ public class CelestialAttack : MonoBehaviour
         {
             //FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             //Debug.Log("funciona");
-            FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
+            audio.AudioPlay("Laser");
             atkExist = false;
             atkGoing = true;
             Destroy(warningClone.gameObject);
@@ -157,7 +159,7 @@ public class CelestialAttack : MonoBehaviour
                 }
                 if (width <= 0)
                 {
-                    FindObjectOfType<AudioManagerController>().AudioStop("Laser");
+                    audio.AudioStop("Laser");
                     timerAttack -= Time.deltaTime;
                 }
             }
