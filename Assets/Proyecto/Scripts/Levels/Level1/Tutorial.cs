@@ -39,7 +39,7 @@ public class Tutorial : MonoBehaviour
         laserPos1 = new Vector2(0, 30);
         laserPos2 = new Vector2(0, -100000000);
         tutorialEnemy.SetActive(false);
-        phaseInfo.text = "Phase 1/4";
+        phaseInfo.text = "Stage 1/4";
         textAnim.Play("phaseInfo");
     }
 

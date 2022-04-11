@@ -21,7 +21,7 @@ public class Level6Controller : MonoBehaviour
     void Start()
     {
         audio = FindObjectOfType<AudioManagerController>();
-        phaseInfo.text = "Phase 1/4";
+        phaseInfo.text = "Stage 1/4";
         textAnim.Play("phaseInfo");
         textFlag2 = true;
         textFlag3 = true;
@@ -43,7 +43,7 @@ public class Level6Controller : MonoBehaviour
             phase2.SetActive(true);
             if (textFlag2 == true)
             {
-                phaseInfo.text = "Phase 2/4";
+                phaseInfo.text = "Stage 2/4";
                 textAnim.Play("phaseInfo");
                 audio.AudioPlay("Plim");
                 textFlag2 = false;
@@ -59,7 +59,7 @@ public class Level6Controller : MonoBehaviour
             phase3.SetActive(true);
             if (textFlag3 == true)
             {
-                phaseInfo.text = "Phase 3/4";
+                phaseInfo.text = "Stage 3/4";
                 textAnim.Play("phaseInfo");
                 audio.AudioPlay("Plim");
                 textFlag3 = false;
@@ -74,7 +74,7 @@ public class Level6Controller : MonoBehaviour
             phase4.SetActive(true);
             if (textFlag4 == true)
             {
-                phaseInfo.text = "Phase 4/4";
+                phaseInfo.text = "Stage 4/4";
                 textAnim.Play("phaseInfo");
                 audio.AudioPlay("Plim");
                 textFlag4 = false;
