@@ -11908,6 +11908,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!1 &217267965
 GameObject:
   m_ObjectHideFlags: 0
@@ -42528,6 +42530,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!1 &473458917
 GameObject:
   m_ObjectHideFlags: 0
@@ -53188,6 +53192,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!1 &641311131
 GameObject:
   m_ObjectHideFlags: 0
@@ -63824,7 +63830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -64475,6 +64481,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!1 &917910424
 GameObject:
   m_ObjectHideFlags: 0
@@ -80729,6 +80737,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!4 &1247330237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
@@ -143659,6 +143669,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!1 &1907317609
 GameObject:
   m_ObjectHideFlags: 0
@@ -143718,6 +143730,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!1 &1920122226
 GameObject:
   m_ObjectHideFlags: 0
@@ -160022,6 +160036,8 @@ MonoBehaviour:
   ScaleX: 0.75
   ScaleY: 3
   ScaleZ: 1
+  laserCounter: 0
+  laserTimes: 0
 --- !u!1 &3047171143561877929
 GameObject:
   m_ObjectHideFlags: 0

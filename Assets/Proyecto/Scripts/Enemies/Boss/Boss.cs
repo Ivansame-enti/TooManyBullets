@@ -171,7 +171,6 @@ public class Boss : MonoBehaviour
         }
         if (bossHealth.health < bossHealth.maxHealth / 2 && startPhase2 == true)
         {
-            Debug.Log(attack);
             if (attack == 1)
             {
                 if (!audio.GetAudioPlaying("MachineGun")) audio.AudioPlay("MachineGun");
