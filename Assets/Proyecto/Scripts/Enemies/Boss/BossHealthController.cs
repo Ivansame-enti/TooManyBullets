@@ -15,12 +15,14 @@ public class BossHealthController : MonoBehaviour
     public Color originalColor;
     public Boss boss;
     public VictoryController victory;
-    
+    private AudioManagerController audio;
+
     // Start is called before the first frame update
     void Start()
     {
         originalColor = superiorFace.GetComponent<SpriteRenderer>().color;
         maxHealth = health;
+        audio = FindObjectOfType<AudioManagerController>();
     }
 
     // Update is called once per frame
@@ -56,9 +58,10 @@ public class BossHealthController : MonoBehaviour
                 Destroy(this.transform.parent.gameObject);
             else Destroy(this.gameObject);
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
-            Instantiate(deathPS2, this.transform.position, Quaternion.identity);
+            //Instantiate(deathPS2, this.transform.position, Quaternion.identity);
             Instantiate(swPs, this.transform.position, Quaternion.identity);
-            Instantiate(swPs2, this.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManagerController>().AudioPlay("BossDeath");
+            //Instantiate(swPs2, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
             victory.victory = true;
         }

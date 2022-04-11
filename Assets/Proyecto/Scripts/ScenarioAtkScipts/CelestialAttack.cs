@@ -31,8 +31,10 @@ public class CelestialAttack : MonoBehaviour
     private float originalBoxColliderSizeY;
     private float boxColliderX;
     public float ScaleX, ScaleY, ScaleZ;
-    private Vector3 scaleChange, originalScale;
     private AudioManagerController audio;
+    private Vector3 scaleChange, originalScale;
+    public bool laserCounter;
+    public int laserTimes;
     private void Awake()
     {
         audio = FindObjectOfType<AudioManagerController>();
@@ -98,8 +100,6 @@ public class CelestialAttack : MonoBehaviour
             warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
             laserParticles.transform.position = laserPos1;
             laserParticles.SetActive(true);
-            //Debug.Log("A");
-            //atkGoing = true;
             atkExist = true;
             timerWarning = 2f;
         }
@@ -111,8 +111,6 @@ public class CelestialAttack : MonoBehaviour
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
-            //FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
-            //Debug.Log("funciona");
             audio.AudioPlay("Laser");
             atkExist = false;
             atkGoing = true;
@@ -135,6 +133,10 @@ public class CelestialAttack : MonoBehaviour
             celestialAtk.SetActive(false);
             laserParticles.SetActive(false);
             laserParticles2.SetActive(false);
+            if(laserCounter == true)
+            {
+                laserTimes++;
+            }
             //timer = activacionAtkGoing;
         }
         else
@@ -143,8 +145,6 @@ public class CelestialAttack : MonoBehaviour
             {
                 if (width > 0)
                 {
-
-                    //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime*2;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);

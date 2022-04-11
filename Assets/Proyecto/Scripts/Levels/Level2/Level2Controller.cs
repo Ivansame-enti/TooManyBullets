@@ -31,7 +31,7 @@ public class Level2Controller : MonoBehaviour
         audio = FindObjectOfType<AudioManagerController>();
         phasecounter = 0;
         phase1.SetActive(true);
-        phaseInfo.text = "Phase 1/4";
+        phaseInfo.text = "Stage 1/4";
         textAnim.Play("phaseInfo");
         phase2.SetActive(false);
         phase3.SetActive(false);
@@ -79,7 +79,7 @@ public class Level2Controller : MonoBehaviour
             phase3.SetActive(false);
             phase4.SetActive(true);
             this.gameObject.SetActive(false);
-            phaseInfo.text = "Phase 4/4";
+            phaseInfo.text = "Stage 4/4";
             textAnim.Play("phaseInfo");
         }
     }
@@ -90,7 +90,7 @@ public class Level2Controller : MonoBehaviour
         {
             if (phasecounter == 0)
             {
-                phaseInfo.text = "Phase 2/4";
+                phaseInfo.text = "Stage 2/4";
                 textAnim.Play("phaseInfo");
                 audio.AudioPlay("Plim");
                 //Destroy(this.GetComponent<SpriteRenderer>());
@@ -106,7 +106,7 @@ public class Level2Controller : MonoBehaviour
                 phasecounter++;
             } else if (phasecounter == 1)
             {
-                phaseInfo.text = "Phase 3/4";
+                phaseInfo.text = "Stage 3/4";
                 textAnim.Play("phaseInfo");
                 GameObject[] bullets;
                 bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");

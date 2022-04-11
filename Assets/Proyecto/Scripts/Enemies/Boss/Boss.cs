@@ -21,7 +21,9 @@ public class Boss : MonoBehaviour
     private GameObject[] water;
     private AudioManagerController audio;
     private PauseController pc;
-    private bool bossStart;
+    private bool bossStart,multiLaserFinish;
+    public CelestialAttack cA;
+    public int numLaser,numLaser2Phase;
     // Start is called before the first frame update
     void Start()
     {
@@ -131,18 +133,22 @@ public class Boss : MonoBehaviour
             if (attack == 4)
             {
                 //audio.AudioPlay("Laser");
-                multiLaser.SetActive(true);
-                if (timer >= multiLaserDuration)
+                if(multiLaserFinish == false)
+                {
+                    multiLaser.SetActive(true);
+                    timer = 0;
+                }
+                
+                if(cA.laserTimes == numLaser)
                 {
                     multiLaser.SetActive(false);
+                    multiLaserFinish = true;
                 }
-                if (timer >= multiLaserDuration + cooldownAttack)
+                if (timer >= cooldownAttack && multiLaserFinish == true)
                 {
+                    cA.laserTimes = 0;
                     attack = Random.Range(1, 5);
-                    if (attack == 4)
-                    {
-                        attack = Random.Range(1, 5);
-                    }
+                    multiLaserFinish = false;
                     timer = 0;
                 }
                 else
@@ -204,28 +210,32 @@ public class Boss : MonoBehaviour
             }
             if (attack == 2)
             {
-                //audio.AudioPlay("Laser");
-                if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
-                multiLaser.SetActive(true);
-                waterDrop.SetActive(true);
-                if (timer >= multiLaserDuration)
+                if (multiLaserFinish == false)
+                {
+                    if (!audio.GetAudioPlaying("Bloops")) audio.AudioPlay("Bloops");
+                    multiLaser.SetActive(true);
+                    waterDrop.SetActive(true);
+                    timer = 0;
+                }
+
+                if (cA.laserTimes == numLaser2Phase)
                 {
                     multiLaser.SetActive(false);
                     waterDrop.SetActive(false);
-                    //audio.AudioStop("Bloops");
+                    multiLaserFinish = true;
                 }
-                if (timer >= multiLaserDuration + cooldownAttack)
+                if (timer >= cooldownAttack && multiLaserFinish == true)
                 {
-                    
+                    cA.laserTimes = 0;
                     attack = Random.Range(1, 5);
+                    multiLaserFinish = false;
                     water = GameObject.FindGameObjectsWithTag("EnemyBullet");
-
                     foreach (GameObject bullet in water)
                     {
                         Destroy(bullet);
                     }
-                    timer = 0;
                     if (audio.GetAudioPlaying("Bloops")) audio.AudioStop("Bloops");
+                    timer = 0;
                 }
                 else
                 {
@@ -277,21 +287,35 @@ public class Boss : MonoBehaviour
             if (attack == 4)
             {
                 //audio.AudioPlay("Laser");
-                if (!audio.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audio.AudioPlay("EnemyLaser");
-                multiLaser.SetActive(true);
-                laser.SetActive(true);
-                if (timer >= multiLaserDuration)
+
+                if (bossLaser.finish == false)
                 {
-                    multiLaser.SetActive(false);
+                    if (!audio.GetAudioPlaying("EnemyLaser") && pc.pauseState == false) audio.AudioPlay("EnemyLaser");
+                    laser.SetActive(true);
+                    timer = 0;
                 }
                 if (bossLaser.finish == true)
                 {
                     laser.SetActive(false);
                     if (audio.GetAudioPlaying("EnemyLaser")) audio.AudioStop("EnemyLaser");
                 }
-                if (timer >= multiLaserDuration + cooldownAttack + 5 && bossLaser.finish == true)
+
+                if (multiLaserFinish == false)
                 {
+                    multiLaser.SetActive(true);
+                    timer = 0;
+                }
+
+                if (cA.laserTimes == numLaser2Phase)
+                {
+                    multiLaser.SetActive(false);
+                    multiLaserFinish = true;
+                }
+                if (timer >= cooldownAttack && multiLaserFinish == true)
+                {
+                    cA.laserTimes = 0;
                     attack = Random.Range(1, 5);
+                    multiLaserFinish = false;
                     timer = 0;
                 }
                 else
