@@ -32,6 +32,8 @@ public class CelestialAttack : MonoBehaviour
     private float boxColliderX;
     public float ScaleX, ScaleY, ScaleZ;
     private Vector3 scaleChange, originalScale;
+    public bool laserCounter;
+    public int laserTimes;
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -133,6 +135,10 @@ public class CelestialAttack : MonoBehaviour
             celestialAtk.SetActive(false);
             laserParticles.SetActive(false);
             laserParticles2.SetActive(false);
+            if(laserCounter == true)
+            {
+                laserTimes++;
+            }
             //timer = activacionAtkGoing;
         }
         else
