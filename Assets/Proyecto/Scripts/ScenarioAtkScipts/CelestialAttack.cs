@@ -98,8 +98,6 @@ public class CelestialAttack : MonoBehaviour
             warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
             laserParticles.transform.position = laserPos1;
             laserParticles.SetActive(true);
-            //Debug.Log("A");
-            //atkGoing = true;
             atkExist = true;
             timerWarning = 2f;
         }
@@ -111,8 +109,6 @@ public class CelestialAttack : MonoBehaviour
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
-            //FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
-            //Debug.Log("funciona");
             FindObjectOfType<AudioManagerController>().AudioPlay("Laser");
             atkExist = false;
             atkGoing = true;
@@ -147,8 +143,6 @@ public class CelestialAttack : MonoBehaviour
             {
                 if (width > 0)
                 {
-
-                    //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime*2;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
