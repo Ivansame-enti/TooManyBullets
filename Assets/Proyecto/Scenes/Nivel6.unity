@@ -614,6 +614,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7346800036578399500, guid: 2c8adca3bad351a42bdf89771186839b,
         type: 3}
+    - target: {fileID: 3969236534520329251, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236534531769471, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: audios.Array.size
@@ -1071,6 +1076,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 143
       objectReference: {fileID: 0}
+    - target: {fileID: 3969236535589140712, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3969236535606439617, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: laserCoolDown
@@ -1174,6 +1184,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 3969236535906652549, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236535906652549, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
       propertyPath: m_fontSizeBase
       value: 80
       objectReference: {fileID: 0}
@@ -1197,6 +1212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969236536003968922, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5403404908034401348, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
