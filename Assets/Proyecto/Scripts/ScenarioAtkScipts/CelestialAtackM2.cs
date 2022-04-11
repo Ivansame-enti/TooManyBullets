@@ -22,7 +22,7 @@ public class CelestialAtackM2 : MonoBehaviour
     public LineRenderer m_lineRenderer;
     Transform m_transform;
     Vector2 laserPos1, laserPos2;
-    public GameObject laserParticles, laserParticles2;
+    public GameObject laserParticles2;
     public int minFrequencylaser, maxFrequencylaser;
     private float originalWidth;
     private float width;
@@ -51,7 +51,7 @@ public class CelestialAtackM2 : MonoBehaviour
     {
         Draw2DRay(laserPos1, laserPos2 * defDistanceRay);
         collisionLaser.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
-        laserParticles.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
+        //laserParticles.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
         laserParticles2.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
         //Debug.Log(collisionLaser.transform.position.x);
 
@@ -89,12 +89,12 @@ public class CelestialAtackM2 : MonoBehaviour
               (randomValor.y + random)
             );
 
-            laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
+            //laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
 
             warningClone = Instantiate(warning, new Vector2(randomValor.x + random, randomValor.y + random), warning.transform.rotation);
             warningClone.transform.rotation = new Quaternion(90, 90, 0, 1);
-            laserParticles.SetActive(true);
-            laserParticles.transform.position = new Vector2(-30, laserPos1.y);
+            //laserParticles.SetActive(true);
+            //laserParticles.transform.position = new Vector2(-30, laserPos1.y);
             //laserParticles.transform.rotation = new Quaternion(90,90,0,1);
 
 
@@ -125,9 +125,9 @@ public class CelestialAtackM2 : MonoBehaviour
             laserParticles2.transform.rotation = new Quaternion(0, 0, 0, 1);
             laserParticles2.transform.position = new Vector2(-30, laserPos1.y); ;
             laserParticles2.SetActive(true);
-            laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
-            laserParticles.transform.position = new Vector2(-30, laserPos1.y); ;
-            laserParticles.SetActive(true);
+            //laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
+            //laserParticles.transform.position = new Vector2(-30, laserPos1.y); ;
+            //laserParticles.SetActive(true);
             timerAttack = activacionAtk;
 
         }
