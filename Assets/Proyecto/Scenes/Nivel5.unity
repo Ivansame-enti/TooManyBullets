@@ -2593,7 +2593,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626465539}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -12950,7 +12950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.7, y: 3}
+  m_AnchoredPosition: {x: 46.7, y: 33.4}
   m_SizeDelta: {x: 339.903, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1502650907
@@ -13754,8 +13754,10 @@ MonoBehaviour:
   isDead: {fileID: 1496381712}
   restartButton: {fileID: 874173223}
   GameOverUI: {fileID: 626465539}
-  gameOverPanel: {fileID: 696234075}
+  gameOverPanel: {fileID: 2092542988}
   gameObstacles: {fileID: 0}
+  UI: {fileID: 1664130014}
+  canvasTutorial: {fileID: 0}
 --- !u!4 &1576646845
 Transform:
   m_ObjectHideFlags: 0
@@ -14987,7 +14989,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Laser
     clip: {fileID: 8300000, guid: 676c19470b782884b96c5587c5a429fd, type: 3}
-    volume: 0.15
+    volume: 0.1
     pitch: 1
     loop: 0
     audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,

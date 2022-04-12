@@ -10,6 +10,8 @@ public class GameOver : MonoBehaviour
     public GameObject restartButton, GameOverUI,gameOverPanel,gameObstacles;
     private bool gameOver,firstTime;
     public static bool goingLS;
+    //private GameObject[] water;
+    public GameObject UI, canvasTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,29 @@ public class GameOver : MonoBehaviour
         {
             if (firstTime)
             {
+                /*water = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                foreach (GameObject bullet in water)
+                {
+                    Destroy(bullet);
+                }*/
+
+                AudioManagerController audio = FindObjectOfType<AudioManagerController>();
+
+                /*if (audio.GetAudioPlaying("MainTheme"))
+                {
+                    audio.AudioStop("MainTheme");
+                }*/
+
+                if (audio.GetAudioPlaying("EnemyLaser"))
+                {
+                    audio.AudioStop("EnemyLaser");
+                }
+                if (audio.GetAudioPlaying("Laser"))
+                {
+                    audio.AudioStop("Laser");
+                }
+
                 if (GameObject.Find("MiniJoe")) GameObject.Find("MiniJoe").SetActive(false);
                 if (gameObstacles != null)
                 {
@@ -32,6 +57,8 @@ public class GameOver : MonoBehaviour
                 }
                 firstTime = false;
             }
+            if(canvasTutorial != null) canvasTutorial.SetActive(false);
+            UI.SetActive(false);
             gameOver = true;
             GameOverUI.SetActive(true);
             gameOverPanel.SetActive(true);

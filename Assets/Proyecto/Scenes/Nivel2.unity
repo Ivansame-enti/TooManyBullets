@@ -7665,8 +7665,10 @@ MonoBehaviour:
   isDead: {fileID: 1315369027}
   restartButton: {fileID: 1667750962}
   GameOverUI: {fileID: 362479656}
-  gameOverPanel: {fileID: 1878980933}
+  gameOverPanel: {fileID: 740164977}
   gameObstacles: {fileID: 0}
+  UI: {fileID: 445056417}
+  canvasTutorial: {fileID: 1339493180}
 --- !u!4 &319701846
 Transform:
   m_ObjectHideFlags: 0
@@ -7878,7 +7880,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362479656}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -14935,7 +14937,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Laser
     clip: {fileID: 8300000, guid: 676c19470b782884b96c5587c5a429fd, type: 3}
-    volume: 0.15
+    volume: 0.1
     pitch: 1
     loop: 0
     audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
@@ -15110,7 +15112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.7, y: 3}
+  m_AnchoredPosition: {x: 46.7, y: 25.9}
   m_SizeDelta: {x: 339.903, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1394946366
@@ -18794,7 +18796,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &1940683179
 GameObject:
