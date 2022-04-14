@@ -325,7 +325,7 @@ Canvas:
   m_GameObject: {fileID: 2048710619}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   spawnParticles: {fileID: 9092008219153462090, guid: 2edcd942b7f5040468c672d1d2d0188b,
     type: 3}
   anim: {fileID: 102427436}
-  enemy: {fileID: 3782049486628547874}
+  muteAttack: 0
 --- !u!114 &6094048694357508492
 MonoBehaviour:
   m_ObjectHideFlags: 0

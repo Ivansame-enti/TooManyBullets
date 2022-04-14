@@ -13,8 +13,17 @@ public class HealthBarController : MonoBehaviour
     private bool fadeOut=false;
     public float fadeOutSpeed;
     public GameObject enemy;
+    private PauseController pc;
+    private bool flagPause;
+    private float defaultt;
     //private Vector3 OrgPosition;
 
+    public void Start()
+    {
+        pc = FindObjectOfType<PauseController>();
+        flagPause = false;
+        
+    }
     public void FadeOutHealthBar()
     {
         float  fadeAmount = this.GetComponent<CanvasGroup>().alpha - (fadeOutSpeed * Time.deltaTime);
@@ -28,7 +37,7 @@ public class HealthBarController : MonoBehaviour
     }
 
     public void SetHealthBar(float currentHealth, float maxHealth)
-    { 
+    {
         healthBar.maxValue = maxHealth;
         if (currentHealth < maxHealth)
         {
@@ -43,14 +52,50 @@ public class HealthBarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pc != null)
+        {
+            if (pc.pauseState == true && flagPause == false)
+            {
+                defaultt = this.GetComponent<CanvasGroup>().alpha;
+                this.GetComponent<CanvasGroup>().alpha = 0;
+                flagPause = true;
+            }
+            if (flagPause == true && pc.pauseState == false)
+            {
+                flagPause = false;
+                this.GetComponent<CanvasGroup>().alpha = defaultt;
+
+            }
+        }
+
         healthBar.transform.position = Camera.main.WorldToScreenPoint(enemy.transform.position + offSet);
 
-        currentTimer += Time.deltaTime;
-
-        if (currentTimer > maxTimer && fadeOut)
+        if (pc!=null)
         {
-            FadeOutHealthBar();
+            if (pc.pauseState == false)
+            {
+                currentTimer += Time.deltaTime;
+
+                if (currentTimer > maxTimer && fadeOut)
+                {
+                    FadeOutHealthBar();
+                }
+            }
         }
+        else
+        {
+           currentTimer += Time.deltaTime;
+
+            if (currentTimer > maxTimer && fadeOut)
+            {
+                FadeOutHealthBar();
+            }
+        }
+        
+
+
+ 
+
     }
 
 }
