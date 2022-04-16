@@ -9,7 +9,7 @@ public class CelestialAttack : MonoBehaviour
     public Vector2 positionA, positionB;
     private float nextActionTime = 0.0f;
     private float warningTiming;
-
+   
     private float timerWarning;
     private float timerAttack;
     public float activacionAtk;
@@ -30,16 +30,24 @@ public class CelestialAttack : MonoBehaviour
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
     private float boxColliderX;
-
+    public float ScaleX, ScaleY, ScaleZ;
+    private AudioManagerController audioSFX;
+    private Vector3 scaleChange, originalScale;
+    public bool laserCounter;
+    public int laserTimes;
     private void Awake()
     {
+        audioSFX = FindObjectOfType<AudioManagerController>();
         m_transform = GetComponent<Transform>();
     }
     // Start is called before the first frame update
     void Start()
     {
+        //pc = FindObjectOfType<PauseController>();
         width = 2.0f;
         originalWidth = celestialAtk.GetComponent<LineRenderer>().startWidth;
+       
+      
         reduceWidth = false;
         originalBoxColliderSizeX = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.x;
         originalBoxColliderSizeY = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.y;
@@ -64,11 +72,13 @@ public class CelestialAttack : MonoBehaviour
     {
         if (nextActionTime <= 0) //Hace warning
         {
+            originalScale = new Vector3(ScaleX,ScaleY,ScaleZ);
+            laserParticles2.transform.localScale = originalScale;
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
             reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
-            celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
+            //celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
             celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
             nextActionTime = warningTiming;
@@ -90,8 +100,6 @@ public class CelestialAttack : MonoBehaviour
             warningClone = Instantiate(warning, randomValor, warning.transform.rotation);
             laserParticles.transform.position = laserPos1;
             laserParticles.SetActive(true);
-            //Debug.Log("A");
-            //atkGoing = true;
             atkExist = true;
             timerWarning = 2f;
         }
@@ -103,7 +111,7 @@ public class CelestialAttack : MonoBehaviour
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
-            //Debug.Log("funciona");
+            audioSFX.AudioPlay("Laser");
             atkExist = false;
             atkGoing = true;
             Destroy(warningClone.gameObject);
@@ -125,6 +133,10 @@ public class CelestialAttack : MonoBehaviour
             celestialAtk.SetActive(false);
             laserParticles.SetActive(false);
             laserParticles2.SetActive(false);
+            if(laserCounter == true)
+            {
+                laserTimes++;
+            }
             //timer = activacionAtkGoing;
         }
         else
@@ -133,15 +145,23 @@ public class CelestialAttack : MonoBehaviour
             {
                 if (width > 0)
                 {
-                    //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
-                    boxColliderX -= Time.deltaTime;
+                    boxColliderX -= Time.deltaTime*2;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
-                    celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
-                    laserParticles.SetActive(false);
-                    laserParticles2.SetActive(false);
+                    //celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
+
+                    scaleChange = new Vector3(-0.015f, 0, 0);
+                    laserParticles2.transform.localScale += scaleChange;
+                  //  transform.localScale = new Vector3(width-1, width-1, width-1);
+                  
+                    //Vector3 laserParticles2 = transform.localScale;
+                    //transform.localScale = new Vector3(width-1, width-1, width-1);
                 }
-                if (width <= 0) timerAttack -= Time.deltaTime;
+                if (width <= 0)
+                {
+                    audioSFX.AudioStop("Laser");
+                    timerAttack -= Time.deltaTime;
+                }
             }
             if (timerAttack <= 0.2 && atkGoing) reduceWidth = true;
             else timerAttack -= Time.deltaTime;

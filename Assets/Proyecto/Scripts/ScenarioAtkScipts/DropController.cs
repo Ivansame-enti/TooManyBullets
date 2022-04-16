@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DropController : MonoBehaviour
 {
@@ -10,11 +11,16 @@ public class DropController : MonoBehaviour
     private Color attackColor = Color.magenta;
     public float scaleTime;
     public GameObject destroyPS;
+    private bool level2;
+    private bool level8;
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        
+        if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
+        else level2 = true;
+        if (SceneManager.GetActiveScene().name != "BossLevel") level8 = false;
+        else level8 = true;
     }
 
     // Update is called once per frame
@@ -28,11 +34,10 @@ public class DropController : MonoBehaviour
         
         if (collision.gameObject.tag.Equals("DropFaster"))
         {
+            if(!level2 && !level8) FindObjectOfType<AudioManagerController>().AudioPlay("WaterDrop");
             WaterDropClone.GetComponent<Rigidbody2D>().drag = 0;
             WaterDropClone.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -15,0);
             rend.material.color = attackColor;
-
-
         }
         
         if (collision.gameObject.tag.Equals("DestroyBulletCollider"))

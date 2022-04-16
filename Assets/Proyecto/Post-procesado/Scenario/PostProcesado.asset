@@ -58,32 +58,32 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   colorFilter:
-    overrideState: 0
+    overrideState: 1
     value: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   hueShift:
-    overrideState: 0
+    overrideState: 1
     value: 0
   saturation:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 10
   brightness:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 0
+    overrideState: 1
     value: 0
   contrast:
-    overrideState: 0
-    value: 25
+    overrideState: 1
+    value: 16
   mixerRedOutRedIn:
     overrideState: 1
-    value: 200
+    value: 97
   mixerRedOutGreenIn:
     overrideState: 1
-    value: -170
+    value: 135
   mixerRedOutBlueIn:
     overrideState: 1
-    value: 28
+    value: 49
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
@@ -1329,7 +1329,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 10
+    value: 15
   threshold:
     overrideState: 1
     value: 1
@@ -1341,10 +1341,10 @@ MonoBehaviour:
     value: 65472
   diffusion:
     overrideState: 0
-    value: 7
+    value: 7.65
   anamorphicRatio:
     overrideState: 0
-    value: 0
+    value: -0.08
   color:
     overrideState: 1
     value: {r: 0.73763466, g: 0, b: 1, a: 1}

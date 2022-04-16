@@ -20,7 +20,7 @@ public class CelestialAttackMV2 : MonoBehaviour
     Vector2 randomValor;
     public float defDistanceRay = 100;
     public LineRenderer m_lineRenderer;
-    Transform m_transform;
+    //Transform m_transform;
     Vector2 laserPos1, laserPos2;
     public GameObject laserParticles, laserParticles2;
     public int minFrequencylaser, maxFrequencylaser;
@@ -33,7 +33,7 @@ public class CelestialAttackMV2 : MonoBehaviour
     private float random;
     private void Awake()
     {
-        m_transform = GetComponent<Transform>();
+        //m_transform = GetComponent<Transform>();
     }
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,7 @@ public class CelestialAttackMV2 : MonoBehaviour
             reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
-            celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
+            //celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
             celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
             nextActionTime = warningTiming;
@@ -151,7 +151,7 @@ public class CelestialAttackMV2 : MonoBehaviour
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime;
                     celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
-                    celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
+                    //celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
                     laserParticles.SetActive(false);
                     laserParticles2.SetActive(false);
                 }

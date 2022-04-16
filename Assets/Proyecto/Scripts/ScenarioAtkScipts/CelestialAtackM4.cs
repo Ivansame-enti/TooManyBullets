@@ -26,13 +26,15 @@ public class CelestialAtackM4 : MonoBehaviour
     public int minFrequencylaser, maxFrequencylaser;
     private float originalWidth;
     private float width;
-    private bool reduceWidth;
+    //private bool reduceWidth;
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
     private float boxColliderX;
     private float random;
+    private AudioManagerController audioSFX;
     private void Awake()
     {
+        audioSFX = FindObjectOfType<AudioManagerController>();
         m_transform = GetComponent<Transform>();
     }
     // Start is called before the first frame update
@@ -40,7 +42,7 @@ public class CelestialAtackM4 : MonoBehaviour
     {
         width = 2.0f;
         originalWidth = celestialAtk.GetComponent<LineRenderer>().startWidth;
-        reduceWidth = false;
+        //reduceWidth = false;
         originalBoxColliderSizeX = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.x;
         originalBoxColliderSizeY = celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size.y;
     }
@@ -67,10 +69,10 @@ public class CelestialAtackM4 : MonoBehaviour
         if (nextActionTime <= 0) //Hace warning
         {
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
-            reduceWidth = false;
+            //reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
-            celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
+            //celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
             celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
             nextActionTime = warningTiming;
@@ -105,11 +107,15 @@ public class CelestialAtackM4 : MonoBehaviour
         else
         {
             if (!atkGoing && !atkExist)
+            {
                 nextActionTime -= Time.deltaTime;
+                if (audioSFX.GetAudioPlaying("Laser")) audioSFX.AudioStop("Laser");
+            }
         }
 
         if (timerWarning <= 0 && atkExist) //Laser
         {
+            if (!audioSFX.GetAudioPlaying("Laser")) audioSFX.AudioPlay("Laser");
             //Debug.Log("funciona");
             atkExist = false;
             atkGoing = true;

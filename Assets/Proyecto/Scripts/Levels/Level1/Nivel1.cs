@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Nivel1 : MonoBehaviour
 {
@@ -10,12 +11,21 @@ public class Nivel1 : MonoBehaviour
     private bool firstTime;
     public VictoryController victoryController;
     //public GameObject laser;
+    public DashController dc;
+    private AudioManagerController audioSFX;
+    public TextMeshProUGUI phaseInfo;
+    public Animation textAnim;
+    private bool textFlag2, textFlag3, textFlag4;
     // Start is called before the first frame update
     void Start()
     {
+        audioSFX = FindObjectOfType<AudioManagerController>();
         startLevel = false;
         clearPart1 = false;
         firstTime = true;
+        textFlag2 = true;
+        textFlag3 = true;
+        textFlag4 = true;
     }
 
     // Update is called once per frame
@@ -24,6 +34,14 @@ public class Nivel1 : MonoBehaviour
         
         if (startLevel == true && firstTime)
         {
+            if (textFlag2 == true)
+            {
+                phaseInfo.text = "Stage 2/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag2 = false;
+            }
+            dc.canDash = true;
             firstTime = false;
             FindObjectOfType<Tutorial>().tutorialImageAttack.SetActive(false);
             part1.SetActive(true);
@@ -33,6 +51,13 @@ public class Nivel1 : MonoBehaviour
         if (part1.transform.childCount <= 0)
         {
             part2.SetActive(true);
+            if (textFlag3 == true)
+            {
+                phaseInfo.text = "Stage 3/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag3 = false;
+            }
         }
 
         if (part2.transform.childCount <= 0 && clearPart1 == false)
@@ -48,6 +73,13 @@ public class Nivel1 : MonoBehaviour
         if (part2.transform.childCount <= 0 && timer < 0)
         {
             part3.SetActive(true);
+            if (textFlag4 == true)
+            {
+                phaseInfo.text = "Stage 4/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag4 = false;
+            }
             //scenarioAttacks.SetActive(true);
             multiLaser.SetActive(false);
             uniLaser.SetActive(true);

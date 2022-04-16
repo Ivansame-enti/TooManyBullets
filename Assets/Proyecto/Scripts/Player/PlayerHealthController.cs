@@ -12,24 +12,39 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
-    public GameObject deathPS;
+    public GameObject deathPS,lowHealthPanel;
     private bool hitInmunity;
     public bool dead;
     public PauseController pause;
+    private AudioManagerController audioManager;
 
 
     private void dealDamage()
     {
         //if (timer <= 0)
         //{
-        if (currentHealth > 0 && currentHealth < 1) currentHealth = 0;
-        if (currentHealth > 1 && currentHealth < 2) currentHealth = 1;
-        if (currentHealth > 2 && currentHealth < 3) currentHealth = 2;
+        //Si se estaba curando
+        if (currentHealth > 0 && currentHealth < 1)
+        {
+            currentHealth = 0;
+            GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable = GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().lastCurrentHeals;
+        }
+        if (currentHealth > 1 && currentHealth < 2)
+        {
+            currentHealth = 1;
+            GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable = GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().lastCurrentHeals;
+        }
+        if (currentHealth > 2 && currentHealth < 3)
+        {
+            currentHealth = 2;
+            GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().currenntHealsAvailable = GameObject.Find("MiniJoe").GetComponent<MiniJoeHealController>().lastCurrentHeals;
+        }
+
         currentHealth--;
         shakeCamera.SetTrigger("Shake");
         timer = inmortalTime;
         Time.timeScale = 0.2f;
-        if (currentHealth > 0) FindObjectOfType<AudioManagerController>().AudioPlay("PlayerHit");
+        if (currentHealth > 0) audioManager.AudioPlay("PlayerHit");
         //}
     }
 
@@ -37,6 +52,7 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = health;
+        audioManager = FindObjectOfType<AudioManagerController>();
     }
 
     // Update is called once per frame
@@ -92,12 +108,20 @@ public class PlayerHealthController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            FindObjectOfType<AudioManagerController>().AudioPlay("PlayerDeath");
+            audioManager.AudioPlay("PlayerDeath");
             Time.timeScale = 1.0f;
             Instantiate(deathPS, this.transform.position, Quaternion.identity);
             dead = true;
             Destroy(this.gameObject);
 
+        }
+        if(currentHealth < 2)
+        {
+            lowHealthPanel.SetActive(true);
+        }
+        else
+        {
+            lowHealthPanel.SetActive(false);
         }
     }
 

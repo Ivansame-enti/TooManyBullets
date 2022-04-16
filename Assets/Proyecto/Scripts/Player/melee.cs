@@ -16,7 +16,7 @@ public class melee : MonoBehaviour
     float result, result2, result3, result4;
     public ParticleSystem particles;
     public PauseController pause;
-    private bool flagSpeed=false;
+    //private bool flagSpeed=false;
 
     /*private void Damage(float rotx, float roty, float rotx2, float roty2)
     {
@@ -124,6 +124,7 @@ public class melee : MonoBehaviour
             {
                 //flagSpeed = true;
                 //this.GetComponent<movement>().speed /= 3;
+                FindObjectOfType<AudioManagerController>().AudioPlay("MeleeAttack");
                 ataquei2 = Instantiate(ataque360);
                 Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                 ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
@@ -147,6 +148,7 @@ public class melee : MonoBehaviour
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
 
                     //Destroy(this.ataquei2, 1);*/
+                    FindObjectOfType<AudioManagerController>().AudioPlay("MeleeAttack");
                     ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);
@@ -210,7 +212,7 @@ public class melee : MonoBehaviour
                     this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90 - 0));
                     ataquei2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180 - 0));
                     */
-
+                    FindObjectOfType<AudioManagerController>().AudioPlay("MeleeAttack");
                     ataquei2 = Instantiate(ataque360);
                     Instantiate(particles, new Vector2(transform.position.x + -1 * attackRange, transform.position.y + 0 * -attackRange), Quaternion.identity);
                     ataquei2.transform.position = new Vector2(transform.position.x, transform.position.y);

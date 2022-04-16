@@ -8,6 +8,7 @@ public class SelectLevelsButton : MonoBehaviour
 {
     public GameObject menuUI, levelSelectorUI;
     public GameObject returnButton,level1, level2, level3, level4, level5, level6, level7, level8;
+    public GameObject pantalla;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +64,7 @@ public class SelectLevelsButton : MonoBehaviour
     {
         menuUI.SetActive(true);
         levelSelectorUI.SetActive(false);
+        pantalla.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(returnButton);
     }

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Nivel3 : MonoBehaviour
 {
     public bool startLevel;
@@ -12,13 +12,23 @@ public class Nivel3 : MonoBehaviour
     public PlayerHealthController playerIsDead;
     public GameObject laserXbox, laserPS4, laserKeyboard;
     public PlayerHealthController phc;
+    private AudioManagerController audioSFX;
+    public TextMeshProUGUI phaseInfo;
+    public Animation textAnim;
+    private bool textFlag2, textFlag3, textFlag4;
     // Start is called before the first frame update
     void Start()
     {
+        audioSFX = FindObjectOfType<AudioManagerController>();
         phc.currentHealth--;
         startLevel = false;
         laserText.SetActive(false);
         healText.SetActive(true);
+        phaseInfo.text = "Stage 1/4";
+        textAnim.Play("phaseInfo");
+        textFlag2 = true;
+        textFlag3 = true;
+        textFlag4 = true;
     }
 
     // Update is called once per frame
@@ -45,20 +55,45 @@ public class Nivel3 : MonoBehaviour
         if (part1.transform.childCount <= 0 && playerIsDead.dead == false && phc.currentHealth==phc.health)
         {
             part2.SetActive(true);
+
+            if(textFlag2 == true)
+            {
+                phaseInfo.text = "Stage 2/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag2 = false;
+            }
+
             laserText.SetActive(true);
             healText.SetActive(false);
             objects.SetActive(true);
         }
 
+
         if (part2.transform.childCount <= 0)
         {
             part3.SetActive(true);
+            if (textFlag3 == true)
+            {
+                phaseInfo.text = "Stage 3/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag3 = false;
+            }
+
             objects.SetActive(false);
             tutorial.SetActive(false);
         }
         if (part3.transform.childCount <= 0)
         {
             part4.SetActive(true);
+            if (textFlag4 == true)
+            {
+                phaseInfo.text = "Stage 4/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag4 = false;
+            }
             scenarioattack1.SetActive(true);
         }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Level7Controller : MonoBehaviour
 {
@@ -17,16 +18,24 @@ public class Level7Controller : MonoBehaviour
     public GameObject enemigo41, enemigo42, enemigo43, enemigo44, enemigo45, enemigo46;
     private int phasecounter;
     private bool oneTime;
-    private float time = 0.0f, timeaux = 0.0f;
+    private float time = 0.0f;
     private bool cambio = true;
     private bool existe = false;
     private bool existe2 = false;
+    private AudioManagerController audioSFX;
+    public TextMeshProUGUI phaseInfo;
+    public Animation textAnim;
+    private bool textFlag2, textFlag3, textFlag4;
     // Start is called before the first frame update
     void Start()
     {
-
-
-         scenario.SetActive(true);
+        audioSFX = FindObjectOfType<AudioManagerController>();
+        phaseInfo.text = "Stage 1/4";
+        textAnim.Play("phaseInfo");
+        textFlag2 = true;
+        textFlag3 = true;
+        textFlag4 = true;
+        scenario.SetActive(true);
        phase1.SetActive(true); 
        // scenario.SetActive(false);
     //    phase4.SetActive(true);
@@ -39,6 +48,13 @@ public class Level7Controller : MonoBehaviour
         {
 
             phase2.SetActive(true);
+            if (textFlag2 == true)
+            {
+                phaseInfo.text = "Stage 2/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag2 = false;
+            }
             scenario.SetActive(false);
         }
 
@@ -47,6 +63,13 @@ public class Level7Controller : MonoBehaviour
 
             phase2.SetActive(false);
             phase3.SetActive(true);
+            if (textFlag3 == true)
+            {
+                phaseInfo.text = "Stage 3/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag3 = false;
+            }
 
             if (!existe)
             {
@@ -97,6 +120,13 @@ public class Level7Controller : MonoBehaviour
             multi2a.SetActive(false);
             multi4a.SetActive(false);
             phase4.SetActive(true);
+            if (textFlag4 == true)
+            {
+                phaseInfo.text = "Stage 4/4";
+                textAnim.Play("phaseInfo");
+                audioSFX.AudioPlay("Plim");
+                textFlag4 = false;
+            }
             scenario.SetActive(false);
         }
 

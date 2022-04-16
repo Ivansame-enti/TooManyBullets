@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Tutorial : MonoBehaviour
 {
@@ -16,13 +17,16 @@ public class Tutorial : MonoBehaviour
     public GameObject laserParticles;
     //Enemigo prueba
     public GameObject tutorialEnemy;
-    public GameObject tutorialImageControls,tutorialImageDash,tutorialImageAttack;
-    public GameObject ps4Moviment, keyboardMovement, xboxAttack,PS4Attack,PS4Dash,xboxDash,keyboarDash,keyboardAttack;
+    public GameObject tutorialImageControls, tutorialImageDash, tutorialImageAttack;
+    public GameObject ps4Moviment, keyboardMovement, xboxAttack, PS4Attack, PS4Dash, xboxDash, keyboarDash, keyboardAttack;
     public movement movementToZero;
     public Nivel1 lvl1;
-    public GameObject tutorialEnemies,player;
-
-
+    public GameObject tutorialEnemies, player;
+    public DashController dc;
+    public TextMeshProUGUI phaseInfo;
+    public Animation textAnim;
+    public GameObject particles;
+    //private GameObject particles1;
     //private new Vector2();
     // Start is called before the first frame update
     void Start()
@@ -32,15 +36,17 @@ public class Tutorial : MonoBehaviour
         tutorialImageDash.SetActive(false);
         tutorialImageAttack.SetActive(false);
         m_transform = GetComponent<Transform>();
-        laserPos1 = new Vector2(0,30);
-        laserPos2 = new Vector2(0,-100000000);
+        laserPos1 = new Vector2(0, 30);
+        laserPos2 = new Vector2(0, -100000000);
         tutorialEnemy.SetActive(false);
+        phaseInfo.text = "Stage 1/4";
+        textAnim.Play("phaseInfo");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (tutorialEnemies.transform.childCount <= 0 && lvl1.startLevel== false)
+        if (tutorialEnemies.transform.childCount <= 0 && lvl1.startLevel == false)
         {
             lvl1.startLevel = true;
             movementToZero.speed += defaultPlayerVel;
@@ -62,13 +68,13 @@ public class Tutorial : MonoBehaviour
             PS4Dash.SetActive(false);
             keyboarDash.SetActive(false);
         }
-        else if (ControllerInput.PS4_Controller == true )
+        else if (ControllerInput.PS4_Controller == true)
         {
             xboxDash.SetActive(false);
             PS4Dash.SetActive(true);
             keyboarDash.SetActive(false);
         }
-        else if(ControllerInput.Xbox_One_Controller == false && ControllerInput.PS4_Controller == false)
+        else if (ControllerInput.Xbox_One_Controller == false && ControllerInput.PS4_Controller == false)
         {
             xboxDash.SetActive(false);
             PS4Dash.SetActive(false);
@@ -88,7 +94,7 @@ public class Tutorial : MonoBehaviour
             PS4Attack.SetActive(true);
             keyboardAttack.SetActive(false);
         }
-        else if(ControllerInput.Xbox_One_Controller == false)
+        else if (ControllerInput.Xbox_One_Controller == false)
         {
             xboxAttack.SetActive(false);
             PS4Attack.SetActive(false);
@@ -100,7 +106,7 @@ public class Tutorial : MonoBehaviour
 
     private void tutorial()
     {
-        if(flag == 0)
+        if (flag == 0)
         {
             tutorialImageControls.SetActive(false);
             tutorialImageDash.SetActive(true);
@@ -109,16 +115,17 @@ public class Tutorial : MonoBehaviour
 
 
         }
-        if(flag == 1)
+        if (flag == 1)
         {
-            
-           tutorialImageDash.SetActive(false);
-           tutorialImageAttack.SetActive(true);
-           celestialAtk.SetActive(false);
-           tutorialEnemy.SetActive(true);
+
+            tutorialImageDash.SetActive(false);
+            tutorialImageAttack.SetActive(true);
+            celestialAtk.SetActive(false);
+            tutorialEnemy.SetActive(true);
             player.transform.position = new Vector2(-11, 0);
             this.transform.position = new Vector2(-30, 0);
-           movementToZero.speed -= defaultPlayerVel;
+            movementToZero.speed -= defaultPlayerVel;
+            dc.canDash = false;
         }
     }
 
@@ -126,8 +133,11 @@ public class Tutorial : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("PlayerTag"))
         {
+            Instantiate(particles, this.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
             tutorial();
             flag++;
+            
         }
     }
     void ShootLaser()

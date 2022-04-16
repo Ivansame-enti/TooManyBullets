@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: ac69b22f14fdf8a43b1b18a5cd7d9714,
     type: 3}
-  m_Color: {r: 0.8584906, g: 0.83538574, b: 0.116625085, a: 1}
+  m_Color: {r: 1, g: 0.18396229, b: 0.3631939, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 35
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
-  deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
+  deathPS: {fileID: 2738825157103236572, guid: d683fdff45bbbb44bb4a41cbd16c1da9, type: 3}
   deathPS2: {fileID: 5031804150630487784, guid: e283fea6115d5874d8a2c6a4b030d557,
     type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}

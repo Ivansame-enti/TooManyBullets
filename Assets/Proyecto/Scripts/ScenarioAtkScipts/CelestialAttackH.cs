@@ -22,15 +22,17 @@ public class CelestialAttackH : MonoBehaviour
     public LineRenderer m_lineRenderer;
     Transform m_transform;
     Vector2 laserPos1, laserPos2;
-    public GameObject laserParticles, laserParticles2;
+    public GameObject laserParticles2;
     public int minFrequencylaser, maxFrequencylaser;
     private float originalWidth;
     private float width;
     private bool reduceWidth;
     private float originalBoxColliderSizeX;
     private float originalBoxColliderSizeY;
-    private float boxColliderX;
+    private float boxColliderX, boxColliderY;
     private float random;
+    public float ScaleX, ScaleY, ScaleZ;
+    private Vector3 scaleChange, originalScale;
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -49,7 +51,7 @@ public class CelestialAttackH : MonoBehaviour
     {
         Draw2DRay(laserPos1, laserPos2 * defDistanceRay);
         collisionLaser.transform.position =new Vector2(laserPos1.x + 1000000000, laserPos1.y);
-        laserParticles.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
+        //laserParticles.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
         laserParticles2.transform.position = new Vector2(laserPos1.x + 1000000000, laserPos1.y);
         //Debug.Log(collisionLaser.transform.position.x);
 
@@ -66,11 +68,16 @@ public class CelestialAttackH : MonoBehaviour
     {
         if (nextActionTime <= 0) //Hace warning
         {
+
+            originalScale = new Vector3(ScaleX, ScaleY, ScaleZ);
+            laserParticles2.transform.localScale = originalScale;
             warningTiming = Random.Range(minFrequencylaser, maxFrequencylaser);
             reduceWidth = false;
             width = originalWidth;
             boxColliderX = originalBoxColliderSizeX;
-            celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
+            boxColliderY = originalBoxColliderSizeY;
+
+            //celestialAtk.GetComponent<LineRenderer>().SetWidth(originalWidth, originalWidth);
             celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(originalBoxColliderSizeX, originalBoxColliderSizeY);
             celestialAtk.SetActive(false);
             nextActionTime = warningTiming;
@@ -90,12 +97,12 @@ public class CelestialAttackH : MonoBehaviour
               (randomValor.y + random)
             );
 
-            laserParticles.transform.rotation = new Quaternion(90, 90, 0, 1);
+            //laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
            
             warningClone = Instantiate(warning, new Vector2(randomValor.x+random, randomValor.y+random), warning.transform.rotation);
             warningClone.transform.rotation = new Quaternion(90, 90, 0, 1);
-            laserParticles.SetActive(true);
-            laserParticles.transform.position = new Vector2(30, laserPos1.y);
+            //laserParticles.SetActive(true);
+            //laserParticles.transform.position = new Vector2(30, laserPos1.y);
             //laserParticles.transform.rotation = new Quaternion(90,90,0,1);
 
            
@@ -119,12 +126,12 @@ public class CelestialAttackH : MonoBehaviour
             Destroy(warningClone.gameObject);
             ShootLaser();
             celestialAtk.SetActive(true);
-            laserParticles2.transform.rotation = new Quaternion(90, 90, 0, 1);
-            laserParticles2.transform.position = new Vector2(30, laserPos1.y); ;
+            laserParticles2.transform.rotation = new Quaternion(0, 0, 0, 1);
+            laserParticles2.transform.position = new Vector2(-30, laserPos1.y); 
             laserParticles2.SetActive(true);
-            laserParticles.transform.rotation = new Quaternion(90, 90, 0, 1);
-            laserParticles.transform.position = new Vector2(30, laserPos1.y); ;
-            laserParticles.SetActive(true);
+            //laserParticles.transform.rotation = new Quaternion(0, 0, 0, 1);
+            //laserParticles.transform.position = new Vector2(-30, laserPos1.y+4); 
+            //laserParticles.SetActive(true);
             timerAttack = activacionAtk;
 
         }
@@ -137,7 +144,7 @@ public class CelestialAttackH : MonoBehaviour
         {
             atkGoing = false;
             celestialAtk.SetActive(false);
-            laserParticles.SetActive(false);
+            //laserParticles.SetActive(false);
             laserParticles2.SetActive(false);
             //timer = activacionAtkGoing;
         }
@@ -150,10 +157,12 @@ public class CelestialAttackH : MonoBehaviour
                     //Debug.Log("Bajaaaaa");
                     width -= Time.deltaTime * 2;
                     boxColliderX -= Time.deltaTime;
-                    celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, originalBoxColliderSizeY);
-                    celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
-                    laserParticles.SetActive(false);
-                    laserParticles2.SetActive(false);
+                    boxColliderY -= Time.deltaTime;
+                    celestialAtk.gameObject.transform.GetChild(2).GetComponent<BoxCollider2D>().size = new Vector2(boxColliderX, boxColliderY);
+                    //celestialAtk.GetComponent<LineRenderer>().SetWidth(width, width);
+
+                    scaleChange = new Vector3(0, -0.015f, 0);
+                    laserParticles2.transform.localScale += scaleChange;
                 }
                 if (width <= 0) timerAttack -= Time.deltaTime;
             }

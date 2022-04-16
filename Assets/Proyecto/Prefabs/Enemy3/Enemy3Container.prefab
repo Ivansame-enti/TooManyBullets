@@ -132,8 +132,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.4914296, b: 0, a: 1}
-      key1: {r: 1, g: 0.4914296, b: 0, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -772,8 +772,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.4914296, b: 0, a: 1}
-      key1: {r: 1, g: 0.4914296, b: 0, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   hitPS: {fileID: 1953506006296609640, guid: 0fdcb8d432c05d446a626f1e589761ce, type: 3}
-  deathPS: {fileID: 5031804150630487784, guid: 6e8ef4e99a5cc134fbfbfa5957d53e66, type: 3}
+  deathPS: {fileID: 2738825157103236572, guid: d683fdff45bbbb44bb4a41cbd16c1da9, type: 3}
   deathPS2: {fileID: 5031804150630487784, guid: e283fea6115d5874d8a2c6a4b030d557,
     type: 3}
   swPs: {fileID: 3532398384952687226, guid: 641e83345493a774e985fe9195bbb4ee, type: 3}
@@ -1818,8 +1818,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.4914296, b: 0, a: 1}
-      key1: {r: 1, g: 0.4914296, b: 0, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

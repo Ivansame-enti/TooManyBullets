@@ -7,12 +7,13 @@ public class VictoryController : MonoBehaviour
 {
     private Vector2 randomValor, randomValor2;
     public Vector2 positionA, positionB, positionC, positionD;
-    public GameObject firework, victoryUI, player, victoryPanel, buttonLs, levelObjects, UI, MiniJoeSkillsUI;
+    public GameObject firework, firework2, firework3, firework4, victoryUI, player, victoryPanel, buttonLs, levelObjects, UI, MiniJoeSkillsUI;
     private float leftFirework, rightFirework;
     public float fireworkCooldownLeft, fireworkCooldownRight;
     public bool victory;
     public static bool goingLS;
     private bool firstTime;
+    private GameObject[] water;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,22 @@ public class VictoryController : MonoBehaviour
         {
             if (firstTime)
             {
+                water = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+                foreach (GameObject bullet in water)
+                {
+                    Destroy(bullet);
+                }
+
                 AudioManagerController audio = FindObjectOfType<AudioManagerController>();
+                if (audio.GetAudioPlaying("EnemyLaser"))
+                {
+                    audio.AudioStop("EnemyLaser");
+                }
+                if (audio.GetAudioPlaying("Laser"))
+                {
+                    audio.AudioStop("Laser");
+                }
                 audio.AudioPlay("Victory");
                 audio.AudioPause("MainTheme");
                 if (GameObject.Find("MiniJoe")) GameObject.Find("MiniJoe").SetActive(false);
@@ -51,6 +67,28 @@ public class VictoryController : MonoBehaviour
                     Random.Range(positionA.y, positionB.y), 1
             );
                 Instantiate(firework, randomValor, Quaternion.identity);
+
+                randomValor = new Vector3(
+                    Random.Range(positionA.x, positionB.x),
+                    Random.Range(positionA.y, positionB.y), 1
+            );
+
+                Instantiate(firework2, randomValor, Quaternion.identity);
+
+                randomValor = new Vector3(
+                    Random.Range(positionA.x, positionB.x),
+                    Random.Range(positionA.y, positionB.y), 1
+            );
+
+                Instantiate(firework3, randomValor, Quaternion.identity);
+
+                randomValor = new Vector3(
+                    Random.Range(positionA.x, positionB.x),
+                    Random.Range(positionA.y, positionB.y), 1
+            );
+
+                Instantiate(firework4, randomValor, Quaternion.identity);
+
                 leftFirework = fireworkCooldownLeft;
             }
             else
@@ -65,6 +103,28 @@ public class VictoryController : MonoBehaviour
                     Random.Range(positionC.y, positionD.y), 1
                  );
                 Instantiate(firework, randomValor2, Quaternion.identity);
+
+                randomValor2 = new Vector3(
+                    Random.Range(positionC.x, positionD.x),
+                    Random.Range(positionC.y, positionD.y), 1
+                 );
+
+                Instantiate(firework2, randomValor2, Quaternion.identity);
+
+                randomValor2 = new Vector3(
+                    Random.Range(positionC.x, positionD.x),
+                    Random.Range(positionC.y, positionD.y), 1
+                 );
+
+                Instantiate(firework3, randomValor2, Quaternion.identity);
+
+                randomValor2 = new Vector3(
+                   Random.Range(positionC.x, positionD.x),
+                   Random.Range(positionC.y, positionD.y), 1
+                );
+
+                Instantiate(firework4, randomValor2, Quaternion.identity);
+
                 rightFirework = fireworkCooldownRight;
             }
             else

@@ -10,22 +10,24 @@ public class MiniJoeHealController : MonoBehaviour
     public float healTimer;
     public float healAmmount;
     public int healsAvailable;
-    public int currenntHealsAvailable;
+    public float currenntHealsAvailable;
     public float timer;
     //public float timer2;
     public PlayerHealthController phc;
-    private bool healedOnce;
+    //private bool healedOnce;
     public GameObject healParticle;
     public GameObject player;
     private float area2;
+    public float lastCurrentHeals;
     
     void Start()
     {
         area2 = 6.7f;
         timer = healTimer;
-        healedOnce = false;
+        //healedOnce = false;
         //timer2 = healDelay;
         currenntHealsAvailable = healsAvailable;
+        lastCurrentHeals = currenntHealsAvailable;
     }
 
     // Update is called once per frame
@@ -39,11 +41,17 @@ public class MiniJoeHealController : MonoBehaviour
                 {
                     var ps = Instantiate(healParticle, new Vector2(player.transform.position.x, player.transform.position.y), Quaternion.identity);
                     phc.currentHealth += healAmmount;
-                    phc.currentHealth = Mathf.Round(phc.currentHealth * 10.0f) * 0.1f; //Resondear a unn decimal porque a veces no se suma bien
+                    currenntHealsAvailable -= healAmmount;
+                    phc.currentHealth = Mathf.Round(phc.currentHealth * 10.0f) * 0.1f; //Redondear a un decimal porque a veces no se suma bien
                     if (phc.currentHealth == 3.0f || phc.currentHealth == 2.0f || phc.currentHealth == 1.0f)
                     {
+                        FindObjectOfType<AudioManagerController>().AudioPlay("Plim");
                         //timer2 = 0;
-                        currenntHealsAvailable--;
+                        //currenntHealsAvailable--;
+                        //currenntHealsAvailable = lastCurrentHeals - 1.0f;
+                        //phc.currentHealth = Mathf.Round(phc.currentHealth);
+                        currenntHealsAvailable = Mathf.Round(currenntHealsAvailable);
+                        lastCurrentHeals = currenntHealsAvailable;
                         //healedOnce = true;
                     }
                     timer = healTimer;
