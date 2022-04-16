@@ -72,7 +72,7 @@ public class Boss : MonoBehaviour
             } else if (audioSFX.GetAudioPlaying("EnemyLaser")) audioSFX.AudioStop("EnemyLaser");
             if (attack == 2)
             {
-                if (!audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioPlay("MachineGun");
+                if (!audioSFX.GetAudioPlaying("MachineGun") && pc.pauseState == false) audioSFX.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
@@ -108,7 +108,7 @@ public class Boss : MonoBehaviour
                 waterDrop.SetActive(true);
                 if (timer >= dropDuration)
                 {
-                    if (!audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioPlay("Bloops");
+                    if (!audioSFX.GetAudioPlaying("Bloops") && pc.pauseState == false) audioSFX.AudioPlay("Bloops");
                     waterDrop.SetActive(false);
                     //audio.AudioStop("Bloops");
                 }
@@ -173,7 +173,7 @@ public class Boss : MonoBehaviour
         {
             if (attack == 1)
             {
-                if (!audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioPlay("MachineGun");
+                if (!audioSFX.GetAudioPlaying("MachineGun") && pc.pauseState == false) audioSFX.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
@@ -212,7 +212,7 @@ public class Boss : MonoBehaviour
             {
                 if (multiLaserFinish == false)
                 {
-                    if (!audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioPlay("Bloops");
+                    if (!audioSFX.GetAudioPlaying("Bloops") && pc.pauseState == false) audioSFX.AudioPlay("Bloops");
                     multiLaser.SetActive(true);
                     waterDrop.SetActive(true);
                     timer = 0;
@@ -245,13 +245,13 @@ public class Boss : MonoBehaviour
 
             if (attack == 3)
             {
-                if (!audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioPlay("MachineGun");
+                if (!audioSFX.GetAudioPlaying("MachineGun") && pc.pauseState == false) audioSFX.AudioPlay("MachineGun");
                 colorChange();
                 if (timer2 >= 2)
                 {
                     bullets.SetActive(true);
                     waterDrop.SetActive(true);
-                    if (!audioSFX.GetAudioPlaying("Bloops")) audioSFX.AudioPlay("Bloops");
+                    if (!audioSFX.GetAudioPlaying("Bloops") && pc.pauseState == false) audioSFX.AudioPlay("Bloops");
                     if (timer >= bulletsDuration)
                     {
                         if (audioSFX.GetAudioPlaying("MachineGun")) audioSFX.AudioStop("MachineGun");
