@@ -8591,7 +8591,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!224 &445056422
 RectTransform:
@@ -16798,6 +16798,18 @@ PrefabInstance:
       propertyPath: inmortal
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1693822653, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_Color.b
+      value: 0.70607877
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693822653, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6850303
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693822653, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8113208
+      objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}
       propertyPath: m_RootOrder
@@ -17714,6 +17726,18 @@ PrefabInstance:
     - target: {fileID: 1693822651, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
       propertyPath: inmortal
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693822653, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_Color.b
+      value: 0.70980394
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693822653, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693822653, guid: e0085f4cb9616ca43a57486386e89024, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8117647
       objectReference: {fileID: 0}
     - target: {fileID: 4850523000277931948, guid: e0085f4cb9616ca43a57486386e89024,
         type: 3}

@@ -22,6 +22,7 @@ public class EnemyHealthController : MonoBehaviour
     public GameObject specialParticles2;
     private bool level1;
     private bool level2;
+    private bool mainMenu;
     private AudioManagerController audioSFX;
     //public GameObject circle;
     // Start is called before the first frame update
@@ -33,6 +34,9 @@ public class EnemyHealthController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
         else level2 = true;
+
+        if (SceneManager.GetActiveScene().name != "MainMenu") mainMenu = false;
+        else mainMenu = true;
 
         //specialEnemy = false;
         probabilidad = 11;
@@ -51,7 +55,7 @@ public class EnemyHealthController : MonoBehaviour
         {
             numAleatorio = Random.Range(1, probabilidad);
             //Debug.Log(numAleatorio);
-            if(numAleatorio == 1 && !level1 && !level2)
+            if(numAleatorio == 1 && !level1 && !level2 && !mainMenu)
             {
                 specialEnemy = true;
                 
