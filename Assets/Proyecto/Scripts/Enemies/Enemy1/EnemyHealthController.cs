@@ -16,7 +16,7 @@ public class EnemyHealthController : MonoBehaviour
     public int probabilidad;
     private int numAleatorio;
     private bool firstTime;
-    public bool specialEnemy=false;
+    public bool specialEnemy=false, comboPlus;
     public bool antiSlash = false;
     public GameObject specialParticles;
     public GameObject specialParticles2;
@@ -24,10 +24,14 @@ public class EnemyHealthController : MonoBehaviour
     private bool level2;
     private bool mainMenu;
     private AudioManagerController audioSFX;
+
+    public ScoreSystem puntuation;
     //public GameObject circle;
     // Start is called before the first frame update
     void Start()
     {
+        puntuation = FindObjectOfType<ScoreSystem>();
+
         audioSFX = FindObjectOfType<AudioManagerController>();
         if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
         else level1 = true;
@@ -71,6 +75,19 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
         if (health <= 0)
         {
+            puntuation.pentakill++;
+            comboPlus = true;
+            if (puntuation.pentakill == 1)
+            {
+                ScoreSystem.score += 10000;
+
+            }else if (puntuation.pentakill > 1)
+            {
+                ScoreSystem.score += 10000 * puntuation.pentakill;
+            }
+            
+            
+            
             if (specialEnemy)
             {
                 //particle.transform.parent = null;
