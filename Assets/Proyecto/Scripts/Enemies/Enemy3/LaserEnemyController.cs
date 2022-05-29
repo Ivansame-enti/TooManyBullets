@@ -23,6 +23,7 @@ public class LaserEnemyController : MonoBehaviour
     GradientAlphaKey[] alphaKey;
     private AudioManagerController audioSFX;
     private PauseController pc;
+    public GameObject laserParticles;
     // Start is called before the first frame update
     void Start()
     {
@@ -261,6 +262,8 @@ public class LaserEnemyController : MonoBehaviour
             if (col != null) Destroy(col.gameObject);
             if (!warning)
             {
+                for (float i = 0; i < 1; i = i + 0.07f)
+                    Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col = new GameObject("Collider").AddComponent<BoxCollider2D>();
                 col.tag = "LaserColliderEnemy";
                 col.gameObject.layer = 8;
@@ -297,6 +300,8 @@ public class LaserEnemyController : MonoBehaviour
             if (col2 != null) Destroy(col2.gameObject);
             if (!warning)
             {
+                for (float i = 0; i < 1; i = i + 0.07f)
+                    Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col2 = new GameObject("Collider2").AddComponent<BoxCollider2D>();
                 col2.tag = "LaserColliderEnemy";
                 col2.gameObject.layer = 8;
@@ -332,7 +337,8 @@ public class LaserEnemyController : MonoBehaviour
             if (col3 != null) Destroy(col3.gameObject);
             if (!warning)
             {
-
+                for (float i = 0; i < 1; i = i + 0.07f)
+                    Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col3 = new GameObject("Collider3").AddComponent<BoxCollider2D>();
                 col3.tag = "LaserColliderEnemy";
                 col3.gameObject.layer = 8;

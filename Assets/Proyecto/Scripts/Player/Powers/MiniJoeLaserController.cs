@@ -161,16 +161,18 @@ public class MiniJoeLaserController : MonoBehaviour
             //Vector3 interpolatedPosition = Vector3.Lerp(laserPos1, laserPos2, 0.1f);
             if (!boolParticles && shooting)
             {
-                Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.1f), Quaternion.identity);
-                Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.2f), Quaternion.identity);
+                for(float i=0; i<1; i=i+0.02f)
+                    Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, i), Quaternion.identity);
+                /*Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.2f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.3f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.4f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.5f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.6f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.7f), Quaternion.identity);
                 Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.8f), Quaternion.identity);
+                Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, 0.9f), Quaternion.identity);*/
 
-                boolParticles =true;
+                //boolParticles = true;
             }
         }
     }
