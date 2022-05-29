@@ -25,7 +25,7 @@ public class MiniJoe : MonoBehaviour
     private bool enemya = false;
     private bool checkenemyinrange = false;
     public bool displanted = false;
-    public GameObject miniJoelaser;
+    public GameObject miniJoelaser, miniJoelaser2;
     private List<Vector3> positionList = new List<Vector3>();
     public float timer;
     public float plantCD;
@@ -219,6 +219,7 @@ public class MiniJoe : MonoBehaviour
 
                                 //player.GetComponent<movement>().speed = playerSpeed;
                                 miniJoelaser.SetActive(false);
+                                miniJoelaser2.SetActive(false);
                                 flagS = false;
                                 displanted = false;
 
@@ -243,6 +244,7 @@ public class MiniJoe : MonoBehaviour
 
                                 //player.GetComponent<movement>().speed = playerSpeed;
                                 miniJoelaser.SetActive(false);
+                                miniJoelaser2.SetActive(false);
                                 flagS = false;
                                 displanted = false;
 
@@ -267,6 +269,7 @@ public class MiniJoe : MonoBehaviour
 
                                 //player.GetComponent<movement>().speed = playerSpeed;
                                 miniJoelaser.SetActive(false);
+                                miniJoelaser2.SetActive(false);
                                 flagS = false;
                                 displanted = false;
 

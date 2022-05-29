@@ -1138,6 +1138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3969236535606439619, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
+      propertyPath: miniJoelaser2
+      value: 
+      objectReference: {fileID: 682587981}
+    - target: {fileID: 3969236535606439619, guid: d04c2d495b45f9b4d89e31ed36467132,
+        type: 3}
       propertyPath: searchEnemies
       value: 
       objectReference: {fileID: 1823652170}

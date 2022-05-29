@@ -16606,6 +16606,7 @@ MonoBehaviour:
   torretarea: {fileID: 903409431}
   displanted: 0
   miniJoelaser: {fileID: 1121173044}
+  miniJoelaser2: {fileID: 1324431953}
   timer: 0
   plantCD: 3
   pickUpDistance: 3
