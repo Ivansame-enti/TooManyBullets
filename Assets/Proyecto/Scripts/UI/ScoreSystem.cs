@@ -9,6 +9,7 @@ public class ScoreSystem : MonoBehaviour
     // Start is called before the first frame update
 
     public static float score = 0;
+    private int scoreInt;
     public int pentakill;
     public string ScoreString = "score : 00000000";
     //private float time;
@@ -42,6 +43,7 @@ public class ScoreSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreInt = (int)score;
         if(score > 0)
         {
             score -= Time.deltaTime;
@@ -52,14 +54,12 @@ public class ScoreSystem : MonoBehaviour
             combo = true;
             timer2 = 0;
             enemyKilled = false;
-            Debug.Log("AAAAAAAAAAAAAA");
         }
 
         if(timer2 >= pentaTimer && combo == true)
         {
             combo = false;
             pentakill = 0;
-            Debug.Log("entra");
         }
         //Debug.Log(pentaTimer);
         timer2 += Time.deltaTime;
@@ -69,7 +69,7 @@ public class ScoreSystem : MonoBehaviour
         if (TextScore != null)
         {
           
-            TextScore.text = ScoreString + score;
+            TextScore.text = ScoreString + scoreInt;
             //score = score + 1;
 
             if (score >= 0 && score <10)
