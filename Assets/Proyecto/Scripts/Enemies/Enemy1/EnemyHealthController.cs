@@ -25,12 +25,13 @@ public class EnemyHealthController : MonoBehaviour
     private bool mainMenu;
     private AudioManagerController audioSFX;
 
-    public ScoreSystem puntuation;
+    private ScoreSystem puntuation;
+    //private GameObject a;
     //public GameObject circle;
     // Start is called before the first frame update
     void Start()
     {
-        puntuation = FindObjectOfType<ScoreSystem>();
+        puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
 
         audioSFX = FindObjectOfType<AudioManagerController>();
         if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
@@ -76,7 +77,7 @@ public class EnemyHealthController : MonoBehaviour
         if (health <= 0)
         {
             puntuation.pentakill++;
-            comboPlus = true;
+            puntuation.enemyKilled = true;
             if (puntuation.pentakill == 1)
             {
                 ScoreSystem.score += 10000;

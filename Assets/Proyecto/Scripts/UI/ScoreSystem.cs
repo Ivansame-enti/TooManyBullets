@@ -11,23 +11,27 @@ public class ScoreSystem : MonoBehaviour
     public static float score = 0;
     public int pentakill;
     public string ScoreString = "score : 00000000";
-    private float time;
-    private PlayerHealthController health;
+    //private float time;
+    //private PlayerHealthController health;
     private float timer;
+    private float timer2;
     public float pentaTimer;
     public TextMeshProUGUI TextScore;
     private bool combo;
+    public bool enemyKilled;
 
-    private EnemyHealthController enemyH;
-    public static ScoreSystem puntuación;
+    //private EnemyHealthController enemyH;
+    //public static ScoreSystem puntuación;
 
     void Awake()
     {
-        puntuación = this;
-        time = Time.deltaTime;
-        health = GetComponent<PlayerHealthController>();
+        enemyKilled = false;
+        //puntuación = this;
+        //time = Time.deltaTime;
+        //health = GetComponent<PlayerHealthController>();
         score = 0;
-        enemyH = FindObjectOfType<EnemyHealthController>();
+        timer2 = 0;
+        //enemyH = FindObjectOfType<EnemyHealthController>();
     }
 
     void Start()
@@ -43,19 +47,22 @@ public class ScoreSystem : MonoBehaviour
             score -= Time.deltaTime;
         }
         
-        if (enemyH.comboPlus == true)
+        if (enemyKilled)
         {
             combo = true;
-            timer = 0;
-            enemyH.comboPlus = false;
+            timer2 = 0;
+            enemyKilled = false;
+            Debug.Log("AAAAAAAAAAAAAA");
         }
-        if(timer >= pentaTimer && combo == true)
+
+        if(timer2 >= pentaTimer && combo == true)
         {
             combo = false;
             pentakill = 0;
             Debug.Log("entra");
         }
-        timer += Time.deltaTime;
+        //Debug.Log(pentaTimer);
+        timer2 += Time.deltaTime;
 
         
 
