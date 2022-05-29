@@ -87,6 +87,7 @@ public class Boss : MonoBehaviour
                     }
                     if (timer >= bulletsDuration + cooldownAttack)
                     {
+
                         attack = Random.Range(1, 5);
 
                         timer = 0;
