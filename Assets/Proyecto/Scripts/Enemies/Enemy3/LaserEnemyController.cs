@@ -10,7 +10,7 @@ public class LaserEnemyController : MonoBehaviour
     public float warningTime;
     private Vector2 laser1Pos1, laser1Pos2, laser2Pos1, laser2Pos2, laser3Pos1, laser3Pos2, laser1Warning, laser2Warning, laser3Warning;
     private float timer, timer2;
-    public GameObject mLaserBeam, mLaserBeam2, mLaserBeam3;
+    public GameObject mLaserBeam, mLaserBeam2, mLaserBeam3, mLaserBeam4, mLaserBeam5, mLaserBeam6;
     public GameObject exclamation1, exclamation2, exclamation3;
     private Quaternion originalRotation;
     private Gradient originalLaserColor;
@@ -102,6 +102,30 @@ public class LaserEnemyController : MonoBehaviour
                 mLaserBeam.GetComponent<LineRenderer>().startWidth = 0.30f;
                 mLaserBeam.GetComponent<LineRenderer>().endWidth = 0.30f;
 
+                mLaserBeam4.SetActive(true);
+                //mLaserBeam.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+                //mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam4.GetComponent<LineRenderer>().startWidth = 0.15f;
+                mLaserBeam4.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+                mLaserBeam5.SetActive(true);
+                //mLaserBeam.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+                //mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam5.GetComponent<LineRenderer>().startWidth = 0.15f;
+                mLaserBeam5.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+                mLaserBeam6.SetActive(true);
+                //mLaserBeam.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
+                //mLaserBeam.GetComponent<LineRenderer>().startColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().endColor = new Color(255, 255, 0);
+                //mLaserBeam.GetComponent<LineRenderer>().SetWidth(0.30f, 0.30f);
+                mLaserBeam6.GetComponent<LineRenderer>().startWidth = 0.15f;
+                mLaserBeam6.GetComponent<LineRenderer>().endWidth = 0.15f;
+
                 mLaserBeam2.SetActive(true);
                 //mLaserBeam2.GetComponent<LineRenderer>().SetColors(new Color(255, 0, 146), new Color(255, 0, 146));
                 //mLaserBeam2.GetComponent<LineRenderer>().startColor = new Color(255, 125, 0);
@@ -128,6 +152,9 @@ public class LaserEnemyController : MonoBehaviour
                     mLaserBeam.SetActive(false);
                     mLaserBeam2.SetActive(false);
                     mLaserBeam3.SetActive(false);
+                    mLaserBeam4.SetActive(false);
+                    mLaserBeam5.SetActive(false);
+                    mLaserBeam6.SetActive(false);
                 }
                 else
                 {
@@ -228,6 +255,8 @@ public class LaserEnemyController : MonoBehaviour
         {
             mLaserBeam.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam.GetComponent<LineRenderer>().SetPosition(1, endPos);
+            mLaserBeam4.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam4.GetComponent<LineRenderer>().SetPosition(1, endPos);
 
             if (col != null) Destroy(col.gameObject);
             if (!warning)
@@ -262,6 +291,8 @@ public class LaserEnemyController : MonoBehaviour
         {
             mLaserBeam2.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam2.GetComponent<LineRenderer>().SetPosition(1, endPos);
+            mLaserBeam5.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam5.GetComponent<LineRenderer>().SetPosition(1, endPos);
 
             if (col2 != null) Destroy(col2.gameObject);
             if (!warning)
@@ -295,6 +326,8 @@ public class LaserEnemyController : MonoBehaviour
         {
             mLaserBeam3.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam3.GetComponent<LineRenderer>().SetPosition(1, endPos);
+            mLaserBeam6.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam6.GetComponent<LineRenderer>().SetPosition(1, endPos);
 
             if (col3 != null) Destroy(col3.gameObject);
             if (!warning)
