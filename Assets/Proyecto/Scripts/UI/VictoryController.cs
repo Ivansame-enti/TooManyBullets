@@ -3,23 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
+
 public class VictoryController : MonoBehaviour
 {
     private Vector2 randomValor, randomValor2;
     public Vector2 positionA, positionB, positionC, positionD;
-    public GameObject firework, firework2, firework3, firework4, victoryUI, player, victoryPanel, buttonLs, levelObjects, UI, MiniJoeSkillsUI;
+    public GameObject firework, firework2, firework3, firework4, victoryUI, player, victoryPanel, buttonLs, levelObjects, UI, MiniJoeSkillsUI,newRecordText;
     private float leftFirework, rightFirework;
     public float fireworkCooldownLeft, fireworkCooldownRight;
     public bool victory;
     public static bool goingLS;
     private bool firstTime;
     private GameObject[] water;
+    public TextMeshProUGUI scoreText;
+    private int scoreInt,highScore;
+    string highScoreKey = "HighScore";
 
     // Start is called before the first frame update
     void Start()
     {
         victoryPanel.SetActive(false);
         firstTime = true;
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        newRecordText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,6 +67,15 @@ public class VictoryController : MonoBehaviour
             levelObjects.SetActive(false);
             victoryPanel.SetActive(true);
             victoryUI.SetActive(true);
+            scoreInt = (int)ScoreSystem.score;
+            scoreText.text = scoreInt.ToString();
+
+            if (scoreInt > highScore)
+            {
+                PlayerPrefs.SetInt("HighScore", scoreInt);
+                PlayerPrefs.Save();
+                newRecordText.SetActive(true);
+            }
             if (leftFirework <= 0)
             {
                 randomValor = new Vector3(
