@@ -11,6 +11,7 @@ public class ComboMultiplier : MonoBehaviour
     public TextMeshProUGUI x;
     private int mult;
     private float scaleAmmount;
+    private float originalScale;
     private float colorAmmount;
     float map(float s, float a1, float a2, float b1, float b2)
     {
@@ -36,27 +37,28 @@ public class ComboMultiplier : MonoBehaviour
             mult++;
             multiplier.text = mult.ToString();
             timer = maxTimer;
+            if(mult<=10) originalScale = map(mult, 1, 10, 1, 2);
+            this.transform.localScale = new Vector3(originalScale, originalScale, originalScale);
         }
 
         //if(mult > 5)
-        scaleAmmount = map(timer, 0, maxTimer, 0, 2);
+        scaleAmmount = map(timer, 0, maxTimer, 0, originalScale);
         colorAmmount = map(timer, 0, maxTimer+2.0f, 1, 0);
 
         this.transform.localScale = new Vector3(scaleAmmount, scaleAmmount, scaleAmmount);
-        if (mult >= 5 && mult < 10)
+        if (mult >= 3 && mult < 6)
         {
-
             multiplier.color = new Color(1.0f, colorAmmount, 1.0f, 1.0f);
             x.color = new Color(1.0f, colorAmmount, 1.0f, 1.0f);
         }
-        else if (mult >= 10)
-        {
-            multiplier.color = new Color(1.0f, 1.0f, colorAmmount, 1.0f);
-            x.color = new Color(1.0f, 1.0f, colorAmmount, 1.0f);
-        } else
+        else if (mult >= 6)
         {
             multiplier.color = new Color(1.0f, colorAmmount, colorAmmount, 1.0f);
             x.color = new Color(1.0f, colorAmmount, colorAmmount, 1.0f);
+        } else
+        {
+            multiplier.color = new Color(1.0f, 1.0f, colorAmmount, 1.0f);
+            x.color = new Color(1.0f, 1.0f, colorAmmount, 1.0f);
         }
         if (timer > 0) timer -= Time.deltaTime;
     }
