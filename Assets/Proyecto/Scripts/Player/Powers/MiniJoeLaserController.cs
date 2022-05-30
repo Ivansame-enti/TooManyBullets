@@ -159,7 +159,7 @@ public class MiniJoeLaserController : MonoBehaviour
         {
             Draw2DRay(laserPos1, laserPos2);
             //Vector3 interpolatedPosition = Vector3.Lerp(laserPos1, laserPos2, 0.1f);
-            if (!boolParticles && shooting)
+            if (!boolParticles && shooting && mLaserBeam.active == true)
             {
                 for(float i=0; i<1; i=i+0.02f)
                     Instantiate(laserParticles, Vector3.Lerp(laserPos1, laserPos2, i), Quaternion.identity);
