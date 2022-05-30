@@ -20,6 +20,17 @@ public class MainMenuController : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(level1);
         }
+
+        if (VictoryBossController.goingCredits == true)
+        {
+            VictoryBossController.goingCredits = false;
+            menuUI.SetActive(false);
+            levelSelectorUI.SetActive(false);
+            creditsUI.SetActive(true);
+            pantalla.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(backButton);
+        }
     }
 
     // Update is called once per frame
