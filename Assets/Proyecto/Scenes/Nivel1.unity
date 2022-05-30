@@ -6864,6 +6864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTimer: 5
   multiplier: {fileID: 1924782630}
+  x: {fileID: 1781637394}
 --- !u!1 &191137709
 GameObject:
   m_ObjectHideFlags: 0
