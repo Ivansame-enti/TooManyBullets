@@ -14,7 +14,7 @@ public class BossHealthController : MonoBehaviour
     public GameObject superiorFace, inferiorFace,mouth;
     public Color originalColor;
     public Boss boss;
-    public VictoryController victory;
+    public VictoryBossController victory;
     //private AudioManagerController audioSFX;
 
     // Start is called before the first frame update

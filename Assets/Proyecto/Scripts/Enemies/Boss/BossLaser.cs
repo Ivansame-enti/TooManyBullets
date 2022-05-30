@@ -10,13 +10,14 @@ public class BossLaser : MonoBehaviour
     public float warningTime;
     private Vector2 laser1Pos1, laser1Pos2, laser2Pos1, laser2Pos2, laser3Pos1, laser3Pos2, laser4Pos1, laser4Pos2,laser5Pos1,laser5Pos2,laser6Pos1,laser6Pos2, laser7Pos1, laser7Pos2, laser8Pos1, laser8Pos2, laser1Warning, laser2Warning, laser3Warning, laser4Warning, laser5Warning, laser6Warning, laser7Warning, laser8Warning;
     private float timer, timer2;
-    public GameObject mLaserBeam, mLaserBeam2, mLaserBeam3,mLaserBeam4, mLaserBeam5, mLaserBeam6, mLaserBeam7, mLaserBeam8;
+    public GameObject mLaserBeam, mLaserBeam2, mLaserBeam3,mLaserBeam4, mLaserBeam5, mLaserBeam6, mLaserBeam7, mLaserBeam8, mLaserBeam9, mLaserBeam10, mLaserBeam11, mLaserBeam12, mLaserBeam13, mLaserBeam14, mLaserBeam15, mLaserBeam16;
     public GameObject exclamation1, exclamation2, exclamation3,exclamation4, exclamation5, exclamation6, exclamation7, exclamation8;
     private Quaternion originalRotation;
     private Gradient originalLaserColor;
     private BoxCollider2D col, col2, col3,col4,col5,col6,col7,col8;
     private bool warning = false;
     public bool finish;
+    public GameObject laserParticles;
     // Start is called before the first frame update
     void Start()
     {
@@ -129,6 +130,38 @@ public class BossLaser : MonoBehaviour
             mLaserBeam8.GetComponent<LineRenderer>().startWidth = 0.30f;
             mLaserBeam8.GetComponent<LineRenderer>().endWidth = 0.30f;
 
+            mLaserBeam9.SetActive(true);
+            mLaserBeam9.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam9.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+            mLaserBeam10.SetActive(true);
+            mLaserBeam10.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam10.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+            mLaserBeam11.SetActive(true);
+            mLaserBeam11.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam11.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+            mLaserBeam12.SetActive(true);
+            mLaserBeam12.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam12.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+            mLaserBeam13.SetActive(true);
+            mLaserBeam13.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam13.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+            mLaserBeam14.SetActive(true);
+            mLaserBeam14.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam14.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+            mLaserBeam15.SetActive(true);
+            mLaserBeam15.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam15.GetComponent<LineRenderer>().endWidth = 0.15f;
+
+            mLaserBeam16.SetActive(true);
+            mLaserBeam16.GetComponent<LineRenderer>().startWidth = 0.15f;
+            mLaserBeam16.GetComponent<LineRenderer>().endWidth = 0.15f;
+
             if (timer2 >= attackDuration)
             {
                 timer = 0;
@@ -141,6 +174,14 @@ public class BossLaser : MonoBehaviour
                 mLaserBeam6.SetActive(false);
                 mLaserBeam7.SetActive(false);
                 mLaserBeam8.SetActive(false);
+                mLaserBeam9.SetActive(false);
+                mLaserBeam10.SetActive(false);
+                mLaserBeam11.SetActive(false);
+                mLaserBeam12.SetActive(false);
+                mLaserBeam13.SetActive(false);
+                mLaserBeam14.SetActive(false);
+                mLaserBeam15.SetActive(false);
+                mLaserBeam16.SetActive(false);
                 finish = true;
 
             }
@@ -240,10 +281,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam9.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam9.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col != null) Destroy(col.gameObject);
             if (!warning)
             {
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                    //Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col = new GameObject("Collider").AddComponent<BoxCollider2D>();
                 col.tag = "LaserColliderEnemy";
                 col.gameObject.layer = 8;
@@ -274,10 +318,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam2.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam2.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam10.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam10.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col2 != null) Destroy(col2.gameObject);
             if (!warning)
             {
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                   // Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col2 = new GameObject("Collider2").AddComponent<BoxCollider2D>();
                 col2.tag = "LaserColliderEnemy";
                 col2.gameObject.layer = 8;
@@ -307,11 +354,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam3.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam3.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam11.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam11.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col3 != null) Destroy(col3.gameObject);
             if (!warning)
             {
-
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                    //Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col3 = new GameObject("Collider3").AddComponent<BoxCollider2D>();
                 col3.tag = "LaserColliderEnemy";
                 col3.gameObject.layer = 8;
@@ -341,11 +390,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam4.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam4.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam12.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam12.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col4 != null) Destroy(col4.gameObject);
             if (!warning)
             {
-
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                    //Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col4 = new GameObject("Collider4").AddComponent<BoxCollider2D>();
                 col4.tag = "LaserColliderEnemy";
                 col4.gameObject.layer = 8;
@@ -375,11 +426,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam5.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam5.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam13.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam13.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col5 != null) Destroy(col5.gameObject);
             if (!warning)
             {
-
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                    //Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col5 = new GameObject("Collider5").AddComponent<BoxCollider2D>();
                 col5.tag = "LaserColliderEnemy";
                 col5.gameObject.layer = 8;
@@ -409,11 +462,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam6.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam6.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam14.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam14.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col6 != null) Destroy(col6.gameObject);
             if (!warning)
             {
-
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                    //Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col6 = new GameObject("Collider6").AddComponent<BoxCollider2D>();
                 col6.tag = "LaserColliderEnemy";
                 col6.gameObject.layer = 8;
@@ -442,11 +497,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam7.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam7.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam15.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam15.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col7 != null) Destroy(col7.gameObject);
             if (!warning)
             {
-
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                    //Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col7 = new GameObject("Collider7").AddComponent<BoxCollider2D>();
                 col7.tag = "LaserColliderEnemy";
                 col7.gameObject.layer = 8;
@@ -476,11 +533,13 @@ public class BossLaser : MonoBehaviour
         {
             mLaserBeam8.GetComponent<LineRenderer>().SetPosition(0, startPos);
             mLaserBeam8.GetComponent<LineRenderer>().SetPosition(1, endPos);
-
+            mLaserBeam16.GetComponent<LineRenderer>().SetPosition(0, startPos);
+            mLaserBeam16.GetComponent<LineRenderer>().SetPosition(1, endPos);
             if (col8 != null) Destroy(col8.gameObject);
             if (!warning)
             {
-
+                //for (float i = 0; i < 1; i = i + 0.07f)
+                    //Instantiate(laserParticles, Vector3.Lerp(startPos, endPos, i), Quaternion.identity);
                 col8 = new GameObject("Collider8").AddComponent<BoxCollider2D>();
                 col8.tag = "LaserColliderEnemy";
                 col8.gameObject.layer = 8;
