@@ -44,9 +44,10 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         scoreInt = (int)score;
+
         if(score > 0)
         {
-            score -= Time.deltaTime;
+            score -= Time.deltaTime * 102;
         }
         
         if (enemyKilled)

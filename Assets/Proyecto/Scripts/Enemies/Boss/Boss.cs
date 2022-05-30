@@ -27,6 +27,8 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        ScoreSystem.score = 99999;
         pc = FindObjectOfType<PauseController>();
         audioSFX = FindObjectOfType<AudioManagerController>();
         attack = Random.Range(1, 5);
@@ -38,6 +40,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(ScoreSystem.score);
         if (playerH.dead == false)
         {
             leftEye.transform.position = Vector2.MoveTowards(leftEye.transform.position, player.transform.position, speed * Time.deltaTime);
