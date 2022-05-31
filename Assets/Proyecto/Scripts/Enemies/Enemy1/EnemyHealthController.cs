@@ -23,7 +23,6 @@ public class EnemyHealthController : MonoBehaviour
     private bool level2;
     private bool mainMenu;
     private AudioManagerController audioSFX;
-
     private ScoreSystem puntuation;
     //private GameObject a;
     //public GameObject circle;
@@ -49,10 +48,9 @@ public class EnemyHealthController : MonoBehaviour
         maxHealth = health;
         if (ending != null) ending.AddEnnemy(this.gameObject);
 
-        if (mainMenu == false)
+        if (mainMenu == false && level1 == false && level2 == false)
         {
             puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
-
         }
     }
 
@@ -80,16 +78,21 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
         if (health <= 0)
         {
-            puntuation.pentakill++;
-            puntuation.enemyKilled = true;
-            if (puntuation.pentakill == 1)
+            if (mainMenu == false && level1 == false && level2 == false)
             {
-                ScoreSystem.score += 10000;
+                puntuation.pentakill++;
+                puntuation.enemyKilled = true;
+                if (puntuation.pentakill == 1)
+                {
+                    ScoreSystem.score += 10000;
 
-            }else if (puntuation.pentakill > 1)
-            {
-                ScoreSystem.score += 10000 * puntuation.pentakill;
+                }
+                else if (puntuation.pentakill > 1)
+                {
+                    ScoreSystem.score += 10000 * puntuation.pentakill;
+                }
             }
+
             
             
             
