@@ -16,6 +16,11 @@ public class Nivel3 : MonoBehaviour
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
     private bool textFlag2, textFlag3, textFlag4;
+
+    public GameObject newRecordText;
+    public TextMeshProUGUI scoreText;
+    private int scoreInt, highScore;
+    string highScoreKey = "HighScore3";
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,9 @@ public class Nivel3 : MonoBehaviour
         textFlag2 = true;
         textFlag3 = true;
         textFlag4 = true;
+
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        newRecordText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -99,7 +107,16 @@ public class Nivel3 : MonoBehaviour
 
         if (part4.transform.childCount <= 0)
         {
+            scoreInt = (int)ScoreSystem.score;
+            scoreText.text = scoreInt.ToString();
+            if (scoreInt > highScore)
+            {
+                PlayerPrefs.SetInt(highScoreKey, scoreInt);
+                PlayerPrefs.Save();
+                newRecordText.SetActive(true);
+            }
             victorycontroller.victory = true;
+
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelEndingController : MonoBehaviour
 {
@@ -8,9 +9,15 @@ public class LevelEndingController : MonoBehaviour
     private bool emptyList = true;
     public VictoryController victoryController;
 
+    public GameObject newRecordText;
+    public TextMeshProUGUI scoreText;
+    private int scoreInt, highScore;
+    string highScoreKey = "HighScore5";
     // Start is called before the first frame update
     void Start()
     {
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        newRecordText.SetActive(false);
         //enemyList.AddRange(GameObject.FindGameObjectsWithTag("enemy"));
     }
 
@@ -19,6 +26,14 @@ public class LevelEndingController : MonoBehaviour
     {
         if (enemyList.Count == 0 && !emptyList)
         {
+            scoreInt = (int)ScoreSystem.score;
+            scoreText.text = scoreInt.ToString();
+            if (scoreInt > highScore)
+            {
+                PlayerPrefs.SetInt(highScoreKey, scoreInt);
+                PlayerPrefs.Save();
+                newRecordText.SetActive(true);
+            }
             victoryController.victory = true;
         }
     }

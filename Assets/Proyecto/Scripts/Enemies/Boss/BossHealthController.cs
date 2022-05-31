@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BossHealthController : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class BossHealthController : MonoBehaviour
     public Color originalColor;
     public Boss boss;
     public VictoryController victory;
+
+    public GameObject newRecordText;
+    public TextMeshProUGUI scoreText;
+    private int scoreInt, highScore;
+    string highScoreKey = "HighScore8";
     //private AudioManagerController audioSFX;
 
     // Start is called before the first frame update
@@ -22,6 +28,9 @@ public class BossHealthController : MonoBehaviour
     {
         originalColor = superiorFace.GetComponent<SpriteRenderer>().color;
         maxHealth = health;
+
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        newRecordText.SetActive(false);
         //audioSFX = FindObjectOfType<AudioManagerController>();
     }
 
@@ -63,6 +72,15 @@ public class BossHealthController : MonoBehaviour
             FindObjectOfType<AudioManagerController>().AudioPlay("BossDeath");
             //Instantiate(swPs2, this.transform.position, Quaternion.identity);
             FindObjectOfType<AudioManagerController>().AudioPlay("Enemy1Death");
+
+            scoreInt = (int)ScoreSystem.score;
+            scoreText.text = scoreInt.ToString();
+            if (scoreInt > highScore)
+            {
+                PlayerPrefs.SetInt(highScoreKey, scoreInt);
+                PlayerPrefs.Save();
+                newRecordText.SetActive(true);
+            }
             victory.victory = true;
         }
     }

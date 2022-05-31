@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class EnemyHealthController : MonoBehaviour
 {
     public float health;
@@ -31,7 +30,7 @@ public class EnemyHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
+
 
         audioSFX = FindObjectOfType<AudioManagerController>();
         if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
@@ -49,7 +48,12 @@ public class EnemyHealthController : MonoBehaviour
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
         if (ending != null) ending.AddEnnemy(this.gameObject);
-        
+
+        if (mainMenu == false)
+        {
+            puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
+
+        }
     }
 
     // Update is called once per frame

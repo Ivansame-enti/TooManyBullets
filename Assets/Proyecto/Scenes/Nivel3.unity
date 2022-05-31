@@ -19782,6 +19782,8 @@ MonoBehaviour:
   phc: {fileID: 781798019}
   phaseInfo: {fileID: 1763869228}
   textAnim: {fileID: 1763869227}
+  newRecordText: {fileID: 755381737}
+  scoreText: {fileID: 1725813260}
 --- !u!4 &2117776825
 Transform:
   m_ObjectHideFlags: 0

@@ -26,6 +26,11 @@ public class Level7Controller : MonoBehaviour
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
     private bool textFlag2, textFlag3, textFlag4;
+
+    public GameObject newRecordText;
+    public TextMeshProUGUI scoreText;
+    private int scoreInt, highScore;
+    string highScoreKey = "HighScore7";
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +41,12 @@ public class Level7Controller : MonoBehaviour
         textFlag3 = true;
         textFlag4 = true;
         scenario.SetActive(true);
-       phase1.SetActive(true); 
-       // scenario.SetActive(false);
-    //    phase4.SetActive(true);
+        phase1.SetActive(true);
+
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        newRecordText.SetActive(false);
+        // scenario.SetActive(false);
+        //    phase4.SetActive(true);
     }
 
     // Update is called once per frame
@@ -132,7 +140,15 @@ public class Level7Controller : MonoBehaviour
 
 
             if (phase4 && enemigo41 == null && enemigo42 == null && enemigo43 == null && enemigo44 == null && enemigo45 == null && enemigo46 == null)
-        {
+            {
+            scoreInt = (int)ScoreSystem.score;
+            scoreText.text = scoreInt.ToString();
+            if (scoreInt > highScore)
+            {
+                PlayerPrefs.SetInt(highScoreKey, scoreInt);
+                PlayerPrefs.Save();
+                newRecordText.SetActive(true);
+            }
             victorycontroller.victory = true;
 
         }

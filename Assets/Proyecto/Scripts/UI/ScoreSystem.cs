@@ -20,12 +20,14 @@ public class ScoreSystem : MonoBehaviour
     public TextMeshProUGUI TextScore;
     private bool combo;
     public bool enemyKilled;
+    public VictoryController victorycontroller;
 
     //private EnemyHealthController enemyH;
     //public static ScoreSystem puntuación;
 
     void Awake()
     {
+        victorycontroller = GameObject.Find("VictoryController").GetComponent<VictoryController>();
         enemyKilled = false;
         //puntuación = this;
         //time = Time.deltaTime;
@@ -45,7 +47,7 @@ public class ScoreSystem : MonoBehaviour
     {
         scoreInt = (int)score;
 
-        if(score > 0)
+        if(score > 0 && victorycontroller.victory != true)
         {
             score -= Time.deltaTime * 102;
         }
@@ -71,7 +73,6 @@ public class ScoreSystem : MonoBehaviour
         {
           
             TextScore.text = ScoreString + scoreInt;
-            //score = score + 1;
 
             if (score >= 0 && score <10)
             {
@@ -105,17 +106,6 @@ public class ScoreSystem : MonoBehaviour
             {
                 ScoreString = "score : ";
             }
-
-          //  if (health.health = 0)
-            {
-
-            }
-
         }
-
-       
-
-        //  TextScore.text = ScoreString + score;
-
     }
 }

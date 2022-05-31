@@ -18,6 +18,11 @@ public class Level6Controller : MonoBehaviour
     public Animation textAnim;
     private bool textFlag2, textFlag3, textFlag4;
     private GameObject[] water;
+
+    public GameObject newRecordText;
+    public TextMeshProUGUI scoreText;
+    private int scoreInt, highScore;
+    string highScoreKey = "HighScore6";
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +39,9 @@ public class Level6Controller : MonoBehaviour
         lights.SetActive(false);
         scenario.SetActive(false);
         phasecounter = 0;
+
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        newRecordText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -93,6 +101,14 @@ public class Level6Controller : MonoBehaviour
 
         if (phase4.transform.childCount <= 0 && phasecounter == 3)
         {
+            scoreInt = (int)ScoreSystem.score;
+            scoreText.text = scoreInt.ToString();
+            if (scoreInt > highScore)
+            {
+                PlayerPrefs.SetInt(highScoreKey, scoreInt);
+                PlayerPrefs.Save();
+                newRecordText.SetActive(true);
+            }
             victorycontroller.victory = true;
         }
     }

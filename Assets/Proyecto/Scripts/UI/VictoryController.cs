@@ -25,8 +25,8 @@ public class VictoryController : MonoBehaviour
     {
         victoryPanel.SetActive(false);
         firstTime = true;
-        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
-        newRecordText.SetActive(false);
+        //highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        //newRecordText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -67,6 +67,7 @@ public class VictoryController : MonoBehaviour
             levelObjects.SetActive(false);
             victoryPanel.SetActive(true);
             victoryUI.SetActive(true);
+            /*
             scoreInt = (int)ScoreSystem.score;
             scoreText.text = scoreInt.ToString();
 
@@ -76,6 +77,7 @@ public class VictoryController : MonoBehaviour
                 PlayerPrefs.Save();
                 newRecordText.SetActive(true);
             }
+            */
             if (leftFirework <= 0)
             {
                 randomValor = new Vector3(

@@ -12880,6 +12880,8 @@ MonoBehaviour:
   plantKeyboard: {fileID: 1041254761}
   phaseInfo: {fileID: 1261713323}
   textAnim: {fileID: 1261713322}
+  newRecordText: {fileID: 170578866}
+  scoreText: {fileID: 159820283}
 --- !u!1 &2135268131
 GameObject:
   m_ObjectHideFlags: 0

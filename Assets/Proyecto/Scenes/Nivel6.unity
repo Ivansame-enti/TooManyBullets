@@ -1159,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 3969236535655275944, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3969236535655275947, guid: d04c2d495b45f9b4d89e31ed36467132,
         type: 3}
@@ -3002,7 +3002,6 @@ GameObject:
   - component: {fileID: 1127851337}
   - component: {fileID: 1127851336}
   - component: {fileID: 1127851335}
-  - component: {fileID: 1127851334}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -3024,19 +3023,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1127851334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127851332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681fb3d2b7f182240b67b7ae0cb973e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  victoryController: {fileID: 0}
 --- !u!114 &1127851335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3059,6 +3045,8 @@ MonoBehaviour:
   victorycontroller: {fileID: 232206359}
   phaseInfo: {fileID: 1715096480}
   textAnim: {fileID: 1715096477}
+  newRecordText: {fileID: 1400675631}
+  scoreText: {fileID: 1681690392}
 --- !u!58 &1127851336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4352,7 +4340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 72.09996, y: -37.000042}
+  m_AnchoredPosition: {x: 72.099945, y: -37.000046}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1803808412
