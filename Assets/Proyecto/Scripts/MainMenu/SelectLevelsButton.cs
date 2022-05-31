@@ -86,27 +86,27 @@ public class SelectLevelsButton : MonoBehaviour
     }
     public void HighScoreLevel3()
     {
-        highScoreText.text = highScore3.ToString();
+        highScoreText.text = highScore3.ToString("#,##0");
     }
     public void HighScoreLevel4()
     {
-        highScoreText.text = highScore4.ToString();
+        highScoreText.text = highScore4.ToString("#,##0");
     }
     public void HighScoreLevel5()
     {
-        highScoreText.text = highScore5.ToString();
+        highScoreText.text = highScore5.ToString("#,##0");
     }
     public void HighScoreLevel6()
     {
-        highScoreText.text = highScore6.ToString();
+        highScoreText.text = highScore6.ToString("#,##0");
     }
     public void HighScoreLevel7()
     {
-        highScoreText.text = highScore7.ToString();
+        highScoreText.text = highScore7.ToString("#,##0");
     }
     public void HighScoreLevel8()
     {
-        highScoreText.text = highScore8.ToString();
+        highScoreText.text = highScore8.ToString("#,##0");
     }
     public void PointerExit()
     {
