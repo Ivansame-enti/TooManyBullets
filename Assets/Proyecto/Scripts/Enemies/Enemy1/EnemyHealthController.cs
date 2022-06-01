@@ -24,6 +24,7 @@ public class EnemyHealthController : MonoBehaviour
     private bool mainMenu;
     private AudioManagerController audioSFX;
     private ScoreSystem puntuation;
+    
     //private GameObject a;
     //public GameObject circle;
     // Start is called before the first frame update
@@ -51,6 +52,7 @@ public class EnemyHealthController : MonoBehaviour
         if (mainMenu == false && level1 == false && level2 == false)
         {
             puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
+            //multi = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ComboMultiplier>();
         }
     }
 
@@ -80,17 +82,18 @@ public class EnemyHealthController : MonoBehaviour
         {
             if (mainMenu == false && level1 == false && level2 == false)
             {
+                //puntuation.enemyTransform = this.transform;   
                 puntuation.pentakill++;
                 puntuation.enemyKilled = true;
                 if (puntuation.pentakill == 1)
                 {
                     ScoreSystem.score += 10000;
-
                 }
                 else if (puntuation.pentakill > 1)
                 {
                     ScoreSystem.score += 10000 * puntuation.pentakill;
                 }
+                puntuation.enemy(this.transform);
             }
 
             

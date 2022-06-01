@@ -12,6 +12,7 @@ public class ScoreSystem : MonoBehaviour
     public static float score = 0;
     private int scoreInt;
     public int pentakill;
+    public Transform enemyTransform;
     public string ScoreString = "score : 00000000";
     //private float time;
     //private PlayerHealthController health;
@@ -24,6 +25,7 @@ public class ScoreSystem : MonoBehaviour
     public VictoryController victorycontroller;
     public VictoryBossController victoryBossController;
     private bool bossLevel;
+    private ComboMultiplier multi;
 
     //private EnemyHealthController enemyH;
     //public static ScoreSystem puntuación;
@@ -40,6 +42,8 @@ public class ScoreSystem : MonoBehaviour
         //health = GetComponent<PlayerHealthController>();
         score = 0;
         timer2 = 0;
+        multi = GameObject.FindGameObjectWithTag("Multiplier").GetComponent<ComboMultiplier>();
+        multi.maxTimer = pentaTimer;
         //enemyH = FindObjectOfType<EnemyHealthController>();
     }
 
@@ -67,20 +71,27 @@ public class ScoreSystem : MonoBehaviour
             }
         }
         
-        if (enemyKilled)
+        /*if (enemyKilled)
         {
+            multi.mult = pentakill;
+            Debug.Log(enemyTransform.position);
+            multi.enemyKilled(enemyTransform);
             combo = true;
-            timer2 = 0;
+            timer2 = pentaTimer;
             enemyKilled = false;
-        }
+        }*/
 
-        if(timer2 >= pentaTimer && combo == true)
+        if(timer2 <= 0 && combo == true)
         {
             combo = false;
             pentakill = 0;
         }
         //Debug.Log(pentaTimer);
-        timer2 += Time.deltaTime;
+        if (combo)
+        {
+            timer2 -= Time.deltaTime;
+            multi.timer = timer2;
+        }
 
         
 
@@ -122,5 +133,14 @@ public class ScoreSystem : MonoBehaviour
                 ScoreString = "score : ";
             }
         }
+    }
+
+    public void enemy(Transform a)
+    {
+        multi.mult = pentakill;
+        //Debug.Log(enemyTransform.position);
+        multi.enemyKilled(a);
+        combo = true;
+        timer2 = pentaTimer;
     }
 }

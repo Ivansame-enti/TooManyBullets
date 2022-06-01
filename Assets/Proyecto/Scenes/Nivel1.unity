@@ -6998,8 +6998,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTimer: 5
+  timer: 0
   multiplier: {fileID: 1924782630}
   x: {fileID: 1781637394}
+  mult: 0
+  enemyPos: {fileID: 0}
 --- !u!1 &191137709
 GameObject:
   m_ObjectHideFlags: 0
@@ -128806,7 +128809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1838948649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151026,9 +151029,11 @@ MonoBehaviour:
   levelObjects: {fileID: 263390910}
   UI: {fileID: 445056417}
   MiniJoeSkillsUI: {fileID: 861389445}
+  newRecordText: {fileID: 0}
   fireworkCooldownLeft: 0.7
   fireworkCooldownRight: 1
   victory: 0
+  scoreText: {fileID: 0}
 --- !u!4 &2140100574
 Transform:
   m_ObjectHideFlags: 0

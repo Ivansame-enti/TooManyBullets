@@ -24,6 +24,7 @@ TagManager:
   - Target
   - Pause
   - ScoreSystem
+  - Multiplier
   layers:
   - Default
   - TransparentFX
