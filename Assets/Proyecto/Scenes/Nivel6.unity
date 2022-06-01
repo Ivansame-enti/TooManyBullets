@@ -1405,6 +1405,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 232206357}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &232206367 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3969236535606439629, guid: d04c2d495b45f9b4d89e31ed36467132,
+    type: 3}
+  m_PrefabInstance: {fileID: 232206357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &257976642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2321,10 +2327,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682587981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 312.14285, y: 37.05779, z: 0.8409917}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 232206366}
+  m_Father: {fileID: 232206367}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &682587983
@@ -4124,6 +4130,8 @@ MonoBehaviour:
   pentaTimer: 5
   TextScore: {fileID: 1728752369}
   enemyKilled: 0
+  victorycontroller: {fileID: 0}
+  victoryBossController: {fileID: 0}
 --- !u!224 &1647401530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4561,7 +4569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 72.099945, y: -37.000046}
+  m_AnchoredPosition: {x: 72.099976, y: -37.000046}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1803808412
