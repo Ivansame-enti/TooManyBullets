@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class EnemyHealthController : MonoBehaviour
 {
     public float health;
@@ -16,7 +15,7 @@ public class EnemyHealthController : MonoBehaviour
     public int probabilidad;
     private int numAleatorio;
     private bool firstTime;
-    public bool specialEnemy=false;
+    public bool specialEnemy=false, comboPlus;
     public bool antiSlash = false;
     public GameObject specialParticles;
     public GameObject specialParticles2;
@@ -24,10 +23,14 @@ public class EnemyHealthController : MonoBehaviour
     private bool level2;
     private bool mainMenu;
     private AudioManagerController audioSFX;
+    private ScoreSystem puntuation;
+    //private GameObject a;
     //public GameObject circle;
     // Start is called before the first frame update
     void Start()
     {
+
+
         audioSFX = FindObjectOfType<AudioManagerController>();
         if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
         else level1 = true;
@@ -44,7 +47,11 @@ public class EnemyHealthController : MonoBehaviour
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
         if (ending != null) ending.AddEnnemy(this.gameObject);
-        
+
+        if (mainMenu == false && level1 == false && level2 == false)
+        {
+            puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
+        }
     }
 
     // Update is called once per frame
@@ -71,6 +78,24 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
         if (health <= 0)
         {
+            if (mainMenu == false && level1 == false && level2 == false)
+            {
+                puntuation.pentakill++;
+                puntuation.enemyKilled = true;
+                if (puntuation.pentakill == 1)
+                {
+                    ScoreSystem.score += 10000;
+
+                }
+                else if (puntuation.pentakill > 1)
+                {
+                    ScoreSystem.score += 10000 * puntuation.pentakill;
+                }
+            }
+
+            
+            
+            
             if (specialEnemy)
             {
                 //particle.transform.parent = null;

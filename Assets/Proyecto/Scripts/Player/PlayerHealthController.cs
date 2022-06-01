@@ -12,7 +12,7 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
-    public GameObject deathPS,lowHealthPanel;
+    public GameObject deathPS, lowHealthPanel;
     private bool hitInmunity;
     public bool dead;
     public PauseController pause;
@@ -24,6 +24,7 @@ public class PlayerHealthController : MonoBehaviour
         //if (timer <= 0)
         //{
         //Si se estaba curando
+
         if (currentHealth > 0 && currentHealth < 1)
         {
             currentHealth = 0;
@@ -42,6 +43,8 @@ public class PlayerHealthController : MonoBehaviour
 
         currentHealth--;
         shakeCamera.SetTrigger("Shake");
+        ScoreSystem.score -= ScoreSystem.score * 25 / 100;
+
         timer = inmortalTime;
         Time.timeScale = 0.2f;
         if (currentHealth > 0) audioManager.AudioPlay("PlayerHit");
@@ -115,7 +118,7 @@ public class PlayerHealthController : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-        if(currentHealth < 2)
+        if (currentHealth < 2)
         {
             lowHealthPanel.SetActive(true);
         }
