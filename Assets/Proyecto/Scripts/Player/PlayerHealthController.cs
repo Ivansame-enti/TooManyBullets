@@ -43,7 +43,7 @@ public class PlayerHealthController : MonoBehaviour
 
         currentHealth--;
         shakeCamera.SetTrigger("Shake");
-        ScoreSystem.score -= ScoreSystem.score * 25 / 100;
+        ScoreSystem.score -= ScoreSystem.score * 50 / 100;
 
         timer = inmortalTime;
         Time.timeScale = 0.2f;

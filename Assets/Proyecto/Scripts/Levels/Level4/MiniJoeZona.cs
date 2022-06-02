@@ -6,11 +6,14 @@ public class MiniJoeZona : MonoBehaviour
 {
 
     public GameObject obstaculo,escudos, tutorial, tutorialEnemies,checkMj;
+    public GameObject scoreTextActive, scoreActive;
 
     // Start is called before the first frame update
     void Start()
     {
         tutorialEnemies.SetActive(false);
+        scoreTextActive.SetActive(false);
+        scoreActive.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,6 +29,8 @@ public class MiniJoeZona : MonoBehaviour
             tutorialEnemies.SetActive(true);
             checkMj.SetActive(false);
             tutorial.SetActive(false);
+            scoreTextActive.SetActive(true);
+            scoreActive.SetActive(true);
         }
         if (collision.tag == "zona2")
         {

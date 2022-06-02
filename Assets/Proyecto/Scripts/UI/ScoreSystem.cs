@@ -93,12 +93,12 @@ public class ScoreSystem : MonoBehaviour
             multi.timer = timer2;
         }
 
-        
-
+        TextScore.text = scoreInt.ToString();
+        /*
         if (TextScore != null)
         {
           
-            TextScore.text = ScoreString + scoreInt;
+            
 
             if (score >= 0 && score <10)
             {
@@ -133,6 +133,7 @@ public class ScoreSystem : MonoBehaviour
                 ScoreString = "score : ";
             }
         }
+        */
     }
 
     public void enemy(Transform a)
