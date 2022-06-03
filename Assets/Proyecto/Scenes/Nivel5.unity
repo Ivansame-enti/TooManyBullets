@@ -7263,8 +7263,8 @@ MonoBehaviour:
   pentakill: 0
   enemyTransform: {fileID: 0}
   ScoreString: 'Score : '
-  pentaTimer: 5
-  TextScore: {fileID: 0}
+  pentaTimer: 4
+  TextScore: {fileID: 1728278386}
   enemyKilled: 0
   victorycontroller: {fileID: 0}
   victoryBossController: {fileID: 0}

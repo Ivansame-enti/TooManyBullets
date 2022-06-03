@@ -13535,7 +13535,7 @@ MonoBehaviour:
   pentakill: 0
   enemyTransform: {fileID: 0}
   ScoreString: 'Score : '
-  pentaTimer: 5
+  pentaTimer: 4
   TextScore: {fileID: 887497158}
   enemyKilled: 0
   victorycontroller: {fileID: 0}

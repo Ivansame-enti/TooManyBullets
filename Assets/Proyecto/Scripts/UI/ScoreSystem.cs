@@ -144,4 +144,15 @@ public class ScoreSystem : MonoBehaviour
         combo = true;
         timer2 = pentaTimer;
     }
+
+    public void TakeDamage()
+    {
+        pentakill = 0;
+        multi.mult = 0;
+        //Debug.Log(enemyTransform.position);
+        //multi.enemyKilled(a);
+        combo = false;
+        timer2 = 0;
+        multi.TakeDamage();
+    }
 }

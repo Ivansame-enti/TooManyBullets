@@ -82,4 +82,9 @@ public class ComboMultiplier : MonoBehaviour
         this.transform.localScale = new Vector3(originalScale, originalScale, originalScale);
         multiOn = true;
     }
+
+    public void TakeDamage()
+    {
+        timer = 0;
+    }
 }
