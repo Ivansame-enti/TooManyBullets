@@ -46,7 +46,7 @@ public class Level7Controller : MonoBehaviour
 
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         newRecordText.SetActive(false);
-        defaultColor = scoreText.color;
+        defaultColor = scoreText2.color;
         scoreNumbers.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         scoreText2.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         // scenario.SetActive(false);
