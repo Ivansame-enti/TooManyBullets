@@ -15,6 +15,8 @@ public class ComboMultiplier : MonoBehaviour
     private float colorAmmount;
     public Transform enemyPos;
     private bool multiOn;
+    private AudioManagerController audioManager;
+
     float map(float s, float a1, float a2, float b1, float b2)
     {
         return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
@@ -23,6 +25,7 @@ public class ComboMultiplier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManagerController>();
         multiOn = false;
         timer = maxTimer;
         mult = 0;
@@ -71,7 +74,8 @@ public class ComboMultiplier : MonoBehaviour
     public void enemyKilled(Transform pos)
     {
         this.transform.position = new Vector3(pos.position.x, pos.position.y + 1.0f, pos.position.z);
-
+        audioManager.ChangePitch("Multiplier", map(mult, 1, 10, 1, 2));
+        audioManager.AudioPlay("Multiplier");
         var rotationVector = transform.rotation.eulerAngles;
         rotationVector.z = Random.Range(-15.0f, 15.0f);
         transform.rotation = Quaternion.Euler(rotationVector);

@@ -3652,6 +3652,14 @@ MonoBehaviour:
     audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
       type: 2}
     source: {fileID: 0}
+  - name: Multiplier
+    clip: {fileID: 8300000, guid: d4d7ec21a725e594a8c5b883281bb53d, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -2433190365633844287, guid: 002fc808a9a3e4644b65792ddba2d7a6,
+      type: 2}
+    source: {fileID: 0}
 --- !u!4 &453757451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3782049486628547885, guid: f39a9eb4c4ea392489762ef2210a2d79,
@@ -5891,7 +5899,7 @@ MonoBehaviour:
   pentakill: 0
   enemyTransform: {fileID: 0}
   ScoreString: 'Score : '
-  pentaTimer: 4
+  pentaTimer: 5
   TextScore: {fileID: 1928160859}
   enemyKilled: 0
   victorycontroller: {fileID: 0}
