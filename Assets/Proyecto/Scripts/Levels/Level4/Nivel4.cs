@@ -15,6 +15,10 @@ public class Nivel4 : MonoBehaviour
     public TextMeshProUGUI phaseInfo;
     public Animation textAnim;
 
+    public GameObject newRecordText;
+    public TextMeshProUGUI scoreText;
+    private int scoreInt, highScore;
+    string highScoreKey = "HighScore4";
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +29,9 @@ public class Nivel4 : MonoBehaviour
         textFlag2 = true;
         textFlag3 = true;
         textFlag4 = true;
+
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        newRecordText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -91,6 +98,14 @@ public class Nivel4 : MonoBehaviour
 
         if (part4.transform.childCount <= 0)
         {
+            scoreInt = (int)ScoreSystem.score;
+            scoreText.text = scoreInt.ToString();
+            if (scoreInt > highScore)
+            {
+                PlayerPrefs.SetInt(highScoreKey, scoreInt);
+                PlayerPrefs.Save();
+                newRecordText.SetActive(true);
+            }
             victorycontroller.victory = true;
 
         }

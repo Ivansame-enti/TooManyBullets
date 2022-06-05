@@ -27,6 +27,7 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ScoreSystem.score = 99999;
         pc = FindObjectOfType<PauseController>();
         audioSFX = FindObjectOfType<AudioManagerController>();
         attack = Random.Range(1, 5);
@@ -87,6 +88,7 @@ public class Boss : MonoBehaviour
                     }
                     if (timer >= bulletsDuration + cooldownAttack)
                     {
+
                         attack = Random.Range(1, 5);
 
                         timer = 0;

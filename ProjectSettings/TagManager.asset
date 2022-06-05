@@ -23,6 +23,8 @@ TagManager:
   - Wall
   - Target
   - Pause
+  - ScoreSystem
+  - Multiplier
   layers:
   - Default
   - TransparentFX

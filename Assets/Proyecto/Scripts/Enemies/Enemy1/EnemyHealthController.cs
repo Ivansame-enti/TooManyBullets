@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class EnemyHealthController : MonoBehaviour
 {
     public float health;
@@ -16,17 +15,23 @@ public class EnemyHealthController : MonoBehaviour
     public int probabilidad;
     private int numAleatorio;
     private bool firstTime;
-    public bool specialEnemy=false;
+    public bool specialEnemy=false, comboPlus;
     public bool antiSlash = false;
     public GameObject specialParticles;
     public GameObject specialParticles2;
     private bool level1;
     private bool level2;
+    private bool mainMenu;
     private AudioManagerController audioSFX;
+    private ScoreSystem puntuation;
+    
+    //private GameObject a;
     //public GameObject circle;
     // Start is called before the first frame update
     void Start()
     {
+
+
         audioSFX = FindObjectOfType<AudioManagerController>();
         if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
         else level1 = true;
@@ -34,13 +39,21 @@ public class EnemyHealthController : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
         else level2 = true;
 
+        if (SceneManager.GetActiveScene().name != "MainMenu") mainMenu = false;
+        else mainMenu = true;
+
         //specialEnemy = false;
         probabilidad = 11;
         firstTime = true;
         //if(GameObject.FindGameObjectWithTag("ending")!=null) ending = GameObject.FindGameObjectWithTag("ending").GetComponent<LevelEndingController>();
         maxHealth = health;
         if (ending != null) ending.AddEnnemy(this.gameObject);
-        
+
+        if (mainMenu == false && level1 == false && level2 == false)
+        {
+            puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
+            //multi = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ComboMultiplier>();
+        }
     }
 
     // Update is called once per frame
@@ -51,7 +64,7 @@ public class EnemyHealthController : MonoBehaviour
         {
             numAleatorio = Random.Range(1, probabilidad);
             //Debug.Log(numAleatorio);
-            if(numAleatorio == 1 && !level1 && !level2)
+            if(numAleatorio == 1 && !level1 && !level2 && !mainMenu)
             {
                 specialEnemy = true;
                 
@@ -67,6 +80,25 @@ public class EnemyHealthController : MonoBehaviour
         ///Debug.Log(health);
         if (health <= 0)
         {
+            if (mainMenu == false && level1 == false && level2 == false)
+            {
+                //puntuation.enemyTransform = this.transform;   
+                puntuation.pentakill++;
+                puntuation.enemyKilled = true;
+                if (puntuation.pentakill == 1)
+                {
+                    ScoreSystem.score += 10000;
+                }
+                else if (puntuation.pentakill > 1)
+                {
+                    ScoreSystem.score += 10000 * puntuation.pentakill;
+                }
+                puntuation.enemy(this.transform);
+            }
+
+            
+            
+            
             if (specialEnemy)
             {
                 //particle.transform.parent = null;

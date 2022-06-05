@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -12,18 +13,22 @@ public class PlayerHealthController : MonoBehaviour
     public float blinkTime;
     private float timer;
     private float timer2;
-    public GameObject deathPS,lowHealthPanel;
+    public GameObject deathPS, lowHealthPanel;
     private bool hitInmunity;
     public bool dead;
     public PauseController pause;
     private AudioManagerController audioManager;
-
+    private ScoreSystem puntuation;
+    private bool level1;
+    private bool level2;
+    private bool mainMenu;
 
     private void dealDamage()
     {
         //if (timer <= 0)
         //{
         //Si se estaba curando
+
         if (currentHealth > 0 && currentHealth < 1)
         {
             currentHealth = 0;
@@ -42,6 +47,13 @@ public class PlayerHealthController : MonoBehaviour
 
         currentHealth--;
         shakeCamera.SetTrigger("Shake");
+        if (mainMenu == false && level1 == false && level2 == false)
+        {
+            ScoreSystem.score -= ScoreSystem.score * 50 / 100;
+            puntuation.TakeDamage();
+            //multi = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ComboMultiplier>();
+        }
+        
         timer = inmortalTime;
         Time.timeScale = 0.2f;
         if (currentHealth > 0) audioManager.AudioPlay("PlayerHit");
@@ -53,6 +65,21 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth = health;
         audioManager = FindObjectOfType<AudioManagerController>();
+
+        if (SceneManager.GetActiveScene().name != "Nivel1") level1 = false;
+        else level1 = true;
+
+        if (SceneManager.GetActiveScene().name != "Nivel2") level2 = false;
+        else level2 = true;
+
+        if (SceneManager.GetActiveScene().name != "MainMenu") mainMenu = false;
+        else mainMenu = true;
+
+        if (mainMenu == false && level1 == false && level2 == false)
+        {
+            puntuation = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ScoreSystem>();
+            //multi = GameObject.FindGameObjectWithTag("ScoreSystem").GetComponent<ComboMultiplier>();
+        }
     }
 
     // Update is called once per frame
@@ -115,7 +142,7 @@ public class PlayerHealthController : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-        if(currentHealth < 2)
+        if (currentHealth < 2)
         {
             lowHealthPanel.SetActive(true);
         }
